@@ -1,236 +1,844 @@
-/* conf geral */
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f9ff;
-    color: #333;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-
-/* menu */
-
-.navbar {
-    background-color: #1d5fa7;
-    padding: 20px;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f8fc;
+    color:#333;
+    line-height:1.6;
 }
 
-
-.navbar-brand {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+img{
+    max-width:100%;
+    display:block;
 }
 
-
-.navbar-nav {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    list-style: none;
+section{
+    padding:70px 20px;
 }
 
-
-.nav-link {
-    color: white;
-    text-decoration: none;
+h1,h2,h3{
+    margin:0;
 }
 
-
-.nav-link:hover {
-    color: #d8f3dc;
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
 }
 
 
 
-/* aprese */
+/* ==========================================
+   MENU
+========================================== */
 
-.apresentacao {
-
-    text-align: center;
-
-    padding: 60px 20px;
-
+.navbar{
+    background:linear-gradient(90deg,#155799,#1d5fa7);
+    padding:18px 0;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-
-.apresentacao h1 {
-
-    color: #1d5fa7;
-
-    font-size: 42px;
-
+.navbar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-
-.apresentacao p {
-
-    font-size: 20px;
-
-    color: #555;
-
+.navbar-brand{
+    color:#fff;
+    font-size:26px;
+    font-weight:bold;
+    text-decoration:none;
 }
 
-
-
-/* cards */
-
-.cards-section {
-
-    padding: 40px 20px;
-
+.navbar-brand:hover{
+    color:#fff;
 }
 
+.navbar-nav{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
 
+.nav-link{
+    color:#fff;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+}
 
-.cards-container {
-
-    display: flex;
-
-    flex-direction: row;
-
-    justify-content: center;
-
-    gap: 30px;
-
+.nav-link:hover{
+    color:#d8f3dc;
+    transform:translateY(-2px);
 }
 
 
 
-.card-item {
+/* ==========================================
+   BANNER
+========================================== */
 
-    flex: 1;
+.apresentacao{
+    min-height:320px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(rgba(29,95,167,.88),rgba(29,95,167,.88));
+}
 
-    max-width: 350px;
+.apresentacao h1{
+    font-size:46px;
+    margin-bottom:18px;
+}
 
+.apresentacao p{
+    max-width:750px;
+    font-size:21px;
 }
 
 
 
-.card {
+/* ==========================================
+   CONHEÇA O NAPNE
+========================================== */
 
-    height: 100%;
+.conheca-napne{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+}
 
-    background-color: white;
+.conheca-napne h2{
+    color:#1d5fa7;
+    font-size:36px;
+    margin-bottom:20px;
+}
 
-    border-radius: 20px;
+.descricao-secao{
+    max-width:800px;
+    margin:0 auto 40px;
+    color:#555;
+    font-size:18px;
+}
 
-    padding: 30px;
+.informacoes-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
 
-    text-align: center;
+.informacao-card{
+    background:#fff;
+    border-radius:20px;
+    padding:30px 20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:.3s;
+}
 
-    border-top: 6px solid #1d5fa7;
+.informacao-card:hover{
+    transform:translateY(-8px);
+}
 
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.12);
+.icone-info{
+    font-size:45px;
+    margin-bottom:15px;
+}
 
-    transition: 0.3s;
+.informacao-card h3{
+    color:#1d5fa7;
+    margin-bottom:12px;
+}
 
+.informacao-card p{
+    color:#555;
 }
 
 
 
-.card:hover {
+/* ==========================================
+   CARDS HOME
+========================================== */
 
-    transform: translateY(-10px);
+.cards-section{
+    padding-top:0;
+}
 
+.cards-container{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.card-item{
+    width:330px;
+}
+
+.card{
+    background:#fff;
+    border:none;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+    height:100%;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-body{
+    padding:35px 25px;
+    text-align:center;
+}
+
+.card h2{
+    font-size:55px;
+}
+
+.card h3{
+    color:#1d5fa7;
+    margin:18px 0;
+}
+
+.card p{
+    color:#555;
+    min-height:70px;
+}
+
+.card button{
+    margin-top:20px;
+    border:none;
+    background:#1d5fa7;
+    color:#fff;
+    padding:13px 35px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    background:#164a82;
+    transform:scale(1.05);
 }
 
 
 
-.card h2 {
+/* ==========================================
+   ÁREA DINÂMICA
+========================================== */
 
-    font-size: 50px;
+.conteudo-dinamico{
+    max-width:950px;
+    margin:50px auto;
+    background:#fff;
+    padding:45px;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
 
+.conteudo-dinamico h2{
+    text-align:center;
+    color:#1d5fa7;
+    margin-bottom:30px;
+}
+
+.quiz-card,
+.mito-card,
+.curiosidade-card,
+.resultado{
+    background:#f4f8fc;
+    border-radius:20px;
+    padding:30px;
+    margin:20px 0;
+    text-align:center;
+}
+
+.opcoes button,
+.mito-card button{
+    display:block;
+    width:90%;
+    margin:15px auto;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    background:#1d5fa7;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.opcoes button:hover,
+.mito-card button:hover{
+    background:#164a82;
+}
+
+.correto{
+    background:#d8f3dc;
+    padding:20px;
+    border-radius:15px;
+}
+
+.incorreto{
+    background:#ffd6d6;
+    padding:20px;
+    border-radius:15px;
+}
+
+#botao-proxima{
+    display:block;
+    margin:25px auto;
+    border:none;
+    background:#1d5fa7;
+    color:#fff;
+    padding:12px 35px;
+    border-radius:30px;
+    cursor:pointer;
 }
 
 
 
-.card h3 {
+/* ==========================================
+   RODAPÉ
+========================================== */
 
-    color: #1d5fa7;
+footer{
+    background:#155799;
+    color:#fff;
+    text-align:center;
+    padding:35px 20px;
+}
 
-    margin: 20px 0;
+footer p{
+    margin:8px 0;
+}
+/* ==========================================
+   PÁGINA NAPNE
+========================================== */
 
+
+/* ==========================
+   SOBRE O NAPNE
+========================== */
+
+.sobre-napne{
+    text-align:center;
+}
+
+.sobre-napne h2{
+    color:#1d5fa7;
+    font-size:36px;
+    margin-bottom:25px;
+}
+
+.sobre-napne p{
+    max-width:900px;
+    margin:15px auto;
+    color:#555;
+    font-size:18px;
+    line-height:1.8;
 }
 
 
 
-.card p {
+/* ==========================
+   PRINCIPAIS AÇÕES
+========================== */
 
-    color: #555;
+.acoes-section{
+    background:#eef5fc;
+    text-align:center;
+}
 
+.acoes-section h2{
+    color:#1d5fa7;
+    font-size:36px;
+    margin-bottom:45px;
 }
 
 
 
-/* Botões */
+/* usa os cards já existentes */
 
-.card button {
+.acoes-section .cards-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
 
-    background-color: #1d5fa7;
+.acoes-section .card-item{
+    width:280px;
+}
 
-    color: white;
+.acoes-section .card{
+    border:none;
+    border-radius:25px;
+    background:#fff;
+    box-shadow:0 8px 25px rgba(0,0,0,.10);
+    padding:30px 20px;
+    transition:.3s;
+}
 
-    border: none;
+.acoes-section .card:hover{
+    transform:translateY(-8px);
+}
 
-    padding: 12px 30px;
+.acoes-section .card h2{
+    font-size:48px;
+}
 
-    border-radius: 25px;
+.acoes-section .card h3{
+    color:#1d5fa7;
+    margin:18px 0;
+}
 
-    cursor: pointer;
-
+.acoes-section .card p{
+    color:#555;
 }
 
 
 
-.card button:hover {
+/* ==========================
+   EQUIPE
+========================== */
 
-    background-color: #164a82;
+.equipe-section{
+    text-align:center;
+}
 
+.equipe-section h2{
+    color:#1d5fa7;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.equipe-card{
+    background:#fff;
+    border-radius:25px;
+    padding:25px;
+    height:100%;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.equipe-card:hover{
+    transform:translateY(-8px);
+}
+
+.foto-equipe{
+    width:170px;
+    height:170px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #1d5fa7;
+}
+
+.foto-equipe img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.equipe-card h3{
+    color:#1d5fa7;
+    margin-bottom:10px;
+}
+
+.equipe-card p{
+    color:#666;
 }
 
 
 
-/* rodapé= */
+/* ==========================
+   COMO FUNCIONA
+========================== */
 
+.atendimento-section{
+    background:#eef5fc;
+    text-align:center;
+}
 
-footer {
+.atendimento-section h2{
+    color:#1d5fa7;
+    margin-bottom:45px;
+}
 
-    margin-top: 60px;
+.passos-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
 
-    padding: 30px;
+.passo-card{
+    width:260px;
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+}
 
-    text-align: center;
+.numero{
+    width:55px;
+    height:55px;
+    margin:auto;
+    border-radius:50%;
+    background:#1d5fa7;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:22px;
+}
 
-    background-color: #1d5fa7;
+.passo-card h3{
+    margin:20px 0;
+    color:#1d5fa7;
+}
 
-    color: white;
-
+.passo-card p{
+    color:#555;
 }
 
 
 
+/* ==========================
+   GALERIA DE AÇÕES
+========================== */
+
+.galeria-acoes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.acao-card{
+    overflow:hidden;
+    background:#fff;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.acao-card:hover{
+    transform:translateY(-8px);
+}
+
+.acao-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.acao-card .texto{
+    padding:25px;
+}
+
+.acao-card h3{
+    color:#1d5fa7;
+    margin-bottom:15px;
+}
+
+.acao-card p{
+    color:#555;
+    line-height:1.7;
+}
 
 
 
-@media (max-width: 768px) {
+/* ==========================
+   MATERIAIS
+========================== */
+
+.materiais-section{
+    text-align:center;
+}
+
+.materiais-section h2{
+    color:#1d5fa7;
+    margin-bottom:15px;
+}
+.materiais-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,290px);
+    justify-content:center;
+    gap:25px;
+    margin-top:45px;
+    max-width:1250px;
+    margin-left:auto;
+    margin-right:auto;
 
 
-    .cards-container {
+}
 
-        flex-direction: column;
+.material-card{
 
-        align-items: center;
+    width:290px;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.10);
+    transition:.3s;
 
+}
+
+.material-card:hover{
+    transform:translateY(-8px);
+}
+
+.imagem-material{
+    height:210px;
+}
+
+.imagem-material img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.material-card h3{
+    color:#1d5fa7;
+    font-size:21px;
+    padding:20px 15px 10px;
+}
+
+.material-card p{
+    color:#555;
+    padding:0 18px;
+    min-height:95px;
+}
+
+.botao-material{
+    display:inline-block;
+    margin:20px 0;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    background:#1d5fa7;
+    color:#fff;
+    transition:.3s;
+}
+
+.botao-material:hover{
+    background:#164a82;
+    color:#fff;
+}
+
+
+
+/* ==========================
+   FAQ
+========================== */
+
+.faq-section{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-section h2{
+    text-align:center;
+    color:#1d5fa7;
+    margin-bottom:40px;
+}
+
+.accordion-button{
+    font-weight:bold;
+    color:#1d5fa7;
+}
+
+
+
+/* ==========================
+   CONTATO
+========================== */
+
+.contato-section{
+    text-align:center;
+}
+
+.contato-section h2{
+    color:#1d5fa7;
+    margin-bottom:40px;
+}
+
+.contato-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contato-card{
+    width:260px;
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.contato-card h3{
+    color:#1d5fa7;
+    margin:15px 0;
+}
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+/* Notebook */
+
+@media (max-width:1200px){
+
+    .informacoes-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-
-    .navbar-nav {
-
-        flex-direction: column;
-
+    .materiais-container{
+        grid-template-columns:repeat(3,1fr);
     }
 
+    .galeria-acoes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    .navbar .container{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .navbar-nav{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .cards-container{
+        justify-content:center;
+    }
+
+    .materiais-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .galeria-acoes{
+        grid-template-columns:1fr;
+    }
+
+    .informacoes-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* Celular */
+
+@media (max-width:768px){
+
+    section{
+        padding:50px 15px;
+    }
+
+    .apresentacao h1{
+        font-size:32px;
+    }
+
+    .apresentacao p{
+        font-size:18px;
+    }
+
+    .navbar-nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .informacoes-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card-item{
+        width:100%;
+        max-width:360px;
+    }
+
+    .passos-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .passo-card{
+        width:100%;
+        max-width:360px;
+    }
+
+    .materiais-container{
+        grid-template-columns:1fr;
+    }
+
+    .material-card{
+        max-width:360px;
+        margin:auto;
+    }
+
+    .galeria-acoes{
+        grid-template-columns:1fr;
+    }
+
+    .acao-card{
+        max-width:450px;
+        margin:auto;
+    }
+
+    .contato-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .contato-card{
+        width:100%;
+        max-width:350px;
+    }
+
+}
+
+
+/* Telas muito grandes */
+
+@media (min-width:1400px){
+
+    .container{
+        max-width:1300px;
+    }
 
 }
