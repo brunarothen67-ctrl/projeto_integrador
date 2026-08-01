@@ -1,0 +1,414 @@
+/* ==========================
+   PÁGINA NAPNE
+========================== */
+
+
+
+
+/* Títulos das seções */
+
+.sobre-napne h2 {
+
+    color: #0056a6;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.sobre-napne {
+
+    background-color:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.sobre-napne .container {
+
+    text-align:center;
+
+}
+
+
+.sobre-napne h2 {
+
+    color:#0056a6;
+    font-weight:bold;
+    margin-bottom:20px;
+
+}
+
+
+.sobre-napne p {
+
+    max-width:900px;
+    margin:15px auto;
+
+}
+
+/* Cards da equipe */
+
+.card-equipe {
+
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+
+}
+
+
+.card-equipe:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+/* Círculo com inicial */
+
+.equipe-icon {
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #0056a6;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+
+
+.card-equipe h3 {
+
+    color: #0056a6;
+    font-size: 1.2rem;
+
+}
+
+
+
+/* O que oferecemos */
+
+.oferta-card {
+
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+
+}
+
+
+
+.oferta-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.oferta-card i {
+
+    font-size: 40px;
+    color: #0056a6;
+    margin-bottom: 15px;
+
+}
+
+
+
+.oferta-card h3 {
+
+    color: #0056a6;
+    font-size: 1.3rem;
+
+}
+
+
+
+/* FAQ */
+
+.accordion-button {
+
+    font-weight: bold;
+
+}
+
+
+.accordion-button:not(.collapsed) {
+
+    background-color: #e8f4ff;
+    color: #0056a6;
+
+}
+
+
+
+/* Contato */
+
+.contato-napne {
+
+    background-color: #f5f9ff;
+    border-radius: 20px;
+    padding: 35px;
+
+}
+
+
+
+.contato-napne i {
+
+    color: #0056a6;
+    font-size: 25px;
+
+}
+
+
+
+/* Materiais */
+
+.material-card {
+
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.material-card img {
+
+    height: 220px;
+    object-fit: cover;
+
+}
+
+
+
+.material-card .card-body {
+
+    padding: 25px;
+
+}
+
+
+
+.material-card h3 {
+
+    color: #0056a6;
+
+}
+/* ==========================
+   SERVIÇOS NAPNE
+========================== */
+
+.card-servico{
+
+    background:white;
+    border-radius:20px;
+    padding:30px;
+
+    height:100%;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+    transition:.3s;
+
+}
+
+
+.card-servico:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.card-servico i{
+
+    font-size:40px;
+    color:#0056a6;
+
+}
+
+
+.card-servico h3{
+
+    color:#0056a6;
+
+}
+
+
+
+/* ==========================
+   PASSOS ATENDIMENTO
+========================== */
+
+
+.passo-card{
+
+    background:white;
+    padding:30px;
+    border-radius:20px;
+
+    height:100%;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+.numero{
+
+    width:45px;
+    height:45px;
+
+    background:#0056a6;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    margin:0 auto 20px;
+
+}
+/* ==========================
+   FOTO DA EQUIPE
+========================== */
+
+.foto-equipe{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    margin:0 auto 20px;
+
+}
+.foto-equipe{
+
+    width:160px;
+    height:160px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+}
+
+
+.foto-equipe img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.foto-equipe img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ==========================
+   CARDS CONTATO
+========================== */
+
+
+.card-contato{
+
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    height:100%;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+.card-contato i{
+
+    font-size:35px;
+    color:#0056a6;
+
+}
+
+
+/* Responsividade */
+
+@media(max-width:768px){
+
+    .banner h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .card-equipe,
+    .oferta-card {
+
+        margin-bottom: 20px;
+
+    }
+
+}
+
+.sobre-napne h2,
+.servicos-napne h2,
+.atendimento-napne h2,
+.equipe-napne h2,
+.contato-napne h2 {
+
+    text-align: center;
+    color: #0056a6;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}

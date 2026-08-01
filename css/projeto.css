@@ -1,0 +1,291 @@
+/* ==========================================
+   BANNER PROJETOS
+========================================== */
+
+
+.banner.projetos-banner{
+
+    min-height:380px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    color:white;
+
+    background:
+
+    linear-gradient(
+    rgba(21,87,153,.85),
+    rgba(21,87,153,.85)
+    ),
+
+    url("../img/projetos.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+
+.projetos-banner h1{
+
+    color:white;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.projetos-banner p{
+
+    color:white;
+
+    font-size:20px;
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+
+
+/* ==========================================
+   SEÇÃO DE PROJETOS
+========================================== */
+
+
+.projetos-conteudo{
+
+    background:#f5f9ff;
+
+    padding:70px 20px;
+
+}
+
+
+
+.projetos-conteudo h2{
+
+    color:#1d5fa7;
+
+    font-size:36px;
+
+    font-weight:bold;
+
+}
+
+
+
+.projetos-conteudo > .container > .text-center p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    font-size:18px;
+
+}
+
+
+
+/* ==========================================
+   CARDS DOS PROJETOS
+========================================== */
+
+
+.projeto-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    height:100%;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+
+
+.projeto-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+/* ==========================================
+   IMAGEM DOS PROJETOS
+========================================== */
+
+
+.imagem-projeto{
+
+    height:230px;
+
+    overflow:hidden;
+
+}
+
+
+
+.imagem-projeto img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+
+
+.projeto-card:hover .imagem-projeto img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* ==========================================
+   CONTEÚDO DOS CARDS
+========================================== */
+
+
+.projeto-card .card-body{
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+
+
+.projeto-card i{
+
+    font-size:45px;
+
+    color:#1d5fa7;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.projeto-card h3{
+
+    color:#1d5fa7;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.projeto-card p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    min-height:90px;
+
+}
+
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+
+.projeto-card .badge{
+
+    display:inline-block;
+
+    background:#1d5fa7;
+
+    color:white;
+
+    padding:8px 20px;
+
+    border-radius:25px;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .projetos-banner h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    .projetos-banner p{
+
+        font-size:17px;
+
+    }
+
+
+
+    .projetos-conteudo h2{
+
+        font-size:30px;
+
+    }
+
+
+
+    .imagem-projeto{
+
+        height:200px;
+
+    }
+
+
+
+    .projeto-card .card-body{
+
+        padding:25px;
+
+    }
+
+
+}

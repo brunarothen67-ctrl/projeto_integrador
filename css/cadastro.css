@@ -1,0 +1,153 @@
+/* ==========================================
+   PÁGINA DE CADASTRO
+========================================== */
+
+
+.cadastro-area{
+
+    padding:70px 20px;
+
+    background:#f5f9ff;
+
+}
+
+
+
+.cadastro-card{
+
+    max-width:500px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.cadastro-card h2{
+
+    color:#1d5fa7;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.cadastro-card label{
+
+    color:#333;
+
+    font-weight:bold;
+
+}
+
+
+
+.cadastro-card input{
+
+    border-radius:15px;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+}
+
+
+
+.cadastro-card input:focus{
+
+    border-color:#1d5fa7;
+
+    box-shadow:0 0 0 .2rem rgba(29,95,167,.25);
+
+}
+
+
+
+.cadastro-card button{
+
+    background:#1d5fa7;
+
+    border:none;
+
+    border-radius:25px;
+
+    padding:12px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.cadastro-card button:hover{
+
+    background:#155799;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+.cadastro-card a{
+
+    color:#1d5fa7;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+
+
+.cadastro-card a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .cadastro-card{
+
+        padding:25px;
+
+    }
+
+
+    .cadastro-card h2{
+
+        font-size:28px;
+
+    }
+
+
+}

@@ -1,0 +1,338 @@
+/* ==========================
+   PÁGINA DE RELATOS
+========================== */
+
+
+/* Área geral */
+
+.relatos-conteudo{
+
+    background:#f5f9ff;
+    padding:70px 20px;
+
+}
+
+
+/* ==========================
+   PESQUISA E FILTROS
+========================== */
+
+
+.input-group{
+
+    border-radius:20px;
+    overflow:hidden;
+
+}
+
+
+.input-group-text{
+
+    background:#1d5fa7;
+    color:white;
+    border:none;
+
+}
+
+
+.form-control{
+
+    border:none;
+
+    padding:15px;
+
+}
+
+
+
+/* Botões filtros */
+
+
+.btn-outline-primary{
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+}
+
+
+
+.btn-outline-primary.active,
+.btn-outline-primary:hover{
+
+    background:#1d5fa7;
+
+    color:white;
+
+}
+
+
+
+/* ==========================
+   CARD DOS RELATOS
+========================== */
+
+
+.relatos-conteudo .card{
+
+
+    border:none;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+    overflow:hidden;
+
+}
+
+
+
+.relatos-conteudo .card-body{
+
+    padding:30px;
+
+}
+
+
+
+/* ==========================
+   FOTO PERFIL
+========================== */
+
+
+.foto-perfil{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #1d5fa7;
+
+}
+
+
+
+/* usuário */
+
+
+.card h6{
+
+    color:#1d5fa7;
+
+    font-weight:bold;
+
+}
+
+
+
+/* categorias */
+
+
+.badge{
+
+    border-radius:20px;
+
+    padding:8px 15px;
+
+}
+
+
+
+/* título relato */
+
+
+.card h4{
+
+    color:#1d5fa7;
+
+    font-weight:bold;
+
+}
+
+
+
+/* texto */
+
+
+.card p{
+
+    color:#555;
+
+    line-height:1.7;
+
+}
+
+
+
+/* imagem do relato */
+
+
+.card img.img-fluid{
+
+    border-radius:20px;
+
+    max-height:350px;
+
+    object-fit:cover;
+
+}
+
+
+
+/* botões interação */
+
+
+.card .btn-light{
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.card .btn-light:hover{
+
+    background:#1d5fa7;
+
+    color:white;
+
+}
+
+
+
+/* ==========================
+   LATERAL
+========================== */
+
+
+.col-lg-4 .card h4,
+.col-lg-4 .card h5{
+
+    color:#1d5fa7;
+
+    font-weight:bold;
+
+}
+
+
+.col-lg-4 .card p{
+
+    font-size:16px;
+
+}
+
+
+
+/* ==========================
+   PUBLICAÇÃO
+========================== */
+
+
+.modal-content{
+
+    border-radius:25px;
+
+    border:none;
+
+}
+
+
+
+.modal-header{
+
+    background:#1d5fa7;
+
+    color:white;
+
+    border-radius:25px 25px 0 0;
+
+}
+
+
+
+.modal-header h4{
+
+    color:white;
+
+}
+
+
+
+.modal-footer .btn-primary{
+
+    background:#1d5fa7;
+
+    border:none;
+
+    border-radius:25px;
+
+    padding:10px 30px;
+
+}
+
+
+
+
+/* Caixa criar publicação */
+
+
+.card-body .btn-primary{
+
+    background:#1d5fa7;
+
+    border:none;
+
+    border-radius:25px;
+
+}
+
+
+
+.card-body .btn-primary:hover{
+
+    background:#155799;
+
+}
+
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+
+@media(max-width:768px){
+
+
+    .relatos-conteudo{
+
+        padding:40px 15px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px!important;
+
+    }
+
+
+    .foto-perfil{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+
+}

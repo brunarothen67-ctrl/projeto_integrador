@@ -1,0 +1,108 @@
+/* ==========================================
+   PÁGINA DE LOGIN
+========================================== */
+
+
+.login-area{
+
+    padding:70px 20px;
+
+    background:#f5f9ff;
+
+}
+
+
+
+.login-card{
+
+    max-width:450px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.login-card h2{
+
+    color:#1d5fa7;
+
+    text-align:center;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.login-card label{
+
+    font-weight:bold;
+
+}
+
+
+
+.login-card input{
+
+    border-radius:15px;
+
+    padding:12px;
+
+}
+
+
+
+.login-card button{
+
+    border-radius:25px;
+
+    padding:12px;
+
+    font-weight:bold;
+
+}
+
+
+
+.login-card a{
+
+    color:#1d5fa7;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+
+
+.login-card a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .login-card{
+
+        padding:25px;
+
+    }
+
+}

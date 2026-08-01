@@ -1,0 +1,294 @@
+/* ==============================
+   BANNER HOME
+============================== */
+
+.banner{
+
+    min-height:450px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+
+    background:
+    linear-gradient(
+    rgba(21,87,153,.85),
+    rgba(21,87,153,.85)
+    ),
+    url("../img/banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+.banner-conteudo{
+    max-width:800px;
+}
+
+.banner h1{
+    font-size:48px;
+    color:white;
+}
+
+.banner p{
+    font-size:21px;
+    color:white;
+    margin-bottom:35px;
+}
+
+
+/* ==============================
+   SEÇÃO AJUDA
+============================== */
+.ajuda{
+    background:white;
+}
+
+.card-ajuda{
+
+    padding:35px 25px;
+    text-align:center;
+    height:100%;
+
+}
+
+
+.card-ajuda i{
+
+    font-size:50px;
+    color:#1d5fa7;
+    margin-bottom:20px;
+
+}
+
+
+.card-ajuda h3{
+
+    color:#1d5fa7;
+
+}
+
+/* ==============================
+   PROJETOS EM DESTAQUE
+   (antiga seção Eventos)
+============================== */
+
+.eventos-home{
+    background:#f5f9ff;
+}
+
+.card-evento{
+    overflow:hidden;
+    height:100%;
+}
+
+.card-evento img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.evento-conteudo{
+    padding:25px;
+}
+
+.evento-conteudo h3{
+    color:#1d5fa7;
+}
+
+
+/* ==============================
+   TECNOLOGIAS
+============================== */
+
+.tecnologias{
+    background:white;
+}
+
+.card-tecnologia{
+    overflow:hidden;
+    height:100%;
+    text-align:center;
+}
+
+.card-tecnologia img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-tecnologia h3{
+    color:#1d5fa7;
+    padding:20px 15px 5px;
+}
+/* ==============================
+   PRÓXIMOS EVENTOS
+============================== */
+
+.eventos-home{
+
+    background:#f5f9ff;
+
+}
+
+
+.card-evento{
+
+    overflow:hidden;
+    height:100%;
+
+}
+
+
+.card-evento img{
+
+    width:100%;
+    height:220px;
+    object-fit:cover;
+
+}
+
+
+.evento-conteudo{
+
+    padding:25px;
+
+}
+
+
+.evento-conteudo h3{
+
+    color:#1d5fa7;
+
+}
+
+
+
+/* ==============================
+   MITOS E VERDADES
+============================== */
+
+
+.mitos{
+
+    background:white;
+
+}
+
+
+.card-interativo{
+
+    max-width:600px;
+    margin:30px auto;
+    padding:40px;
+    text-align:center;
+
+}
+
+
+.card-interativo i{
+
+    font-size:55px;
+    color:#1d5fa7;
+    margin-bottom:20px;
+
+}
+
+
+.card-interativo h3{
+
+    color:#1d5fa7;
+
+}
+
+
+.card-interativo button{
+
+    background:#1d5fa7;
+    color:white;
+
+    border:none;
+    padding:12px 30px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.card-interativo button:hover{
+
+    background:#155799;
+    transform:scale(1.05);
+
+}
+
+
+
+/* ==============================
+   VOCÊ SABIA
+============================== */
+
+
+.curiosidades{
+
+    background:#f5f9ff;
+
+}
+
+
+.card-curiosidade{
+
+    padding:35px 25px;
+    height:100%;
+    text-align:center;
+
+}
+
+
+.card-curiosidade i{
+
+    font-size:45px;
+    color:#1d5fa7;
+    margin-bottom:20px;
+
+}
+
+
+.card-curiosidade h3{
+
+    color:#1d5fa7;
+
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media(max-width:768px){
+
+    .banner h1{
+        font-size:32px;
+    }
+
+    .banner p{
+        font-size:17px;
+    }
+
+    .card-ajuda,
+.card-evento,
+.card-tecnologia{
+
+    max-width:350px;
+    margin:auto;
+
+}
+
+}

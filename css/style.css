@@ -1,9 +1,13 @@
-/*Configurações Gerais */
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 
@@ -19,7 +23,7 @@ body{
 
 section{
 
-    padding:70px 20px;
+    padding:50px 20px;
 
 }
 
@@ -41,10 +45,10 @@ h1,h2,h3{
 
 h2{
 
-    text-align:center;
     color:#1d5fa7;
     font-size:36px;
     font-weight:bold;
+    text-align:center;
 
 }
 
@@ -65,24 +69,33 @@ img{
 
 
 
-/* Navbar-> barra de navegação do site */
+/* ==============================
+   NAVBAR
+============================== */
 
 
 .navbar{
 
     background:linear-gradient(90deg,#155799,#1d5fa7);
+
     padding:18px 0;
+
     box-shadow:0 5px 15px rgba(0,0,0,.15);
 
 }
 
 
+
 .navbar-brand{
 
     color:white;
+
     font-size:25px;
+
     font-weight:bold;
+
 }
+
 
 
 .navbar-brand:hover{
@@ -96,19 +109,25 @@ img{
 .nav-link{
 
     color:white!important;
+
     font-size:17px;
+
     margin:0 8px;
+
     transition:.3s;
 
 }
 
 
+
 .nav-link:hover{
 
     color:#d8f3dc!important;
+
     transform:translateY(-2px);
 
 }
+
 
 
 .nav-link.active{
@@ -119,22 +138,34 @@ img{
 
 
 
+/* ==============================
+   BOTÕES
+============================== */
+
+
 .botoes-login{
 
     display:flex;
+
     gap:10px;
+
     margin-left:20px;
 
 }
+
 
 
 .btn-login,
 .btn-cadastro{
 
     text-decoration:none;
+
     padding:10px 22px;
+
     border-radius:25px;
+
     font-weight:bold;
+
     transition:.3s;
 
 }
@@ -144,6 +175,7 @@ img{
 .btn-login{
 
     color:white;
+
     border:2px solid white;
 
 }
@@ -153,6 +185,7 @@ img{
 .btn-login:hover{
 
     background:white;
+
     color:#1d5fa7;
 
 }
@@ -162,6 +195,7 @@ img{
 .btn-cadastro{
 
     background:white;
+
     color:#1d5fa7;
 
 }
@@ -171,22 +205,67 @@ img{
 .btn-cadastro:hover{
 
     background:#d8f3dc;
+
 }
 
 
 
-/* banner home */
+/* ==============================
+   BOTÃO PRINCIPAL
+============================== */
 
 
-.banner{
+.botao-principal{
 
-    min-height:450px;
+    display:inline-block;
+
+    background:white;
+
+    color:#1d5fa7;
+
+    padding:14px 35px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.botao-principal:hover{
+
+    transform:scale(1.05);
+
+    background:#d8f3dc;
+
+}
+
+
+
+/* ==============================
+   BANNERS
+============================== */
+
+
+.banner,
+.pagina-banner{
+
+    min-height:380px;
+
     display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
 
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
 
     background:
 
@@ -199,6 +278,7 @@ img{
 
 
     background-size:cover;
+
     background-position:center;
 
 }
@@ -207,7 +287,9 @@ img{
 
 .banner-conteudo{
 
-    max-width:800px;
+    max-width:850px;
+
+    margin:auto;
 
 }
 
@@ -216,7 +298,12 @@ img{
 .banner h1{
 
     font-size:48px;
+
+    font-weight:bold;
+
     color:white;
+
+    margin-bottom:20px;
 
 }
 
@@ -224,39 +311,17 @@ img{
 
 .banner p{
 
-    font-size:21px;
     color:white;
-    margin-bottom:35px;
+
+    font-size:20px;
 
 }
 
 
 
-.botao-principal{
-
-    display:inline-block;
-    background:white;
-    color:#1d5fa7;
-    padding:14px 35px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-
-}
-
-
-
-.botao-principal:hover{
-
-    transform:scale(1.05);
-    background:#d8f3dc;
-
-}
-
-
-
-/* cards */
+/* ==============================
+   CARDS PADRÃO
+============================== */
 
 
 .card-ajuda,
@@ -275,9 +340,13 @@ img{
 
 
     background:white;
+
     border-radius:25px;
+
     box-shadow:0 8px 25px rgba(0,0,0,.12);
+
     transition:.3s;
+
 
 }
 
@@ -301,666 +370,12 @@ img{
     transform:translateY(-8px);
 
 }
-/* home ajuda */
 
 
-.ajuda{
 
-    background:white;
-
-}
-
-
-
-.card-ajuda{
-
-    padding:35px 25px;
-    text-align:center;
-    height:100%;
-
-}
-
-
-
-.card-ajuda i{
-
-    font-size:50px;
-    color:#1d5fa7;
-    margin-bottom:20px;
-
-}
-
-
-
-.card-ajuda h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-
-/* Eventos  */
-
-
-.eventos-home{
-
-    background:#f5f9ff;
-
-}
-
-
-
-.card-evento{
-
-    overflow:hidden;
-    height:100%;
-
-}
-
-
-
-.card-evento img{
-
-    width:100%;
-    height:220px;
-    object-fit:cover;
-
-}
-
-
-
-.evento-conteudo{
-
-    padding:25px;
-
-}
-
-
-
-.evento-conteudo h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-
-/* tec home */
-
-
-.tecnologias{
-
-    background:white;
-
-}
-
-
-
-.card-tecnologia{
-
-    overflow:hidden;
-    height:100%;
-    text-align:center;
-
-}
-
-
-
-.card-tecnologia img{
-
-    width:100%;
-    height:200px;
-    object-fit:cover;
-
-}
-
-
-
-.card-tecnologia h3{
-
-    color:#1d5fa7;
-    padding:20px 15px 5px;
-
-}
-
-
-
-/* Sobre o napne*/
-
-
-.sobre-napne{
-
-    background:white;
-    text-align:center;
-
-}
-
-
-
-.sobre-napne p{
-
-    max-width:900px;
-    margin:15px auto;
-    font-size:18px;
-    line-height:1.8;
-
-}
-
-
-
-
-/* serviços napne */
-
-
-.servicos-napne{
-
-    background:#f5f9ff;
-
-}
-
-
-.servicos-napne .card-ajuda{
-
-    background:white;
-
-}
-
-
-
-
-/* Atendimento napne */
-
-
-.atendimento-napne{
-
-    background:#f5f9ff;
-
-}
-
-
-
-.passo-card{
-
-    padding:35px 25px;
-    text-align:center;
-    height:100%;
-
-}
-
-
-
-.numero{
-
-    width:60px;
-    height:60px;
-
-    margin:0 auto 20px;
-
-    border-radius:50%;
-
-    background:#1d5fa7;
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:25px;
-    font-weight:bold;
-
-}
-
-
-
-.passo-card h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-/* Equipe napne*/
-
-
-.equipe-napne{
-
-    background:white;
-
-}
-
-
-
-.card-equipe{
-
-    padding:30px 20px;
-    text-align:center;
-    height:100%;
-
-}
-
-
-
-.foto-equipe{
-
-    width:150px;
-    height:150px;
-
-    margin:auto;
-    margin-bottom:20px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    border:5px solid #1d5fa7;
-
-}
-
-
-
-.foto-equipe img{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-}
-
-
-
-.card-equipe h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-
-/* Contatos  */
-
-
-.contato-napne{
-
-    background:#f5f9ff;
-
-}
-
-
-
-.card-contato{
-
-    padding:35px 25px;
-    text-align:center;
-    height:100%;
-
-}
-
-
-
-.card-contato i{
-
-    font-size:45px;
-    color:#1d5fa7;
-
-}
-
-
-
-.card-contato h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-/* Banner de acessibilidade*/
-
-
-.acessibilidade-banner{
-
-    min-height:380px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    color:white;
-
-
-    background:
-
-    linear-gradient(
-    rgba(21,87,153,.85),
-    rgba(21,87,153,.85)
-    ),
-
-    url("../img/acessibilidade.jpg");
-
-
-    background-size:cover;
-
-    background-position:center;
-
-}
-
-
-
-.acessibilidade-banner h1{
-
-    color:white;
-    font-size:48px;
-
-}
-
-
-
-.acessibilidade-banner p{
-
-    color:white;
-    max-width:800px;
-    margin:auto;
-    font-size:20px;
-
-}
-
-
-
-
-/* sobre a acessibilidade */
-
-
-.sobre-acessibilidade{
-
-    background:white;
-    text-align:center;
-
-}
-
-
-
-.sobre-acessibilidade p{
-
-    max-width:900px;
-
-    margin:15px auto;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-
-
-
-
-
-/* conceitos */
-
-
-.conceitos-acessibilidade{
-
-    background:#f5f9ff;
-    text-align:center;
-
-}
-
-
-
-.card-conceito{
-
-    padding:35px 25px;
-    height:100%;
-
-}
-
-
-
-.icone-conceito{
-
-    font-size:45px;
-    margin-bottom:15px;
-
-}
-
-
-
-.card-conceito h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-
-
-/* Dua */
-
-
-.dua-section{
-
-    background:white;
-    text-align:center;
-
-}
-
-
-
-.card-dua{
-
-    padding:35px 25px;
-    height:100%;
-
-}
-
-
-
-.card-dua h3{
-
-    color:#1d5fa7;
-
-}
-/* tec assistivas */
-
-
-.tecnologias-section{
-
-    background:#f5f9ff;
-    text-align:center;
-
-}
-
-
-
-.tecnologias-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-    margin-top:40px;
-
-}
-
-
-
-.tecnologia-card{
-
-    overflow:hidden;
-    height:100%;
-
-}
-
-
-
-.imagem-tecnologia{
-
-    height:220px;
-
-}
-
-
-
-.imagem-tecnologia img{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-}
-
-
-
-.tecnologia-card h3{
-
-    color:#1d5fa7;
-    padding:20px 15px 5px;
-
-}
-
-
-
-.tecnologia-card p{
-
-    padding:0 20px 25px;
-
-}
-
-
-
-
-
-/* Direitos estudantes*/
-
-
-.direitos-section{
-
-    background:white;
-    text-align:center;
-
-}
-
-
-
-.direito-card{
-
-    padding:30px 20px;
-
-    height:100%;
-
-}
-
-
-
-.direito-card h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-
-
-/* Materiais */
-
-
-.materiais-acessibilidade{
-
-    background:#f5f9ff;
-
-    text-align:center;
-
-}
-
-
-
-.materiais-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-    margin-top:40px;
-
-}
-
-
-
-.material-acess-card{
-
-    padding:35px 25px;
-
-    height:100%;
-
-}
-
-
-
-.material-acess-card h3{
-
-    color:#1d5fa7;
-
-}
-
-
-
-.material-acess-card button{
-
-    background:#1d5fa7;
-
-    color:white;
-
-    border:none;
-
-    padding:12px 30px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-
-.material-acess-card button:hover{
-
-    background:#164a82;
-
-    transform:scale(1.05);
-
-}
-
-
-
-
-
-/*Rodapé */
+/* ==============================
+   RODAPÉ
+============================== */
 
 
 .footer,
@@ -1012,30 +427,31 @@ footer a:hover{
 
 
 
+/* ==============================
+   AJUSTES GERAIS
+============================== */
 
 
-/* Responsividade */
+main{
 
+    margin:0;
 
-@media(max-width:992px){
-
-
-    .tecnologias-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-
-    .materiais-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
+    padding:0;
 
 }
 
+
+main > section:first-child{
+
+    padding-top:0;
+
+}
+
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
 
 
 @media(max-width:768px){
@@ -1052,6 +468,32 @@ footer a:hover{
     h2{
 
         font-size:30px;
+
+    }
+
+
+
+    .banner{
+
+        min-height:250px;
+
+        padding:40px 20px;
+
+    }
+
+
+
+    .banner h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    .banner p{
+
+        font-size:17px;
 
     }
 
@@ -1085,418 +527,6 @@ footer a:hover{
         text-align:center;
 
     }
-
-
-
-    .banner h1{
-
-        font-size:32px;
-
-    }
-
-
-
-    .banner p{
-
-        font-size:17px;
-
-    }
-
-
-
-    .acessibilidade-banner h1{
-
-        font-size:34px;
-
-    }
-
-
-
-    .acessibilidade-banner p{
-
-        font-size:17px;
-
-    }
-
-
-
-    .tecnologias-grid,
-    .materiais-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-
-    .card-ajuda,
-    .card-evento,
-    .card-tecnologia,
-    .card-equipe,
-    .card-contato{
-
-        max-width:350px;
-
-        margin:auto;
-
-    }
-
-
-}
-
-
-/* RELATOS */
-
-
-/* Banner relatos  */
-
-.banner-relatos{
-
-    min-height:380px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    color:white;
-
-    background:
-
-    linear-gradient(
-    rgba(21,87,153,.85),
-    rgba(21,87,153,.85)
-    ),
-
-    url("../img/relatos.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-}
-
-
-.banner-relatos h1{
-
-    font-size:48px;
-    font-weight:bold;
-    margin-bottom:20px;
-
-}
-
-
-.banner-relatos p{
-
-    max-width:800px;
-    margin:auto;
-
-    font-size:20px;
-
-}
-
-
-
-/* FOTO perfil*/
-
-.foto-perfil{
-
-    width:60px;
-    height:60px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:3px solid #1d5fa7;
-
-}
-
-
-
-/* CARDS relatos */
-
-.card{
-
-    border:none;
-
-    border-radius:25px;
-
-    overflow:hidden;
-
-}
-
-
-
-.card-body{
-
-    padding:30px;
-
-}
-
-
-
-.card h4{
-
-    color:#1d5fa7;
-
-    font-weight:bold;
-
-}
-
-
-
-.card p{
-
-    color:#555;
-
-    line-height:1.7;
-
-}
-
-
-
-/* botões de interação */
-
-
-.card .btn-light{
-
-    border-radius:25px;
-
-    transition:.3s;
-
-}
-
-
-
-.card .btn-light:hover{
-
-    background:#e7f0fb;
-
-    color:#1d5fa7;
-
-    transform:translateY(-3px);
-
-}
-
-
-
-/* BADGES estilizar as etiquetas */
-
-
-.badge{
-
-    padding:8px 15px;
-
-    border-radius:20px;
-
-}
-
-
-
-/* ÁREA LATERAL */
-
-
-.col-lg-4 .card{
-
-    margin-bottom:25px;
-
-}
-
-
-
-.col-lg-4 h4,
-.col-lg-4 h5{
-
-    color:#1d5fa7;
-
-    font-weight:bold;
-
-}
-
-
-
-.col-lg-4 p{
-
-    color:#555;
-
-}
-
-
-
-/* PESQUISA */
-
-
-.input-group{
-
-    max-width:800px;
-
-}
-
-
-
-.input-group-text{
-
-    background:#1d5fa7;
-
-    color:white;
-
-    border:none;
-
-}
-
-
-
-.form-control{
-
-    border-radius:0 25px 25px 0;
-
-    padding:12px 20px;
-
-}
-
-
-
-/* FILTROS */
-
-
-.btn-outline-primary{
-
-    border-radius:25px;
-
-    padding:10px 25px;
-
-}
-
-
-
-.btn-outline-primary:hover,
-.btn-outline-primary.active{
-
-    background:#1d5fa7;
-
-    color:white;
-
-}
-
-
-
-/* PUBLICAÇÃO */
-
-
-.card .btn-primary{
-
-    background:#1d5fa7;
-
-    border:none;
-
-    border-radius:30px;
-
-    padding:12px 35px;
-
-}
-
-
-
-.card .btn-primary:hover{
-
-    background:#164a82;
-
-    transform:scale(1.05);
-
-}
-
-
-
-/* MODAL - > abre uma janela ao inves de uma nova página*/
-
-
-.modal-content{
-
-    border-radius:25px;
-
-    border:none;
-
-}
-
-
-
-.modal-header{
-
-    background:#1d5fa7;
-
-    color:white;
-
-    border-radius:25px 25px 0 0;
-
-}
-
-
-
-.modal-header h4{
-
-    color:white;
-
-}
-
-
-
-.modal-footer .btn{
-
-    border-radius:25px;
-
-}
-
-
-
-
-
-/* RESPONSIVO relatos- faz adptção ao tamanho da tela do dispositivo */
-
-
-@media(max-width:768px){
-
-
-.banner-relatos h1{
-
-    font-size:34px;
-
-}
-
-
-
-.banner-relatos p{
-
-    font-size:17px;
-
-}
-
-
-
-.card-body{
-
-    padding:20px;
-
-}
-
-
-
-.d-flex.justify-content-between{
-
-    flex-direction:column;
-
-    gap:10px;
-
-}
-
-
-
-.d-flex.justify-content-between button{
-
-    width:100%;
-
-}
-
 
 
 }
