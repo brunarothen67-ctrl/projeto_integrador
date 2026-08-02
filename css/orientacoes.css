@@ -1,0 +1,287 @@
+/* ==========================
+   ORIENTAÇÕES NAPNE
+========================== */
+
+
+/* Banner */
+
+.orientacoes-banner{
+
+    padding:80px 20px;
+    background:linear-gradient(135deg,#0056a6,#00a6d6);
+    color:white;
+    text-align:center;
+
+}
+
+
+.orientacoes-banner h1{
+
+    font-size:2.8rem;
+    font-weight:bold;
+
+}
+
+
+.orientacoes-banner p{
+
+    max-width:800px;
+    margin:20px auto;
+    font-size:1.1rem;
+
+}
+
+
+
+/* ==========================
+   CARDS DE ATALHO
+========================== */
+
+
+.atalhos-orientacoes{
+
+    padding:70px 0;
+
+}
+
+
+
+.card-atalho{
+
+    display:block;
+    height:100%;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#333;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+
+}
+
+
+
+.card-atalho:hover{
+
+    transform:translateY(-8px);
+
+    color:#0056a6;
+
+}
+
+
+
+.card-atalho i{
+
+    font-size:45px;
+
+    color:#0056a6;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.card-atalho h3{
+
+    font-size:1.3rem;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================
+   BLOCOS DE ORIENTAÇÃO
+========================== */
+
+
+.bloco-orientacao{
+
+    padding:70px 0;
+
+}
+
+
+
+.bloco-orientacao h2{
+
+    color:#0056a6;
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.bloco-orientacao p{
+
+    font-size:1.05rem;
+
+    line-height:1.7;
+
+}
+
+
+
+.fundo-claro{
+
+    background:#f5f9fc;
+
+}
+
+
+
+/* Lista lateral */
+
+
+.lista-orientacao{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+.lista-orientacao h3{
+
+    color:#0056a6;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.lista-orientacao li{
+
+    margin-bottom:12px;
+
+}
+
+
+
+/* ==========================
+   CONTATO
+========================== */
+
+
+.contato-orientacoes{
+
+    padding:70px 0;
+
+}
+
+
+
+.card-contato-orientacoes{
+
+    background:linear-gradient(135deg,#0056a6,#00a6d6);
+
+    color:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+.card-contato-orientacoes p{
+
+    color:white;
+
+}
+
+
+.card-contato-orientacoes i{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.card-contato-orientacoes h2{
+
+    font-weight:bold;
+
+}
+
+
+
+.card-contato-orientacoes .botao-principal{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:white;
+
+    color:#0056a6;
+
+    padding:12px 30px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+
+.card-contato-orientacoes .botao-principal:hover{
+
+    opacity:0.9;
+
+}
+
+
+
+/* Responsivo */
+
+
+@media(max-width:768px){
+
+
+    .orientacoes-banner h1{
+
+        font-size:2rem;
+
+    }
+
+
+    .bloco-orientacao{
+
+        text-align:center;
+
+    }
+
+
+}
