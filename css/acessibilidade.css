@@ -1,354 +1,163 @@
-/* ==========================================
-   BANNER ACESSIBILIDADE
-========================================== */
 
-.acessibilidade-banner{
 
-    min-height:380px;
-    display:flex;
+/* ---------- SOBRE ACESSIBILIDADE ---------- */
+.sobre-acessibilidade{
+    background:var(--branco);
+    text-align:center;
+}
+.sobre-acessibilidade p{
+    max-width:850px;
+    margin:15px auto;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+/* ---------- CONCEITOS (Igualdade / Equidade / Inclusão) ---------- */
+.conceitos-acessibilidade{
+    background:var(--azul-100);
+    text-align:center;
+}
+.card-conceito{
+    padding:36px 26px;
+    height:100%;
+    border-top:4px solid var(--dourado);
+}
+.icone-conceito{
+    font-size:42px;
+    margin-bottom:14px;
+}
+.card-conceito h3{
+    color:var(--azul-900);
+}
+
+/* ---------- DUA ---------- */
+.dua-section{
+    background:var(--branco);
+    text-align:center;
+}
+.card-dua{
+    padding:36px 26px;
+    height:100%;
+}
+.card-dua .icone-info{
+    display:inline-flex;
     align-items:center;
     justify-content:center;
-
-    text-align:center;
-    color:white;
-
-    background:
-    linear-gradient(
-        rgba(21,87,153,.85),
-        rgba(21,87,153,.85)
-    ),
-    url("../img/acessibilidade.jpg");
-
-    background-size:cover;
-    background-position:center;
-
+    width:60px;
+    height:60px;
+    border-radius:16px;
+    font-size:26px;
+    background:var(--azul-100);
+    margin-bottom:14px;
 }
-
-
-.acessibilidade-banner h1{
-
-    color:white;
-    font-size:48px;
-    font-weight:bold;
-
-}
-
-
-.acessibilidade-banner p{
-
-    color:white;
-    max-width:800px;
-    margin:auto;
-    font-size:20px;
-
-}
-
-
-/* ==========================================
-   SOBRE A ACESSIBILIDADE
-========================================== */
-
-.sobre-acessibilidade{
-
-    background:white;
-    text-align:center;
-
-}
-
-
-.sobre-acessibilidade p{
-
-    max-width:900px;
-    margin:15px auto;
-    font-size:18px;
-    line-height:1.8;
-
-}
-
-
-/* ==========================================
-   CONCEITOS
-========================================== */
-
-.conceitos-acessibilidade{
-
-    background:#f5f9ff;
-    text-align:center;
-
-}
-
-
-.card-conceito{
-
-    padding:35px 25px;
-    height:100%;
-
-}
-
-
-.icone-conceito{
-
-    font-size:45px;
-    margin-bottom:15px;
-
-}
-
-
-.card-conceito h3{
-
-    color:#1d5fa7;
-
-}
-
-
-/* ==========================================
-   DUA
-========================================== */
-
-.dua-section{
-
-    background:white;
-    text-align:center;
-
-}
-
-
-.card-dua{
-
-    padding:35px 25px;
-    height:100%;
-
-}
-
-
 .card-dua h3{
-
-    color:#1d5fa7;
-
+    color:var(--azul-900);
 }
 
-
-/* ==========================================
-   TECNOLOGIAS ASSISTIVAS
-========================================== */
-
+/* ---------- TECNOLOGIAS ASSISTIVAS ---------- */
 .tecnologias-section{
-
-    background:#f5f9ff;
+    background:var(--azul-100);
     text-align:center;
-
 }
-
-
 .tecnologias-grid{
-
     display:grid;
     grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
+    gap:24px;
     margin-top:40px;
-
 }
-
-
 .tecnologia-card{
-
-    background:white;
-
-    border-radius:20px;
+    background:var(--branco);
+    border-radius:var(--raio);
     overflow:hidden;
-
     height:100%;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
 }
-
-
 .imagem-tecnologia{
-
-    height:220px;
-
+    height:200px;
+    background:linear-gradient(135deg, var(--azul-700), var(--azul-900));
 }
-
-
 .imagem-tecnologia img{
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
 }
-
-
 .tecnologia-card h3{
-
-    color:#1d5fa7;
-
-    padding:20px 15px 5px;
-
+    color:var(--azul-900);
+    font-size:1.05rem;
+    padding:18px 16px 4px;
 }
-
-
 .tecnologia-card p{
-
-    padding:0 20px 25px;
-
+    padding:0 18px 22px;
+    font-size:.92rem;
 }
 
-
-/* ==========================================
-   DIREITOS DOS ESTUDANTES
-========================================== */
-
+/* ---------- DIREITOS DOS ESTUDANTES ---------- */
 .direitos-section{
-
-    background:white;
+    background:var(--branco);
     text-align:center;
-
 }
-
-
 .direito-card{
-
     padding:30px 20px;
     height:100%;
-
 }
-
-
+.direito-card .icone-info{
+    font-size:36px;
+    display:block;
+    margin-bottom:10px;
+}
 .direito-card h3{
-
-    color:#1d5fa7;
-
+    color:var(--azul-900);
+    font-size:1.02rem;
 }
 
-
-/* ==========================================
-   MATERIAIS
-========================================== */
-
+/* ---------- MATERIAIS ---------- */
 .materiais-acessibilidade{
-
-    background:#f5f9ff;
+    background:var(--azul-100);
     text-align:center;
-
 }
-
-
 .materiais-grid{
-
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
+    gap:24px;
     margin-top:40px;
-
 }
-
-
 .material-acess-card{
-
-    background:white;
-
-    padding:35px 25px;
-
-    border-radius:20px;
-
+    background:var(--branco);
+    padding:34px 24px;
+    border-radius:var(--raio);
     height:100%;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
 }
-
-
 .material-acess-card h3{
-
-    color:#1d5fa7;
-
+    color:var(--azul-900);
+    font-size:1.05rem;
 }
-
-
 .material-acess-card button{
-
-    background:#1d5fa7;
-
-    color:white;
-
+    background:var(--dourado);
+    color:var(--azul-900);
     border:none;
-
-    padding:12px 30px;
-
-    border-radius:30px;
-
+    padding:11px 28px;
+    border-radius:50px;
+    font-family:var(--fonte-titulo);
+    font-weight:700;
     cursor:pointer;
-
-    transition:.3s;
-
+    transition:all .25s ease;
+    margin-top:8px;
 }
-
-
 .material-acess-card button:hover{
-
-    background:#164a82;
-
-    transform:scale(1.05);
-
+    background:var(--azul-900);
+    color:var(--branco);
+    transform:translateY(-2px);
 }
 
-
-/* ==========================================
-   RESPONSIVIDADE
-========================================== */
-
-
+/* ---------- RESPONSIVIDADE ---------- */
 @media(max-width:992px){
-
-
-    .tecnologias-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-
-    .materiais-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-
-}
-
-
-
-@media(max-width:768px){
-
-
-    .acessibilidade-banner h1{
-
-        font-size:34px;
-
-    }
-
-
-    .acessibilidade-banner p{
-
-        font-size:17px;
-
-    }
-
-
     .tecnologias-grid,
     .materiais-grid{
-
-        grid-template-columns:1fr;
-
+        grid-template-columns:repeat(2,1fr);
     }
-
-
+}
+@media(max-width:768px){
+    .tecnologias-grid,
+    .materiais-grid{
+        grid-template-columns:1fr;
+    }
 }

@@ -1,338 +1,138 @@
-/* ==========================
-   PÁGINA DE RELATOS
-========================== */
 
-
-/* Área geral */
 
 .relatos-conteudo{
-
-    background:#f5f9ff;
-    padding:70px 20px;
-
+    background:var(--fundo);
 }
 
-
-/* ==========================
-   PESQUISA E FILTROS
-========================== */
-
-
+/* ---------- PESQUISA ---------- */
 .input-group{
-
-    border-radius:20px;
+    border-radius:50px;
     overflow:hidden;
-
+    box-shadow:var(--sombra);
 }
-
-
 .input-group-text{
-
-    background:#1d5fa7;
-    color:white;
+    background:var(--azul-700);
+    color:var(--branco);
     border:none;
-
 }
-
-
 .form-control{
-
     border:none;
-
-    padding:15px;
-
+    padding:14px 16px;
+}
+.form-control:focus{
+    box-shadow:none;
 }
 
-
-
-/* Botões filtros */
-
-
-.btn-outline-primary{
-
-    border-radius:25px;
-
-    padding:10px 25px;
-
-}
-
-
-
-.btn-outline-primary.active,
-.btn-outline-primary:hover{
-
-    background:#1d5fa7;
-
-    color:white;
-
-}
-
-
-
-/* ==========================
-   CARD DOS RELATOS
-========================== */
-
-
+/* ---------- CARD DE RELATO ---------- */
 .relatos-conteudo .card{
-
-
     border:none;
-
-    border-radius:25px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
-
+    border-radius:var(--raio);
+    box-shadow:var(--sombra);
     overflow:hidden;
-
+    transition:box-shadow .25s ease;
 }
-
-
-
+.relatos-conteudo .card:hover{
+    box-shadow:var(--sombra-forte);
+}
 .relatos-conteudo .card-body{
-
-    padding:30px;
-
+    padding:28px;
 }
-
-
-
-/* ==========================
-   FOTO PERFIL
-========================== */
-
 
 .foto-perfil{
-
-    width:60px;
-
-    height:60px;
-
+    width:56px;
+    height:56px;
     border-radius:50%;
-
     object-fit:cover;
-
-    border:3px solid #1d5fa7;
-
+    border:3px solid var(--azul-100);
 }
-
-
-
-/* usuário */
-
 
 .card h6{
-
-    color:#1d5fa7;
-
-    font-weight:bold;
-
+    color:var(--azul-900);
+    font-weight:700;
 }
 
-
-
-/* categorias */
-
-
+/* Badges de categoria */
 .badge{
-
-    border-radius:20px;
-
-    padding:8px 15px;
-
+    border-radius:50px;
+    padding:7px 16px;
+    font-weight:600;
 }
-
-
-
-/* título relato */
-
+.badge.bg-primary{
+    background-color:var(--azul-700) !important;
+}
+.badge.bg-success{
+    background-color:#2f9e6a !important;
+}
+.badge.bg-warning{
+    background-color:var(--dourado) !important;
+    color:var(--azul-900) !important;
+}
 
 .card h4{
-
-    color:#1d5fa7;
-
-    font-weight:bold;
-
+    color:var(--azul-900);
+    font-weight:700;
 }
-
-
-
-/* texto */
-
-
 .card p{
-
-    color:#555;
-
     line-height:1.7;
-
 }
-
-
-
-/* imagem do relato */
-
-
 .card img.img-fluid{
-
-    border-radius:20px;
-
-    max-height:350px;
-
+    border-radius:16px;
+    max-height:340px;
     object-fit:cover;
-
 }
-
-
-
-/* botões interação */
-
 
 .card .btn-light{
-
-    border-radius:20px;
-
-    transition:.3s;
-
+    border-radius:50px;
+    font-weight:600;
+    transition:all .25s ease;
 }
-
-
-
 .card .btn-light:hover{
-
-    background:#1d5fa7;
-
-    color:white;
-
+    background:var(--azul-700);
+    color:var(--branco);
 }
 
-
-
-/* ==========================
-   LATERAL
-========================== */
-
-
+/* ---------- COLUNA LATERAL ---------- */
 .col-lg-4 .card h4,
 .col-lg-4 .card h5{
-
-    color:#1d5fa7;
-
-    font-weight:bold;
-
+    color:var(--azul-900);
+    font-weight:700;
 }
-
-
 .col-lg-4 .card p{
-
-    font-size:16px;
-
+    font-size:.95rem;
 }
 
-
-
-/* ==========================
-   PUBLICAÇÃO
-========================== */
-
-
+/* ---------- MODAL DE NOVA PUBLICAÇÃO ---------- */
 .modal-content{
-
-    border-radius:25px;
-
+    border-radius:22px;
     border:none;
-
+    overflow:hidden;
 }
-
-
-
 .modal-header{
-
-    background:#1d5fa7;
-
-    color:white;
-
-    border-radius:25px 25px 0 0;
-
+    background:var(--azul-700);
+    color:var(--branco);
 }
-
-
-
 .modal-header h4{
-
-    color:white;
-
+    color:var(--branco);
+    margin:0;
 }
-
-
-
 .modal-footer .btn-primary{
-
-    background:#1d5fa7;
-
-    border:none;
-
-    border-radius:25px;
-
-    padding:10px 30px;
-
+    padding:10px 28px;
 }
-
-
-
-
-/* Caixa criar publicação */
-
 
 .card-body .btn-primary{
-
-    background:#1d5fa7;
-
-    border:none;
-
-    border-radius:25px;
-
+    padding:11px 34px;
 }
 
-
-
-.card-body .btn-primary:hover{
-
-    background:#155799;
-
-}
-
-
-
-/* ==========================
-   RESPONSIVIDADE
-========================== */
-
-
+/* ---------- RESPONSIVIDADE ---------- */
 @media(max-width:768px){
-
-
     .relatos-conteudo{
-
         padding:40px 15px;
-
     }
-
-
     .card-body{
-
-        padding:20px!important;
-
+        padding:20px !important;
     }
-
-
     .foto-perfil{
-
-        width:50px;
-
-        height:50px;
-
+        width:48px;
+        height:48px;
     }
-
-
 }
