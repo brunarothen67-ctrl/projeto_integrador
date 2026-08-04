@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recuperação de Senha</title>
+
+
+    <!-- Bootstrap -->
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+
+    <!-- Seu CSS (se tiver) -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <main class="container mt-5">
+
+
+        <h2 class="text-center">
+            Recuperação de Senha
+        </h2>
+
+
+        <p class="text-center mb-4">
+
+            Informe o e-mail utilizado no seu cadastro.
+            Se existir uma conta vinculada a esse endereço,
+            um link para redefinição de senha será enviado.
+
+        </p>
+
+
+        <form id="formRecuperacao">
+
+
+            <div class="mb-3">
+
+                <label class="form-label" for="email">
+                    E-mail
+                </label>
+
+
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary w-100">
+
+                Enviar link de recuperação
+
+            </button>
+
+
+        </form>
+
+
+
+        <div 
+            id="mensagemRecuperacao" 
+            class="alert alert-success mt-4 d-none">
+
+            <strong>Solicitação enviada!</strong><br>
+
+            Se existir uma conta vinculada ao e-mail informado,
+            um link para redefinição de senha será enviado.
+
+        </div>
+
+
+
+        <p class="text-center mt-4">
+
+            Lembrou sua senha?
+
+            <a href="login.html">
+                Voltar para o login
+            </a>
+
+        </p>
+
+
+    </main>
+
+
+
+    <script src="js/recuperar-senha.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

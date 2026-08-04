@@ -160,7 +160,13 @@
     color:var(--azul-900);
     padding:20px 15px 5px;
 }
+.faq h2{
+    padding-bottom: 0;
+}
 
+.faq h2::after{
+    display: none;
+}
 /* ---------- RESPONSIVIDADE ---------- */
 @media(max-width:768px){
     .card-ajuda,
