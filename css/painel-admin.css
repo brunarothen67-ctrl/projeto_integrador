@@ -1,0 +1,316 @@
+/* ==========================
+   PAINEL ADMINISTRATIVO
+========================== */
+
+
+/* ---------- ÁREA PRINCIPAL ---------- */
+
+.admin-area{
+
+    padding:80px 0;
+
+    background:var(--branco);
+
+}
+
+
+
+/* ---------- TOPO ---------- */
+
+.admin-topo{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+.admin-topo h2{
+
+    color:var(--azul-900);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+
+.admin-topo p{
+
+    color:#555;
+
+    font-size:1rem;
+
+}
+
+
+
+/* ==========================
+   RESUMO DO SISTEMA
+========================== */
+
+
+.resumo-admin{
+
+    margin-bottom:80px;
+
+}
+
+
+.resumo-admin h2,
+.admin-gerenciamento h2{
+
+    text-align:center;
+
+    color:var(--azul-900);
+
+    font-size:1.8rem;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* ---------- CARDS DE RESUMO ---------- */
+
+
+.resumo-card{
+
+    background:var(--branco);
+
+    border-radius:18px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    height:100%;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:.25s ease;
+
+    border-top:4px solid var(--dourado);
+
+}
+
+
+
+.resumo-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.resumo-card i{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:16px;
+
+    background:var(--azul-100);
+
+    color:var(--azul-700);
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.resumo-card h3{
+
+    color:var(--azul-900);
+
+    font-size:2rem;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.resumo-card p{
+
+    color:#555;
+
+    margin:0;
+
+    font-size:1rem;
+
+}
+
+
+
+/* ==========================
+   GERENCIAMENTO
+========================== */
+
+
+.admin-gerenciamento{
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* ---------- CARDS ADMIN ---------- */
+
+
+.admin-card{
+
+    background:var(--branco);
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    height:100%;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:.25s ease;
+
+}
+
+
+
+.admin-card:hover{
+
+    transform:translateY(-7px);
+
+}
+
+
+
+.admin-card i{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:16px;
+
+    background:var(--azul-100);
+
+    color:var(--azul-700);
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+    transition:.25s ease;
+
+}
+
+
+
+.admin-card:hover i{
+
+    background:var(--azul-700);
+
+    color:var(--branco);
+
+}
+
+
+
+.admin-card h3{
+
+    color:var(--azul-900);
+
+    font-size:1.2rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.admin-card p{
+
+    color:#555;
+
+    font-size:.95rem;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* ---------- BOTÕES ---------- */
+
+
+.admin-card .btn{
+
+    border-radius:50px;
+
+    padding:10px 28px;
+
+    font-weight:600;
+
+}
+
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+
+@media(max-width:768px){
+
+
+    .admin-area{
+
+        padding:50px 0;
+
+    }
+
+
+    .admin-topo h2{
+
+        font-size:1.6rem;
+
+    }
+
+
+    .resumo-admin h2,
+    .admin-gerenciamento h2{
+
+        font-size:1.5rem;
+
+    }
+
+
+
+}

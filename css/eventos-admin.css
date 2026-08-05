@@ -1,0 +1,368 @@
+/* ==========================
+   GERENCIAMENTO DE EVENTOS
+========================== */
+
+
+/* ---------- ÁREA PRINCIPAL ---------- */
+
+.eventos-admin-area{
+
+    background:var(--branco);
+
+    padding:80px 0;
+
+}
+
+
+
+/* ---------- TÍTULOS ---------- */
+
+
+.admin-titulo{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+
+.admin-titulo h2{
+
+    color:var(--azul-900);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+
+.admin-titulo p{
+
+    color:#555;
+
+    font-size:1rem;
+
+}
+
+
+
+
+
+/* ---------- CARD FORMULÁRIO ---------- */
+
+
+.card-admin{
+
+    background:var(--branco);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    margin-bottom:80px;
+
+}
+
+
+
+
+
+.form-label{
+
+    color:var(--azul-900);
+
+    font-weight:600;
+
+}
+
+
+
+
+.form-control,
+.form-select{
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    border:1px solid #ddd;
+
+}
+
+
+
+
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:var(--azul-700);
+
+    box-shadow:0 0 0 .2rem rgba(0,86,166,.15);
+
+}
+
+
+
+
+
+
+
+/* ---------- BOTÃO SALVAR ---------- */
+
+
+.card-admin .btn-primary{
+
+    background:var(--azul-700);
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:12px 30px;
+
+    font-weight:600;
+
+}
+
+
+
+.card-admin .btn-primary:hover{
+
+    background:var(--azul-900);
+
+}
+
+
+
+
+
+/* ==========================
+   CARDS DOS EVENTOS
+========================== */
+
+
+.evento-card{
+
+    background:var(--branco);
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    height:100%;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.25s ease;
+
+}
+
+
+
+.evento-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+
+
+
+/* ---------- ÍCONE ---------- */
+
+
+.evento-card > i{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:16px;
+
+    background:var(--azul-100);
+
+    color:var(--azul-700);
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.evento-card h3{
+
+    color:var(--azul-900);
+
+    font-size:1.25rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* ---------- DATA ---------- */
+
+
+.data-evento{
+
+    display:inline-block;
+
+    background:var(--azul-100);
+
+    color:var(--azul-700);
+
+    padding:7px 18px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    font-size:.85rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.evento-card p{
+
+    color:#555;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+/* ---------- INFORMAÇÕES ---------- */
+
+
+.informacoes-evento{
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid #eee;
+
+}
+
+
+
+.informacoes-evento p{
+
+    font-size:.9rem;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.informacoes-evento i{
+
+    color:var(--azul-700);
+
+    margin-right:8px;
+
+}
+
+
+
+
+
+/* ---------- BOTÕES ---------- */
+
+
+.acoes-evento{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+
+.acoes-evento .btn{
+
+    border-radius:50px;
+
+    padding:8px 18px;
+
+}
+
+
+
+
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+
+@media(max-width:768px){
+
+
+    .eventos-admin-area{
+
+        padding:50px 0;
+
+    }
+
+
+
+    .card-admin{
+
+        padding:25px;
+
+    }
+
+
+
+    .admin-titulo h2{
+
+        font-size:1.6rem;
+
+    }
+
+
+
+    .acoes-evento{
+
+        flex-direction:column;
+
+    }
+
+
+}

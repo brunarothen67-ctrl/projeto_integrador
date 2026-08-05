@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Projetos | Painel Administrativo</title>
+
+
+<!-- Bootstrap -->
+
+<link 
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+rel="stylesheet">
+
+
+<!-- Bootstrap Icons -->
+
+<link 
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/projetos-admin.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+
+<div class="container">
+
+
+<a class="navbar-brand" href="painel-admin.html">
+
+NAPNE IFRS
+
+</a>
+
+
+<div class="ms-auto">
+
+
+<a href="painel-admin.html" class="btn btn-light">
+
+<i class="bi bi-arrow-left"></i>
+
+Voltar ao Painel
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<!-- BANNER -->
+
+
+<section class="banner pagina-banner">
+
+
+<div class="banner-conteudo">
+
+
+<h1>
+
+Gerenciamento de Projetos
+
+</h1>
+
+
+<p>
+
+Cadastre, organize e gerencie os projetos desenvolvidos pelo NAPNE.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- CONTEÚDO -->
+
+
+<main class="projetos-admin-area">
+
+
+<div class="container">
+
+
+
+<!-- TÍTULO -->
+
+
+<section class="admin-titulo">
+
+
+<h2>
+
+Novo Projeto
+
+</h2>
+
+
+<p>
+
+Preencha as informações abaixo para cadastrar um novo projeto.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<!-- FORMULÁRIO -->
+
+
+<section class="formulario-projeto">
+
+
+<div class="card-admin">
+
+
+
+<form>
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Título do projeto
+
+</label>
+
+
+<input 
+type="text"
+class="form-control"
+placeholder="Digite o título do projeto">
+
+
+</div>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Categoria
+
+</label>
+
+
+<select class="form-select">
+
+
+<option selected>
+
+Selecione uma categoria
+
+</option>
+
+
+<option>
+
+Ensino
+
+</option>
+
+
+<option>
+
+Pesquisa
+
+</option>
+
+
+<option>
+
+Extensão
+
+</option>
+
+
+<option>
+
+Inclusão
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Imagem do projeto
+
+</label>
+
+
+<input 
+type="text"
+class="form-control"
+placeholder="Cole o link da imagem">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Descrição
+
+</label>
+
+
+<textarea 
+class="form-control"
+rows="5"
+placeholder="Descreva o projeto">
+
+</textarea>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Status
+
+</label>
+
+
+<select class="form-select">
+
+
+<option>
+
+Ativo
+
+</option>
+
+
+<option>
+
+Inativo
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<button class="btn btn-primary">
+
+<i class="bi bi-plus-circle"></i>
+
+Salvar Projeto
+
+</button>
+
+
+
+
+</form>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- PROJETOS CADASTRADOS -->
+
+
+<section class="lista-projetos">
+
+
+<div class="admin-titulo">
+
+
+<h2>
+
+Projetos Cadastrados
+
+</h2>
+
+
+<p>
+
+Visualize e gerencie os projetos existentes.
+
+</p>
+
+
+</div>
+
+<!-- CARD DOS PROJETOS -->
+
+<div class="row g-4">
+
+
+
+<div class="col-md-6 col-lg-4">
+
+
+<div class="projeto-card">
+
+
+
+<i class="bi bi-folder2-open"></i>
+
+
+
+<h3>
+
+Inclusão Digital
+
+</h3>
+
+
+
+<span class="categoria">
+
+Extensão
+
+</span>
+
+
+
+<p>
+
+Projeto voltado para promover o acesso à tecnologia e desenvolver habilidades digitais nos estudantes.
+
+</p>
+
+
+
+
+<div class="acoes-projeto">
+
+
+<button class="btn btn-outline-primary">
+
+<i class="bi bi-pencil"></i>
+
+Editar
+
+</button>
+
+
+
+<button class="btn btn-outline-danger">
+
+<i class="bi bi-trash"></i>
+
+Excluir
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+
+<div class="projeto-card">
+
+
+
+<i class="bi bi-people"></i>
+
+
+
+<h3>
+
+Acessibilidade e Inclusão
+
+</h3>
+
+
+
+<span class="categoria">
+
+Inclusão
+
+</span>
+
+
+
+<p>
+
+Ações e iniciativas voltadas para a promoção da acessibilidade no ambiente acadêmico.
+
+</p>
+
+
+
+
+<div class="acoes-projeto">
+
+
+<button class="btn btn-outline-primary">
+
+<i class="bi bi-pencil"></i>
+
+Editar
+
+</button>
+
+
+
+<button class="btn btn-outline-danger">
+
+<i class="bi bi-trash"></i>
+
+Excluir
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+
+<div class="projeto-card">
+
+
+
+<i class="bi bi-book"></i>
+
+
+
+<h3>
+
+Formação Inclusiva
+
+</h3>
+
+
+
+<span class="categoria">
+
+Ensino
+
+</span>
+
+
+
+<p>
+
+Capacitações e materiais para estudantes e servidores sobre inclusão.
+
+</p>
+
+
+
+
+<div class="acoes-projeto">
+
+
+<button class="btn btn-outline-primary">
+
+<i class="bi bi-pencil"></i>
+
+Editar
+
+</button>
+
+
+
+<button class="btn btn-outline-danger">
+
+<i class="bi bi-trash"></i>
+
+Excluir
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+</main>
+
+
+
+
+
+
+<!-- RODAPÉ -->
+
+
+<footer class="footer">
+
+
+<div class="container">
+
+
+<p class="text-center mb-0">
+
+© 2026 NAPNE - IFRS Campus Rolante
+
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+
+</html>

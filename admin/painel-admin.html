@@ -1,267 +1,393 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Painel Administrativo | NAPNE IFRS</title>
 
-<title>Painel Administrativo | NAPNE</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-
-<!-- Bootstrap -->
-
-<link 
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-rel="stylesheet">
-
-
-
-<!-- Bootstrap Icons -->
-
-<link 
-rel="stylesheet" 
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="../css/style.css">
-
-<link rel="stylesheet" href="../css/admin.css">
-
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/painel-admin.css">
 
 </head>
 
-
-
 <body>
 
+    <!-- MENU -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container">
+
+                <a class="navbar-brand" href="../index.html">
+                    NAPNE IFRS
+                </a>
+
+                <div class="ms-auto">
+
+                    <a href="../index.html" class="btn btn-light">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Sair
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
 
 
-<header>
+    <!-- BANNER -->
+
+    <section class="banner pagina-banner">
+
+        <div class="banner-conteudo">
+
+            <h1>Painel Administrativo</h1>
+
+            <p>
+                Gerencie os conteúdos do site do NAPNE de forma simples e organizada.
+            </p>
+
+        </div>
+
+    </section>
 
 
-<nav class="navbar navbar-dark">
-
+    <!-- CONTEÚDO -->
+<main class="admin-area">
 
 <div class="container">
 
 
-<a class="navbar-brand" href="#">
+<!-- BOAS VINDAS -->
 
-Painel Administrativo - NAPNE
+<section class="admin-topo">
 
-</a>
-
-
-
-<a href="../index.html" class="btn btn-light">
-
-Sair
-
-</a>
-
-
-
-</div>
-
-
-</nav>
-
-
-</header>
-
-
-
-
-
-<main class="container mt-5 admin-area">
-
-
-
-<h1 class="text-center">
-
-Área do Administrador
-
-</h1>
-
-
-
-<p class="text-center">
-
-Gerencie os conteúdos do site NAPNE.
-
-</p>
-
-
-
-
-
-<div class="row g-4 mt-5">
-
-
-
-
-
-<div class="col-md-4">
-
-
-<div class="admin-card">
-
-
-<i class="bi bi-folder"></i>
-
-
-
-<h3>
-
-Projetos
-
-</h3>
-
-
+<h2>
+Bem-vindo, Administrador!
+</h2>
 
 <p>
-
-Cadastrar, editar e organizar os projetos do NAPNE.
-
+Gerencie os conteúdos e informações do site NAPNE.
 </p>
 
+</section>
 
 
-<button class="btn btn-primary">
 
-Acessar
+<!-- RESUMO DO SISTEMA -->
 
-</button>
+<section class="resumo-admin">
 
 
+<h2>
+Resumo do sistema
+</h2>
+
+
+<div class="row g-4">
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="resumo-card">
+
+<i class="bi bi-folder2-open"></i>
+
+<h3>
+12
+</h3>
+
+<p>
+Projetos
+</p>
+
+</div>
 
 </div>
 
 
-</div>
 
 
+<div class="col-md-6 col-lg-3">
 
-
-
-
-
-<div class="col-md-4">
-
-
-<div class="admin-card">
-
+<div class="resumo-card">
 
 <i class="bi bi-calendar-event"></i>
 
-
-
 <h3>
-
-Eventos
-
+5
 </h3>
 
-
-
 <p>
-
-Publicar e gerenciar eventos e notícias.
-
+Eventos
 </p>
 
-
-
-<button class="btn btn-primary">
-
-Acessar
-
-</button>
-
-
-
 </div>
-
 
 </div>
 
 
 
 
+<div class="col-md-6 col-lg-3">
 
-
-
-<div class="col-md-4">
-
-
-<div class="admin-card">
-
+<div class="resumo-card">
 
 <i class="bi bi-chat-left-text"></i>
 
-
-
 <h3>
-
-Relatos
-
+18
 </h3>
 
-
-
 <p>
-
-Visualizar e administrar relatos enviados.
-
+Relatos
 </p>
 
+</div>
+
+</div>
 
 
-<button class="btn btn-primary">
 
+
+<div class="col-md-6 col-lg-3">
+
+<div class="resumo-card">
+
+<i class="bi bi-file-earmark-text"></i>
+
+<h3>
+20
+</h3>
+
+<p>
+Materiais
+</p>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- GERENCIAMENTO -->
+
+<section class="admin-gerenciamento">
+
+
+<h2>
+Gerenciamento
+</h2>
+
+
+
+<div class="row g-4">
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="admin-card">
+
+<i class="bi bi-folder"></i>
+
+<h3>
+Projetos
+</h3>
+
+<p>
+Cadastrar, editar e organizar projetos do NAPNE.
+</p>
+
+<a href="projetos-admin.html" class="btn btn-primary">
+Gerenciar
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="admin-card">
+
+<i class="bi bi-calendar"></i>
+
+<h3>
+Eventos
+</h3>
+
+<p>
+Publicar e atualizar eventos do núcleo.
+</p>
+
+<a href="eventos-admin.html" class="btn btn-primary">
+Gerenciar
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="admin-card">
+
+<i class="bi bi-chat"></i>
+
+<h3>
+Relatos
+</h3>
+
+<p>
+Analisar relatos enviados pelos usuários.
+</p>
+
+<a href="relatos-admin.html" class="btn btn-primary">
+Gerenciar
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="admin-card">
+
+<i class="bi bi-book"></i>
+
+<h3>
+Materiais
+</h3>
+
+<p>
+Adicionar documentos e conteúdos de acessibilidade.
+</p>
+
+<a href="materiais-admin.html" class="btn btn-primary">
+Gerenciar
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="admin-card">
+
+<i class="bi bi-people"></i>
+
+<h3>
+Usuários
+</h3>
+
+<p>
+Gerenciar usuários cadastrados no sistema.
+</p>
+
+<a href="usuarios-admin.html" class="btn btn-primary">
+Gerenciar
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="admin-card">
+
+<i class="bi bi-gear"></i>
+
+<h3>
+Configurações
+</h3>
+
+<p>
+Ajustar configurações gerais do painel.
+</p>
+
+<a href="#" class="btn btn-primary">
 Acessar
+</a>
 
-</button>
+</div>
+
+</div>
 
 
 
 </div>
 
 
-</div>
-
-
-
+</section>
 
 
 </div>
-
-
-
 
 </main>
 
+    <!-- RODAPÉ -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p class="text-center mb-0">
+
+                © 2026 NAPNE - IFRS Campus Rolante
+
+            </p>
+
+        </div>
+
+    </footer>
 
 
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
-
 </html>
-```
