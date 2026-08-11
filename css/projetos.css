@@ -1,0 +1,372 @@
+/* =========================================================
+   PROJETOS
+   NAPNE - IFRS Campus Rolante
+========================================================= */
+
+
+/* =========================================================
+   CONTEÚDO DA PÁGINA
+========================================================= */
+
+.projetos-conteudo {
+    background: #f4f9fd;
+    padding: 70px 0;
+}
+
+
+/* =========================================================
+   TÍTULO E INTRODUÇÃO
+========================================================= */
+
+.projetos-conteudo h2 {
+    color: var(--azul-900);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.projetos-conteudo > .container > .text-center p {
+    max-width: 760px;
+    margin: 0 auto 50px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texto-suave);
+}
+
+
+/* =========================================================
+   CARDS DOS PROJETOS
+========================================================= */
+
+.projeto-card {
+    background: #fff;
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   CORES DOS CARDS
+========================================================= */
+
+/* Projeto 1 - Azul */
+
+.projetos-conteudo .col-md-4:nth-child(1) .projeto-card {
+    border-top: 6px solid #2f80ed;
+}
+
+
+/* Projeto 2 - Verde */
+
+.projetos-conteudo .col-md-4:nth-child(2) .projeto-card {
+    border-top: 6px solid #27ae60;
+}
+
+
+/* Projeto 3 - Roxo */
+
+.projetos-conteudo .col-md-4:nth-child(3) .projeto-card {
+    border-top: 6px solid #9b51e0;
+}
+
+
+/* =========================================================
+   EFEITO AO PASSAR O MOUSE
+========================================================= */
+
+.projeto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   IMAGEM DO PROJETO
+========================================================= */
+
+.imagem-projeto {
+    height: 220px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-700),
+            var(--azul-900)
+        );
+}
+
+.imagem-projeto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Zoom suave da imagem */
+
+.projeto-card:hover .imagem-projeto img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CORPO DO CARD
+========================================================= */
+
+.projeto-card .card-body {
+    padding: 30px 25px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.projeto-card i {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -58px auto 20px;
+
+    background: #fff;
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+    position: relative;
+    z-index: 2;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Ícone Projeto 1 - Azul */
+
+.projetos-conteudo .col-md-4:nth-child(1) .projeto-card i {
+    color: #2f80ed;
+}
+
+
+/* Ícone Projeto 2 - Verde */
+
+.projetos-conteudo .col-md-4:nth-child(2) .projeto-card i {
+    color: #27ae60;
+}
+
+
+/* Ícone Projeto 3 - Roxo */
+
+.projetos-conteudo .col-md-4:nth-child(3) .projeto-card i {
+    color: #9b51e0;
+}
+
+
+/* =========================================================
+   TÍTULO DO CARD
+========================================================= */
+
+.projeto-card h3 {
+    color: var(--azul-900);
+
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Cores dos títulos */
+
+.projetos-conteudo .col-md-4:nth-child(1) h3 {
+    color: #2169b0;
+}
+
+.projetos-conteudo .col-md-4:nth-child(2) h3 {
+    color: #218c4d;
+}
+
+.projetos-conteudo .col-md-4:nth-child(3) h3 {
+    color: #8242bd;
+}
+
+
+/* =========================================================
+   TEXTO DO CARD
+========================================================= */
+
+.projeto-card p {
+    color: var(--texto-suave);
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+
+    min-height: 110px;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.projeto-card .badge {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border-radius: 30px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Badge Projeto 1 */
+
+.projetos-conteudo .col-md-4:nth-child(1) .badge {
+    background: #dcecff;
+    color: #2169b0;
+}
+
+
+/* Badge Projeto 2 */
+
+.projetos-conteudo .col-md-4:nth-child(2) .badge {
+    background: #dcf5e6;
+    color: #218c4d;
+}
+
+
+/* Badge Projeto 3 */
+
+.projetos-conteudo .col-md-4:nth-child(3) .badge {
+    background: #eee0fa;
+    color: #8242bd;
+}
+
+
+/* =========================================================
+   HOVER DOS ELEMENTOS
+========================================================= */
+
+.projeto-card:hover h3 {
+    color: var(--laranja);
+}
+
+.projeto-card:hover i {
+    background: var(--laranja);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.projeto-card:hover .badge {
+    background: var(--laranja);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ESPAÇAMENTO ENTRE OS CARDS
+========================================================= */
+
+.projetos-conteudo .row {
+    row-gap: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .projetos-conteudo {
+        padding: 55px 0;
+    }
+
+    .projetos-conteudo > .container > .text-center p {
+        margin-bottom: 40px;
+        padding: 0 10px;
+        font-size: 1rem;
+    }
+
+    .imagem-projeto {
+        height: 190px;
+    }
+
+    .projeto-card .card-body {
+        padding: 25px 20px;
+    }
+
+    .projeto-card p {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .projetos-conteudo {
+        padding: 45px 0;
+    }
+
+    .imagem-projeto {
+        height: 170px;
+    }
+
+    .projeto-card .card-body {
+        padding: 23px 18px;
+    }
+
+    .projeto-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .projeto-card p {
+        font-size: 0.95rem;
+    }
+
+    .projeto-card i {
+        width: 58px;
+        height: 58px;
+        font-size: 25px;
+        margin-top: -52px;
+    }
+
+}

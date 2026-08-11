@@ -1,323 +1,740 @@
+/* =========================================================
+   1. FONTES
+========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
 
-/* 1. VARIÁVEIS DE COR(paleta única para todo o site)*/
-:root{
 
-   
-    --azul-900:#082c4a;   /* navbar, rodapé, textos fortes           */
-    --azul-700:#0e5c9c;   /* cor primária: botões, links, ícones     */
-    --azul-500:#2f8fd2;   /* variações de hover / gradientes         */
-    --azul-100:#e3f0fb;   /* fundos claros, tags                     */
-    --azul-borda:#c9e2f5;
+/* =========================================================
+   2. VARIÁVEIS
+========================================================= */
 
-    /* Acento puxado direto da logo do NAPNE      */
-    --dourado:#ef8a1c;
+:root {
 
-    --texto:#20303f;
-    --texto-suave:#5b6b78;
-    --branco:#ffffff;
-    --fundo:#f6f9fc;
+    --azul: #0F4C97;
+    --azul-escuro: #0A376B;
+    --azul-500: #2F8FD2;
+    --azul-claro: #EAF5FF;
+    --azul-borda: #D5E7F5;
 
-    --fonte-titulo:'Poppins','Segoe UI',Arial,sans-serif;
-    --fonte-texto:'Inter','Segoe UI',Arial,sans-serif;
+    --turquesa: #18A999;
 
-    --raio:18px;
-    --sombra: 0 10px 30px rgba(8,44,74,.10);
-    --sombra-forte: 0 16px 40px rgba(8,44,74,.16);
+    --verde: #45B36B;
+    --verde-claro: #EEF9F2;
+
+    --roxo: #6E49C8;
+    --roxo-claro: #F4F0FF;
+
+    --amarelo: #FFD54A;
+    --amarelo-claro: #FFF9EA;
+
+    --texto: #2C3E50;
+    --cinza: #5F6B7A;
+
+    --branco: #FFFFFF;
+    --fundo: #F6F9FC;
+
+    --fonte-titulo: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    --fonte-texto: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+    --raio: 20px;
+
+    --sombra:
+        0 10px 30px rgba(10, 55, 107, .10);
+
+    --sombra-forte:
+        0 16px 40px rgba(10, 55, 107, .16);
 }
 
-/*CONFIGURAÇÕES GERAIS */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+/* =========================================================
+   3. CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:var(--fonte-texto);
-    background:var(--fundo);
-    color:var(--texto);
-    line-height:1.65;
+html {
+    scroll-behavior: smooth;
 }
 
-section{
-    padding:70px 20px;
+body {
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 400;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.65;
+    overflow-x: hidden;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
+/* Textos gerais */
+
+p,
+span,
+li,
+label,
+input,
+textarea,
+select,
+button {
+    font-family: var(--fonte-texto);
 }
 
-h1,h2,h3{
-    font-family:var(--fonte-titulo);
-    margin-bottom:20px;
-    color:var(--azul-900);
+/* Títulos */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fonte-titulo);
+    color: var(--azul-escuro);
 }
 
-h2{
-    font-size:2.1rem;
-    font-weight:700;
-    text-align:center;
-    position:relative;
-    padding-bottom:14px;
+h1,
+h2,
+h3 {
+    margin-bottom: 20px;
 }
 
-/* Traço curto sob os títulos de seção */
-h2::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:0;
-    transform:translateX(-50%);
-    width:56px;
-    height:4px;
-    border-radius:4px;
-    background:var(--dourado);
+h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding-bottom: 14px;
 }
 
-p{
-    color:var(--texto-suave);
+h2::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 56px;
+    height: 4px;
+
+    border-radius: 4px;
+
+    background: var(--turquesa);
 }
 
-img{
-    max-width:100%;
-    display:block;
+p {
+    color: var(--cinza);
 }
 
-/* Foco visível no teclado */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 70px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. ACESSIBILIDADE
+========================================================= */
+
 a:focus-visible,
 button:focus-visible,
 .nav-link:focus-visible,
-.form-control:focus-visible{
-    outline:3px solid var(--dourado);
-    outline-offset:2px;
+.form-control:focus-visible {
+
+    outline: 3px solid var(--amarelo);
+    outline-offset: 2px;
 }
 
-/* Navbar */
-.navbar{
-    background:var(--azul-900);
-    padding:16px 0;
-    box-shadow:0 4px 20px rgba(8,44,74,.18);
+
+/* =========================================================
+   5. NAVBAR
+========================================================= */
+
+.navbar {
+
+    background: #FFFFFF !important;
+
+    padding: 18px 0;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .08);
+
+    position: relative;
+
+    z-index: 1000;
 }
 
-.navbar-brand{
-    color:var(--branco);
-    font-family:var(--fonte-titulo);
-    font-size:1.35rem;
-    font-weight:700;
-    letter-spacing:.01em;
+
+/* Nome NAPNE */
+
+.navbar-brand {
+
+    color: var(--azul) !important;
+
+    font-family: var(--fonte-titulo) !important;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+    text-decoration: none;
 }
 
-.navbar-brand:hover{
-    color:var(--branco);
+.navbar-brand:hover {
+
+    color: var(--azul-escuro) !important;
+
+    text-decoration: none;
 }
 
-.nav-link{
-    color:#cfe2f2 !important;
-    font-weight:600;
-    font-size:.96rem;
-    margin:0 6px;
-    position:relative;
-    transition:color .25s ease;
+
+/* Bonequinho */
+
+.navbar-brand i {
+
+    color: var(--verde);
+
+    margin-right: 8px;
 }
 
-/* Sublinhado animado  */
-.nav-link::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-4px;
-    height:2px;
-    background:var(--dourado);
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform .25s ease;
+
+/* Botão mobile */
+
+.navbar-toggler {
+
+    border: 2px solid var(--azul);
 }
 
-.nav-link:hover,
-.nav-link.active{
-    color:var(--branco) !important;
+.navbar-toggler:focus {
+
+    box-shadow: 0 0 0 3px rgba(24, 169, 153, .20);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after{
-    transform:scaleX(1);
+
+/* =========================================================
+   6. LINKS DA NAVBAR
+========================================================= */
+
+.navbar .nav-link {
+
+    color: #163B73 !important;
+
+    font-family: var(--fonte-texto) !important;
+
+    font-weight: 600;
+
+    font-size: .96rem;
+
+    margin: 0 8px;
+
+    position: relative;
+
+    transition: .3s;
 }
 
-/* Botões*/
-.botoes-login{
-    display:flex;
-    gap:10px;
-    margin-left:20px;
+.navbar .nav-link:hover {
+
+    color: var(--turquesa) !important;
+}
+
+.navbar .nav-link.active {
+
+    color: var(--azul) !important;
+
+    font-weight: 700;
+}
+
+
+/* Sublinhado */
+
+.navbar .nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -5px;
+
+    height: 3px;
+
+    background: var(--turquesa);
+
+    border-radius: 5px;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: transform .25s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   7. BOTÕES DA NAVBAR
+========================================================= */
+
+.botoes-login {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-left: 20px;
 }
 
 .btn-login,
-.btn-cadastro{
-    text-decoration:none;
-    padding:10px 22px;
-    border-radius:50px;
-    font-weight:700;
-    font-family:var(--fonte-titulo);
-    font-size:.85rem;
-    transition:all .25s ease;
-    display:inline-block;
+.btn-cadastro {
+
+    text-decoration: none;
+
+    padding: 10px 22px;
+
+    border-radius: 50px;
+
+    font-family: var(--fonte-titulo) !important;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    transition: all .25s ease;
+
+    display: inline-block;
 }
 
-.btn-login{
-    color:var(--branco);
-    border:2px solid rgba(255,255,255,.55);
-}
-.btn-login:hover{
-    background:var(--branco);
-    color:var(--azul-900);
-    border-color:var(--branco);
+.btn-login {
+
+    color: var(--azul) !important;
+
+    border: 2px solid var(--azul);
 }
 
-.btn-cadastro{
-    background:var(--dourado);
-    color:var(--azul-900);
-    border:2px solid var(--dourado);
-}
-.btn-cadastro:hover{
-    background:transparent;
-    color:var(--branco);
-    border-color:var(--branco);
-    transform:translateY(-2px);
+.btn-login:hover {
+
+    background: var(--azul);
+
+    color: #fff !important;
 }
 
-/* do bootstrap */
-.btn-primary{
-    background:var(--azul-700) !important;
-    border-color:var(--azul-700) !important;
-    font-family:var(--fonte-titulo);
-    font-weight:600;
-    border-radius:50px;
-    padding:10px 26px;
-    transition:all .25s ease;
-}
-.btn-primary:hover{
-    background:var(--azul-900) !important;
-    border-color:var(--azul-900) !important;
-    transform:translateY(-2px);
+.btn-cadastro {
+
+    background: var(--azul);
+
+    color: #fff !important;
+
+    border: 2px solid var(--amarelo);
+
+    border-radius: 30px;
+
+    padding: 10px 22px;
 }
 
-.btn-secondary{
-    border-radius:50px;
-    font-weight:600;
+.btn-cadastro:hover {
+
+    background: var(--turquesa);
+
+    color: #fff !important;
+
+    border-color: var(--turquesa);
+
+    transform: translateY(-2px);
 }
 
-.btn-outline-primary{
-    border-radius:50px;
-    color:var(--azul-700);
-    border-color:var(--azul-700);
-    font-weight:600;
-    padding:10px 25px;
+
+/* =========================================================
+   8. BOTÕES GERAIS
+========================================================= */
+
+.btn-primary {
+
+    background: var(--azul) !important;
+
+    border-color: var(--azul) !important;
+
+    color: #fff !important;
+
+    font-family: var(--fonte-titulo) !important;
+
+    font-weight: 600;
+
+    border-radius: 50px;
+
+    padding: 10px 26px;
+
+    transition: all .25s ease;
 }
+
+.btn-primary:hover {
+
+    background: var(--turquesa) !important;
+
+    border-color: var(--turquesa) !important;
+
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+
+    border-radius: 50px;
+
+    font-weight: 600;
+}
+
+.btn-outline-primary {
+
+    border-radius: 50px;
+
+    color: var(--azul);
+
+    border-color: var(--azul);
+
+    font-weight: 600;
+
+    padding: 10px 25px;
+}
+
 .btn-outline-primary.active,
-.btn-outline-primary:hover{
-    background:var(--azul-700);
-    border-color:var(--azul-700);
-    color:var(--branco);
+.btn-outline-primary:hover {
+
+    background: var(--azul);
+
+    border-color: var(--azul);
+
+    color: #fff;
 }
 
-/* Botão principal  */
-.botao-principal{
-    display:inline-block;
-    background:var(--dourado);
-    color:var(--azul-900);
-    padding:14px 34px;
-    border-radius:50px;
-    text-decoration:none;
-    font-family:var(--fonte-titulo);
-    font-weight:700;
-    transition:all .25s ease;
-    box-shadow:0 10px 24px rgba(240,166,61,.35);
-}
-.botao-principal:hover{
-    transform:translateY(-3px);
-    box-shadow:0 14px 30px rgba(240,166,61,.45);
+
+/* Botão principal */
+
+.botao-principal {
+
+    display: inline-block;
+
+    background: var(--amarelo);
+
+    color: var(--azul-escuro);
+
+    padding: 14px 34px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-family: var(--fonte-titulo) !important;
+
+    font-weight: 700;
+
+    transition: all .25s ease;
+
+    box-shadow: 0 10px 24px rgba(255, 213, 74, .35);
 }
 
-/* banners */
+.botao-principal:hover {
+
+    transform: translateY(-3px);
+
+    background: #F4C936;
+
+    color: var(--azul-escuro);
+}
+
+
+/* =========================================================
+   9. BANNER PADRÃO
+   MESMO TAMANHO EM TODAS AS PÁGINAS
+========================================================= */
+
 .banner,
 .pagina-banner,
 .acessibilidade-banner,
 .projetos-banner,
-.orientacoes-banner{
-    position:relative;
-    min-height:340px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:var(--branco);
-    overflow:hidden;
-    padding:70px 20px 90px;
+.orientacoes-banner {
+
+    position: relative;
+
+    height: 370px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    overflow: hidden;
+
+    padding: 50px 20px 70px;
 
     background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,.08) 0, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(255,255,255,.06) 0, transparent 45%),
-        linear-gradient(120deg, var(--azul-900) 0%, var(--azul-700) 60%, var(--azul-500) 100%);
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 213, 74, .16),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(24, 169, 153, .25),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            120deg,
+            #0A376B 0%,
+            #0F4C97 50%,
+            #18A999 100%
+        );
 }
 
+
+/* =========================================================
+   10. DECORAÇÃO DO BANNER
+========================================================= */
 
 .banner::before,
 .pagina-banner::before,
 .acessibilidade-banner::before,
 .projetos-banner::before,
-.orientacoes-banner::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    opacity:.5;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.18' stroke-width='1.5'%3E%3Cline x1='30' y1='40' x2='120' y2='90'/%3E%3Cline x1='120' y1='90' x2='90' y2='190'/%3E%3Cline x1='120' y1='90' x2='230' y2='60'/%3E%3Cline x1='230' y1='60' x2='260' y2='170'/%3E%3Cline x1='90' y1='190' x2='200' y2='240'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.35'%3E%3Ccircle cx='30' cy='40' r='4'/%3E%3Ccircle cx='120' cy='90' r='5'/%3E%3Ccircle cx='90' cy='190' r='4'/%3E%3Ccircle cx='230' cy='60' r='4'/%3E%3Ccircle cx='260' cy='170' r='4'/%3E%3Ccircle cx='200' cy='240' r='4'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat:repeat;
-    background-size:300px 300px;
-    pointer-events:none;
+.orientacoes-banner::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .45;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.15' stroke-width='1.5'%3E%3Cline x1='30' y1='40' x2='120' y2='90'/%3E%3Cline x1='120' y1='90' x2='90' y2='190'/%3E%3Cline x1='120' y1='90' x2='230' y2='60'/%3E%3Cline x1='230' y1='60' x2='260' y2='170'/%3E%3Cline x1='90' y1='190' x2='200' y2='240'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.35'%3E%3Ccircle cx='30' cy='40' r='4'/%3E%3Ccircle cx='120' cy='90' r='5'/%3E%3Ccircle cx='90' cy='190' r='4'/%3E%3Ccircle cx='230' cy='60' r='4'/%3E%3Ccircle cx='260' cy='170' r='4'/%3E%3Ccircle cx='200' cy='240' r='4'/%3E%3C/g%3E%3C/svg%3E");
+
+    background-repeat: repeat;
+
+    background-size: 300px 300px;
+
+    pointer-events: none;
+
+    z-index: 1;
 }
 
-/* Corte em onda na base do banner*/
+
+/* =========================================================
+   11. CONTEÚDO DO BANNER
+========================================================= */
+
+.banner-conteudo {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   12. ÍCONE DO BANNER
+========================================================= */
+
+.banner-icone {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-bottom: 12px;
+}
+
+.banner-icone i {
+
+    font-size: 2.5rem;
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   13. TÍTULOS DOS BANNERS
+========================================================= */
+
+.banner h1,
+.pagina-banner h1,
+.acessibilidade-banner h1,
+.projetos-banner h1,
+.orientacoes-banner h1 {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto 18px;
+
+    font-family: var(--fonte-titulo) !important;
+
+    font-size: 2.9rem;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    color: #FFFFFF !important;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   14. DESCRIÇÕES DOS BANNERS
+========================================================= */
+
+.banner p,
+.pagina-banner p,
+.acessibilidade-banner p,
+.projetos-banner p,
+.orientacoes-banner p {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    font-family: var(--fonte-texto) !important;
+
+    font-size: 1.15rem;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: #FFF4B8 !important;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   15. BOTÃO DO BANNER
+========================================================= */
+
+.banner .botao-principal,
+.pagina-banner .botao-principal,
+.acessibilidade-banner .botao-principal,
+.projetos-banner .botao-principal,
+.orientacoes-banner .botao-principal {
+
+    position: relative;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   16. ONDA INFERIOR
+========================================================= */
+
 .banner::after,
 .pagina-banner::after,
 .acessibilidade-banner::after,
 .projetos-banner::after,
-.orientacoes-banner::after{
-    content:"";
-    position:absolute;
-    left:0; right:0; bottom:-1px;
-    height:46px;
-    background-color:var(--fundo);
-    -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C200,70 400,0 600,24 C800,48 1000,10 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E");
-    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C200,70 400,0 600,24 C800,48 1000,10 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E");
-    -webkit-mask-size:100% 100%;
-    mask-size:100% 100%;
+.orientacoes-banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -1px;
+
+    height: 48px;
+
+    background: var(--fundo);
+
+    z-index: 2;
+
+    -webkit-mask-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C200,70 400,0 600,24 C800,48 1000,10 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E");
+
+    mask-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C200,70 400,0 600,24 C800,48 1000,10 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E");
+
+    -webkit-mask-size: 100% 100%;
+
+    mask-size: 100% 100%;
 }
 
-.banner-conteudo{
-    position:relative;
-    z-index:2;
-    max-width:820px;
-    margin:auto;
+
+/* =========================================================
+   17. ESPAÇO ENTRE BANNER E CONTEÚDO
+========================================================= */
+
+.banner + section,
+.pagina-banner + section,
+.acessibilidade-banner + section,
+.projetos-banner + section,
+.orientacoes-banner + section {
+
+    padding-top: 80px;
 }
 
-.banner h1{
-    font-family:var(--fonte-titulo);
-    font-size:2.9rem;
-    font-weight:800;
-    color:var(--branco);
-    margin-bottom:18px;
-}
 
-.banner p{
-    color:#dceaf6;
-    font-size:1.15rem;
-    margin-bottom:20px;
-}
+/* =========================================================
+   18. CARDS
+========================================================= */
 
-/* Cards*/
 .card-ajuda,
 .card-evento,
 .card-tecnologia,
@@ -330,11 +747,17 @@ button:focus-visible,
 .tecnologia-card,
 .direito-card,
 .material-acess-card,
-.passo-card{
-    background:var(--branco);
-    border-radius:var(--raio);
-    box-shadow:var(--sombra);
-    transition:transform .3s ease, box-shadow .3s ease;
+.passo-card {
+
+    background: #FFFFFF;
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .card-ajuda:hover,
@@ -349,96 +772,338 @@ button:focus-visible,
 .tecnologia-card:hover,
 .direito-card:hover,
 .material-acess-card:hover,
-.passo-card:hover{
-    transform:translateY(-8px);
-    box-shadow:var(--sombra-forte);
+.passo-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--sombra-forte);
 }
 
-/* Rodapé */
+
+/* =========================================================
+   19. LINKS DOS CARDS
+========================================================= */
+
+.link-card {
+
+    display: block;
+
+    height: 100%;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.link-card:hover {
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.saiba-mais {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    font-weight: 700;
+
+    color: var(--azul);
+
+    transition: .3s;
+}
+
+.saiba-mais i {
+
+    transition: .3s;
+}
+
+.link-card:hover .saiba-mais {
+
+    color: var(--turquesa);
+}
+
+.link-card:hover .saiba-mais i {
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   20. RODAPÉ
+========================================================= */
+
 .footer,
-footer{
-    background:var(--azul-900);
-    color:#cfe2f2;
-    padding:50px 20px 25px;
-    text-align:center;
+footer {
+
+    background: var(--azul-escuro);
+
+    color: #DDEAF5;
+
+    padding: 50px 20px 25px;
+
+    text-align: center;
 }
 
-footer h4{
-    color:var(--branco);
-    font-family:var(--fonte-titulo);
-    font-size:1rem;
-    margin-bottom:14px;
+footer h4 {
+
+    color: #FFFFFF;
+
+    font-family: var(--fonte-titulo) !important;
+
+    font-size: 1rem;
+
+    margin-bottom: 14px;
 }
 
-footer p{
-    color:#b9d2e6;
+footer p {
+
+    color: #C5D9E9;
+
+    font-family: var(--fonte-texto) !important;
 }
 
-footer a{
-    color:#cfe2f2;
-    text-decoration:none;
-    transition:color .2s ease;
-}
-footer a:hover{
-    color:var(--dourado);
+footer a {
+
+    color: #DDEAF5;
+
+    text-decoration: none;
+
+    font-family: var(--fonte-texto) !important;
+
+    transition: color .2s ease;
 }
 
-footer hr{
-    border-color:rgba(255,255,255,.15);
-    margin:24px 0 18px;
+footer a:hover {
+
+    color: var(--amarelo);
 }
 
-/* Ajustes gerais*/
-main{
-    margin:0;
-    padding:0;
-}
-main > section:first-child{
-    padding-top:0;
+footer hr {
+
+    border-color: rgba(255, 255, 255, .15);
+
+    margin: 24px 0 18px;
 }
 
-/*Responsividade */
-@media(max-width:768px){
 
-    section{
-        padding:50px 15px;
+/* =========================================================
+   21. MAIN
+========================================================= */
+
+main {
+
+    margin: 0;
+
+    padding: 0;
+}
+
+main > section:first-child {
+
+    padding-top: 0;
+}
+
+
+/* =========================================================
+   22. RESPONSIVIDADE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+
+        text-align: center;
+
+        padding-top: 15px;
     }
 
-    h2{
-        font-size:1.7rem;
+    .navbar .nav-link {
+
+        margin: 5px 0;
+    }
+
+    .navbar .nav-link::after {
+
+        display: none;
+    }
+
+    .botoes-login {
+
+        justify-content: center;
+
+        margin: 15px 0 0;
     }
 
     .banner,
     .pagina-banner,
     .acessibilidade-banner,
     .projetos-banner,
-    .orientacoes-banner{
-        min-height:260px;
-        padding:50px 20px 70px;
+    .orientacoes-banner {
+
+        height: 350px;
+
+        padding: 50px 20px 65px;
     }
 
-    .banner h1{
-        font-size:2rem;
+    .banner h1,
+    .pagina-banner h1,
+    .acessibilidade-banner h1,
+    .projetos-banner h1,
+    .orientacoes-banner h1 {
+
+        font-size: 2.8rem;
     }
 
-    .banner p{
-        font-size:1rem;
+    .banner p,
+    .pagina-banner p,
+    .acessibilidade-banner p,
+    .projetos-banner p,
+    .orientacoes-banner p {
+
+        font-size: 1.2rem;
+    }
+}
+
+
+/* =========================================================
+   23. RESPONSIVIDADE — CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    section {
+
+        padding: 50px 15px;
     }
 
-    .navbar-nav{
-        text-align:center;
+    h2 {
+
+        font-size: 1.7rem;
     }
 
-    .botoes-login{
-        flex-direction:column;
-        align-items:center;
-        margin-top:20px;
+    .banner,
+    .pagina-banner,
+    .acessibilidade-banner,
+    .projetos-banner,
+    .orientacoes-banner {
+
+        height: 300px;
+
+        padding: 45px 20px 65px;
+    }
+
+    .banner h1,
+    .pagina-banner h1,
+    .acessibilidade-banner h1,
+    .projetos-banner h1,
+    .orientacoes-banner h1 {
+
+        font-size: 2.2rem;
+    }
+
+    .banner p,
+    .pagina-banner p,
+    .acessibilidade-banner p,
+    .projetos-banner p,
+    .orientacoes-banner p {
+
+        font-size: 1rem;
+    }
+
+    .botoes-login {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 8px;
     }
 
     .btn-login,
-    .btn-cadastro{
-        width:180px;
-        text-align:center;
-        margin:auto;
+    .btn-cadastro {
+
+        width: 180px;
+
+        text-align: center;
+    }
+
+    .banner + section,
+    .pagina-banner + section,
+    .acessibilidade-banner + section,
+    .projetos-banner + section,
+    .orientacoes-banner + section {
+
+        padding-top: 60px;
+    }
+}
+
+
+/* =========================================================
+   24. CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .navbar-brand {
+
+        font-size: 1.5rem;
+    }
+
+    .banner,
+    .pagina-banner,
+    .acessibilidade-banner,
+    .projetos-banner,
+    .orientacoes-banner {
+
+        height: 280px;
+
+        padding: 40px 15px 60px;
+    }
+
+    .banner h1,
+    .pagina-banner h1,
+    .acessibilidade-banner h1,
+    .projetos-banner h1,
+    .orientacoes-banner h1 {
+
+        font-size: 1.8rem;
+
+        margin-bottom: 12px;
+    }
+
+    .banner p,
+    .pagina-banner p,
+    .acessibilidade-banner p,
+    .projetos-banner p,
+    .orientacoes-banner p {
+
+        font-size: .95rem;
+
+        margin-bottom: 18px;
+    }
+
+    .banner-icone i {
+
+        font-size: 2rem;
+    }
+
+    .btn-cadastro {
+
+        padding: 9px 18px;
+    }
+
+    .banner + section,
+    .pagina-banner + section,
+    .acessibilidade-banner + section,
+    .projetos-banner + section,
+    .orientacoes-banner + section {
+
+        padding-top: 50px;
     }
 }

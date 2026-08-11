@@ -1,163 +1,172 @@
+/* =========================================================
+   ACESSIBILIDADE
+   NAPNE - IFRS Campus Rolante
+   ========================================================= */
 
 
-/* ---------- SOBRE ACESSIBILIDADE ---------- */
-.sobre-acessibilidade{
-    background:var(--branco);
-    text-align:center;
-}
-.sobre-acessibilidade p{
-    max-width:850px;
-    margin:15px auto;
-    font-size:1.05rem;
-    line-height:1.8;
+/* =========================================================
+   SEÇÕES DA PÁGINA
+   ========================================================= */
+
+.acessibilidade-section {
+    text-align: center;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
-/* ---------- CONCEITOS (Igualdade / Equidade / Inclusão) ---------- */
-.conceitos-acessibilidade{
-    background:var(--azul-100);
-    text-align:center;
-}
-.card-conceito{
-    padding:36px 26px;
-    height:100%;
-    border-top:4px solid var(--dourado);
-}
-.icone-conceito{
-    font-size:42px;
-    margin-bottom:14px;
-}
-.card-conceito h3{
-    color:var(--azul-900);
+
+/* Alternância dos fundos */
+
+.acessibilidade-section:nth-child(odd) {
+    background: var(--branco);
 }
 
-/* ---------- DUA ---------- */
-.dua-section{
-    background:var(--branco);
-    text-align:center;
-}
-.card-dua{
-    padding:36px 26px;
-    height:100%;
-}
-.card-dua .icone-info{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:60px;
-    height:60px;
-    border-radius:16px;
-    font-size:26px;
-    background:var(--azul-100);
-    margin-bottom:14px;
-}
-.card-dua h3{
-    color:var(--azul-900);
+.acessibilidade-section:nth-child(even) {
+    background: var(--azul-claro);
 }
 
-/* ---------- TECNOLOGIAS ASSISTIVAS ---------- */
-.tecnologias-section{
-    background:var(--azul-100);
-    text-align:center;
-}
-.tecnologias-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:24px;
-    margin-top:40px;
-}
-.tecnologia-card{
-    background:var(--branco);
-    border-radius:var(--raio);
-    overflow:hidden;
-    height:100%;
-}
-.imagem-tecnologia{
-    height:200px;
-    background:linear-gradient(135deg, var(--azul-700), var(--azul-900));
-}
-.imagem-tecnologia img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-.tecnologia-card h3{
-    color:var(--azul-900);
-    font-size:1.05rem;
-    padding:18px 16px 4px;
-}
-.tecnologia-card p{
-    padding:0 18px 22px;
-    font-size:.92rem;
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+.acessibilidade-section h2 {
+    color: var(--azul-escuro);
 }
 
-/* ---------- DIREITOS DOS ESTUDANTES ---------- */
-.direitos-section{
-    background:var(--branco);
-    text-align:center;
-}
-.direito-card{
-    padding:30px 20px;
-    height:100%;
-}
-.direito-card .icone-info{
-    font-size:36px;
-    display:block;
-    margin-bottom:10px;
-}
-.direito-card h3{
-    color:var(--azul-900);
-    font-size:1.02rem;
+.acessibilidade-section h3 {
+    color: var(--azul-escuro);
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
-/* ---------- MATERIAIS ---------- */
-.materiais-acessibilidade{
-    background:var(--azul-100);
-    text-align:center;
-}
-.materiais-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:24px;
-    margin-top:40px;
-}
-.material-acess-card{
-    background:var(--branco);
-    padding:34px 24px;
-    border-radius:var(--raio);
-    height:100%;
-}
-.material-acess-card h3{
-    color:var(--azul-900);
-    font-size:1.05rem;
-}
-.material-acess-card button{
-    background:var(--dourado);
-    color:var(--azul-900);
-    border:none;
-    padding:11px 28px;
-    border-radius:50px;
-    font-family:var(--fonte-titulo);
-    font-weight:700;
-    cursor:pointer;
-    transition:all .25s ease;
-    margin-top:8px;
-}
-.material-acess-card button:hover{
-    background:var(--azul-900);
-    color:var(--branco);
-    transform:translateY(-2px);
+
+/* =========================================================
+   TEXTOS DAS SEÇÕES
+   ========================================================= */
+
+.acessibilidade-section > .container > p {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
-@media(max-width:992px){
-    .tecnologias-grid,
-    .materiais-grid{
-        grid-template-columns:repeat(2,1fr);
+
+/* =========================================================
+   CARDS DE ACESSIBILIDADE
+   ========================================================= */
+
+.acessibilidade-card {
+    height: 100%;
+    padding: 30px 24px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--azul-borda);
+    border-top: 4px solid var(--turquesa);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Cards sobre fundo branco */
+
+.acessibilidade-section:nth-child(odd) .acessibilidade-card {
+    background: var(--fundo);
+}
+
+
+/* Efeito dos cards */
+
+.acessibilidade-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-forte);
+}
+
+
+/* =========================================================
+   ÍCONES DOS CARDS
+   ========================================================= */
+
+.acessibilidade-card .icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    background: var(--azul-claro);
+
+    border-radius: 16px;
+
+    font-size: 28px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TÍTULOS DOS CARDS
+   ========================================================= */
+
+.acessibilidade-card h3 {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   TEXTOS DOS CARDS
+   ========================================================= */
+
+.acessibilidade-card p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÕES DOS MATERIAIS
+   ========================================================= */
+
+.acessibilidade-card .btn {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .acessibilidade-card {
+        padding: 26px 20px;
     }
+
 }
-@media(max-width:768px){
-    .tecnologias-grid,
-    .materiais-grid{
-        grid-template-columns:1fr;
+
+
+@media (max-width: 576px) {
+
+    .acessibilidade-card {
+        padding: 24px 18px;
     }
+
 }

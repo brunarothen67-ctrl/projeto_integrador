@@ -1,1257 +1,1095 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Acessibilidade | NAPNE - IFRS Campus Rolante</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-    <!-- CSS -->
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/acessibilidade.css"></head>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="css/acessibilidade.css">
+
+</head>
+
 
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+<!-- ==========================
+        NAVBAR
+=========================== -->
 
-<div class="container">
+<header>
 
+    <nav class="navbar navbar-expand-lg navbar-dark">
 
-<a class="navbar-brand" href="index.html">
-    NAPNE - IFRS
-</a>
+        <div class="container">
 
+            <a class="navbar-brand" href="index.html">
 
-<button class="navbar-toggler" 
-type="button" 
-data-bs-toggle="collapse" 
-data-bs-target="#menu">
+                <i class="bi bi-universal-access"></i>
 
-<span class="navbar-toggler-icon"></span>
+                NAPNE IFRS
 
-</button>
-
+            </a>
 
 
-<div class="collapse navbar-collapse" id="menu">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
 
 
-<ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
 
 
-<li class="nav-item">
-<a class="nav-link" href="index.html">
-Home
-</a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="napne.html">
+                            NAPNE
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="projetos.html">
+                            Projetos
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="acessibilidade.html"
+                        >
+                            Acessibilidade
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="relatos.html">
+                            Relatos
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            Entrar
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item ms-lg-2">
+
+                        <a
+                            class="btn-cadastro"
+                            href="cadastro.html"
+                        >
+                            Cadastrar
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
 
 
 
-<li class="nav-item">
-<a class="nav-link" href="napne.html">
-NAPNE
-</a>
-</li>
+<!-- ==========================
+        BANNER
+=========================== -->
+
+<section class="banner">
+
+    <div class="container text-center">
+
+        <h1>
+            Acessibilidade
+        </h1>
+
+        <p>
+            Conheça conceitos, direitos, tecnologias assistivas e materiais
+            que promovem uma educação inclusiva para todos.
+        </p>
+
+    </div>
+
+</section>
 
 
 
+<!-- ==========================
+        CONTEÚDO PRINCIPAL
+=========================== -->
 
-<li class="nav-item">
-<a class="nav-link" href="projetos.html">
-Projetos
-</a>
-</li>
+<main>
 
-
-<li class="nav-item">
-<a class="nav-link active" href="acessibilidade.html">
-Acessibilidade
-</a>
-</li>
-
-
-
-<li class="nav-item">
-<a class="nav-link" href="relatos.html">
-Relatos
-</a>
-</li>
-
-
-
-
-
-<li class="nav-item">
-    <a class="nav-link" href="login.html">
-        Entrar
-    </a>
-</li>
-
-
-<li class="nav-item ms-lg-2">
-
-    <a class="btn btn-primary" href="cadastro.html">
-        Cadastrar
-    </a>
-
-</li>
-
-</ul>
-
-
-</div>
-
-
-</div>
-
-</nav>
 
     <!-- ==========================
-            BANNER
-    ========================== -->
+            O QUE É ACESSIBILIDADE
+    =========================== -->
 
-<section class="acessibilidade-banner">
+    <section class="acessibilidade-section">
 
-<div class="banner-conteudo">
-            <h1>
-                Acessibilidade
-            </h1>
+        <div class="container">
+
+            <h2>
+                O que é acessibilidade?
+            </h2>
 
             <p>
-                Conheça conceitos, direitos, tecnologias assistivas e materiais
-                que promovem uma educação inclusiva para todos.
+                A acessibilidade reúne práticas, recursos e estratégias que
+                permitem que todas as pessoas participem, aprendam e utilizem
+                espaços, serviços e informações com autonomia e segurança.
+            </p>
+
+            <p>
+                No ambiente educacional, envolve adaptações físicas,
+                estratégias pedagógicas, comunicação acessível e tecnologias
+                assistivas.
             </p>
 
         </div>
 
     </section>
 
+
+
     <!-- ==========================
-            O QUE É ACESSIBILIDADE
-    ========================== -->
-<section class="sobre-acessibilidade">
+            IGUALDADE, EQUIDADE E INCLUSÃO
+    =========================== -->
 
+    <section class="acessibilidade-section">
 
-<div class="container">
+        <div class="container">
 
+            <h2>
+                Igualdade, Equidade e Inclusão
+            </h2>
 
-<h2>
+            <p>
+                Compreender esses conceitos é fundamental para construir
+                ambientes mais acessíveis.
+            </p>
 
-O que é acessibilidade?
 
-</h2>
+            <div class="row g-4 mt-3">
 
 
+                <!-- IGUALDADE -->
 
-<p>
+                <div class="col-md-4">
 
-A acessibilidade é um conjunto de práticas, recursos e estratégias que permitem que todas as pessoas possam participar, aprender e utilizar os espaços, serviços e informações com autonomia e segurança.
+                    <div class="acessibilidade-card">
 
-</p>
+                        <div class="icon">
+                            ⚖️
+                        </div>
 
+                        <h3>
+                            Igualdade
+                        </h3>
 
+                        <p>
+                            Oferece os mesmos direitos e oportunidades
+                            para todas as pessoas.
+                        </p>
 
-<p>
+                    </div>
 
-No ambiente educacional, a acessibilidade envolve não apenas adaptações físicas, mas também estratégias pedagógicas, comunicação acessível, tecnologias assistivas e diferentes formas de ensinar e aprender.
+                </div>
 
-</p>
 
+                <!-- EQUIDADE -->
 
-</div>
+                <div class="col-md-4">
 
+                    <div class="acessibilidade-card">
 
-</section>
+                        <div class="icon">
+                            🌱
+                        </div>
 
+                        <h3>
+                            Equidade
+                        </h3>
 
+                        <p>
+                            Considera as necessidades individuais para
+                            garantir condições de participação.
+                        </p>
 
+                    </div>
 
+                </div>
 
 
+                <!-- INCLUSÃO -->
 
-<!-- ==========================
-     IGUALDADE, EQUIDADE E INCLUSÃO
-========================== -->
+                <div class="col-md-4">
 
+                    <div class="acessibilidade-card">
 
-<section class="conceitos-acessibilidade">
+                        <div class="icon">
+                            🤝
+                        </div>
 
+                        <h3>
+                            Inclusão
+                        </h3>
 
-<div class="container">
+                        <p>
+                            Garante a participação de todas as pessoas,
+                            respeitando suas diferenças.
+                        </p>
 
+                    </div>
 
-<h2>
-
-Igualdade, Equidade e Inclusão
-
-</h2>
-
-
-
-<p class="descricao">
-
-Compreender esses conceitos é fundamental para construir ambientes mais acessíveis.
-
-</p>
-
-
-
-
-
-
-<div class="row g-4">
-
-
-
-
-
-<div class="col-md-4">
-
-
-<div class="card-conceito">
-
-
-<div class="icone-conceito">
-
-⚖️
-
-</div>
-
-
-
-<h3>
-
-Igualdade
-
-</h3>
-
-
-
-<p>
-
-Significa oferecer os mesmos direitos e oportunidades para todas as pessoas.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="col-md-4">
-
-
-<div class="card-conceito">
-
-
-<div class="icone-conceito">
-
-🌱
-
-</div>
-
-
-
-<h3>
-
-Equidade
-
-</h3>
-
-
-
-<p>
-
-Considera as necessidades individuais para garantir que todos tenham condições de participar.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="col-md-4">
-
-
-<div class="card-conceito">
-
-
-<div class="icone-conceito">
-
-🤝
-
-</div>
-
-
-
-<h3>
-
-Inclusão
-
-</h3>
-
-
-
-<p>
-
-Busca garantir a participação de todas as pessoas, respeitando suas diferenças e necessidades.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-<!-- ==========================
-        DUA
-========================== -->
-
-
-<section class="dua-section">
-
-
-<div class="container">
-
-
-<h2>
-
-Desenho Universal para Aprendizagem (DUA)
-
-</h2>
-
-
-
-<p class="descricao-secao">
-
-O Desenho Universal para Aprendizagem busca criar diferentes formas de ensinar, participar e demonstrar conhecimentos, considerando a diversidade dos estudantes.
-
-</p>
-
-
-
-
-
-<div class="row g-4">
-
-
-
-<div class="col-md-4">
-
-<div class="card-dua">
-
-
-<div class="icone-info">
-
-📚
-
-</div>
-
-
-<h3>
-
-Múltiplas formas de apresentar
-
-</h3>
-
-
-<p>
-
-Utilizar diferentes recursos para apresentar conteúdos, como textos, imagens, vídeos e áudios.
-
-</p>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="col-md-4">
-
-<div class="card-dua">
-
-
-<div class="icone-info">
-
-💬
-
-</div>
-
-
-<h3>
-
-Múltiplas formas de participação
-
-</h3>
-
-
-<p>
-
-Criar diferentes maneiras para que estudantes participem das atividades e interajam com os conteúdos.
-
-</p>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="col-md-4">
-
-<div class="card-dua">
-
-
-<div class="icone-info">
-
-✏️
-
-</div>
-
-
-<h3>
-
-Múltiplas formas de expressão
-
-</h3>
-
-
-<p>
-
-Permitir diferentes maneiras de demonstrar conhecimentos e aprendizagens.
-
-</p>
-
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ==========================
-        TECNOLOGIAS ASSISTIVAS
-========================== -->
-
-
-<section class="tecnologias-section">
-
-
-<div class="container">
-
-
-<h2>
-
-Tecnologias Assistivas
-
-</h2>
-
-
-
-<p class="descricao-secao">
-
-Recursos e ferramentas que auxiliam na autonomia, comunicação, participação e aprendizagem dos estudantes.
-
-</p>
-
-
-
-
-
-<div class="tecnologias-grid">
-
-
-
-
-
-<!-- CARD 1 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/leitor-tela.jpg" alt="Leitor de tela">
-
-
-</div>
-
-
-
-<h3>
-
-Leitor de tela
-
-</h3>
-
-
-
-<p>
-
-Tecnologia que transforma textos digitais em áudio, auxiliando o acesso às informações.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<!-- CARD 2 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/teclado-adaptado.jpg" alt="Teclado adaptado">
-
-
-</div>
-
-
-
-<h3>
-
-Teclado adaptado
-
-</h3>
-
-
-
-<p>
-
-Recursos que facilitam a utilização do computador para diferentes necessidades.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CARD 3 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/mouse-adaptado.jpg" alt="Mouse adaptado">
-
-
-</div>
-
-
-
-<h3>
-
-Mouse adaptado
-
-</h3>
-
-
-
-<p>
-
-Dispositivos alternativos que auxiliam na interação com computadores.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CARD 4 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/ampliador-tela.jpg" alt="Ampliador de tela">
-
-
-</div>
-
-
-
-<h3>
-
-Ampliador de tela
-
-</h3>
-
-
-
-<p>
-
-Ferramentas que aumentam elementos visuais para facilitar a leitura.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CARD 5 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/comunicacao.jpg" alt="Comunicação alternativa">
-
-
-</div>
-
-
-
-<h3>
-
-Comunicação alternativa
-
-</h3>
-
-
-
-<p>
-
-Recursos que auxiliam pessoas na comunicação através de imagens, símbolos ou sons.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CARD 6 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/fone.jpg" alt="Fone com redução de ruído">
-
-
-</div>
-
-
-
-<h3>
-
-Fones com redução de ruído
-
-</h3>
-
-
-
-<p>
-
-Podem auxiliar no controle de estímulos sonoros e favorecer a concentração.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CARD 7 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/software.jpg" alt="Software de apoio">
-
-
-</div>
-
-
-
-<h3>
-
-Softwares de apoio
-
-</h3>
-
-
-
-<p>
-
-Programas que auxiliam leitura, escrita, organização e aprendizagem.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CARD 8 -->
-
-<div class="tecnologia-card">
-
-
-<div class="imagem-tecnologia">
-
-
-<img src="img/tecnologias/audiolivro.jpg" alt="Audiolivros">
-
-
-</div>
-
-
-
-<h3>
-
-Audiolivros e materiais acessíveis
-
-</h3>
-
-
-
-<p>
-
-Materiais adaptados que oferecem diferentes formas de acesso ao conhecimento.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-<!-- ==========================
-        DIREITOS
-========================== -->
-
-
-<section class="direitos-section">
-
-
-<div class="container">
-
-
-<h2>
-
-Direitos dos estudantes
-
-</h2>
-
-
-
-<p class="descricao-secao">
-
-A inclusão educacional garante que estudantes tenham acesso, participação e aprendizagem com igualdade de oportunidades.
-
-</p>
-
-
-
-
-<div class="row g-4">
-
-
-
-
-
-<div class="col-md-3">
-
-
-<div class="direito-card">
-
-
-<div class="icone-info">
-
-📚
-
-</div>
-
-
-<h3>
-
-Acesso à educação
-
-</h3>
-
-
-<p>
-
-Todos os estudantes têm direito a participar da vida acadêmica com condições adequadas de aprendizagem.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="col-md-3">
-
-
-<div class="direito-card">
-
-
-<div class="icone-info">
-
-♿
-
-</div>
-
-
-<h3>
-
-Acessibilidade
-
-</h3>
-
-
-<p>
-
-Direito a recursos e estratégias que favoreçam autonomia e participação.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="col-md-3">
-
-
-<div class="direito-card">
-
-
-<div class="icone-info">
-
-🤝
-
-</div>
-
-
-<h3>
-
-Apoio educacional
-
-</h3>
-
-
-<p>
-
-Possibilidade de acompanhamento e construção de estratégias conforme as necessidades apresentadas.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="col-md-3">
-
-
-<div class="direito-card">
-
-
-<div class="icone-info">
-
-⚖️
-
-</div>
-
-
-<h3>
-
-Equidade
-
-</h3>
-
-
-<p>
-
-Garantia de oportunidades considerando as diferentes necessidades dos estudantes.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ==========================
-        MATERIAIS
-========================== -->
-
-
-<section class="materiais-acessibilidade">
-
-
-<div class="container">
-
-
-<h2>
-
-Materiais e documentos
-
-</h2>
-
-
-
-<p class="descricao-secao">
-
-Confira documentos, cartilhas e conteúdos relacionados à inclusão e acessibilidade.
-
-</p>
-
-
-
-
-
-<div class="materiais-grid">
-
-
-
-
-
-<div class="material-acess-card">
-
-
-<h3>
-
-📄 Legislação
-
-</h3>
-
-
-<p>
-
-Documentos e normas relacionados aos direitos das pessoas com necessidades educacionais específicas.
-
-</p>
-
-
-<button>
-
-Acessar
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="material-acess-card">
-
-
-<h3>
-
-📘 Cartilhas
-
-</h3>
-
-
-<p>
-
-Materiais educativos sobre inclusão, acessibilidade e participação.
-
-</p>
-
-
-<button>
-
-Acessar
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="material-acess-card">
-
-
-<h3>
-
-🏫 Documentos do IFRS
-
-</h3>
-
-
-<p>
-
-Materiais institucionais produzidos pelo IFRS relacionados à inclusão.
-
-</p>
-
-
-<button>
-
-Acessar
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="material-acess-card">
-
-
-<h3>
-
-🌎 Materiais oficiais
-
-</h3>
-
-
-<p>
-
-Conteúdos produzidos por órgãos oficiais sobre acessibilidade.
-
-</p>
-
-
-<button>
-
-Acessar
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-<!-- ==========================
-        RODAPÉ
-========================== -->
-
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-4">
-                <h4>NAPNE</h4>
-
-                <p>
-                    Núcleo de Atendimento às Pessoas com Necessidades
-                    Educacionais Específicas do IFRS Campus Rolante.
-                </p>
-            </div>
-
-            <div class="col-md-4">
-
-                <h4>Links</h4>
-
-                <ul class="list-unstyled">
-
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="napne.html">NAPNE</a></li>
-                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-
-                </ul>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <h4>Contato</h4>
-
-                <p>IFRS Campus Rolante</p>
-                <p>napne@rolante.ifrs.edu.br</p>
+                </div>
 
             </div>
 
         </div>
 
+    </section>
+
+
+
+    <!-- ==========================
+            DESENHO UNIVERSAL PARA APRENDIZAGEM
+    =========================== -->
+
+    <section class="acessibilidade-section">
+
+        <div class="container">
+
+            <h2>
+                Desenho Universal para Aprendizagem (DUA)
+            </h2>
+
+            <p>
+                O DUA propõe diferentes formas de ensinar, participar e
+                demonstrar conhecimentos, considerando a diversidade dos
+                estudantes.
+            </p>
+
+
+            <div class="row g-4 mt-3">
+
+
+                <!-- APRESENTAR -->
+
+                <div class="col-md-4">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Múltiplas formas de apresentar
+                        </h3>
+
+                        <p>
+                            Utilizar textos, imagens, vídeos, áudios e
+                            diferentes recursos para apresentar conteúdos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PARTICIPAR -->
+
+                <div class="col-md-4">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            💬
+                        </div>
+
+                        <h3>
+                            Múltiplas formas de participação
+                        </h3>
+
+                        <p>
+                            Criar diferentes maneiras para os estudantes
+                            participarem e interagirem com os conteúdos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXPRESSÃO -->
+
+                <div class="col-md-4">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            ✏️
+                        </div>
+
+                        <h3>
+                            Múltiplas formas de expressão
+                        </h3>
+
+                        <p>
+                            Permitir diferentes maneiras de demonstrar
+                            conhecimentos e aprendizagens.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================
+            TECNOLOGIAS ASSISTIVAS
+    =========================== -->
+
+    <section class="acessibilidade-section">
+
+        <div class="container">
+
+            <h2>
+                Tecnologias Assistivas
+            </h2>
+
+            <p>
+                Recursos que auxiliam na autonomia, comunicação,
+                participação e aprendizagem dos estudantes.
+            </p>
+
+
+            <!--
+                4 CARDS POR LINHA NO COMPUTADOR
+                col-lg-3 = 4 cards
+                col-md-6 = 2 cards
+                col-12 = 1 card
+            -->
+
+            <div class="row g-4 mt-3">
+
+
+                <!-- =================================================
+                        1. TECLADO COLMEIA
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-teclado-colmeia.jpg"
+                                alt="Teclado colmeia utilizado como recurso de acessibilidade"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Teclado colmeia
+                            </h3>
+
+                            <p>
+                                Acessório que evita o pressionamento
+                                involuntário de teclas e auxilia pessoas
+                                com mobilidade reduzida.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        2. SUPORTE PARA CELULAR COMO LUPA
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-suporte-celular-lupa.jpg"
+                                alt="Suporte para celular utilizado com aplicativo de lupa"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Suporte para celular como lupa
+                            </h3>
+
+                            <p>
+                                Suporte que facilita o uso de aplicativos
+                                de lupa, auxiliando a leitura de pessoas
+                                com baixa visão.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        3. RÉGUA DE LEITURA
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-regua-leitura.jpg"
+                                alt="Régua de leitura utilizada para acompanhar linhas de um texto"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Régua de leitura
+                            </h3>
+
+                            <p>
+                                Auxilia estudantes a acompanhar linhas
+                                e palavras, contribuindo para a concentração
+                                durante a leitura.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        4. FACILITADOR DE ESCRITA EM EVA
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-facilitador-escrita-eva.jpg"
+                                alt="Facilitador de escrita confeccionado em EVA"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Facilitador de escrita em EVA
+                            </h3>
+
+                            <p>
+                                Facilita o manuseio de lápis, canetas e giz
+                                para pessoas com dificuldade de segurar
+                                objetos finos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        5. CADERNO COM PAUTA AMPLIADA
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-caderno-pauta-ampliada.jpg"
+                                alt="Caderno com pauta ampliada para facilitar a leitura e escrita"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Caderno com pauta ampliada
+                            </h3>
+
+                            <p>
+                                Possui maior espaçamento entre as linhas
+                                e pautas mais marcadas, auxiliando pessoas
+                                com baixa visão.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        6. PLANO INCLINADO
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-plano-inclinado.jpg"
+                                alt="Plano inclinado utilizado para apoiar livros e materiais"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Plano inclinado
+                            </h3>
+
+                            <p>
+                                Permite posicionar livros, cadernos e outros
+                                materiais em uma inclinação adequada para
+                                leitura e manuseio.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        7. LUPA FÁCIL
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-lupa-facil.jpg"
+                                alt="Lupa Fácil conectada ao computador para ampliar textos"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Lupa Fácil
+                            </h3>
+
+                            <p>
+                                Conectada ao computador, amplia textos e
+                                imagens na tela, facilitando a leitura
+                                para pessoas com baixa visão.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        8. CALCULADORA SONORA
+                ================================================== -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card tecnologia-card">
+
+                        <div class="tecnologia-imagem">
+
+                            <img
+                                src="img/tecnologia-calculadora-sonora.jpg"
+                                alt="Calculadora sonora que informa teclas e resultados por voz"
+                            >
+
+                        </div>
+
+
+                        <div class="tecnologia-conteudo">
+
+                            <h3>
+                                Calculadora sonora
+                            </h3>
+
+                            <p>
+                                Emite sons ao pressionar as teclas e informa
+                                o resultado por voz, promovendo maior
+                                autonomia nas operações matemáticas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================
+            DIREITOS DOS ESTUDANTES
+    =========================== -->
+
+    <section class="acessibilidade-section">
+
+        <div class="container">
+
+            <h2>
+                Direitos dos estudantes
+            </h2>
+
+            <p>
+                A inclusão educacional garante acesso, participação e
+                aprendizagem com igualdade de oportunidades.
+            </p>
+
+
+            <div class="row g-4 mt-3">
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Acesso à educação
+                        </h3>
+
+                        <p>
+                            Direito de participar da vida acadêmica com
+                            condições adequadas de aprendizagem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            ♿
+                        </div>
+
+                        <h3>
+                            Acessibilidade
+                        </h3>
+
+                        <p>
+                            Direito a recursos e estratégias que favoreçam
+                            autonomia e participação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            🤝
+                        </div>
+
+                        <h3>
+                            Apoio educacional
+                        </h3>
+
+                        <p>
+                            Possibilidade de acompanhamento e estratégias
+                            conforme as necessidades apresentadas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <div class="icon">
+                            ⚖️
+                        </div>
+
+                        <h3>
+                            Equidade
+                        </h3>
+
+                        <p>
+                            Garantia de oportunidades considerando as
+                            diferentes necessidades dos estudantes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================
+            MATERIAIS E DOCUMENTOS
+    =========================== -->
+
+    <section class="acessibilidade-section">
+
+        <div class="container">
+
+            <h2>
+                Materiais e documentos
+            </h2>
+
+            <p>
+                Confira documentos, cartilhas e conteúdos relacionados
+                à inclusão e acessibilidade.
+            </p>
+
+
+            <div class="row g-4 mt-3">
+
+
+                <!-- LEGISLAÇÃO -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <h3>
+                            📄 Legislação
+                        </h3>
+
+                        <p>
+                            Documentos e normas relacionados aos direitos
+                            das pessoas com necessidades educacionais
+                            específicas.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                        >
+                            Acessar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARTILHAS -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <h3>
+                            📘 Cartilhas
+                        </h3>
+
+                        <p>
+                            Materiais educativos sobre inclusão,
+                            acessibilidade e participação.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                        >
+                            Acessar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCUMENTOS IFRS -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <h3>
+                            🏫 Documentos do IFRS
+                        </h3>
+
+                        <p>
+                            Materiais institucionais relacionados
+                            à inclusão no IFRS.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                        >
+                            Acessar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATERIAIS OFICIAIS -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="acessibilidade-card">
+
+                        <h3>
+                            🌎 Materiais oficiais
+                        </h3>
+
+                        <p>
+                            Conteúdos produzidos por órgãos oficiais
+                            sobre acessibilidade.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                        >
+                            Acessar
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================
+        FOOTER
+=========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <!-- NAPNE -->
+
+            <div class="col-md-4">
+
+                <h4>
+                    NAPNE
+                </h4>
+
+                <p>
+                    Núcleo de Atendimento às Pessoas com Necessidades
+                    Educacionais Específicas do IFRS Campus Rolante.
+                </p>
+
+            </div>
+
+
+            <!-- LINKS -->
+
+            <div class="col-md-4">
+
+                <h4>
+                    Links
+                </h4>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="napne.html">
+                            NAPNE
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="acessibilidade.html">
+                            Acessibilidade
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="projetos.html">
+                            Projetos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="relatos.html">
+                            Relatos
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTATO -->
+
+            <div class="col-md-4">
+
+                <h4>
+                    Contato
+                </h4>
+
+                <p>
+                    IFRS Campus Rolante
+                </p>
+
+                <p>
+                    napne@rolante.ifrs.edu.br
+                </p>
+
+            </div>
+
+        </div>
+
+
         <hr>
+
 
         <p class="text-center mb-0">
             © 2026 NAPNE - IFRS Campus Rolante
@@ -1261,15 +1099,18 @@ Acessar
 
 </footer>
 
-<!-- Bootstrap JS -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- JavaScript do projeto -->
+<!-- ==========================
+        BOOTSTRAP JAVASCRIPT
+=========================== -->
 
-<script src="js/script.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
 
 
 </body>
 
 </html>
+```

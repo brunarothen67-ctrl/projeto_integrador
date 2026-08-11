@@ -1,235 +1,649 @@
 
+/* ===================================================
+   TÍTULOS DAS SEÇÕES
+=================================================== */
 
-/* Título das seções  */
 .sobre-napne h2,
 .servicos-napne h2,
 .atendimento-napne h2,
 .equipe-napne h2,
-.contato-napne h2{
-    text-align:center;
-    color:var(--azul-900);
-    font-weight:700;
+.contato-napne h2 {
+
+    text-align: center;
+
+    color: var(--azul-escuro);
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
 }
 
-/* ---------- SOBRE O NAPNE ---------- */
-.sobre-napne{
-    background:var(--branco);
-    border-radius:24px;
-    padding:45px 35px;
-    box-shadow:var(--sombra);
-    max-width:1100px;
-    margin:0 auto;
+
+/* ===================================================
+   SOBRE O NAPNE
+=================================================== */
+
+.sobre-napne {
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    padding: 50px 35px;
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    border-top: 7px solid var(--turquesa);
 }
 
-.sobre-napne .container{
-    text-align:center;
-    max-width:900px;
+
+.sobre-napne .container {
+
+    text-align: center;
+
+    max-width: 900px;
 }
 
-.sobre-napne p{
-    margin:15px auto;
-    font-size:1.05rem;
-    line-height:1.8;
+
+.sobre-napne p {
+
+    margin: 15px auto;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: var(--cinza);
 }
 
-/* ---------- SERVIÇOS ---------- */
-.card-servico{
-    background:var(--branco);
-    border-radius:var(--raio);
-    padding:34px 28px;
-    height:100%;
-    text-align:center;
+
+/* ===================================================
+   SERVIÇOS
+=================================================== */
+
+.card-servico {
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    padding: 35px 28px;
+
+    height: 100%;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    border-top: 7px solid var(--azul);
+
+    transition: .35s;
 }
 
-.card-servico i{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:64px;
-    height:64px;
-    border-radius:16px;
-    font-size:28px;
-    color:var(--azul-700);
-    background:var(--azul-100);
-    margin-bottom:16px;
+
+.card-servico:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
 }
 
-.card-servico h3{
-    color:var(--azul-900);
-    font-size:1.1rem;
+
+.card-servico i {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    color: var(--azul);
+
+    background: #E8F3FF;
+
+    margin-bottom: 18px;
 }
 
-/* ---------- COMO SOLICITAR ATENDIMENTO ---------- */
-.passo-card{
-    background:var(--branco);
-    padding:32px 28px;
-    height:100%;
-    text-align:center;
+
+.card-servico h3 {
+
+    color: var(--azul-escuro);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
 }
 
-.numero{
-    width:48px;
-    height:48px;
-    background:var(--dourado);
-    color:var(--azul-900);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:var(--fonte-titulo);
-    font-weight:800;
-    font-size:1.1rem;
-    margin:0 auto 18px;
+
+.card-servico p {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
 }
 
-.aviso-atendimento{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    background:var(--azul-100);
-    border-left:4px solid var(--dourado);
-    border-radius:12px;
-    padding:18px 22px;
-    margin-top:36px;
-}
-.aviso-atendimento i{
-    color:var(--azul-700);
-    font-size:1.3rem;
-    margin-top:2px;
-}
-.aviso-atendimento p{
-    margin:0;
-    color:var(--texto);
+
+/* ===================================================
+   COMO SOLICITAR ATENDIMENTO
+=================================================== */
+
+.passo-card {
+
+    background: #ffffff;
+
+    padding: 35px 28px;
+
+    height: 100%;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    border-top: 6px solid var(--amarelo);
+
+    transition: .35s;
 }
 
-/* ---------- EQUIPE ---------- */
-.card-equipe{
-    border:none;
-    padding:28px 22px;
-    text-align:center;
-    height:100%;
+
+.passo-card:hover {
+
+    transform: translateY(-7px);
 }
 
-.equipe-icon{
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    background:linear-gradient(135deg, var(--azul-700), var(--azul-900));
-    color:var(--branco);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 20px;
-    font-family:var(--fonte-titulo);
-    font-size:1.8rem;
-    font-weight:700;
+
+.numero {
+
+    width: 55px;
+
+    height: 55px;
+
+    background: var(--amarelo);
+
+    color: var(--azul-escuro);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 800;
+
+    font-size: 1.2rem;
+
+    margin: 0 auto 20px;
 }
 
-.card-equipe h3{
-    color:var(--azul-900);
-    font-size:1.1rem;
+
+.passo-card h3 {
+
+    color: var(--azul-escuro);
+
+    font-weight: 700;
 }
 
-.foto-equipe{
-    width:150px;
-    height:150px;
-    margin:0 auto 20px;
-    border-radius:50%;
-    overflow:hidden;
-    border:4px solid var(--azul-100);
-}
-.foto-equipe img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+
+.passo-card p {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
 }
 
-.equipe-extra{
-    max-width:800px;
-    margin:36px auto 0;
-    text-align:center;
-    color:var(--texto-suave);
-    font-size:.95rem;
+
+/* ===================================================
+   AVISO IMPORTANTE
+=================================================== */
+
+.aviso-atendimento {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    background: var(--amarelo-claro);
+
+    border-left: 5px solid var(--amarelo);
+
+    border-radius: 15px;
+
+    padding: 20px 24px;
+
+    margin-top: 40px;
 }
 
-/* ---------- FAQ ---------- */
-.accordion-button{
-    font-family:var(--fonte-titulo);
-    font-weight:600;
-    color:var(--azul-900);
-}
-.accordion-button:not(.collapsed){
-    background-color:var(--azul-100);
-    color:var(--azul-700);
-    box-shadow:none;
-}
-.accordion-button:focus{
-    box-shadow:0 0 0 3px rgba(14,92,156,.2);
-}
-.accordion-item{
-    border-radius:14px !important;
-    overflow:hidden;
-    margin-bottom:12px;
-    border:1px solid var(--azul-borda);
+
+.aviso-atendimento i {
+
+    color: #D39A00;
+
+    font-size: 1.4rem;
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
 }
 
-/* ---------- CONTATO ---------- */
-.contato-napne{
-    background:var(--azul-100);
-    border-radius:24px;
-    padding:45px 35px;
+
+.aviso-atendimento p {
+
+    margin: 0;
+
+    color: var(--texto);
+
+    line-height: 1.6;
 }
 
-.card-contato{
-    background:var(--branco);
-    padding:30px;
-    text-align:center;
-    border-radius:var(--raio);
-    height:100%;
+
+/* ===================================================
+   EQUIPE
+=================================================== */
+
+.card-equipe {
+
+    border: none;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    height: 100%;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .07);
+
+    transition: .35s;
 }
 
-.card-contato i{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    font-size:26px;
-    color:var(--branco);
-    background:var(--azul-700);
-    margin-bottom:14px;
+
+.card-equipe:hover {
+
+    transform: translateY(-7px);
 }
 
-.card-contato h3{
-    color:var(--azul-900);
+
+.equipe-icon {
+
+    width: 85px;
+
+    height: 85px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--turquesa)
+    );
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    font-size: 1.9rem;
+
+    font-weight: 700;
 }
 
-/* ---------- MATERIAIS---------- */
-.material-card{
-    border:none;
-    border-radius:var(--raio);
-    overflow:hidden;
-}
-.material-card img{
-    height:220px;
-    object-fit:cover;
-}
-.material-card .card-body{
-    padding:26px;
-}
-.material-card h3{
-    color:var(--azul-900);
+
+.card-equipe h3 {
+
+    color: var(--azul-escuro);
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
-@media(max-width:768px){
+
+.card-equipe p {
+
+    color: var(--cinza);
+}
+
+
+/* ===================================================
+   FOTO DA EQUIPE
+=================================================== */
+
+.foto-equipe {
+
+    width: 150px;
+
+    height: 150px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 5px solid #E8F3FF;
+}
+
+
+.foto-equipe img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.equipe-extra {
+
+    max-width: 800px;
+
+    margin: 36px auto 0;
+
+    text-align: center;
+
+    color: var(--cinza);
+
+    font-size: .95rem;
+
+    line-height: 1.7;
+}
+
+
+/* ===================================================
+   FAQ
+=================================================== */
+
+.accordion-button {
+
+    font-weight: 600;
+
+    color: var(--azul-escuro);
+
+    background: #ffffff;
+}
+
+
+.accordion-button:not(.collapsed) {
+
+    background: #EAF5FF;
+
+    color: var(--azul);
+
+    box-shadow: none;
+}
+
+
+.accordion-button:focus {
+
+    box-shadow: 0 0 0 3px rgba(24, 169, 153, .20);
+}
+
+
+.accordion-item {
+
+    border-radius: 18px !important;
+
+    overflow: hidden;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #D9EAF5;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
+}
+
+
+.accordion-body {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+}
+
+
+/* ===================================================
+   CONTATO
+=================================================== */
+
+.contato-napne {
+
+    background: #EAF5FF;
+
+    border-radius: 25px;
+
+    padding: 50px 35px;
+}
+
+
+.card-contato {
+
+    background: #ffffff;
+
+    padding: 32px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    height: 100%;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .07);
+
+    transition: .35s;
+}
+
+
+.card-contato:hover {
+
+    transform: translateY(-7px);
+}
+
+
+.card-contato i {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    color: #ffffff;
+
+    background: var(--turquesa);
+
+    margin-bottom: 16px;
+}
+
+
+.card-contato h3 {
+
+    color: var(--azul-escuro);
+
+    font-weight: 700;
+}
+
+
+.card-contato p {
+
+    color: var(--cinza);
+}
+
+
+/* ===================================================
+   MATERIAIS
+=================================================== */
+
+.material-card {
+
+    border: none;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    transition: .35s;
+}
+
+
+.material-card:hover {
+
+    transform: translateY(-7px);
+}
+
+
+.material-card img {
+
+    height: 220px;
+
+    width: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.material-card .card-body {
+
+    padding: 28px;
+}
+
+
+.material-card h3 {
+
+    color: var(--azul-escuro);
+
+    font-weight: 700;
+}
+
+
+.material-card p {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+}
+
+
+/* ===================================================
+   BOTÕES
+=================================================== */
+
+.sobre-napne .btn,
+.contato-napne .btn,
+.material-card .btn {
+
+    border-radius: 30px;
+
+    padding: 11px 25px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+
+.sobre-napne .btn-primary,
+.contato-napne .btn-primary,
+.material-card .btn-primary {
+
+    background: var(--azul);
+
+    border-color: var(--azul);
+}
+
+
+.sobre-napne .btn-primary:hover,
+.contato-napne .btn-primary:hover,
+.material-card .btn-primary:hover {
+
+    background: var(--turquesa);
+
+    border-color: var(--turquesa);
+}
+
+
+/* ===================================================
+   RESPONSIVIDADE
+=================================================== */
+
+@media (max-width: 768px) {
+
     .sobre-napne,
-    .contato-napne{
-        padding:30px 22px;
+    .contato-napne {
+
+        padding: 32px 22px;
     }
+
+
     .card-equipe,
-    .card-servico{
-        margin-bottom:20px;
+    .card-servico,
+    .passo-card,
+    .card-contato {
+
+        margin-bottom: 20px;
     }
+
+
+    .foto-equipe {
+
+        width: 130px;
+
+        height: 130px;
+    }
+
+
+    .sobre-napne p {
+
+        font-size: 1rem;
+    }
+
+
+    .aviso-atendimento {
+
+        padding: 18px;
+    }
+
 }
