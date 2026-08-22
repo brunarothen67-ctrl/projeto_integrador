@@ -1,6 +1,6 @@
 # projeto_integrador
 
-Oiiiiiiiiiiiiiiiiiii, Fábiooooooooooooooooooooooooooo!!!!!!!
+Oi, Fábioooooo!!!!!!!
 Espero que esteja bem <3
 Vou descrever algumas coisas, mas tudo é bem intuitivo. 
  
@@ -41,7 +41,7 @@ Caso tente publicar sem estar logado, o sistema solicitará que o usuário faça
 Para acessar o Painel Administrativo, utilize:
 
 **E-mail:** `admin@napne.com`  
-**Senha:** `123456`(bem segura, graças a Deus)
+**Senha:** `123456`
 
 Após entrar, o administrador poderá acessar o painel e testar as funções de gerenciamento e publicação.
 
@@ -54,4 +54,3 @@ O projeto utiliza `localStorage` (dona AI me apresentou )para armazenar os dados
 Por isso, os dados ficam salvos apenas no navegador utilizado. Se o armazenamento do navegador for apagado, os dados cadastrados também poderão ser perdidos.
 
 Era isso. Abraços, Fábio!!!!
-Esse site não vale nada. 
