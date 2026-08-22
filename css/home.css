@@ -1,261 +1,44 @@
 
-/* ===================================================
-HOME - NAPNE IFRS CAMPUS ROLANTE
-=================================================== */
-
-/* ===========================
-PALETA DE CORES
-=========================== */
-
-:root {
-
-    --azul: #0F4C97;
-    --azul-escuro: #0A376B;
-    --azul-claro: #EAF5FF;
-
-    --turquesa: #18A999;
-    --verde: #45B36B;
-    --verde-claro: #EEF9F2;
-
-    --roxo: #6E49C8;
-    --roxo-claro: #F4F0FF;
-
-    --amarelo: #FFD54A;
-    --amarelo-claro: #FFF9EA;
-
-    --cinza: #5F6B7A;
-    --texto: #2C3E50;
-
-    --branco: #FFFFFF;
-
-}
 
 
-/* ===========================
-CONFIGURAÇÕES GERAIS
-=========================== */
+/* =========================================================
+   1. SEÇÕES DA HOME
+========================================================= */
 
-body {
 
-    background: #ffffff;
 
-    color: var(--texto);
-
-    overflow-x: hidden;
-
-}
-
-section {
-
-    padding: 90px 0;
-
-}
-
-section h2 {
-
+main section h2 {
     color: var(--azul-escuro);
-
     font-size: 2.4rem;
-
     font-weight: 700;
-
     text-align: center;
-
     margin-bottom: 18px;
-
 }
 
 .texto-secao {
-
     max-width: 760px;
-
-    margin: auto;
-
+    margin: 0 auto 55px;
     text-align: center;
-
     color: var(--cinza);
-
     font-size: 1.08rem;
-
-    margin-bottom: 55px;
-
+    line-height: 1.7;
 }
 
 
-/* ===========================
-BANNER
-=========================== */
+/* =========================================================
+   2. COMO PODEMOS AJUDAR
+========================================================= */
 
-.banner-home {
+.ajuda-section {
+    background: #FFFFFF;
+}
 
+.ajuda-section .card-ajuda {
     position: relative;
-
     overflow: hidden;
 
-    padding: 120px 20px 80px;
-
-    background: linear-gradient(135deg, #0F5BA8 0%, #1B9B8E 100%);
-
-    text-align: center;
-
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(135deg, #0F5BA8 0%, #1B9B8E 100%);
-
-    background-size: 200px 200px, 150px 150px, 180px 180px, 160px 160px, 100%;
-
-}
-
-
-/* Onda na base */
-
-.banner-home::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 60px;
-
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60"><path d="M0,30 Q300,0 600,30 T1200,30 L1200,60 L0,60 Z" fill="%23ffffff"/></svg>');
-
-    background-repeat: repeat-x;
-
-    background-size: cover;
-
-}
-
-.banner-conteudo {
-
-    position: relative;
-
-    z-index: 2;
-
-    padding-bottom: 20px;
-
-}
-
-.banner-home .banner-icone {
-
-    width: 90px;
-
-    height: 90px;
-
-    margin: auto;
-
-    margin-bottom: 25px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    font-size: 3.5rem;
-
-    color: #fff;
-
-}
-
-.banner-home h1 {
-
-    color: #fff;
-
-    font-size: 3.5rem;
-
-    font-weight: 800;
-
-    margin-bottom: 20px;
-
-    line-height: 1.2;
-
-}
-
-.banner-home p {
-
-    color: rgba(255, 255, 255, 0.95);
-
-    font-size: 1.25rem;
-
-    max-width: 900px;
-
-    margin: auto;
-
-    line-height: 1.8;
-
-    margin-bottom: 40px;
-
-}
-
-.btn-banner {
-
-    display: inline-block;
-
-    background: var(--amarelo);
-
-    color: var(--azul-escuro);
-
-    text-decoration: none;
-
-    padding: 18px 42px;
-
-    border-radius: 40px;
-
-    font-weight: 700;
-
-    font-size: 1.1rem;
-
-    transition: .35s;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
-
-}
-
-.btn-banner:hover {
-
-    transform: translateY(-4px);
-
-    background: #FFE680;
-
-    color: var(--azul-escuro);
-
-    text-decoration: none;
-
-}
-
-.btn-banner i {
-
-    margin-left: 8px;
-
-}
-
-
-/* ===================================================
-COMO PODEMOS AJUDAR
-=================================================== */
-
-.ajuda-home {
-
-    background: #ffffff;
-
-}
-
-.card-ajuda {
-
-    background: #fff;
-
-    border-radius: 25px;
+    background: #FFFFFF;
+    border-radius: var(--raio);
 
     padding: 35px 30px;
 
@@ -263,112 +46,80 @@ COMO PODEMOS AJUDAR
 
     height: 100%;
 
-    transition: .35s;
-
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
-
     border-top: 8px solid transparent;
 
-    position: relative;
+    box-shadow: var(--sombra);
 
-    overflow: hidden;
-
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 }
 
-.card-ajuda::before {
-
+.ajuda-section .card-ajuda::before {
     content: "";
 
     position: absolute;
 
     width: 120px;
-
     height: 120px;
 
     border-radius: 50%;
 
     top: -60px;
-
     right: -60px;
 
     opacity: .15;
-
 }
 
-.card-ajuda:hover {
-
+.ajuda-section .card-ajuda:hover {
     transform: translateY(-10px);
-
-    box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
-
+    box-shadow: var(--sombra-forte);
 }
 
-.link-card {
-
-    text-decoration: none;
-
-    color: inherit;
-
+.ajuda-section .link-card {
     display: block;
 
-}
-
-.link-card:hover {
-
-    text-decoration: none;
-
     color: inherit;
-
+    text-decoration: none;
 }
 
-.icone-card {
+.ajuda-section .link-card:hover {
+    color: inherit;
+    text-decoration: none;
+}
 
+.ajuda-section .icone-card {
     width: 85px;
-
     height: 85px;
 
-    margin: auto;
+    margin: 0 auto 25px;
 
     border-radius: 50%;
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
-
-    margin-bottom: 25px;
-
+    justify-content: center;
 }
 
-.icone-card i {
-
+.ajuda-section .icone-card i {
     font-size: 2.3rem;
-
 }
 
-.card-ajuda h3 {
-
+.ajuda-section .card-ajuda h3 {
     color: var(--azul-escuro);
 
     font-size: 1.4rem;
-
     font-weight: 700;
 
     margin-bottom: 15px;
-
 }
 
-.card-ajuda p {
-
+.ajuda-section .card-ajuda p {
     color: var(--cinza);
-
     line-height: 1.7;
-
 }
 
-.saiba-mais {
-
+.ajuda-section .saiba-mais {
     color: var(--turquesa);
 
     font-weight: 600;
@@ -376,143 +127,109 @@ COMO PODEMOS AJUDAR
     display: inline-block;
 
     margin-top: 15px;
-
 }
 
-.saiba-mais i {
-
+.ajuda-section .saiba-mais i {
     margin-left: 6px;
-
 }
 
 
-/* ===========================
-CARD ESTUDANTE
-=========================== */
+/* =========================================================
+   3. CARD ESTUDANTE
+========================================================= */
 
-.estudante {
-
+.ajuda-section .estudante {
     border-top-color: #1D74D9;
-
 }
 
-.estudante::before {
-
+.ajuda-section .estudante::before {
     background: #1D74D9;
-
 }
 
-.estudante .icone-card {
-
+.ajuda-section .estudante .icone-card {
     background: #E8F3FF;
-
 }
 
-.estudante i {
-
+.ajuda-section .estudante i {
     color: #1D74D9;
-
 }
 
 
-/* ===========================
-CARD PROFESSOR
-=========================== */
+/* =========================================================
+   4. CARD PROFESSOR
+========================================================= */
 
-.professor {
-
+.ajuda-section .professor {
     border-top-color: var(--verde);
-
 }
 
-.professor::before {
-
+.ajuda-section .professor::before {
     background: var(--verde);
-
 }
 
-.professor .icone-card {
-
-    background: #EEF9F2;
-
+.ajuda-section .professor .icone-card {
+    background: var(--verde-claro);
 }
 
-.professor i {
-
+.ajuda-section .professor i {
     color: var(--verde);
-
 }
 
 
-/* ===========================
-CARD FAMILIAR
-=========================== */
+/* =========================================================
+   5. CARD FAMILIAR
+========================================================= */
 
-.familiar {
-
+.ajuda-section .familiar {
     border-top-color: var(--roxo);
-
 }
 
-.familiar::before {
-
+.ajuda-section .familiar::before {
     background: var(--roxo);
-
 }
 
-.familiar .icone-card {
-
-    background: #F4F0FF;
-
+.ajuda-section .familiar .icone-card {
+    background: var(--roxo-claro);
 }
 
-.familiar i {
-
+.ajuda-section .familiar i {
     color: var(--roxo);
-
 }
 
 
-/* ===================================================
-EVENTOS
-=================================================== */
+/* =========================================================
+   6. EVENTOS
+========================================================= */
 
-.eventos-home {
-
+.eventos-section {
     background: var(--amarelo-claro);
-
 }
 
-.card-evento {
+.eventos-section .card-evento {
+    background: #FFFFFF;
 
-    background: #fff;
-
-    border-radius: 25px;
+    border-radius: var(--raio);
 
     padding: 30px;
 
     height: 100%;
 
-    transition: .35s;
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
-
     border-bottom: 8px solid var(--amarelo);
 
+    box-shadow: var(--sombra);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 }
 
-.card-evento:hover {
-
+.eventos-section .card-evento:hover {
     transform: translateY(-8px);
-
-    box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
-
+    box-shadow: var(--sombra-forte);
 }
 
-.evento-icone {
-
+.eventos-section .evento-icone {
     width: 75px;
-
     height: 75px;
 
     background: #FFF4CF;
@@ -520,25 +237,18 @@ EVENTOS
     border-radius: 50%;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
-
     margin: 0 auto 20px;
-
 }
 
-.evento-icone i {
-
+.eventos-section .evento-icone i {
     font-size: 2rem;
-
     color: #D39A00;
-
 }
 
-.card-evento h3 {
-
+.eventos-section .card-evento h3 {
     color: var(--azul-escuro);
 
     text-align: center;
@@ -546,45 +256,40 @@ EVENTOS
     font-size: 1.35rem;
 
     margin-bottom: 20px;
-
 }
 
-.card-evento p {
-
+.eventos-section .card-evento p {
     color: var(--cinza);
 
     margin-bottom: 10px;
 
     line-height: 1.6;
-
 }
 
-.card-evento p i {
-
+.eventos-section .card-evento p i {
     color: var(--turquesa);
-
     margin-right: 8px;
-
 }
 
 
-/* ===================================================
-MITOS E VERDADES
-=================================================== */
+/* =========================================================
+   7. MITOS E VERDADES
+========================================================= */
 
 .mitos-home {
-
-    background: linear-gradient(135deg, #f8f5ff, #efe8ff);
-
+    background: linear-gradient(
+        135deg,
+        #F8F5FF,
+        #EFE8FF
+    );
 }
 
-.card-interativo {
-
+.mitos-home .card-interativo {
     max-width: 850px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    background: #fff;
+    background: #FFFFFF;
 
     border-radius: 30px;
 
@@ -592,89 +297,69 @@ MITOS E VERDADES
 
     text-align: center;
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
-
     border-top: 8px solid var(--roxo);
 
+    box-shadow: var(--sombra-forte);
 }
 
-.interativo-icone {
-
+.mitos-home .interativo-icone {
     width: 90px;
-
     height: 90px;
 
-    margin: auto;
-
-    margin-bottom: 25px;
+    margin: 0 auto 25px;
 
     border-radius: 50%;
 
-    background: #F2ECFF;
+    background: var(--roxo-claro);
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
-
+    justify-content: center;
 }
 
-.interativo-icone i {
-
+.mitos-home .interativo-icone i {
     font-size: 2.5rem;
-
     color: var(--roxo);
-
 }
 
-.card-interativo h3 {
-
+.mitos-home .card-interativo h3 {
     color: var(--azul-escuro);
 
     font-size: 2rem;
 
     margin-bottom: 20px;
-
 }
 
-.card-interativo p {
-
+.mitos-home .card-interativo p {
     color: var(--cinza);
 
     line-height: 1.8;
 
     margin-bottom: 35px;
-
 }
 
 
-/* ===========================
-BOTÕES MITOS E VERDADES
-=========================== */
+/* =========================================================
+   8. BOTÕES DO MITOS E VERDADES
+========================================================= */
 
-#opcoesMito .btn {
-
+.mitos-home #opcoesMito .btn {
     width: 150px;
-
     min-width: 150px;
 
     padding: 10px 20px;
 
     text-align: center;
-
 }
 
-
-.botao-principal {
-
+.mitos-home .botao-principal {
     display: inline-block;
 
     padding: 15px 38px;
 
     background: var(--roxo);
 
-    color: #fff;
+    color: #FFFFFF;
 
     text-decoration: none;
 
@@ -682,44 +367,38 @@ BOTÕES MITOS E VERDADES
 
     font-weight: 600;
 
-    transition: .3s;
-
+    transition:
+        background .3s ease,
+        transform .3s ease;
 }
 
-.botao-principal:hover {
+.mitos-home .botao-principal:hover {
+    background: #5B38B8;
 
-    background: #5b38b8;
-
-    color: #fff;
+    color: #FFFFFF;
 
     transform: translateY(-3px);
 
     text-decoration: none;
-
 }
 
-.botao-principal i {
-
+.mitos-home .botao-principal i {
     margin-right: 8px;
-
 }
 
 
-/* ===================================================
-VOCÊ SABIA
-=================================================== */
+/* =========================================================
+   9. VOCÊ SABIA?
+========================================================= */
 
-.sabia-home {
-
-    background: #fff;
-
+.sabia-section {
+    background: #FFFFFF;
 }
 
-.card-curiosidade {
+.sabia-section .card-curiosidade {
+    background: #FFFFFF;
 
-    background: #fff;
-
-    border-radius: 25px;
+    border-radius: var(--raio);
 
     padding: 35px;
 
@@ -727,50 +406,39 @@ VOCÊ SABIA
 
     height: 100%;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
-
     border-top: 7px solid var(--verde);
 
-    transition: .3s;
+    box-shadow: var(--sombra);
 
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
-.card-curiosidade:hover {
-
+.sabia-section .card-curiosidade:hover {
     transform: translateY(-8px);
-
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .12);
-
+    box-shadow: var(--sombra-forte);
 }
 
-.curiosidade-icone {
-
+.sabia-section .curiosidade-icone {
     width: 75px;
-
     height: 75px;
 
-    margin: auto;
+    margin: 0 auto 20px;
 
     border-radius: 50%;
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
-
-    margin-bottom: 20px;
+    justify-content: center;
 
     font-size: 2.2rem;
 
     background: var(--verde-claro);
-
     color: var(--verde);
-
 }
 
-.card-curiosidade h3 {
-
+.sabia-section .card-curiosidade h3 {
     color: var(--azul-escuro);
 
     font-size: 1.35rem;
@@ -778,30 +446,23 @@ VOCÊ SABIA
     margin-bottom: 15px;
 
     font-weight: 700;
-
 }
 
-.card-curiosidade p {
-
+.sabia-section .card-curiosidade p {
     color: var(--cinza);
-
     line-height: 1.7;
-
 }
 
 
-/* ===================================================
-FAQ
-=================================================== */
+/* =========================================================
+   10. FAQ
+========================================================= */
 
-.faq-home {
-
+.faq-section {
     background: var(--azul-claro);
-
 }
 
-.accordion-item {
-
+.faq-section .accordion-item {
     border: none;
 
     border-radius: 18px !important;
@@ -811,12 +472,10 @@ FAQ
     margin-bottom: 18px;
 
     box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
-
 }
 
-.accordion-button {
-
-    background: #fff;
+.faq-section .accordion-button {
+    background: #FFFFFF;
 
     color: var(--azul-escuro);
 
@@ -824,218 +483,95 @@ FAQ
 
     padding: 22px;
 
-    box-shadow: none !important;
-
+    box-shadow: none;
 }
 
-.accordion-button:not(.collapsed) {
-
-    background: #d9eeff;
-
+.faq-section .accordion-button:not(.collapsed) {
+    background: #D9EEFF;
     color: var(--azul-escuro);
-
 }
 
-.accordion-body {
-
+.faq-section .accordion-body {
     padding: 22px;
 
     color: var(--cinza);
 
     line-height: 1.8;
-
 }
 
 
-/* ===================================================
-FOOTER
-=================================================== */
-
-.footer {
-
-    background: var(--azul-escuro);
-
-    color: #fff;
-
-    padding: 70px 0 30px;
-
-}
-
-.footer h4 {
-
-    color: var(--amarelo);
-
-    margin-bottom: 20px;
-
-    font-weight: 700;
-
-}
-
-.footer p {
-
-    color: #E7EEF6;
-
-}
-
-.footer ul {
-
-    padding: 0;
-
-    margin: 0;
-
-}
-
-.footer li {
-
-    list-style: none;
-
-    margin-bottom: 10px;
-
-}
-
-.footer a {
-
-    color: #fff;
-
-    text-decoration: none;
-
-    transition: .3s;
-
-}
-
-.footer a:hover {
-
-    color: var(--turquesa);
-
-    padding-left: 6px;
-
-}
-
-.footer hr {
-
-    margin: 40px 0 20px;
-
-    border-color: rgba(255, 255, 255, .15);
-
-}
-
-
-/* ===================================================
-RESPONSIVO
-=================================================== */
+/* =========================================================
+   11. RESPONSIVIDADE — TABLET
+========================================================= */
 
 @media (max-width: 991px) {
 
-    .banner-home {
-
-        padding: 100px 20px 70px;
-
-    }
-
-    .banner-home h1 {
-
-        font-size: 2.8rem;
-
-    }
-
-    .banner-home p {
-
-        font-size: 1.15rem;
-
-    }
-
-    section {
-
-        padding: 70px 0;
-
+    main section {
+        padding: 70px 20px;
     }
 
 }
+
+
+/* =========================================================
+   12. RESPONSIVIDADE — CELULAR
+========================================================= */
 
 @media (max-width: 768px) {
 
-    .banner-home h1 {
-
-        font-size: 2.2rem;
-
-    }
-
-    .banner-home p {
-
-        font-size: 1rem;
-
-    }
-
-    section h2 {
-
+    main section h2 {
         font-size: 2rem;
-
     }
 
-    .card-ajuda,
-    .card-evento,
-    .card-curiosidade,
-    .card-interativo {
-
+    .ajuda-section .card-ajuda,
+    .eventos-section .card-evento,
+    .sabia-section .card-curiosidade,
+    .mitos-home .card-interativo {
         padding: 28px;
-
     }
 
-    .btn-banner,
-    .botao-principal {
-
+    .mitos-home .botao-principal {
         width: 100%;
-
         text-align: center;
-
     }
 
 }
 
+
+/* =========================================================
+   13. CELULAR PEQUENO
+========================================================= */
+
 @media (max-width: 576px) {
 
-    .navbar-brand {
-
-        font-size: 1.5rem;
-
-    }
-
-    .banner-home {
-
-        padding: 60px 15px 50px;
-
-    }
-
-    .banner-home .banner-icone {
-
-        font-size: 2.5rem;
-
-        width: 70px;
-
-        height: 70px;
-
-        margin-bottom: 15px;
-
-    }
-
-    .banner-home h1 {
-
-        font-size: 1.8rem;
-
-        margin-bottom: 15px;
-
-    }
-
-    .banner-home p {
-
-        font-size: .95rem;
-
+    main section {
+        padding: 60px 15px;
     }
 
     .texto-secao {
-
         font-size: 1rem;
-
     }
 
+    .mitos-home .card-interativo {
+        padding: 30px 20px;
+    }
+
+}
+/* =====================================================
+   IMAGEM DOS EVENTOS
+===================================================== */
+
+.imagem-evento {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.imagem-evento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

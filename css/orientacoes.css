@@ -1,93 +1,56 @@
-/* ===================================================
+/* =========================================================
    ORIENTAÇÕES - NAPNE IFRS CAMPUS ROLANTE
-   =================================================== */
+   ========================================================= */
 
 
-/* ===========================
-   PALETA DE CORES
-=========================== */
+/* =========================================================
+   PALETA
+========================================================= */
 
 :root {
 
-    --azul: #0F4C97;
-    --azul-escuro: #0A376B;
-    --azul-claro: #EAF5FF;
+    --orient-azul: #0F4C97;
+    --orient-azul-escuro: #0A376B;
+    --orient-azul-claro: #EAF5FF;
 
-    --turquesa: #18A999;
-    --verde: #45B36B;
-    --verde-claro: #EEF9F2;
+    --orient-turquesa: #18A999;
 
-    --roxo: #6E49C8;
-    --roxo-claro: #F4F0FF;
+    --orient-verde: #45B36B;
+    --orient-verde-claro: #EEF9F2;
 
-    --amarelo: #FFD54A;
-    --amarelo-claro: #FFF9EA;
+    --orient-roxo: #6E49C8;
+    --orient-roxo-claro: #F4F0FF;
 
-    --cinza: #5F6B7A;
-    --texto: #2C3E50;
+    --orient-amarelo: #FFD54A;
 
-    --branco: #FFFFFF;
+    --orient-cinza: #5F6B7A;
+    --orient-texto: #2C3E50;
+
+    --orient-branco: #FFFFFF;
 
 }
 
 
-/* ===========================
-   CONFIGURAÇÕES GERAIS
-=========================== */
+/* =========================================================
+   CONFIGURAÇÕES DA PÁGINA
+========================================================= */
 
 body {
 
     background: #ffffff;
 
-    color: var(--texto);
+    color: var(--orient-texto);
 
     overflow-x: hidden;
 
 }
 
 
-section {
-
-    padding: 90px 0;
-
-}
-
-
-section h2 {
-
-    color: var(--azul-escuro);
-
-    font-size: 2.4rem;
-
-    font-weight: 700;
-
-    text-align: center;
-
-    margin-bottom: 18px;
-
-}
-
-
-.texto-secao {
-
-    max-width: 760px;
-
-    margin: auto;
-
-    text-align: center;
-
-    color: var(--cinza);
-
-    font-size: 1.08rem;
-
-    margin-bottom: 55px;
-
-}
-
-
-/* ===========================
+/* =========================================================
    BANNER
-=========================== */
+   Usa a classe .banner geral + estilos específicos
+   somente para esta página.
+========================================================= */
 
 .orientacoes-banner {
 
@@ -95,144 +58,178 @@ section h2 {
 
     overflow: hidden;
 
-    padding: 120px 20px 80px;
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(255,255,255,.10) 0,
+            rgba(255,255,255,.10) 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.08) 0,
+            rgba(255,255,255,.08) 2px,
+            transparent 3px
+        ),
+        linear-gradient(
+            135deg,
+            #0F5BA8 0%,
+            #18A999 100%
+        );
 
-    background: linear-gradient(135deg, #0F5BA8 0%, #1B9B8E 100%);
-
-    text-align: center;
-
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(135deg, #0F5BA8 0%, #1B9B8E 100%);
-
-    background-size: 200px 200px, 150px 150px, 180px 180px, 160px 160px, 100%;
-
-}
-
-
-/* Onda na base */
-
-.orientacoes-banner::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 60px;
-
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60"><path d="M0,30 Q300,0 600,30 T1200,30 L1200,60 L0,60 Z" fill="%23ffffff"/></svg>');
-
-    background-repeat: repeat-x;
-
-    background-size: cover;
+    background-size:
+        180px 180px,
+        220px 220px,
+        100% 100%;
 
 }
 
 
-.banner-conteudo {
+/* Conteúdo do banner */
+
+.orientacoes-banner .banner-conteudo {
 
     position: relative;
 
     z-index: 2;
 
-    padding-bottom: 20px;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
 
 }
 
 
-.banner-conteudo i {
+/* Ícone */
 
-    font-size: 3.5rem;
-
-    color: #fff;
+.orientacoes-banner .banner-conteudo > i {
 
     display: block;
 
-    margin-bottom: 25px;
+    font-size: 3.4rem;
+
+    color: #ffffff;
+
+    margin-bottom: 18px;
 
 }
 
 
+/* Título */
+
 .orientacoes-banner h1 {
 
-    color: #fff;
-
-    font-size: 3.5rem;
+    color: #ffffff;
 
     font-weight: 800;
 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     line-height: 1.2;
 
 }
 
 
+/* Texto */
+
 .orientacoes-banner p {
 
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255,255,255,.94);
 
-    font-size: 1.25rem;
+    max-width: 780px;
 
-    max-width: 900px;
+    margin: 0 auto;
 
-    margin: auto;
-
-    line-height: 1.8;
+    line-height: 1.7;
 
 }
 
 
-/* ===================================================
-   ATALHOS - CARDS
-=================================================== */
+/* =========================================================
+   ATALHOS
+========================================================= */
 
 .atalhos-orientacoes {
 
     background: #ffffff;
 
+    padding: 80px 0;
+
 }
 
+
+/* Título */
+
+.atalhos-orientacoes h2 {
+
+    color: var(--orient-azul-escuro);
+
+    font-size: 2.3rem;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Texto */
+
+.atalhos-orientacoes .texto-secao {
+
+    max-width: 760px;
+
+    margin: 0 auto 45px;
+
+    color: var(--orient-cinza);
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CARDS DE ATALHO
+========================================================= */
 
 .card-atalho {
 
     display: block;
 
-    background: #fff;
-
-    border-radius: 25px;
-
-    padding: 35px 30px;
-
-    text-align: center;
-
     height: 100%;
-
-    transition: .35s;
-
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
-
-    border-top: 8px solid transparent;
 
     position: relative;
 
     overflow: hidden;
 
+    padding: 35px 28px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    border-top: 6px solid transparent;
+
     text-decoration: none;
 
     color: inherit;
 
+    text-align: center;
+
+    box-shadow: 0 10px 28px rgba(15, 76, 151, .09);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
 }
 
+
+/* Círculo decorativo */
 
 .card-atalho::before {
 
@@ -240,80 +237,91 @@ section h2 {
 
     position: absolute;
 
-    width: 120px;
+    width: 130px;
 
-    height: 120px;
+    height: 130px;
 
     border-radius: 50%;
 
-    top: -60px;
+    top: -70px;
 
-    right: -60px;
+    right: -70px;
 
-    opacity: .15;
+    opacity: .10;
 
 }
 
 
+/* Hover */
+
 .card-atalho:hover {
 
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 
-    box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
-
-    text-decoration: none;
+    box-shadow: 0 18px 35px rgba(15, 76, 151, .15);
 
     color: inherit;
 
 }
 
 
-.card-atalho i {
+/* Ícones */
 
-    width: 85px;
+.card-atalho > i {
 
-    height: 85px;
+    width: 82px;
 
-    margin: auto;
+    height: 82px;
+
+    margin: 0 auto 22px;
 
     border-radius: 50%;
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
 
-    margin-bottom: 25px;
+    justify-content: center;
 
-    font-size: 2.3rem;
+    font-size: 2.2rem;
 
 }
 
+
+/* Títulos */
 
 .card-atalho h3 {
 
-    color: var(--azul-escuro);
+    color: var(--orient-azul-escuro);
 
-    font-size: 1.4rem;
+    font-size: 1.35rem;
 
-    font-weight: 700;
+    font-weight: 750;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
 }
 
+
+/* Textos */
 
 .card-atalho p {
 
-    color: var(--cinza);
+    color: var(--orient-cinza);
 
-    line-height: 1.7;
+    line-height: 1.65;
+
+    margin-bottom: 0;
 
 }
 
 
-/* Cores dos atalhos */
+/* =========================================================
+   CORES DOS CARDS
+========================================================= */
+
+
+/* ESTUDANTE */
 
 .card-atalho:nth-child(1) {
 
@@ -327,7 +335,7 @@ section h2 {
 
 }
 
-.card-atalho:nth-child(1) i {
+.card-atalho:nth-child(1) > i {
 
     background: #E8F3FF;
 
@@ -336,61 +344,67 @@ section h2 {
 }
 
 
+/* PROFESSOR */
+
 .card-atalho:nth-child(2) {
 
-    border-top-color: var(--verde);
+    border-top-color: var(--orient-verde);
 
 }
 
 .card-atalho:nth-child(2)::before {
 
-    background: var(--verde);
+    background: var(--orient-verde);
 
 }
 
-.card-atalho:nth-child(2) i {
+.card-atalho:nth-child(2) > i {
 
-    background: #EEF9F2;
+    background: var(--orient-verde-claro);
 
-    color: var(--verde);
+    color: var(--orient-verde);
 
 }
 
+
+/* FAMÍLIA */
 
 .card-atalho:nth-child(3) {
 
-    border-top-color: var(--roxo);
+    border-top-color: var(--orient-roxo);
 
 }
 
 .card-atalho:nth-child(3)::before {
 
-    background: var(--roxo);
+    background: var(--orient-roxo);
 
 }
 
-.card-atalho:nth-child(3) i {
+.card-atalho:nth-child(3) > i {
 
-    background: #F4F0FF;
+    background: var(--orient-roxo-claro);
 
-    color: var(--roxo);
+    color: var(--orient-roxo);
 
 }
 
+
+/* NAPNE */
 
 .card-atalho:nth-child(4) {
 
-    border-top-color: var(--amarelo);
+    border-top-color: var(--orient-amarelo);
 
 }
 
 .card-atalho:nth-child(4)::before {
 
-    background: var(--amarelo);
+    background: var(--orient-amarelo);
 
 }
 
-.card-atalho:nth-child(4) i {
+.card-atalho:nth-child(4) > i {
 
     background: #FFF4CF;
 
@@ -399,83 +413,93 @@ section h2 {
 }
 
 
-/* ===================================================
+/* =========================================================
    BLOCOS DE ORIENTAÇÃO
-=================================================== */
+========================================================= */
 
 .bloco-orientacao {
+
+    padding: 85px 0;
 
     background: #ffffff;
 
 }
 
 
+/* Fundo alternativo */
+
 .bloco-orientacao.fundo-claro {
 
-    background: var(--azul-claro);
+    background: var(--orient-azul-claro);
 
 }
 
+
+/* Títulos */
 
 .bloco-orientacao h2 {
 
-    color: var(--azul-escuro);
+    color: var(--orient-azul-escuro);
 
-    font-size: 2rem;
+    font-size: 2.1rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    margin-bottom: 25px;
-
-    text-align: left;
+    margin-bottom: 22px;
 
 }
 
 
+/* Texto */
+
 .bloco-orientacao p {
 
-    color: var(--cinza);
+    color: var(--orient-cinza);
 
     font-size: 1.05rem;
 
     line-height: 1.8;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
 }
 
 
-/* Lista de orientação */
+/* =========================================================
+   LISTAS
+========================================================= */
 
 .lista-orientacao {
 
-    background: #fff;
+    background: #ffffff;
 
-    padding: 35px 30px;
+    padding: 35px 32px;
 
-    border-radius: 25px;
+    border-radius: 22px;
 
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+    border-left: 6px solid var(--orient-turquesa);
 
-    border-left: 8px solid var(--azul);
+    box-shadow: 0 10px 28px rgba(15, 76, 151, .09);
 
 }
 
+
+/* Título */
 
 .lista-orientacao h3 {
 
-    color: var(--azul-escuro);
+    color: var(--orient-azul-escuro);
 
-    font-size: 1.35rem;
+    font-size: 1.3rem;
 
-    font-weight: 700;
+    font-weight: 750;
 
-    margin-bottom: 25px;
-
-    text-align: center;
+    margin-bottom: 24px;
 
 }
 
+
+/* Lista */
 
 .lista-orientacao ul {
 
@@ -488,22 +512,26 @@ section h2 {
 }
 
 
+/* Itens */
+
 .lista-orientacao li {
-
-    color: var(--cinza);
-
-    font-size: 1.05rem;
-
-    line-height: 1.8;
-
-    margin-bottom: 16px;
-
-    padding-left: 28px;
 
     position: relative;
 
+    padding-left: 30px;
+
+    margin-bottom: 15px;
+
+    color: var(--orient-cinza);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
 }
 
+
+/* Check */
 
 .lista-orientacao li::before {
 
@@ -513,68 +541,150 @@ section h2 {
 
     left: 0;
 
-    color: var(--verde);
+    top: 0;
 
-    font-weight: 700;
+    color: var(--orient-turquesa);
 
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+
+    font-weight: 800;
 
 }
 
 
-/* ===================================================
-   CONTATO
-=================================================== */
+/* Último item */
+
+.lista-orientacao li:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   PRECISA DE AJUDA?
+   Bloco combinado visualmente com o banner
+========================================================= */
 
 .contato-orientacoes {
 
-    background: linear-gradient(135deg, #f8f5ff, #efe8ff);
-
-}
-
-
-.card-contato-orientacoes {
-
-    max-width: 850px;
-
-    margin: auto;
-
-    background: linear-gradient(135deg, #0B4FA3 0%, #18A999 100%);
-
-    color: #fff;
-
-    padding: 50px;
-
-    border-radius: 30px;
-
-    text-align: center;
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
-
     position: relative;
+
+    padding: 85px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #EAF5FF 0%,
+            #F3FBFA 100%
+        );
 
     overflow: hidden;
 
 }
 
 
+/* Elementos decorativos */
+
+.contato-orientacoes::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(24,169,153,.08);
+
+    top: -100px;
+
+    left: -80px;
+
+}
+
+
+.contato-orientacoes::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(15,76,151,.06);
+
+    bottom: -130px;
+
+    right: -100px;
+
+}
+
+
+/* =========================================================
+   CARD DE CONTATO
+========================================================= */
+
+.card-contato-orientacoes {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 50px 45px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0F4C97 0%,
+            #1265A5 45%,
+            #18A999 100%
+        );
+
+    box-shadow:
+        0 18px 40px rgba(15,76,151,.20);
+
+    overflow: hidden;
+
+}
+
+
+/* Decoração interna */
+
 .card-contato-orientacoes::before {
 
     content: "";
 
-    width: 350px;
+    position: absolute;
 
-    height: 350px;
+    width: 280px;
+
+    height: 280px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, .08);
+    background: rgba(255,255,255,.07);
 
-    position: absolute;
+    right: -100px;
 
-    right: -120px;
-
-    bottom: -150px;
+    top: -120px;
 
 }
 
@@ -583,86 +693,111 @@ section h2 {
 
     content: "";
 
-    width: 250px;
+    position: absolute;
 
-    height: 250px;
+    width: 200px;
+
+    height: 200px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, .07);
+    background: rgba(255,255,255,.06);
 
-    position: absolute;
+    left: -80px;
 
-    left: -100px;
-
-    top: -120px;
+    bottom: -100px;
 
 }
 
 
-.card-contato-orientacoes {
+/* Ícone */
+
+.card-contato-orientacoes > i {
 
     position: relative;
 
     z-index: 2;
 
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 75px;
+
+    height: 75px;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.14);
+
+    color: var(--orient-amarelo);
+
+    font-size: 2.4rem;
+
 }
 
 
-.card-contato-orientacoes i {
-
-    font-size: 3rem;
-
-    margin-bottom: 25px;
-
-    display: block;
-
-    color: var(--amarelo);
-
-}
-
+/* Título */
 
 .card-contato-orientacoes h2 {
 
-    color: #fff;
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
 
     font-size: 2.2rem;
 
     font-weight: 800;
 
-    margin-bottom: 20px;
-
-    text-align: center;
+    margin-bottom: 15px;
 
 }
 
+
+/* Texto */
 
 .card-contato-orientacoes p {
 
-    color: #E7EEF6;
+    position: relative;
 
-    font-size: 1.1rem;
+    z-index: 2;
 
-    line-height: 1.8;
+    max-width: 680px;
 
-    margin-bottom: 35px;
+    margin: 0 auto 30px;
 
-    max-width: 700px;
+    color: rgba(255,255,255,.90);
 
-    margin-left: auto;
+    font-size: 1.05rem;
 
-    margin-right: auto;
+    line-height: 1.75;
 
 }
 
 
+/* =========================================================
+   BOTÕES DE CONTATO
+========================================================= */
+
 .botoes-contato {
+
+    position: relative;
+
+    z-index: 3;
 
     display: flex;
 
-    gap: 20px;
-
     justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
 
     flex-wrap: wrap;
 
@@ -671,87 +806,128 @@ section h2 {
 
 .botao-principal {
 
-    display: inline-block;
+    display: inline-flex;
 
-    background: #fff;
+    align-items: center;
 
-    color: #0B4FA3;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 170px;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: var(--orient-azul);
 
     text-decoration: none;
 
-    padding: 16px 36px;
-
-    border-radius: 40px;
-
-    font-weight: 700;
-
     font-size: 1rem;
 
-    transition: .35s;
+    font-weight: 750;
 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
 
 }
 
+
+/* Ícone dos botões */
+
+.botao-principal i {
+
+    margin: 0;
+
+    font-size: 1.15rem;
+
+}
+
+
+/* Hover */
 
 .botao-principal:hover {
 
     transform: translateY(-4px);
 
-    background: #F7F7F7;
+    color: var(--orient-azul-escuro);
 
-    color: #0B4FA3;
+    background: #F8FCFF;
+
+    box-shadow: 0 12px 25px rgba(0,0,0,.20);
 
     text-decoration: none;
 
 }
 
 
-.botao-principal i {
+/* =========================================================
+   RODAPÉ
+========================================================= */
 
-    margin-right: 10px;
+/*
+   Não criamos regras genéricas para .footer aqui.
+   O footer continua sendo controlado pelo style.css.
+*/
 
-}
 
-
-/* ===================================================
-   RESPONSIVO
-=================================================== */
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
 
 @media (max-width: 991px) {
 
-    .orientacoes-banner {
-
-        padding: 100px 20px 70px;
-
-    }
-
-    .orientacoes-banner h1 {
-
-        font-size: 2.8rem;
-
-    }
-
-    .orientacoes-banner p {
-
-        font-size: 1.15rem;
-
-    }
-
-    section {
+    .atalhos-orientacoes {
 
         padding: 70px 0;
 
     }
 
+    .bloco-orientacao {
+
+        padding: 70px 0;
+
+    }
+
+    .contato-orientacoes {
+
+        padding: 70px 0;
+
+    }
+
+    .card-contato-orientacoes {
+
+        padding: 45px 35px;
+
+    }
+
 }
 
 
+/* =========================================================
+   TABLET / CELULAR
+========================================================= */
+
 @media (max-width: 768px) {
+
+    .orientacoes-banner .banner-conteudo > i {
+
+        font-size: 2.8rem;
+
+        margin-bottom: 15px;
+
+    }
 
     .orientacoes-banner h1 {
 
-        font-size: 2.2rem;
+        font-size: 2.3rem;
 
     }
 
@@ -761,11 +937,13 @@ section h2 {
 
     }
 
-    section h2 {
+
+    .atalhos-orientacoes h2 {
 
         font-size: 2rem;
 
     }
+
 
     .bloco-orientacao h2 {
 
@@ -775,58 +953,74 @@ section h2 {
 
     }
 
+
     .lista-orientacao {
 
         padding: 28px;
 
-        margin-top: 30px;
+        margin-top: 10px;
 
     }
+
 
     .card-atalho {
 
-        padding: 28px;
+        padding: 30px 25px;
 
     }
 
+
     .card-contato-orientacoes {
 
-        padding: 35px 28px;
+        padding: 40px 25px;
+
+        border-radius: 24px;
+
+    }
+
+
+    .card-contato-orientacoes h2 {
+
+        font-size: 1.9rem;
 
     }
 
 }
 
 
+/* =========================================================
+   CELULAR
+========================================================= */
+
 @media (max-width: 576px) {
 
-    .navbar-brand {
+    .atalhos-orientacoes {
 
-        font-size: 1.5rem;
-
-    }
-
-    .orientacoes-banner {
-
-        padding: 60px 15px 50px;
+        padding: 55px 0;
 
     }
 
-    .banner-conteudo i {
 
-        font-size: 2.5rem;
+    .bloco-orientacao {
 
-        margin-bottom: 15px;
+        padding: 60px 0;
 
     }
+
+
+    .contato-orientacoes {
+
+        padding: 55px 15px;
+
+    }
+
 
     .orientacoes-banner h1 {
 
-        font-size: 1.8rem;
-
-        margin-bottom: 15px;
+        font-size: 1.9rem;
 
     }
+
 
     .orientacoes-banner p {
 
@@ -834,23 +1028,60 @@ section h2 {
 
     }
 
-    .texto-secao {
 
-        font-size: 1rem;
+    .atalhos-orientacoes h2 {
+
+        font-size: 1.8rem;
 
     }
+
+
+    .card-contato-orientacoes {
+
+        padding: 35px 20px;
+
+    }
+
+
+    .card-contato-orientacoes > i {
+
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 2rem;
+
+    }
+
+
+    .card-contato-orientacoes h2 {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .card-contato-orientacoes p {
+
+        font-size: .95rem;
+
+    }
+
 
     .botoes-contato {
 
         flex-direction: column;
 
+        width: 100%;
+
     }
+
 
     .botao-principal {
 
         width: 100%;
 
-        text-align: center;
+        min-width: 0;
 
     }
 

@@ -1,0 +1,259 @@
+/* =========================================================
+   PERFIL DO USUÁRIO
+   NAPNE - IFRS Campus Rolante
+========================================================= */
+
+
+/* =========================================================
+   ÁREA DO PERFIL
+========================================================= */
+
+.perfil-section {
+    padding: 80px 20px;
+}
+
+
+/* =========================================================
+   CARD DO PERFIL
+========================================================= */
+
+.perfil-card {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    background: var(--branco);
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    box-shadow: var(--sombra);
+
+    display: grid;
+
+    grid-template-columns: 300px 1fr;
+
+    gap: 55px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.foto-area {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.foto-container {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 6px solid var(--azul-claro);
+
+    box-shadow: 0 8px 25px rgba(10, 55, 107, .15);
+
+    margin-bottom: 20px;
+
+    background: var(--azul-claro);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.foto-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   BOTÃO DA FOTO
+========================================================= */
+
+.btn-foto {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background: var(--azul);
+
+    color: var(--branco);
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.btn-foto:hover {
+    background: var(--turquesa);
+
+    transform: translateY(-2px);
+}
+
+
+.foto-area small {
+    display: block;
+
+    max-width: 230px;
+
+    margin-top: 12px;
+
+    color: var(--cinza);
+
+    font-size: .85rem;
+}
+
+
+/* =========================================================
+   DADOS
+========================================================= */
+
+.dados-area h2 {
+    text-align: left;
+
+    padding-bottom: 12px;
+}
+
+
+.dados-area h2::after {
+    left: 0;
+
+    transform: none;
+}
+
+
+.dados-area h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 8px;
+}
+
+
+.dados-area .form-label {
+    color: var(--azul-escuro);
+
+    font-weight: 600;
+}
+
+
+.dados-area .form-control {
+    border: 2px solid var(--azul-borda);
+
+    border-radius: 12px;
+
+    padding: 12px 15px;
+
+    transition: .25s;
+}
+
+
+.dados-area .form-control:focus {
+    border-color: var(--turquesa);
+
+    box-shadow: 0 0 0 3px rgba(24, 169, 153, .12);
+}
+
+
+.dados-area hr {
+    margin: 30px 0;
+
+    border-color: var(--azul-borda);
+}
+
+
+.senha-info {
+    font-size: .9rem;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR
+========================================================= */
+
+.btn-salvar {
+    margin-top: 10px;
+
+    padding: 12px 25px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET / CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .perfil-card {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 30px 22px;
+    }
+
+    .dados-area h2 {
+        text-align: center;
+    }
+
+    .dados-area h2::after {
+        left: 50%;
+
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .perfil-section {
+        padding: 50px 15px;
+    }
+
+    .perfil-card {
+        padding: 25px 18px;
+
+        border-radius: 18px;
+    }
+
+    .foto-container {
+        width: 150px;
+        height: 150px;
+    }
+
+}

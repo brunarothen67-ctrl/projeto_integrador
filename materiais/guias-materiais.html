@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guias e Materiais de Apoio | NAPNE IFRS</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/materiais-usuarios.css">
+
+    <style>
+
+        .materiais-pagina {
+            padding: 60px 0;
+        }
+
+        .materiais-introducao {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 45px;
+        }
+
+        .materiais-introducao h2 {
+            margin-bottom: 15px;
+        }
+
+        .materiais-introducao p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .materiais-lista {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .material-card {
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            border-radius: 16px;
+            padding: 25px;
+
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 0.2s;
+        }
+
+        .material-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        }
+
+        .material-icone {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 12px;
+
+            background: #f0eef9;
+            color: #5d568f;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            margin-bottom: 18px;
+        }
+
+        .material-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #333333;
+        }
+
+        .material-card p {
+            color: #666666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .material-card .btn {
+            align-self: flex-start;
+            border-radius: 8px;
+            padding: 9px 16px;
+        }
+
+        .sem-materiais {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 50px 25px;
+
+            background: #ffffff;
+
+            border: 1px dashed #d8d8d8;
+
+            border-radius: 16px;
+
+            color: #777777;
+        }
+
+        .sem-materiais i {
+            font-size: 45px;
+            color: #aaa;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .sem-materiais h3 {
+            color: #444444;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .sem-materiais p {
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+
+            .materiais-lista {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+            .materiais-pagina {
+                padding: 40px 0;
+            }
+
+            .materiais-lista {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container">
+
+                <a
+                    class="navbar-brand"
+                    href="../index.html">
+
+                    <i class="bi bi-universal-access"></i>
+
+                    NAPNE IFRS
+
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menu">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="../index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="../napne.html">
+                                NAPNE
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="../projetos.html">
+                                Projetos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                href="../acessibilidade.html">
+                                Acessibilidade
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="../relatos.html">
+                                Relatos
+                            </a>
+                        </li>
+
+                        <li
+                            class="nav-item"
+                            id="areaEntrar">
+
+                            <a
+                                class="nav-link"
+                                href="../login.html">
+                                Entrar
+                            </a>
+
+                        </li>
+
+                        <li
+                            class="nav-item ms-lg-2"
+                            id="areaCadastro">
+
+                            <a
+                                class="btn-cadastro"
+                                href="../cadastro.html">
+                                Cadastrar
+                            </a>
+
+                        </li>
+
+                        <li
+                            class="nav-item"
+                            id="areaPerfil"
+                            style="display: none;">
+
+                            <a
+                                class="nav-link"
+                                href="../perfil.html">
+
+                                <i class="bi bi-person-circle"></i>
+
+                                <span id="nomeUsuarioNavbar">
+                                    Meu perfil
+                                </span>
+
+                            </a>
+
+                        </li>
+
+                        <li
+                            class="nav-item"
+                            id="areaSair"
+                            style="display: none;">
+
+                            <a
+                                class="nav-link"
+                                href="#"
+                                id="btnSairNavbar">
+
+                                <i class="bi bi-box-arrow-right"></i>
+
+                                Sair
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <section class="materiais-cabecalho">
+
+        <h1>
+            Guias e materiais de apoio
+        </h1>
+
+        <p>
+            Cartilhas, guias e materiais práticos para
+            consulta e apoio no cotidiano.
+        </p>
+
+    </section>
+
+
+    <main>
+
+        <section class="materiais-pagina">
+
+            <div class="container">
+
+                <div class="materiais-introducao">
+
+                    <h2>
+                        Guias e materiais de apoio
+                    </h2>
+
+                    <p>
+                        Consulte materiais práticos que podem auxiliar
+                        estudantes, servidores e comunidade acadêmica
+                        em situações relacionadas à inclusão e
+                        acessibilidade.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="listaMateriais"
+                    class="materiais-lista"
+                    data-categoria="guias">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <h4>NAPNE</h4>
+
+                    <p>
+                        Núcleo de Atendimento às Pessoas com
+                        Necessidades Educacionais Específicas
+                        do IFRS Campus Rolante.
+                    </p>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h4>Links</h4>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <a href="../index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../napne.html">
+                                NAPNE
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../acessibilidade.html">
+                                Acessibilidade
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../projetos.html">
+                                Projetos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../relatos.html">
+                                Relatos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h4>Contato</h4>
+
+                    <p>
+                        IFRS Campus Rolante
+                    </p>
+
+                    <p>
+                        napne@rolante.ifrs.edu.br
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center mb-0">
+                © 2026 NAPNE - IFRS Campus Rolante
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const areaEntrar =
+                document.getElementById("areaEntrar");
+
+            const areaCadastro =
+                document.getElementById("areaCadastro");
+
+            const areaPerfil =
+                document.getElementById("areaPerfil");
+
+            const areaSair =
+                document.getElementById("areaSair");
+
+            const nomeUsuarioNavbar =
+                document.getElementById("nomeUsuarioNavbar");
+
+            const btnSairNavbar =
+                document.getElementById("btnSairNavbar");
+
+
+            const usuarioLogado =
+                JSON.parse(
+                    localStorage.getItem("usuarioLogado")
+                );
+
+
+            if (!usuarioLogado) {
+
+                areaEntrar.style.display = "block";
+                areaCadastro.style.display = "block";
+
+                areaPerfil.style.display = "none";
+                areaSair.style.display = "none";
+
+                return;
+
+            }
+
+
+            if (usuarioLogado.tipo === "usuario") {
+
+                areaEntrar.style.display = "none";
+                areaCadastro.style.display = "none";
+
+                areaPerfil.style.display = "block";
+                areaSair.style.display = "block";
+
+                nomeUsuarioNavbar.textContent =
+                    usuarioLogado.nome || "Meu perfil";
+
+            }
+
+
+            if (usuarioLogado.tipo === "admin") {
+
+                areaEntrar.style.display = "none";
+                areaCadastro.style.display = "none";
+
+                areaPerfil.style.display = "none";
+                areaSair.style.display = "block";
+
+            }
+
+
+            btnSairNavbar.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    localStorage.removeItem(
+                        "usuarioLogado"
+                    );
+
+                    window.location.href =
+                        "../index.html";
+
+                }
+            );
+
+        });
+
+    </script>
+
+
+    <script src="../js/materiais.js"></script>
+
+</body>
+
+</html>

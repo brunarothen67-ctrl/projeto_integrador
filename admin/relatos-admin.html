@@ -1,40 +1,31 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatos | Painel Administrativo - NAPNE IFRS</title>
 
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-<title>Relatos | Painel Administrativo</title>
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- CSS geral -->
+    <link rel="stylesheet" href="../css/style.css">
 
+    <!-- CSS do painel -->
+    <link rel="stylesheet" href="../css/painel-admin.css">
 
-<!-- Bootstrap -->
-
-<link 
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-rel="stylesheet">
-
-
-
-<!-- Bootstrap Icons -->
-
-<link 
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="../css/style.css">
-
-<link rel="stylesheet" href="../css/relatos-admin.css">
-
+    <!-- CSS dos relatos -->
+    <link rel="stylesheet" href="../css/relatos-admin.css">
 
 </head>
 
@@ -42,629 +33,809 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 <body>
 
 
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
 
-<header>
+<aside class="admin-sidebar" id="adminSidebar">
 
+    <div class="sidebar-logo">
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+        <i class="bi bi-universal-access"></i>
 
+        <span>NAPNE IFRS</span>
 
-<div class="container">
+    </div>
 
 
-<a class="navbar-brand" href="painel-admin.html">
+    <div class="sidebar-admin">
 
-NAPNE IFRS
+        <div class="sidebar-avatar">
 
-</a>
+            <i class="bi bi-person-fill"></i>
 
+        </div>
 
+        <div>
 
-<div class="ms-auto">
+            <strong>Administrador</strong>
 
+            <small>Painel administrativo</small>
 
-<a href="painel-admin.html" class="btn btn-light">
+        </div>
 
-<i class="bi bi-arrow-left"></i>
+    </div>
 
-Voltar ao Painel
 
-</a>
+    <nav class="sidebar-menu">
 
 
-</div>
+        <a
+            href="painel-admin.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-grid-1x2-fill"></i>
 
-</div>
+            <span>Dashboard</span>
 
+        </a>
 
-</nav>
 
+        <a
+            href="projetos-admin.html"
+            class="sidebar-link"
+        >
 
-</header>
+            <i class="bi bi-folder2-open"></i>
 
+            <span>Projetos</span>
 
+        </a>
 
 
+        <a
+            href="eventos-admin.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-calendar-event"></i>
 
+            <span>Eventos</span>
 
-<section class="banner pagina-banner">
+        </a>
 
 
-<div class="banner-conteudo">
+        <a
+            href="relatos-admin.html"
+            class="sidebar-link active"
+        >
 
+            <i class="bi bi-chat-left-text"></i>
 
-<h1>
+            <span>Relatos</span>
 
-Gerenciamento de Relatos
+        </a>
 
-</h1>
 
+        <a
+            href="materiais-admin.html"
+            class="sidebar-link"
+        >
 
-<p>
+            <i class="bi bi-file-earmark-text"></i>
 
-Visualize e organize os relatos enviados pela comunidade acadêmica.
+            <span>Materiais</span>
 
-</p>
+        </a>
 
 
-</div>
+        <a
+            href="usuarios-admin.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-people"></i>
 
-</section>
+            <span>Usuários</span>
 
+        </a>
 
 
+        <div class="sidebar-divisor"></div>
 
 
+        <a
+            href="../index.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-house"></i>
 
+            <span>Voltar ao site</span>
 
-<main class="relatos-admin-area">
+        </a>
 
 
-<div class="container">
+        <button
+            type="button"
+            class="sidebar-sair"
+            id="btnSairAdmin"
+        >
 
+            <i class="bi bi-box-arrow-right"></i>
 
+            <span>Sair</span>
 
+        </button>
 
 
+    </nav>
 
-<section class="admin-titulo">
+</aside>
 
 
-<h2>
 
-Relatos Publicados
+<!-- =====================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
 
-</h2>
+<main class="admin-main">
 
 
-<p>
+    <!-- CABEÇALHO -->
 
-Gerencie os relatos compartilhados pelos usuários do site.
+    <header class="admin-header">
 
-</p>
+        <div>
 
+            <h1>Relatos</h1>
 
-</section>
+            <p>
+                Analise os relatos enviados pelos usuários
+                antes de publicá-los no site.
+            </p>
 
+        </div>
 
 
+        <button
+            type="button"
+            class="sidebar-mobile-button"
+            id="btnMenuAdmin"
+        >
 
+            <i class="bi bi-list"></i>
 
+        </button>
 
+    </header>
 
 
-<!-- FILTRO POR TIPO -->
 
+    <!-- FILTRO -->
 
-<section class="filtro-relatos">
+    <section class="admin-section">
 
+        <div class="admin-section-title">
 
-<div class="card-admin">
+            <div>
 
+                <h2>Relatos recebidos</h2>
 
-<label class="form-label">
+                <p>
+                    Aprove ou exclua os relatos enviados
+                    pela comunidade.
+                </p>
 
-Filtrar por tipo de relato
+            </div>
 
-</label>
+        </div>
 
 
+        <div class="admin-form-card">
 
-<select class="form-select">
+            <label
+                for="filtroRelatos"
+                class="form-label"
+            >
+                Filtrar relatos
+            </label>
 
 
-<option>
+            <select
+                id="filtroRelatos"
+                class="form-select"
+            >
 
-Todos os relatos
+                <option value="todos">
+                    Todos os relatos
+                </option>
 
-</option>
+                <option value="pendente">
+                    Aguardando aprovação
+                </option>
 
+                <option value="publicado">
+                    Publicados
+                </option>
 
-<option>
+            </select>
 
-Experiência com o NAPNE
+        </div>
 
-</option>
+    </section>
 
 
-<option>
 
-Sugestão de melhoria
+    <!-- LISTA DINÂMICA -->
 
-</option>
+    <section class="admin-section">
 
+        <div
+            id="listaRelatos"
+            class="relatos-admin-list"
+        >
 
-<option>
+            <!--
+                OS RELATOS SERÃO INSERIDOS
+                AUTOMATICAMENTE PELO JAVASCRIPT
+            -->
 
-Dificuldade encontrada
+        </div>
 
-</option>
+    </section>
 
 
-<option>
 
-Elogio
+    <!-- RODAPÉ -->
 
-</option>
+    <footer class="admin-footer">
 
+        <p>
+            © 2026 NAPNE - IFRS Campus Rolante
+        </p>
 
-<option>
-
-Outro
-
-</option>
-
-
-</select>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- LISTA DE RELATOS -->
-
-
-<section class="lista-relatos">
-
-
-<div class="row g-4">
-
-
-
-
-
-
-
-<div class="col-md-6 col-lg-4">
-
-
-<div class="relato-card">
-
-
-
-<i class="bi bi-chat-heart"></i>
-
-
-
-<h3>
-
-Experiência acadêmica
-
-</h3>
-
-
-
-<span class="tipo-relato">
-
-Experiência com o NAPNE
-
-</span>
-
-
-
-
-
-<p>
-
-O atendimento recebido contribuiu para melhorar minha participação nas atividades acadêmicas.
-
-</p>
-
-
-
-
-
-<div class="informacoes-relato">
-
-
-<p>
-
-<i class="bi bi-person"></i>
-
-Usuário anônimo
-
-</p>
-
-
-
-<p>
-
-<i class="bi bi-calendar"></i>
-
-04/08/2026
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="acoes-relato">
-
-
-<button class="btn btn-outline-primary">
-
-<i class="bi bi-pencil"></i>
-
-Editar
-
-</button>
-
-
-
-
-<button class="btn btn-warning">
-
-<i class="bi bi-archive"></i>
-
-Arquivar
-
-</button>
-
-
-
-
-<button class="btn btn-outline-danger">
-
-<i class="bi bi-trash"></i>
-
-Excluir
-
-</button>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="col-md-6 col-lg-4">
-
-
-<div class="relato-card">
-
-
-
-<i class="bi bi-lightbulb"></i>
-
-
-
-<h3>
-
-Sugestão de melhoria
-
-</h3>
-
-
-
-<span class="tipo-relato">
-
-Sugestão de melhoria
-
-</span>
-
-
-
-
-
-<p>
-
-Sugestão enviada para contribuir com melhorias nos serviços de acessibilidade.
-
-</p>
-
-
-
-
-
-<div class="informacoes-relato">
-
-
-<p>
-
-<i class="bi bi-person"></i>
-
-Maria Silva
-
-</p>
-
-
-
-<p>
-
-<i class="bi bi-calendar"></i>
-
-28/07/2026
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="acoes-relato">
-
-
-<button class="btn btn-outline-primary">
-
-<i class="bi bi-pencil"></i>
-
-Editar
-
-</button>
-
-
-
-
-<button class="btn btn-warning">
-
-<i class="bi bi-archive"></i>
-
-Arquivar
-
-</button>
-
-
-
-
-<button class="btn btn-outline-danger">
-
-<i class="bi bi-trash"></i>
-
-Excluir
-
-</button>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="col-md-6 col-lg-4">
-
-
-<div class="relato-card">
-
-
-
-<i class="bi bi-heart"></i>
-
-
-
-<h3>
-
-Elogio ao atendimento
-
-</h3>
-
-
-
-<span class="tipo-relato">
-
-Elogio
-
-</span>
-
-
-
-
-
-<p>
-
-Relato positivo sobre o suporte oferecido pelo núcleo.
-
-</p>
-
-
-
-
-
-<div class="informacoes-relato">
-
-
-<p>
-
-<i class="bi bi-person"></i>
-
-Usuário anônimo
-
-</p>
-
-
-
-<p>
-
-<i class="bi bi-calendar"></i>
-
-15/07/2026
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="acoes-relato">
-
-
-<button class="btn btn-outline-primary">
-
-<i class="bi bi-pencil"></i>
-
-Editar
-
-</button>
-
-
-
-
-<button class="btn btn-warning">
-
-<i class="bi bi-archive"></i>
-
-Arquivar
-
-</button>
-
-
-
-
-<button class="btn btn-outline-danger">
-
-<i class="bi bi-trash"></i>
-
-Excluir
-
-</button>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-</div>
+    </footer>
 
 
 </main>
 
 
 
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
 
 
 
+<!-- JAVASCRIPT -->
 
-<footer class="footer">
+<script>
 
-
-<div class="container">
-
-
-<p class="text-center mb-0">
-
-© 2026 NAPNE - IFRS Campus Rolante
-
-</p>
+document.addEventListener("DOMContentLoaded", function () {
 
 
-</div>
+    // =====================================================
+    // SAIR
+    // =====================================================
+
+    const btnSair =
+        document.getElementById("btnSairAdmin");
 
 
-</footer>
+    if (btnSair) {
+
+        btnSair.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "usuarioLogado"
+                );
+
+                window.location.href =
+                    "../index.html";
+
+            }
+        );
+
+    }
 
 
+    // =====================================================
+    // MENU MOBILE
+    // =====================================================
+
+    const btnMenu =
+        document.getElementById("btnMenuAdmin");
+
+    const sidebar =
+        document.getElementById("adminSidebar");
 
 
+    if (btnMenu && sidebar) {
+
+        btnMenu.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle(
+                    "aberta"
+                );
+
+            }
+        );
+
+    }
 
 
+    // =====================================================
+    // OBTER RELATOS
+    // =====================================================
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    function obterRelatos() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem("relatos")
+            ) || [];
+
+        } catch (erro) {
+
+            return [];
+
+        }
+
+    }
+
+
+    // =====================================================
+    // SALVAR RELATOS
+    // =====================================================
+
+    function salvarRelatos(relatos) {
+
+        localStorage.setItem(
+            "relatos",
+            JSON.stringify(relatos)
+        );
+
+    }
+
+
+    // =====================================================
+    // MOSTRAR RELATOS
+    // =====================================================
+
+    function mostrarRelatos() {
+
+        const lista =
+            document.getElementById(
+                "listaRelatos"
+            );
+
+
+        if (!lista) {
+            return;
+        }
+
+
+        const relatos =
+            obterRelatos();
+
+
+        lista.innerHTML = "";
+
+
+        // -----------------------------------------------
+        // NENHUM RELATO
+        // -----------------------------------------------
+
+        if (relatos.length === 0) {
+
+            lista.innerHTML = `
+
+                <div class="nenhum-relato">
+
+                    <i class="bi bi-chat-left-text"></i>
+
+                    <h3>
+                        Nenhum relato recebido
+                    </h3>
+
+                    <p>
+                        Quando um usuário enviar um relato,
+                        ele aparecerá aqui para análise.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        // -----------------------------------------------
+        // CRIAR CARDS
+        // -----------------------------------------------
+
+        relatos.forEach(function (relato) {
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "relato-card";
+
+
+            card.dataset.status =
+                relato.status || "pendente";
+
+
+            const status =
+                relato.status || "pendente";
+
+
+            const statusHTML =
+                status === "publicado"
+
+                ?
+
+                `
+                <div class="relato-status publicado">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Publicado
+
+                </div>
+                `
+
+                :
+
+                `
+                <div class="relato-status pendente">
+
+                    <i class="bi bi-clock"></i>
+
+                    Aguardando aprovação
+
+                </div>
+                `;
+
+
+            card.innerHTML = `
+
+                ${statusHTML}
+
+
+                <i class="bi bi-chat-heart relato-icone"></i>
+
+
+                <h3>
+                    ${relato.titulo}
+                </h3>
+
+
+                <span class="tipo-relato">
+
+                    ${relato.tipo}
+
+                </span>
+
+
+                <p class="texto-relato">
+
+                    ${relato.texto}
+
+                </p>
+
+
+                <div class="informacoes-relato">
+
+                    <p>
+
+                        <i class="bi bi-person"></i>
+
+                        ${
+                            relato.anonimo
+                            ? "Usuário anônimo"
+                            : relato.nome
+                        }
+
+                    </p>
+
+
+                    <p>
+
+                        <i class="bi bi-calendar"></i>
+
+                        ${relato.data}
+
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-relato">
+
+
+                    ${
+                        status === "pendente"
+
+                        ?
+
+                        `
+                        <button
+                            type="button"
+                            class="btn btn-success btn-publicar"
+                            data-id="${relato.id}"
+                        >
+
+                            <i class="bi bi-check-circle"></i>
+
+                            Publicar
+
+                        </button>
+                        `
+
+                        :
+
+                        ""
+                    }
+
+
+                    <button
+                        type="button"
+                        class="btn btn-outline-danger btn-excluir"
+                        data-id="${relato.id}"
+                    >
+
+                        <i class="bi bi-trash"></i>
+
+                        Excluir
+
+                    </button>
+
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(card);
+
+        });
+
+
+        configurarBotoes();
+
+    }
+
+
+    // =====================================================
+    // BOTÕES PUBLICAR / EXCLUIR
+    // =====================================================
+
+    function configurarBotoes() {
+
+
+        // -------------------------------------------------
+        // PUBLICAR
+        // -------------------------------------------------
+
+        const botoesPublicar =
+            document.querySelectorAll(
+                ".btn-publicar"
+            );
+
+
+        botoesPublicar.forEach(function (botao) {
+
+            botao.addEventListener(
+                "click",
+                function () {
+
+                    const id =
+                        Number(
+                            this.dataset.id
+                        );
+
+
+                    const confirmar =
+                        confirm(
+                            "Deseja realmente publicar este relato?"
+                        );
+
+
+                    if (!confirmar) {
+                        return;
+                    }
+
+
+                    let relatos =
+                        obterRelatos();
+
+
+                    relatos =
+                        relatos.map(
+                            function (relato) {
+
+                                if (
+                                    relato.id === id
+                                ) {
+
+                                    relato.status =
+                                        "publicado";
+
+                                }
+
+                                return relato;
+
+                            }
+                        );
+
+
+                    salvarRelatos(
+                        relatos
+                    );
+
+
+                    alert(
+                        "Relato publicado com sucesso!"
+                    );
+
+
+                    mostrarRelatos();
+
+                }
+            );
+
+        });
+
+
+        // -------------------------------------------------
+        // EXCLUIR
+        // -------------------------------------------------
+
+        const botoesExcluir =
+            document.querySelectorAll(
+                ".btn-excluir"
+            );
+
+
+        botoesExcluir.forEach(function (botao) {
+
+            botao.addEventListener(
+                "click",
+                function () {
+
+                    const id =
+                        Number(
+                            this.dataset.id
+                        );
+
+
+                    const confirmar =
+                        confirm(
+                            "Deseja realmente excluir este relato?"
+                        );
+
+
+                    if (!confirmar) {
+                        return;
+                    }
+
+
+                    let relatos =
+                        obterRelatos();
+
+
+                    relatos =
+                        relatos.filter(
+                            function (relato) {
+
+                                return relato.id !== id;
+
+                            }
+                        );
+
+
+                    salvarRelatos(
+                        relatos
+                    );
+
+
+                    alert(
+                        "Relato excluído."
+                    );
+
+
+                    mostrarRelatos();
+
+                }
+            );
+
+        });
+
+    }
+
+
+    // =====================================================
+    // FILTRO
+    // =====================================================
+
+    const filtro =
+        document.getElementById(
+            "filtroRelatos"
+        );
+
+
+    if (filtro) {
+
+        filtro.addEventListener(
+            "change",
+            function () {
+
+                const valor =
+                    this.value;
+
+
+                const cards =
+                    document.querySelectorAll(
+                        ".relato-card"
+                    );
+
+
+                cards.forEach(
+                    function (card) {
+
+                        const status =
+                            card.dataset.status;
+
+
+                        if (
+                            valor === "todos" ||
+                            valor === status
+                        ) {
+
+                            card.style.display =
+                                "flex";
+
+                        } else {
+
+                            card.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    // =====================================================
+    // CARREGAR
+    // =====================================================
+
+    mostrarRelatos();
+
+});
+
+</script>
 
 
 </body>
 
-
 </html>
-```

@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -33,9 +32,9 @@
 <body>
 
 
-<!-- ==========================
-        NAVBAR
-=========================== -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <header>
 
@@ -43,7 +42,12 @@
 
         <div class="container">
 
-            <a class="navbar-brand" href="index.html">
+            <!-- LOGO -->
+
+            <a
+                class="navbar-brand"
+                href="index.html"
+            >
 
                 <i class="bi bi-universal-access"></i>
 
@@ -51,6 +55,8 @@
 
             </a>
 
+
+            <!-- BOTÃO MOBILE -->
 
             <button
                 class="navbar-toggler"
@@ -67,65 +73,184 @@
             </button>
 
 
-            <div class="collapse navbar-collapse" id="menu">
+            <!-- MENU -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="menu"
+            >
 
                 <ul class="navbar-nav ms-auto">
 
+
+                    <!-- HOME -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+
+                        <a
+                            class="nav-link"
+                            href="index.html"
+                        >
+
                             Home
+
                         </a>
+
                     </li>
 
 
+                    <!-- NAPNE -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="napne.html">
+
+                        <a
+                            class="nav-link"
+                            href="napne.html"
+                        >
+
                             NAPNE
+
                         </a>
+
                     </li>
 
 
+                    <!-- PROJETOS -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">
+
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+
                             Projetos
+
                         </a>
+
                     </li>
 
 
+                    <!-- ACESSIBILIDADE -->
+
                     <li class="nav-item">
+
                         <a
                             class="nav-link active"
                             href="acessibilidade.html"
                         >
+
                             Acessibilidade
+
                         </a>
+
                     </li>
 
 
+                    <!-- RELATOS -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="relatos.html">
+
+                        <a
+                            class="nav-link"
+                            href="relatos.html"
+                        >
+
                             Relatos
+
                         </a>
+
                     </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
+                    <!-- =================================================
+                         ÁREA DE LOGIN
+                    ================================================== -->
+
+                    <!-- ENTRAR -->
+
+                    <li
+                        class="nav-item"
+                        id="areaEntrar"
+                    >
+
+                        <a
+                            class="nav-link"
+                            href="login.html"
+                        >
+
                             Entrar
+
                         </a>
+
                     </li>
 
 
-                    <li class="nav-item ms-lg-2">
+                    <!-- CADASTRAR -->
+
+                    <li
+                        class="nav-item ms-lg-2"
+                        id="areaCadastro"
+                    >
 
                         <a
                             class="btn-cadastro"
                             href="cadastro.html"
                         >
+
                             Cadastrar
+
                         </a>
 
                     </li>
+
+
+                    <!-- PERFIL -->
+
+                    <li
+                        class="nav-item"
+                        id="areaPerfil"
+                        style="display: none;"
+                    >
+
+                        <a
+                            class="nav-link"
+                            href="perfil.html"
+                        >
+
+                            <i class="bi bi-person-circle"></i>
+
+                            <span id="nomeUsuarioNavbar">
+                                Meu perfil
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- SAIR -->
+
+                    <li
+                        class="nav-item"
+                        id="areaSair"
+                        style="display: none;"
+                    >
+
+                        <a
+                            class="nav-link"
+                            href="#"
+                            id="btnSairNavbar"
+                        >
+
+                            <i class="bi bi-box-arrow-right"></i>
+
+                            Sair
+
+                        </a>
+
+                    </li>
+
 
                 </ul>
 
@@ -139,9 +264,9 @@
 
 
 
-<!-- ==========================
-        BANNER
-=========================== -->
+<!-- =====================================================
+     BANNER
+===================================================== -->
 
 <section class="banner">
 
@@ -162,16 +287,16 @@
 
 
 
-<!-- ==========================
-        CONTEÚDO PRINCIPAL
-=========================== -->
+<!-- =====================================================
+     CONTEÚDO PRINCIPAL
+===================================================== -->
 
 <main>
 
 
-    <!-- ==========================
-            O QUE É ACESSIBILIDADE
-    =========================== -->
+    <!-- =================================================
+         O QUE É ACESSIBILIDADE
+    ================================================== -->
 
     <section class="acessibilidade-section">
 
@@ -199,9 +324,9 @@
 
 
 
-    <!-- ==========================
-            IGUALDADE, EQUIDADE E INCLUSÃO
-    =========================== -->
+    <!-- =================================================
+         IGUALDADE, EQUIDADE E INCLUSÃO
+    ================================================== -->
 
     <section class="acessibilidade-section">
 
@@ -299,9 +424,9 @@
 
 
 
-    <!-- ==========================
-            DESENHO UNIVERSAL PARA APRENDIZAGEM
-    =========================== -->
+    <!-- =================================================
+         DUA
+    ================================================== -->
 
     <section class="acessibilidade-section">
 
@@ -320,8 +445,6 @@
 
             <div class="row g-4 mt-3">
 
-
-                <!-- APRESENTAR -->
 
                 <div class="col-md-4">
 
@@ -345,8 +468,6 @@
                 </div>
 
 
-                <!-- PARTICIPAR -->
-
                 <div class="col-md-4">
 
                     <div class="acessibilidade-card">
@@ -368,8 +489,6 @@
 
                 </div>
 
-
-                <!-- EXPRESSÃO -->
 
                 <div class="col-md-4">
 
@@ -400,9 +519,9 @@
 
 
 
-    <!-- ==========================
-            TECNOLOGIAS ASSISTIVAS
-    =========================== -->
+    <!-- =================================================
+         TECNOLOGIAS ASSISTIVAS
+    ================================================== -->
 
     <section class="acessibilidade-section">
 
@@ -418,19 +537,10 @@
             </p>
 
 
-            <!--
-                4 CARDS POR LINHA NO COMPUTADOR
-                col-lg-3 = 4 cards
-                col-md-6 = 2 cards
-                col-12 = 1 card
-            -->
-
             <div class="row g-4 mt-3">
 
 
-                <!-- =================================================
-                        1. TECLADO COLMEIA
-                ================================================== -->
+                <!-- TECLADO COLMEIA -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -444,7 +554,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -465,10 +574,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        2. SUPORTE PARA CELULAR COMO LUPA
-                ================================================== -->
+                <!-- SUPORTE PARA CELULAR -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -482,7 +588,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -503,10 +608,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        3. RÉGUA DE LEITURA
-                ================================================== -->
+                <!-- RÉGUA -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -520,7 +622,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -541,10 +642,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        4. FACILITADOR DE ESCRITA EM EVA
-                ================================================== -->
+                <!-- FACILITADOR -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -558,7 +656,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -579,10 +676,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        5. CADERNO COM PAUTA AMPLIADA
-                ================================================== -->
+                <!-- CADERNO -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -596,7 +690,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -617,10 +710,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        6. PLANO INCLINADO
-                ================================================== -->
+                <!-- PLANO INCLINADO -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -634,7 +724,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -655,10 +744,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        7. LUPA FÁCIL
-                ================================================== -->
+                <!-- LUPA FÁCIL -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -672,7 +758,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -693,10 +778,7 @@
                 </div>
 
 
-
-                <!-- =================================================
-                        8. CALCULADORA SONORA
-                ================================================== -->
+                <!-- CALCULADORA -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
@@ -710,7 +792,6 @@
                             >
 
                         </div>
-
 
                         <div class="tecnologia-conteudo">
 
@@ -739,9 +820,9 @@
 
 
 
-    <!-- ==========================
-            DIREITOS DOS ESTUDANTES
-    =========================== -->
+    <!-- =================================================
+         DIREITOS
+    ================================================== -->
 
     <section class="acessibilidade-section">
 
@@ -855,9 +936,9 @@
 
 
 
-    <!-- ==========================
-            MATERIAIS E DOCUMENTOS
-    =========================== -->
+    <!-- =================================================
+         MATERIAIS E DOCUMENTOS
+    ================================================== -->
 
     <section class="acessibilidade-section">
 
@@ -868,8 +949,8 @@
             </h2>
 
             <p>
-                Confira documentos, cartilhas e conteúdos relacionados
-                à inclusão e acessibilidade.
+                Confira documentos, livros, normativas e materiais
+                relacionados à inclusão, acessibilidade e educação.
             </p>
 
 
@@ -883,17 +964,16 @@
                     <div class="acessibilidade-card">
 
                         <h3>
-                            📄 Legislação
+                            📄 Legislação e normativas
                         </h3>
 
                         <p>
-                            Documentos e normas relacionados aos direitos
-                            das pessoas com necessidades educacionais
-                            específicas.
+                            Leis, decretos e normas relacionadas à inclusão,
+                            acessibilidade e aos direitos das pessoas com NEE.
                         </p>
 
                         <a
-                            href="#"
+                            href="materiais/legislacao.html"
                             class="btn btn-primary"
                         >
                             Acessar
@@ -904,23 +984,23 @@
                 </div>
 
 
-                <!-- CARTILHAS -->
+                <!-- NORMATIVAS IFRS -->
 
                 <div class="col-md-6 col-lg-3">
 
                     <div class="acessibilidade-card">
 
                         <h3>
-                            📘 Cartilhas
+                            🏫 Normativas do IFRS
                         </h3>
 
                         <p>
-                            Materiais educativos sobre inclusão,
-                            acessibilidade e participação.
+                            Políticas, resoluções e orientações institucionais
+                            relacionadas à inclusão e à acessibilidade no IFRS.
                         </p>
 
                         <a
-                            href="#"
+                            href="materiais/normativas-ifrs.html"
                             class="btn btn-primary"
                         >
                             Acessar
@@ -931,23 +1011,23 @@
                 </div>
 
 
-                <!-- DOCUMENTOS IFRS -->
+                <!-- LIVROS -->
 
                 <div class="col-md-6 col-lg-3">
 
                     <div class="acessibilidade-card">
 
                         <h3>
-                            🏫 Documentos do IFRS
+                            📚 Livros e artigos
                         </h3>
 
                         <p>
-                            Materiais institucionais relacionados
-                            à inclusão no IFRS.
+                            Leituras para conhecer e aprofundar temas
+                            relacionados à inclusão, educação e diferença.
                         </p>
 
                         <a
-                            href="#"
+                            href="materiais/livros-artigos.html"
                             class="btn btn-primary"
                         >
                             Acessar
@@ -958,23 +1038,23 @@
                 </div>
 
 
-                <!-- MATERIAIS OFICIAIS -->
+                <!-- GUIAS -->
 
                 <div class="col-md-6 col-lg-3">
 
                     <div class="acessibilidade-card">
 
                         <h3>
-                            🌎 Materiais oficiais
+                            📘 Guias e materiais de apoio
                         </h3>
 
                         <p>
-                            Conteúdos produzidos por órgãos oficiais
-                            sobre acessibilidade.
+                            Cartilhas, guias e materiais práticos para
+                            consulta e apoio no cotidiano.
                         </p>
 
                         <a
-                            href="#"
+                            href="materiais/guias-materiais.html"
                             class="btn btn-primary"
                         >
                             Acessar
@@ -983,6 +1063,7 @@
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -995,9 +1076,9 @@
 
 
 
-<!-- ==========================
-        FOOTER
-=========================== -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1005,8 +1086,6 @@
 
         <div class="row">
 
-
-            <!-- NAPNE -->
 
             <div class="col-md-4">
 
@@ -1021,8 +1100,6 @@
 
             </div>
 
-
-            <!-- LINKS -->
 
             <div class="col-md-4">
 
@@ -1067,8 +1144,6 @@
             </div>
 
 
-            <!-- CONTATO -->
-
             <div class="col-md-4">
 
                 <h4>
@@ -1101,16 +1176,22 @@
 
 
 
-<!-- ==========================
-        BOOTSTRAP JAVASCRIPT
-=========================== -->
+<!-- =====================================================
+     BOOTSTRAP JAVASCRIPT
+===================================================== -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<script src="js/navbar.js"></script>
+
+
 </body>
 
 </html>
-```

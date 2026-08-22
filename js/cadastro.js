@@ -1,139 +1,117 @@
-```javascript
+
 /* =========================================================
    CADASTRO DE USUÁRIO
    NAPNE - IFRS Campus Rolante
-
-   Sistema apenas front-end.
-   Os dados são armazenados no localStorage
-   do navegador para simular um cadastro.
 ========================================================= */
 
-
+// Pega o formulário de cadastro
 const formulario = document.getElementById("formCadastro");
 
 
-formulario.addEventListener("submit", function(event) {
+// Verifica se o formulário existe na página
+if (formulario) {
 
-    event.preventDefault();
+    formulario.addEventListener("submit", function (event) {
 
-
-    /* =====================================================
-       PEGAR DADOS DO FORMULÁRIO
-    ===================================================== */
-
-    const nome = document
-        .getElementById("nome")
-        .value
-        .trim();
-
-    const email = document
-        .getElementById("email")
-        .value
-        .trim()
-        .toLowerCase();
-
-    const senha = document
-        .getElementById("senha")
-        .value;
-
-    const confirmarSenha = document
-        .getElementById("confirmarSenha")
-        .value;
+        // Impede o formulário de recarregar a página
+        event.preventDefault();
 
 
-    /* =====================================================
-       VERIFICAR SENHAS
-    ===================================================== */
+        // ==========================
+        // PEGAR OS DADOS
+        // ==========================
 
-    if (senha !== confirmarSenha) {
-
-        alert("As senhas não coincidem.");
-
-        return;
-    }
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim().toLowerCase();
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmarSenha").value;
 
 
-    /* =====================================================
-       VERIFICAR SENHA VAZIA
-    ===================================================== */
+        // ==========================
+        // VERIFICAR CAMPOS
+        // ==========================
 
-    if (senha.length < 6) {
+        if (!nome || !email || !senha || !confirmarSenha) {
 
-        alert("A senha deve ter pelo menos 6 caracteres.");
+            alert("Preencha todos os campos.");
 
-        return;
-    }
-
-
-    /* =====================================================
-       VERIFICAR SE É O E-MAIL DO ADMINISTRADOR
-    ===================================================== */
-
-    if (email === "admin@napne.com") {
-
-        alert(
-            "Este e-mail é reservado para o administrador."
-        );
-
-        return;
-    }
+            return;
+        }
 
 
-    /* =====================================================
-       CRIAR USUÁRIO
-    ===================================================== */
+        // ==========================
+        // VERIFICAR SENHAS
+        // ==========================
 
-    const usuario = {
+        if (senha !== confirmarSenha) {
 
+            alert("As senhas não coincidem.");
+
+            return;
+        }
+
+
+        // ==========================
+        // BUSCAR USUÁRIOS SALVOS
+        // ==========================
+
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+
+        // ==========================
+        // VERIFICAR SE E-MAIL JÁ EXISTE
+        // ==========================
+
+        const usuarioExistente = usuarios.find(function (usuario) {
+
+            return usuario.email === email;
+
+        });
+
+
+        if (usuarioExistente) {
+
+            alert("Este e-mail já está cadastrado.");
+
+            return;
+        }
+
+
+        // ==========================
+        // CRIAR NOVO USUÁRIO
+        // ==========================
+        const novoUsuario = {
         nome: nome,
-
         email: email,
-
-        senha: senha
-
-    };
-
-
-    /* =====================================================
-       SALVAR USUÁRIO NO NAVEGADOR
-    ===================================================== */
-
-    localStorage.setItem(
-        "usuarioNAPNE",
-        JSON.stringify(usuario)
-    );
+        senha: senha,
+        tipo: "usuario",
+        foto: ""
+        };
 
 
-    /* =====================================================
-       MARCAR COMO LOGADO
-    ===================================================== */
+        // ==========================
+        // SALVAR USUÁRIO
+        // ==========================
 
-    localStorage.setItem(
-        "usuarioLogado",
-        "true"
-    );
+        usuarios.push(novoUsuario);
 
-
-    localStorage.setItem(
-        "nomeUsuario",
-        nome
-    );
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 
-    /* =====================================================
-       MENSAGEM
-    ===================================================== */
+        // ==========================
+        // MENSAGEM DE SUCESSO
+        // ==========================
 
-    alert(
-        "Cadastro realizado com sucesso!"
-    );
+        alert("Cadastro realizado com sucesso!");
 
 
-    /* =====================================================
-       IR PARA A HOME
-    ===================================================== */
+        // ==========================
+        // IR PARA LOGIN
+        // ==========================
 
-    window.location.href = "index.html";
+        window.location.href = "login.html";
 
-});
-```
+    });
+
+}
+

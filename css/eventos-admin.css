@@ -1,368 +1,237 @@
-/* ==========================
-   GERENCIAMENTO DE EVENTOS
-========================== */
+/* =========================================================
+   ÁREA DOS EVENTOS
+========================================================= */
 
-
-/* ---------- ÁREA PRINCIPAL ---------- */
-
-.eventos-admin-area{
-
-    background:var(--branco);
-
-    padding:80px 0;
-
+#listaEventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 300px));
+    justify-content: center;
+    gap: 22px;
 }
 
 
+/* =========================================================
+   CARD DO EVENTO
+========================================================= */
 
-/* ---------- TÍTULOS ---------- */
+.evento-card {
+    width: 100%;
+    min-height: 350px;
+    height: auto;
 
+    background: var(--branco);
 
-.admin-titulo{
+    border-radius: 16px;
 
-    text-align:center;
+    padding: 20px;
 
-    margin-bottom:40px;
+    text-align: center;
 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: .25s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-4px);
 }
 
 
-.admin-titulo h2{
+/* =========================================================
+   IMAGEM DO EVENTO
+========================================================= */
 
-    color:var(--azul-900);
+.imagem-evento-admin {
+    width: 100%;
+    height: 105px;
 
-    font-size:2rem;
+    flex-shrink: 0;
 
-    font-weight:700;
+    overflow: hidden;
 
-    margin-bottom:15px;
+    border-radius: 10px;
 
+    margin-bottom: 10px;
+}
+
+.imagem-evento-admin img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
 }
 
 
-.admin-titulo p{
+/* =========================================================
+   ÍCONE
+========================================================= */
 
-    color:#555;
+.evento-card > i {
+    display: inline-flex;
 
-    font-size:1rem;
+    align-items: center;
+    justify-content: center;
 
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--azul-claro);
+    color: var(--azul);
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
 }
 
 
+/* =========================================================
+   TÍTULO
+========================================================= */
 
+.evento-card h3 {
+    color: var(--azul-escuro);
 
+    font-size: 1.05rem;
 
-/* ---------- CARD FORMULÁRIO ---------- */
+    line-height: 1.3;
 
+    margin: 0 0 8px;
 
-.card-admin{
-
-    background:var(--branco);
-
-    padding:40px;
-
-    border-radius:20px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-
-    margin-bottom:80px;
-
+    max-width: 100%;
 }
 
 
+/* =========================================================
+   DATA
+========================================================= */
 
+.data-evento {
+    display: inline-block;
 
+    background: var(--azul-claro);
+    color: var(--azul);
 
-.form-label{
+    padding: 5px 12px;
 
-    color:var(--azul-900);
+    border-radius: 50px;
 
-    font-weight:600;
+    font-weight: 600;
 
+    font-size: .78rem;
+
+    margin-bottom: 8px;
 }
 
 
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
 
+.evento-card p {
+    color: var(--cinza);
 
-.form-control,
-.form-select{
+    font-size: .85rem;
 
-    border-radius:12px;
+    line-height: 1.4;
 
-    padding:12px 15px;
+    margin-bottom: 0;
 
-    border:1px solid #ddd;
+    display: -webkit-box;
 
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
 }
 
 
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
 
+.informacoes-evento {
+    width: 100%;
 
+    margin-top: 10px;
 
-.form-control:focus,
-.form-select:focus{
+    padding-top: 8px;
 
-    border-color:var(--azul-700);
+    border-top: 1px solid var(--azul-borda);
+}
 
-    box-shadow:0 0 0 .2rem rgba(0,86,166,.15);
+.informacoes-evento p {
+    font-size: .78rem;
 
+    margin-bottom: 4px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+.informacoes-evento i {
+    color: var(--turquesa);
+
+    margin-right: 6px;
 }
 
 
+/* =========================================================
+   BOTÕES
+========================================================= */
 
+.evento-admin-acoes,
+.acoes-evento {
+    display: flex;
 
+    justify-content: center;
 
+    align-items: center;
 
+    gap: 7px;
 
-/* ---------- BOTÃO SALVAR ---------- */
+    width: 100%;
 
+    margin-top: auto;
 
-.card-admin .btn-primary{
+    padding-top: 12px;
+}
 
-    background:var(--azul-700);
+.btn-evento {
+    font-size: 12px;
 
-    border:none;
+    padding: 5px 10px;
 
-    border-radius:50px;
+    border-radius: 6px;
+}
 
-    padding:12px 30px;
-
-    font-weight:600;
-
+.btn-evento i {
+    margin-right: 4px;
 }
 
 
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
 
-.card-admin .btn-primary:hover{
+@media (max-width: 768px) {
 
-    background:var(--azul-900);
-
-}
-
-
-
-
-
-/* ==========================
-   CARDS DOS EVENTOS
-========================== */
-
-
-.evento-card{
-
-    background:var(--branco);
-
-    border-radius:20px;
-
-    padding:35px 25px;
-
-    text-align:center;
-
-    height:100%;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.25s ease;
-
-}
-
-
-
-.evento-card:hover{
-
-    transform:translateY(-6px);
-
-}
-
-
-
-
-
-/* ---------- ÍCONE ---------- */
-
-
-.evento-card > i{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:65px;
-
-    height:65px;
-
-    border-radius:16px;
-
-    background:var(--azul-100);
-
-    color:var(--azul-700);
-
-    font-size:30px;
-
-    margin-bottom:20px;
-
-}
-
-
-
-
-
-.evento-card h3{
-
-    color:var(--azul-900);
-
-    font-size:1.25rem;
-
-    margin-bottom:15px;
-
-}
-
-
-
-
-
-/* ---------- DATA ---------- */
-
-
-.data-evento{
-
-    display:inline-block;
-
-    background:var(--azul-100);
-
-    color:var(--azul-700);
-
-    padding:7px 18px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    font-size:.85rem;
-
-    margin-bottom:15px;
-
-}
-
-
-
-
-
-.evento-card p{
-
-    color:#555;
-
-    line-height:1.6;
-
-}
-
-
-
-
-
-/* ---------- INFORMAÇÕES ---------- */
-
-
-.informacoes-evento{
-
-    margin-top:20px;
-
-    padding-top:15px;
-
-    border-top:1px solid #eee;
-
-}
-
-
-
-.informacoes-evento p{
-
-    font-size:.9rem;
-
-    margin-bottom:8px;
-
-}
-
-
-
-.informacoes-evento i{
-
-    color:var(--azul-700);
-
-    margin-right:8px;
-
-}
-
-
-
-
-
-/* ---------- BOTÕES ---------- */
-
-
-.acoes-evento{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-top:25px;
-
-}
-
-
-
-.acoes-evento .btn{
-
-    border-radius:50px;
-
-    padding:8px 18px;
-
-}
-
-
-
-
-
-/* ---------- RESPONSIVIDADE ---------- */
-
-
-@media(max-width:768px){
-
-
-    .eventos-admin-area{
-
-        padding:50px 0;
-
+    #listaEventos {
+        grid-template-columns: minmax(250px, 300px);
     }
 
-
-
-    .card-admin{
-
-        padding:25px;
-
+    .evento-card {
+        min-height: 340px;
     }
-
-
-
-    .admin-titulo h2{
-
-        font-size:1.6rem;
-
-    }
-
-
-
-    .acoes-evento{
-
-        flex-direction:column;
-
-    }
-
 
 }

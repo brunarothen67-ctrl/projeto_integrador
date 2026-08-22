@@ -1,101 +1,235 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatos | NAPNE IFRS</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>Relatos | NAPNE IFRS</title>
 
-    <!-- CSS -->
+<!-- Bootstrap -->
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<!-- Bootstrap Icons -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
+
+<!-- CSS Geral -->
 <link rel="stylesheet" href="css/style.css">
 
 <!-- CSS da página -->
 <link rel="stylesheet" href="css/relatos.css">
+
 </head>
 
 <body>
 
-<!-- ================= MENU ================= -->
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
 
     <div class="container">
 
-        <a class="navbar-brand" href="index.html">
-             <i class="bi bi-universal-access"></i>
+        <!-- LOGO -->
+
+        <a
+            class="navbar-brand"
+            href="index.html"
+        >
+
+            <i class="bi bi-universal-access"></i>
+
             NAPNE IFRS
+
         </a>
 
-        <button class="navbar-toggler"
+
+        <!-- BOTÃO MOBILE -->
+
+        <button
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#menu">
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+        >
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
 
-        <div class="collapse navbar-collapse" id="menu">
+        <!-- MENU -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="menu"
+        >
 
             <ul class="navbar-nav ms-auto">
 
 
+                <!-- HOME -->
+
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
+
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
                         Home
                     </a>
+
                 </li>
 
 
+                <!-- NAPNE -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="napne.html">
+
+                    <a
+                        class="nav-link"
+                        href="napne.html"
+                    >
                         NAPNE
                     </a>
+
                 </li>
 
 
+                <!-- PROJETOS -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="projetos.html">
+
+                    <a
+                        class="nav-link"
+                        href="projetos.html"
+                    >
                         Projetos
                     </a>
+
                 </li>
 
 
+                <!-- ACESSIBILIDADE -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="acessibilidade.html">
+
+                    <a
+                        class="nav-link"
+                        href="acessibilidade.html"
+                    >
                         Acessibilidade
                     </a>
+
                 </li>
 
 
+                <!-- RELATOS -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="relatos.html">
+
+                    <a
+                        class="nav-link active"
+                        href="relatos.html"
+                    >
                         Relatos
                     </a>
-                </li>
-                
 
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">
+                </li>
+
+
+                <!-- ENTRAR -->
+
+                <li
+                    class="nav-item"
+                    id="areaEntrar"
+                >
+
+                    <a
+                        class="nav-link"
+                        href="login.html"
+                    >
                         Entrar
                     </a>
+
                 </li>
 
 
-                <li class="nav-item ms-lg-2">
+                <!-- CADASTRAR -->
 
-                    <a class="btn btn-primary" href="cadastro.html">
+                <li
+                    class="nav-item ms-lg-2"
+                    id="areaCadastro"
+                >
+
+                    <a
+                        class="btn-cadastro"
+                        href="cadastro.html"
+                    >
                         Cadastrar
                     </a>
 
                 </li>
 
+
+                <!-- PERFIL -->
+
+                <li
+                    class="nav-item"
+                    id="areaPerfil"
+                    style="display: none;"
+                >
+
+                    <a
+                        class="nav-link"
+                        href="perfil.html"
+                    >
+
+                        <i class="bi bi-person-circle"></i>
+
+                        <span id="nomeUsuarioNavbar">
+                            Meu perfil
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <!-- SAIR -->
+
+                <li
+                    class="nav-item"
+                    id="areaSair"
+                    style="display: none;"
+                >
+
+                    <a
+                        class="nav-link"
+                        href="#"
+                        id="btnSairNavbar"
+                    >
+
+                        <i class="bi bi-box-arrow-right"></i>
+
+                        Sair
+
+                    </a>
+
+                </li>
 
             </ul>
 
@@ -105,17 +239,21 @@
 
 </nav>
 
-<!-- Banner -->
 
-<section class="banner pagina-banner">
+
+<!-- =====================================================
+     BANNER
+===================================================== -->
+
+<section class="banner">
 
     <div class="container text-center">
 
-        <h1 class="fw-bold">
+        <h1>
             Relatos da Comunidade
         </h1>
 
-        <p class="lead">
+        <p>
 
             Compartilhe experiências, desafios e conquistas.
             Sua história pode ajudar outras pessoas.
@@ -126,7 +264,11 @@
 
 </section>
 
-<!-- Pesquisa -->
+
+
+<!-- =====================================================
+     PESQUISA
+===================================================== -->
 
 <section class="container my-4">
 
@@ -144,8 +286,10 @@
 
                 <input
                     type="text"
+                    id="pesquisaRelatos"
                     class="form-control"
-                    placeholder="Pesquisar relatos...">
+                    placeholder="Pesquisar relatos..."
+                >
 
             </div>
 
@@ -155,25 +299,41 @@
 
 </section>
 
-<!-- filtros -->
+
+
+<!-- =====================================================
+     FILTROS
+===================================================== -->
 
 <section class="container mb-4">
 
     <div class="d-flex flex-wrap gap-2">
 
-        <button class="btn btn-outline-primary active">
+        <button
+            type="button"
+            class="btn btn-outline-primary active"
+        >
             Todos
         </button>
 
-        <button class="btn btn-outline-primary">
+        <button
+            type="button"
+            class="btn btn-outline-primary"
+        >
             Recentes
         </button>
 
-        <button class="btn btn-outline-primary">
+        <button
+            type="button"
+            class="btn btn-outline-primary"
+        >
             Populares
         </button>
 
-        <button class="btn btn-outline-primary">
+        <button
+            type="button"
+            class="btn btn-outline-primary"
+        >
             Com fotos
         </button>
 
@@ -181,301 +341,108 @@
 
 </section>
 
-<!-- conteúdo-->
+
+
+<!-- =====================================================
+     CONTEÚDO
+===================================================== -->
 
 <section class="container">
 
     <div class="row">
 
-        <!-- FEED -->
+
+        <!-- =================================================
+             RELATOS PUBLICADOS
+        ================================================== -->
 
         <div class="col-lg-8">
 
-            <!-- RELATO 1 -->
-
-            <div class="card shadow-sm mb-4">
-
-                <div class="card-body">
-
-                    <div class="d-flex align-items-center">
-
-                        <img
-                            src="imagens/avatar.png"
-                            class="foto-perfil me-3"
-                            alt="Perfil">
-
-                        <div>
-
-                            <h6 class="mb-0">
-                                Maria Oliveira
-                            </h6>
-
-                            <small class="text-muted">
-
-                                Hoje • 😊 Feliz
-
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                    <span class="badge bg-primary mt-3">
-
-                        Experiência
-
-                    </span>
-
-                    <h4 class="mt-3">
-
-                        Meu primeiro atendimento no NAPNE
-
-                    </h4>
-
-                    <p>
-
-                        Quero compartilhar minha experiência.
-                        Quando comecei no IFRS eu tinha muitas
-                        dúvidas e inseguranças, mas encontrei
-                        apoio e acolhimento.
-
-                    </p>
-
-                    <img
-                        src="imagens/exemplo.jpg"
-                        class="img-fluid rounded mb-3"
-                        alt="Foto do relato">
-
-                    <div class="d-flex justify-content-between">
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-heart"></i>
-
-                            Curtir
-
-                        </button>
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-chat"></i>
-
-                            Comentários
-
-                        </button>
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-share"></i>
-
-                            Compartilhar
-
-                        </button>
-
-                    </div>
-
-                </div>
+            <div
+                id="relatosPublicados"
+                class="row g-4"
+            >
 
             </div>
 
-            <!-- RELATO 2 -->
 
-            <div class="card shadow-sm mb-4">
+            <!-- MENSAGEM CASO NÃO EXISTAM RELATOS -->
 
-                <div class="card-body">
+            <div
+                id="mensagemSemRelatos"
+                class="text-center py-5"
+                style="display: none;"
+            >
 
-                    <div class="d-flex align-items-center">
+                <i
+                    class="bi bi-chat-left-text"
+                    style="font-size: 3rem;"
+                ></i>
 
-                        <img
-                            src="imagens/avatar.png"
-                            class="foto-perfil me-3"
-                            alt="Perfil">
+                <h4 class="mt-3">
+                    Ainda não há relatos publicados.
+                </h4>
 
-                        <div>
+                <p class="text-muted">
 
-                            <h6 class="mb-0">
-                                Anônimo
-                            </h6>
+                    Seja o primeiro a compartilhar
+                    sua experiência com a comunidade.
 
-                            <small class="text-muted">
-
-                                Ontem • 💙 Agradecido
-
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                    <span class="badge bg-success mt-3">
-
-                        Conquista
-
-                    </span>
-
-                    <h4 class="mt-3">
-
-                        Passei em todas as disciplinas
-
-                    </h4>
-
-                    <p>
-
-                        Este semestre foi difícil,
-                        mas consegui superar os desafios.
-                        O apoio recebido fez toda a diferença.
-
-                    </p>
-
-                                       <div class="d-flex justify-content-between mt-3">
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-heart"></i>
-
-                            Curtir
-
-                        </button>
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-chat"></i>
-
-                            Comentários
-
-                        </button>
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-share"></i>
-
-                            Compartilhar
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- RELATO 3 -->
-
-            <div class="card shadow-sm mb-4">
-
-                <div class="card-body">
-
-                    <div class="d-flex align-items-center">
-
-                        <img
-                            src="imagens/avatar.png"
-                            class="foto-perfil me-3"
-                            alt="Perfil">
-
-                        <div>
-
-                            <h6 class="mb-0">
-
-                                João Pedro
-
-                            </h6>
-
-                            <small class="text-muted">
-
-                                Há 3 dias • 💪 Motivado
-
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                    <span class="badge bg-warning text-dark mt-3">
-
-                        Dica
-
-                    </span>
-
-                    <h4 class="mt-3">
-
-                        Organização faz diferença
-
-                    </h4>
-
-                    <p>
-
-                        Passei a utilizar agenda e lembretes para organizar
-                        minhas tarefas e isso melhorou muito meu rendimento
-                        durante o semestre.
-
-                    </p>
-
-                    <div class="d-flex justify-content-between mt-3">
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-heart"></i>
-
-                            Curtir
-
-                        </button>
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-chat"></i>
-
-                            Comentários
-
-                        </button>
-
-                        <button class="btn btn-light">
-
-                            <i class="bi bi-share"></i>
-
-                            Compartilhar
-
-                        </button>
-
-                    </div>
-
-                </div>
+                </p>
 
             </div>
 
         </div>
 
-        <!-- COLUNA LATERAL -->
+
+
+        <!-- =================================================
+             COLUNA LATERAL
+        ================================================== -->
 
         <div class="col-lg-4">
+
+
+            <!-- COMUNIDADE -->
 
             <div class="card shadow-sm mb-4">
 
                 <div class="card-body">
 
                     <h4 class="mb-3">
-
                         Comunidade
-
                     </h4>
+
 
                     <p>
 
                         📝 Relatos publicados:
-                        <strong>128</strong>
+
+                        <strong id="contadorRelatos">
+                            0
+                        </strong>
 
                     </p>
+
 
                     <p>
 
                         ❤️ Curtidas nesta semana:
-                        <strong>356</strong>
+
+                        <strong>
+                            356
+                        </strong>
 
                     </p>
+
 
                     <p>
 
                         👥 Usuários cadastrados:
-                        <strong>85</strong>
+
+                        <strong>
+                            85
+                        </strong>
 
                     </p>
 
@@ -483,34 +450,33 @@
 
             </div>
 
+
+
+            <!-- DESTAQUES -->
+
             <div class="card shadow-sm">
 
                 <div class="card-body">
 
                     <h5>
-
                         Relatos em destaque
-
                     </h5>
 
                     <hr>
 
-                    <p>
 
+                    <p>
                         ⭐ Minha experiência no IFRS
-
                     </p>
 
-                    <p>
 
+                    <p>
                         ⭐ Como o NAPNE me ajudou
-
                     </p>
 
+
                     <p>
-
                         ⭐ Estratégias para estudar
-
                     </p>
 
                 </div>
@@ -523,242 +489,442 @@
 
 </section>
 
-<!-- Nova publicação  -->
 
-<div class="card shadow-sm mb-4">
 
-    <div class="card-body">
+<!-- =====================================================
+     CRIAR PUBLICAÇÃO
+===================================================== -->
 
-        <div class="d-flex align-items-center">
+<section class="container my-5">
 
-            <img
-                src="imagens/avatar.png"
-                alt="Perfil"
-                class="foto-perfil me-3">
+    <div class="card shadow-sm">
 
-            <div>
+        <div class="card-body">
 
-                <h5 class="mb-1">
-                    Compartilhe sua experiência
-                </h5>
 
-                <p class="text-muted mb-0">
-                    Sua história pode inspirar e ajudar outras pessoas da comunidade.
-                </p>
+            <div class="d-flex align-items-center">
+
+                <img
+                    src="imagens/avatar.png"
+                    alt="Perfil"
+                    class="foto-perfil me-3"
+                >
+
+
+                <div>
+
+                    <h5 class="mb-1">
+                        Compartilhe sua experiência
+                    </h5>
+
+
+                    <p class="text-muted mb-0">
+
+                        Sua história pode inspirar e ajudar
+                        outras pessoas da comunidade.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="text-center">
+
+                <button
+                    type="button"
+                    class="btn btn-primary px-5"
+                    id="btnCriarPublicacao"
+                >
+
+                    <i class="bi bi-pencil-square"></i>
+
+                    Criar publicação
+
+                </button>
 
             </div>
 
         </div>
 
-        <hr>
+    </div>
 
-        <div class="text-center">
+</section>
 
-            <button
-                class="btn btn-primary px-5"
-                data-bs-toggle="modal"
-                data-bs-target="#modalRelato">
 
-                <i class="bi bi-pencil-square"></i>
 
-                Criar publicação
+<!-- =====================================================
+     MODAL DE ACESSO
+===================================================== -->
 
-            </button>
+<div
+    class="modal fade"
+    id="modalAcesso"
+    tabindex="-1"
+    aria-labelledby="modalAcessoLabel"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="modalAcessoLabel"
+                >
+                    Faça login para publicar
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body text-center">
+
+                <i
+                    class="bi bi-person-circle"
+                    style="font-size: 3rem;"
+                ></i>
+
+
+                <p class="mt-3">
+
+                    Para publicar um relato, você precisa
+                    estar cadastrado e conectado à sua conta.
+
+                </p>
+
+
+                <p class="text-muted">
+
+                    Ainda não possui uma conta?
+                    Faça seu cadastro gratuitamente.
+
+                </p>
+
+            </div>
+
+
+            <div class="modal-footer justify-content-center">
+
+                <a
+                    href="cadastro.html"
+                    class="btn btn-primary"
+                >
+
+                    <i class="bi bi-person-plus"></i>
+
+                    Cadastrar
+
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="btn btn-outline-primary"
+                >
+
+                    <i class="bi bi-box-arrow-in-right"></i>
+
+                    Entrar
+
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
 </div>
-<!-- MODAL -->
+
+
+
+<!-- =====================================================
+     MODAL DE PUBLICAÇÃO
+===================================================== -->
 
 <div
-class="modal fade"
-id="modalRelato"
-tabindex="-1">
+    class="modal fade"
+    id="modalRelato"
+    tabindex="-1"
+    aria-labelledby="modalRelatoLabel"
+    aria-hidden="true"
+>
 
-<div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg">
 
-<div class="modal-content">
+        <div class="modal-content">
 
-<div class="modal-header">
 
-<h4>
+            <div class="modal-header">
 
-Nova publicação
+                <h4
+                    class="modal-title"
+                    id="modalRelatoLabel"
+                >
+                    Nova publicação
+                </h4>
 
-</h4>
 
-<button
-class="btn-close"
-data-bs-dismiss="modal">
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar"
+                ></button>
 
-</button>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <form id="formRelato">
+
+
+                    <!-- TÍTULO -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="tituloRelato"
+                            class="form-label"
+                        >
+                            Título
+                        </label>
+
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="tituloRelato"
+                            placeholder="Digite um título"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- TIPO -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="tipoRelato"
+                            class="form-label"
+                        >
+                            Tipo
+                        </label>
+
+
+                        <select
+                            class="form-select"
+                            id="tipoRelato"
+                            required
+                        >
+
+                            <option value="Experiência">
+                                Experiência
+                            </option>
+
+                            <option value="Dica">
+                                Dica
+                            </option>
+
+                            <option value="Conquista">
+                                Conquista
+                            </option>
+
+                            <option value="Dúvida">
+                                Dúvida
+                            </option>
+
+                            <option value="Agradecimento">
+                                Agradecimento
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- RELATO -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="textoRelato"
+                            class="form-label"
+                        >
+                            Seu relato
+                        </label>
+
+
+                        <textarea
+                            class="form-control"
+                            id="textoRelato"
+                            rows="6"
+                            placeholder="Escreva aqui..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- FOTOS -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="fotosRelato"
+                            class="form-label"
+                        >
+                            Adicionar fotos
+                        </label>
+
+
+                        <input
+                            type="file"
+                            class="form-control"
+                            id="fotosRelato"
+                            multiple
+                            accept="image/*"
+                        >
+
+                    </div>
+
+
+
+                    <!-- SENTIMENTO -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="sentimentoRelato"
+                            class="form-label"
+                        >
+                            Como você está se sentindo?
+                        </label>
+
+
+                        <select
+                            class="form-select"
+                            id="sentimentoRelato"
+                        >
+
+                            <option>
+                                😊 Feliz
+                            </option>
+
+                            <option>
+                                💙 Agradecido
+                            </option>
+
+                            <option>
+                                💪 Motivado
+                            </option>
+
+                            <option>
+                                😌 Tranquilo
+                            </option>
+
+                            <option>
+                                🤔 Pensativo
+                            </option>
+
+                            <option>
+                                😔 Precisando de apoio
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ANÔNIMO -->
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="anonimo"
+                        >
+
+
+                        <label
+                            class="form-check-label"
+                            for="anonimo"
+                        >
+                            Publicar anonimamente
+                        </label>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- BOTÕES -->
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Cancelar
+                </button>
+
+
+                <button
+                    type="submit"
+                    form="formRelato"
+                    class="btn btn-primary"
+                >
+
+                    <i class="bi bi-send"></i>
+
+                    Enviar relato
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
-<div class="modal-body">
 
-<div class="mb-3">
 
-<label class="form-label">
-
-Título
-
-</label>
-
-<input
-type="text"
-class="form-control"
-placeholder="Digite um título">
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Tipo
-
-</label>
-
-<select class="form-select">
-
-<option>Experiência</option>
-
-<option>Dica</option>
-
-<option>Conquista</option>
-
-<option>Dúvida</option>
-
-<option>Agradecimento</option>
-
-</select>
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Seu relato
-
-</label>
-
-<textarea
-class="form-control"
-rows="6"
-placeholder="Escreva aqui..."></textarea>
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Adicionar fotos
-
-</label>
-
-<input
-type="file"
-class="form-control"
-multiple>
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Como você está se sentindo?
-
-</label>
-
-<select class="form-select">
-
-<option>😊 Feliz</option>
-
-<option>💙 Agradecido</option>
-
-<option>💪 Motivado</option>
-
-<option>😌 Tranquilo</option>
-
-<option>🤔 Pensativo</option>
-
-<option>😔 Precisando de apoio</option>
-
-</select>
-
-</div>
-
-<div class="form-check">
-
-<input
-class="form-check-input"
-type="checkbox"
-id="anonimo">
-
-<label
-class="form-check-label"
-for="anonimo">
-
-Publicar anonimamente
-
-</label>
-
-</div>
-
-</div>
-
-<div class="modal-footer">
-
-<button
-class="btn btn-secondary"
-data-bs-dismiss="modal">
-
-Cancelar
-
-</button>
-
-<button class="btn btn-primary">
-
-Publicar
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Bootstrap -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
-
-
-<script src="js/script.js"></script>
-
-</body>
-
-</html>
-
-
-
-
-<!-- ==========================
-        RODAPÉ
-========================== -->
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
 
 <footer class="footer">
 
@@ -766,43 +932,91 @@ Publicar
 
         <div class="row">
 
+
             <div class="col-md-4">
-                <h4>NAPNE</h4>
+
+                <h4>
+                    NAPNE
+                </h4>
 
                 <p>
-                    Núcleo de Atendimento às Pessoas com Necessidades
-                    Educacionais Específicas do IFRS Campus Rolante.
+
+                    Núcleo de Atendimento às Pessoas com
+                    Necessidades Educacionais Específicas
+                    do IFRS Campus Rolante.
+
                 </p>
+
             </div>
+
+
 
             <div class="col-md-4">
 
-                <h4>Links</h4>
+                <h4>
+                    Links
+                </h4>
+
 
                 <ul class="list-unstyled">
 
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="napne.html">NAPNE</a></li>
-                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
-                    <li><a href="projetos.html">Projetos</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="napne.html">
+                            NAPNE
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="acessibilidade.html">
+                            Acessibilidade
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="projetos.html">
+                            Projetos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="relatos.html">
+                            Relatos
+                        </a>
+                    </li>
 
                 </ul>
 
             </div>
 
+
+
             <div class="col-md-4">
 
-                <h4>Contato</h4>
+                <h4>
+                    Contato
+                </h4>
 
-                <p>IFRS Campus Rolante</p>
-                <p>napne@rolante.ifrs.edu.br</p>
+                <p>
+                    IFRS Campus Rolante
+                </p>
+
+                <p>
+                    napne@rolante.ifrs.edu.br
+                </p>
 
             </div>
 
         </div>
 
+
         <hr>
+
 
         <p class="text-center mb-0">
             © 2026 NAPNE - IFRS Campus Rolante
@@ -811,3 +1025,22 @@ Publicar
     </div>
 
 </footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="js/relatos.js"></script>
+
+<script src="js/navbar.js"></script>
+
+
+</body>
+
+</html>

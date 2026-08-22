@@ -1,138 +1,256 @@
+/* =========================================================
+   RELATOS
+   NAPNE - IFRS Campus Rolante
+========================================================= */
 
 
-.relatos-conteudo{
-    background:var(--fundo);
+/* =========================================================
+   ÁREA DE RELATOS
+========================================================= */
+
+.relatos-conteudo {
+    background: var(--fundo);
 }
 
-/* ---------- PESQUISA ---------- */
-.input-group{
-    border-radius:50px;
-    overflow:hidden;
-    box-shadow:var(--sombra);
-}
-.input-group-text{
-    background:var(--azul-700);
-    color:var(--branco);
-    border:none;
-}
-.form-control{
-    border:none;
-    padding:14px 16px;
-}
-.form-control:focus{
-    box-shadow:none;
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.relatos-conteudo .input-group {
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    box-shadow: var(--sombra);
 }
 
-/* ---------- CARD DE RELATO ---------- */
-.relatos-conteudo .card{
-    border:none;
-    border-radius:var(--raio);
-    box-shadow:var(--sombra);
-    overflow:hidden;
-    transition:box-shadow .25s ease;
-}
-.relatos-conteudo .card:hover{
-    box-shadow:var(--sombra-forte);
-}
-.relatos-conteudo .card-body{
-    padding:28px;
+
+.relatos-conteudo .input-group-text {
+    background: var(--azul);
+
+    color: var(--branco);
+
+    border: none;
 }
 
-.foto-perfil{
-    width:56px;
-    height:56px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid var(--azul-100);
+
+.relatos-conteudo .form-control {
+    border: none;
+
+    padding: 14px 16px;
 }
 
-.card h6{
-    color:var(--azul-900);
-    font-weight:700;
+
+.relatos-conteudo .form-control:focus {
+    box-shadow: none;
 }
 
-/* Badges de categoria */
-.badge{
-    border-radius:50px;
-    padding:7px 16px;
-    font-weight:600;
-}
-.badge.bg-primary{
-    background-color:var(--azul-700) !important;
-}
-.badge.bg-success{
-    background-color:#2f9e6a !important;
-}
-.badge.bg-warning{
-    background-color:var(--dourado) !important;
-    color:var(--azul-900) !important;
+
+/* =========================================================
+   CARDS DE RELATOS
+========================================================= */
+
+.relatos-conteudo .card {
+    border: none;
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+
+    transition: box-shadow .25s ease;
 }
 
-.card h4{
-    color:var(--azul-900);
-    font-weight:700;
-}
-.card p{
-    line-height:1.7;
-}
-.card img.img-fluid{
-    border-radius:16px;
-    max-height:340px;
-    object-fit:cover;
+
+.relatos-conteudo .card:hover {
+    box-shadow: var(--sombra-forte);
 }
 
-.card .btn-light{
-    border-radius:50px;
-    font-weight:600;
-    transition:all .25s ease;
-}
-.card .btn-light:hover{
-    background:var(--azul-700);
-    color:var(--branco);
+
+.relatos-conteudo .card-body {
+    padding: 28px;
 }
 
-/* ---------- COLUNA LATERAL ---------- */
-.col-lg-4 .card h4,
-.col-lg-4 .card h5{
-    color:var(--azul-900);
-    font-weight:700;
-}
-.col-lg-4 .card p{
-    font-size:.95rem;
+
+/* =========================================================
+   FOTO DE PERFIL
+========================================================= */
+
+.relatos-conteudo .foto-perfil {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid var(--azul-claro);
 }
 
-/* ---------- MODAL DE NOVA PUBLICAÇÃO ---------- */
-.modal-content{
-    border-radius:22px;
-    border:none;
-    overflow:hidden;
-}
-.modal-header{
-    background:var(--azul-700);
-    color:var(--branco);
-}
-.modal-header h4{
-    color:var(--branco);
-    margin:0;
-}
-.modal-footer .btn-primary{
-    padding:10px 28px;
+
+/* =========================================================
+   TÍTULOS DOS CARDS
+========================================================= */
+
+.relatos-conteudo .card h6 {
+    color: var(--azul-escuro);
+
+    font-weight: 700;
 }
 
-.card-body .btn-primary{
-    padding:11px 34px;
+
+.relatos-conteudo .card h4 {
+    color: var(--azul-escuro);
+
+    font-weight: 700;
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
-@media(max-width:768px){
-    .relatos-conteudo{
-        padding:40px 15px;
+
+.relatos-conteudo .card p {
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.relatos-conteudo .badge {
+    border-radius: 50px;
+
+    padding: 7px 16px;
+
+    font-weight: 600;
+}
+
+
+.relatos-conteudo .badge.bg-primary {
+    background-color: var(--azul);
+}
+
+
+.relatos-conteudo .badge.bg-success {
+    background-color: #2F9E6A;
+}
+
+
+.relatos-conteudo .badge.bg-warning {
+    background-color: var(--amarelo);
+
+    color: var(--azul-escuro);
+}
+
+
+/* =========================================================
+   IMAGENS DOS RELATOS
+========================================================= */
+
+.relatos-conteudo .card img.img-fluid {
+    border-radius: 16px;
+
+    max-height: 340px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   BOTÃO LIGHT
+========================================================= */
+
+.relatos-conteudo .card .btn-light {
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+
+.relatos-conteudo .card .btn-light:hover {
+    background: var(--azul);
+
+    color: var(--branco);
+}
+
+
+/* =========================================================
+   COLUNA LATERAL
+========================================================= */
+
+.relatos-conteudo .col-lg-4 .card h4,
+.relatos-conteudo .col-lg-4 .card h5 {
+    color: var(--azul-escuro);
+
+    font-weight: 700;
+}
+
+
+.relatos-conteudo .col-lg-4 .card p {
+    font-size: .95rem;
+}
+
+
+/* =========================================================
+   MODAIS
+========================================================= */
+
+.relatos-conteudo .modal-content {
+    border-radius: 22px;
+
+    border: none;
+
+    overflow: hidden;
+}
+
+
+.relatos-conteudo .modal-header {
+    background: var(--azul);
+
+    color: var(--branco);
+}
+
+
+.relatos-conteudo .modal-header h4 {
+    color: var(--branco);
+
+    margin: 0;
+}
+
+
+.relatos-conteudo .modal-footer .btn-primary {
+    padding: 10px 28px;
+}
+
+
+/* =========================================================
+   BOTÃO DE PUBLICAÇÃO
+========================================================= */
+
+.relatos-conteudo .card-body .btn-primary {
+    padding: 11px 34px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .relatos-conteudo {
+        padding: 40px 15px;
     }
-    .card-body{
-        padding:20px !important;
+
+    .relatos-conteudo .card-body {
+        padding: 20px;
     }
-    .foto-perfil{
-        width:48px;
-        height:48px;
+
+    .relatos-conteudo .foto-perfil {
+        width: 48px;
+        height: 48px;
     }
+
 }

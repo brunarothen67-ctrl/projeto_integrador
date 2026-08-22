@@ -1,0 +1,261 @@
+/* =========================================================
+   PÁGINAS DE MATERIAIS
+   NAPNE - IFRS Campus Rolante
+========================================================= */
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.materiais-cabecalho {
+    background: #f5f3fa;
+    padding: 45px 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.materiais-cabecalho h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.materiais-cabecalho p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+========================================================= */
+
+.materiais-pagina {
+    padding: 60px 0;
+}
+
+
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
+
+.materiais-introducao {
+    max-width: 800px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.materiais-introducao h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.materiais-introducao p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.materiais-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.material-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.material-icone {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background: #f0eef9;
+    color: #5d568f;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   CATEGORIA
+========================================================= */
+
+.material-categoria {
+    display: inline-block;
+    width: fit-content;
+
+    margin-bottom: 12px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #f0eef9;
+    color: #5d568f;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.material-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    color: #333;
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.material-card p {
+    flex-grow: 1;
+
+    margin-bottom: 20px;
+
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.material-card .btn {
+    align-self: flex-start;
+
+    padding: 9px 16px;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   SEM MATERIAIS
+========================================================= */
+
+.sem-materiais {
+    grid-column: 1 / -1;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border: 1px dashed #d8d8d8;
+    border-radius: 14px;
+
+    color: #777;
+}
+
+.sem-materiais i {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 45px;
+    color: #aaa;
+}
+
+.sem-materiais h3 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    color: #444;
+}
+
+.sem-materiais p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .materiais-lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .materiais-cabecalho {
+        padding: 35px 20px;
+    }
+
+    .materiais-cabecalho h1 {
+        font-size: 27px;
+    }
+
+    .materiais-pagina {
+        padding: 40px 0;
+    }
+
+    .materiais-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .material-card {
+        padding: 22px;
+    }
+
+}

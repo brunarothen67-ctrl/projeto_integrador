@@ -3,34 +3,60 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>Projetos | Painel Administrativo</title>
+    <title>Projetos | Painel Administrativo - NAPNE IFRS</title>
 
 
-<!-- Bootstrap -->
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
 
-<link 
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-rel="stylesheet">
-
-
-<!-- Bootstrap Icons -->
-
-<link 
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
 
-<!-- CSS -->
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
 
-<link rel="stylesheet" href="../css/style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-<link rel="stylesheet" href="../css/projetos-admin.css">
 
+    <!-- =====================================================
+         CSS GERAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <!-- =====================================================
+         CSS DO PAINEL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/painel-admin.css"
+    >
+
+
+    <!-- =====================================================
+         CSS DOS PROJETOS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/projetos-admin.css"
+    >
 
 </head>
 
@@ -38,623 +64,538 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 <body>
 
 
-<!-- NAVBAR -->
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
 
-<header>
+<aside
+    class="admin-sidebar"
+    id="adminSidebar"
+>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
 
+    <!-- LOGO -->
 
-<div class="container">
+    <div class="sidebar-logo">
 
+        <i class="bi bi-universal-access"></i>
 
-<a class="navbar-brand" href="painel-admin.html">
+        <span>
+            NAPNE IFRS
+        </span>
 
-NAPNE IFRS
+    </div>
 
-</a>
 
+    <!-- ADMINISTRADOR -->
 
-<div class="ms-auto">
+    <div class="sidebar-admin">
 
+        <div class="sidebar-avatar">
 
-<a href="painel-admin.html" class="btn btn-light">
+            <i class="bi bi-person-fill"></i>
 
-<i class="bi bi-arrow-left"></i>
+        </div>
 
-Voltar ao Painel
+        <div>
 
-</a>
+            <strong>
+                Administrador
+            </strong>
 
+            <small>
+                Painel administrativo
+            </small>
 
-</div>
+        </div>
 
+    </div>
 
-</div>
 
+    <!-- MENU -->
 
-</nav>
+    <nav class="sidebar-menu">
 
-</header>
 
+        <!-- DASHBOARD -->
 
+        <a
+            href="painel-admin.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-grid-1x2-fill"></i>
 
+            <span>
+                Dashboard
+            </span>
 
-<!-- BANNER -->
+        </a>
 
 
-<section class="banner pagina-banner">
+        <!-- PROJETOS -->
 
+        <a
+            href="projetos-admin.html"
+            class="sidebar-link active"
+        >
 
-<div class="banner-conteudo">
+            <i class="bi bi-folder2-open"></i>
 
+            <span>
+                Projetos
+            </span>
 
-<h1>
+        </a>
 
-Gerenciamento de Projetos
 
-</h1>
+        <!-- EVENTOS -->
 
+        <a
+            href="eventos-admin.html"
+            class="sidebar-link"
+        >
 
-<p>
+            <i class="bi bi-calendar-event"></i>
 
-Cadastre, organize e gerencie os projetos desenvolvidos pelo NAPNE.
+            <span>
+                Eventos
+            </span>
 
-</p>
+        </a>
 
 
-</div>
+        <!-- RELATOS -->
 
+        <a
+            href="relatos-admin.html"
+            class="sidebar-link"
+        >
 
-</section>
+            <i class="bi bi-chat-left-text"></i>
 
+            <span>
+                Relatos
+            </span>
 
+        </a>
 
 
+        <!-- MATERIAIS -->
 
+        <a
+            href="materiais-admin.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-file-earmark-text"></i>
 
-<!-- CONTEÚDO -->
+            <span>
+                Materiais
+            </span>
 
+        </a>
 
-<main class="projetos-admin-area">
 
+        <!-- USUÁRIOS -->
 
-<div class="container">
+        <a
+            href="usuarios-admin.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-people"></i>
 
+            <span>
+                Usuários
+            </span>
 
-<!-- TÍTULO -->
+        </a>
 
 
-<section class="admin-titulo">
+        <!-- DIVISOR -->
 
+        <div class="sidebar-divisor"></div>
 
-<h2>
 
-Novo Projeto
+        <!-- VOLTAR AO SITE -->
 
-</h2>
+        <a
+            href="../index.html"
+            class="sidebar-link"
+        >
 
+            <i class="bi bi-house"></i>
 
-<p>
+            <span>
+                Voltar ao site
+            </span>
 
-Preencha as informações abaixo para cadastrar um novo projeto.
+        </a>
 
-</p>
 
+        <!-- SAIR -->
 
-</section>
+        <button
+            type="button"
+            class="sidebar-sair"
+            id="btnSairAdmin"
+        >
 
+            <i class="bi bi-box-arrow-right"></i>
 
+            <span>
+                Sair
+            </span>
 
+        </button>
 
 
+    </nav>
 
-<!-- FORMULÁRIO -->
+</aside>
 
 
-<section class="formulario-projeto">
 
+<!-- =====================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
 
-<div class="card-admin">
+<main class="admin-main">
 
 
+    <!-- =================================================
+         CABEÇALHO
+    ================================================== -->
 
-<form>
+    <header class="admin-header">
 
+        <div>
 
+            <h1>
+                Projetos
+            </h1>
 
+            <p>
+                Cadastre, organize e gerencie os projetos
+                desenvolvidos pelo NAPNE.
+            </p>
 
-<div class="mb-3">
+        </div>
 
 
-<label class="form-label">
+        <!-- MENU MOBILE -->
 
-Título do projeto
+        <button
+            type="button"
+            class="sidebar-mobile-button"
+            id="btnMenuAdmin"
+        >
 
-</label>
+            <i class="bi bi-list"></i>
 
+        </button>
 
-<input 
-type="text"
-class="form-control"
-placeholder="Digite o título do projeto">
+    </header>
 
 
-</div>
 
+    <!-- =================================================
+         NOVO PROJETO
+    ================================================== -->
 
+    <section class="admin-section">
 
 
+        <div class="admin-section-title">
 
-<div class="mb-3">
+            <div>
 
+                <h2>
+                    Novo projeto
+                </h2>
 
-<label class="form-label">
+                <p>
+                    Preencha as informações abaixo para
+                    cadastrar um novo projeto.
+                </p>
 
-Categoria
+            </div>
 
-</label>
+        </div>
 
 
-<select class="form-select">
 
+        <div class="admin-form-card">
 
-<option selected>
 
-Selecione uma categoria
+            <form id="formProjeto">
 
-</option>
 
+                <!-- =================================================
+                     TÍTULO
+                ================================================== -->
 
-<option>
+                <div class="mb-3">
 
-Ensino
+                    <label
+                        for="tituloProjeto"
+                        class="form-label"
+                    >
+                        Título do projeto
+                    </label>
 
-</option>
 
+                    <input
+                        type="text"
+                        id="tituloProjeto"
+                        class="form-control"
+                        placeholder="Digite o título do projeto"
+                        required
+                    >
 
-<option>
+                </div>
 
-Pesquisa
 
-</option>
 
+                <!-- =================================================
+                     CATEGORIA
+                ================================================== -->
 
-<option>
+                <div class="mb-3">
 
-Extensão
+                    <label
+                        for="categoriaProjeto"
+                        class="form-label"
+                    >
+                        Categoria
+                    </label>
 
-</option>
 
+                    <select
+                        id="categoriaProjeto"
+                        class="form-select"
+                        required
+                    >
 
-<option>
+                        <option value="">
+                            Selecione uma categoria
+                        </option>
 
-Inclusão
+                        <option value="Ensino">
+                            Ensino
+                        </option>
 
-</option>
+                        <option value="Pesquisa">
+                            Pesquisa
+                        </option>
 
+                        <option value="Extensão">
+                            Extensão
+                        </option>
 
-</select>
+                        <option value="Inclusão">
+                            Inclusão
+                        </option>
 
+                    </select>
 
-</div>
+                </div>
 
 
 
+                <!-- =================================================
+                     IMAGEM
+                ================================================== -->
 
+                <div class="mb-3">
 
+                    <label
+                        for="imagemProjeto"
+                        class="form-label"
+                    >
+                        Imagem do projeto
+                    </label>
 
 
-<div class="mb-3">
+                    <input
+                        type="file"
+                        id="imagemProjeto"
+                        class="form-control"
+                        accept="image/*"
+                    >
 
 
-<label class="form-label">
+                    <small class="text-muted">
+                        Selecione uma imagem do computador.
+                    </small>
 
-Imagem do projeto
+                </div>
 
-</label>
 
 
-<input 
-type="text"
-class="form-control"
-placeholder="Cole o link da imagem">
+                <!-- =================================================
+                     DESCRIÇÃO
+                ================================================== -->
 
+                <div class="mb-3">
 
-</div>
+                    <label
+                        for="descricaoProjeto"
+                        class="form-label"
+                    >
+                        Descrição
+                    </label>
 
 
+                    <textarea
+                        id="descricaoProjeto"
+                        class="form-control"
+                        rows="5"
+                        placeholder="Descreva o projeto"
+                        required
+                    ></textarea>
 
+                </div>
 
 
 
+                <!-- =================================================
+                     STATUS
+                ================================================== -->
 
-<div class="mb-3">
+                <div class="mb-3">
 
+                    <label
+                        for="statusProjeto"
+                        class="form-label"
+                    >
+                        Status
+                    </label>
 
-<label class="form-label">
 
-Descrição
+                    <select
+                        id="statusProjeto"
+                        class="form-select"
+                    >
 
-</label>
+                        <option value="Ativo">
+                            Ativo
+                        </option>
 
+                        <option value="Inativo">
+                            Inativo
+                        </option>
 
-<textarea 
-class="form-control"
-rows="5"
-placeholder="Descreva o projeto">
+                    </select>
 
-</textarea>
+                </div>
 
 
-</div>
 
+                <!-- =================================================
+                     BOTÃO
+                ================================================== -->
 
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
 
+                    <i class="bi bi-plus-circle"></i>
 
+                    Salvar projeto
 
+                </button>
 
 
-<div class="mb-3">
+            </form>
 
 
-<label class="form-label">
+        </div>
 
-Status
+    </section>
 
-</label>
 
 
-<select class="form-select">
+    <!-- =================================================
+         PROJETOS CADASTRADOS
+    ================================================== -->
 
+    <section class="admin-section">
 
-<option>
 
-Ativo
+        <div class="admin-section-title">
 
-</option>
+            <div>
 
+                <h2>
+                    Projetos cadastrados
+                </h2>
 
-<option>
+                <p>
+                    Visualize e gerencie os projetos existentes.
+                </p>
 
-Inativo
+            </div>
 
-</option>
+        </div>
 
 
-</select>
 
+        <!--
+            Os projetos cadastrados serão
+            carregados pelo projetos-admin.js.
+        -->
 
-</div>
+        <div
+            class="projetos-admin-list"
+            id="listaProjetos"
+        >
 
+        </div>
 
 
+    </section>
 
 
 
+    <!-- =================================================
+         RODAPÉ
+    ================================================== -->
 
-<button class="btn btn-primary">
+    <footer class="admin-footer">
 
-<i class="bi bi-plus-circle"></i>
+        <p>
+            © 2026 NAPNE - IFRS Campus Rolante
+        </p>
 
-Salvar Projeto
-
-</button>
-
-
-
-
-</form>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- PROJETOS CADASTRADOS -->
-
-
-<section class="lista-projetos">
-
-
-<div class="admin-titulo">
-
-
-<h2>
-
-Projetos Cadastrados
-
-</h2>
-
-
-<p>
-
-Visualize e gerencie os projetos existentes.
-
-</p>
-
-
-</div>
-
-<!-- CARD DOS PROJETOS -->
-
-<div class="row g-4">
-
-
-
-<div class="col-md-6 col-lg-4">
-
-
-<div class="projeto-card">
-
-
-
-<i class="bi bi-folder2-open"></i>
-
-
-
-<h3>
-
-Inclusão Digital
-
-</h3>
-
-
-
-<span class="categoria">
-
-Extensão
-
-</span>
-
-
-
-<p>
-
-Projeto voltado para promover o acesso à tecnologia e desenvolver habilidades digitais nos estudantes.
-
-</p>
-
-
-
-
-<div class="acoes-projeto">
-
-
-<button class="btn btn-outline-primary">
-
-<i class="bi bi-pencil"></i>
-
-Editar
-
-</button>
-
-
-
-<button class="btn btn-outline-danger">
-
-<i class="bi bi-trash"></i>
-
-Excluir
-
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="col-md-6 col-lg-4">
-
-
-<div class="projeto-card">
-
-
-
-<i class="bi bi-people"></i>
-
-
-
-<h3>
-
-Acessibilidade e Inclusão
-
-</h3>
-
-
-
-<span class="categoria">
-
-Inclusão
-
-</span>
-
-
-
-<p>
-
-Ações e iniciativas voltadas para a promoção da acessibilidade no ambiente acadêmico.
-
-</p>
-
-
-
-
-<div class="acoes-projeto">
-
-
-<button class="btn btn-outline-primary">
-
-<i class="bi bi-pencil"></i>
-
-Editar
-
-</button>
-
-
-
-<button class="btn btn-outline-danger">
-
-<i class="bi bi-trash"></i>
-
-Excluir
-
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="col-md-6 col-lg-4">
-
-
-<div class="projeto-card">
-
-
-
-<i class="bi bi-book"></i>
-
-
-
-<h3>
-
-Formação Inclusiva
-
-</h3>
-
-
-
-<span class="categoria">
-
-Ensino
-
-</span>
-
-
-
-<p>
-
-Capacitações e materiais para estudantes e servidores sobre inclusão.
-
-</p>
-
-
-
-
-<div class="acoes-projeto">
-
-
-<button class="btn btn-outline-primary">
-
-<i class="bi bi-pencil"></i>
-
-Editar
-
-</button>
-
-
-
-<button class="btn btn-outline-danger">
-
-<i class="bi bi-trash"></i>
-
-Excluir
-
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-</div>
+    </footer>
 
 
 </main>
 
 
 
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
 
 
 
-<!-- RODAPÉ -->
+<!-- =====================================================
+     JAVASCRIPT DOS PROJETOS
+====================================================== -->
 
-
-<footer class="footer">
-
-
-<div class="container">
-
-
-<p class="text-center mb-0">
-
-© 2026 NAPNE - IFRS Campus Rolante
-
-</p>
-
-
-</div>
-
-
-</footer>
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+<script
+    src="../js/projetos-admin.js">
+</script>
 
 
 </body>
-
 
 </html>

@@ -1,23 +1,16 @@
 /* =========================================================
    ACESSIBILIDADE
    NAPNE - IFRS Campus Rolante
-   ========================================================= */
+========================================================= */
 
 
 /* =========================================================
-   SEÇÕES DA PÁGINA
-   ========================================================= */
+   SEÇÕES
+========================================================= */
 
 .acessibilidade-section {
     text-align: center;
-
-    border: none;
-    outline: none;
-    box-shadow: none;
 }
-
-
-/* Alternância dos fundos */
 
 .acessibilidade-section:nth-child(odd) {
     background: var(--branco);
@@ -30,7 +23,7 @@
 
 /* =========================================================
    TÍTULOS
-   ========================================================= */
+========================================================= */
 
 .acessibilidade-section h2 {
     color: var(--azul-escuro);
@@ -44,19 +37,18 @@
 
 
 /* =========================================================
-   TEXTOS DAS SEÇÕES
-   ========================================================= */
+   TEXTO DAS SEÇÕES
+========================================================= */
 
 .acessibilidade-section > .container > p {
     max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 
 /* =========================================================
-   CARDS DE ACESSIBILIDADE
-   ========================================================= */
+   CARDS
+========================================================= */
 
 .acessibilidade-card {
     height: 100%;
@@ -66,7 +58,6 @@
 
     border: 1px solid var(--azul-borda);
     border-top: 4px solid var(--turquesa);
-
     border-radius: var(--raio);
 
     box-shadow: var(--sombra);
@@ -77,20 +68,18 @@
 
     text-align: center;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 
-/* Cards sobre fundo branco */
+/* Cards em seções brancas */
 
 .acessibilidade-section:nth-child(odd) .acessibilidade-card {
     background: var(--fundo);
 }
 
 
-/* Efeito dos cards */
+/* Efeito */
 
 .acessibilidade-card:hover {
     transform: translateY(-6px);
@@ -99,8 +88,8 @@
 
 
 /* =========================================================
-   ÍCONES DOS CARDS
-   ========================================================= */
+   ÍCONES
+========================================================= */
 
 .acessibilidade-card .icon {
     width: 60px;
@@ -113,18 +102,16 @@
     margin-bottom: 18px;
 
     background: var(--azul-claro);
-
     border-radius: 16px;
 
     font-size: 28px;
-
     flex-shrink: 0;
 }
 
 
 /* =========================================================
    TÍTULOS DOS CARDS
-   ========================================================= */
+========================================================= */
 
 .acessibilidade-card h3 {
     margin-bottom: 12px;
@@ -133,7 +120,7 @@
 
 /* =========================================================
    TEXTOS DOS CARDS
-   ========================================================= */
+========================================================= */
 
 .acessibilidade-card p {
     margin-bottom: 0;
@@ -142,8 +129,8 @@
 
 
 /* =========================================================
-   BOTÕES DOS MATERIAIS
-   ========================================================= */
+   BOTÕES
+========================================================= */
 
 .acessibilidade-card .btn {
     margin-top: 20px;
@@ -152,7 +139,7 @@
 
 /* =========================================================
    RESPONSIVIDADE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 768px) {
 

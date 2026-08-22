@@ -4,608 +4,297 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>NAPNE - IFRS Campus Rolante</title>
 
-    <!-- Bootstrap -->
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- Bootstrap Icons -->
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
-    <!-- CSS geral -->
-    <link rel="stylesheet" href="css/style.css">
 
-    <!-- CSS do NAPNE -->
-    <link rel="stylesheet" href="css/napne.css">
+    <!-- =====================================================
+         CSS GERAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =====================================================
+         CSS DO NAPNE
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/napne.css"
+    >
 
 </head>
 
+
 <body>
 
-    <!-- =====================================================
-         NAVBAR
-    ====================================================== -->
-
-    <header>
-
-        <nav class="navbar navbar-expand-lg">
-
-            <div class="container">
-
-                <a class="navbar-brand" href="index.html">
-                    <i class="bi bi-universal-access"></i>
-                    NAPNE IFRS
-                </a>
-
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu"
-                    aria-controls="menu"
-                    aria-expanded="false"
-                    aria-label="Abrir menu">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
 
-                <div class="collapse navbar-collapse" id="menu">
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
-                    <ul class="navbar-nav ms-auto">
+<header>
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="index.html">
-                                Home
-                            </a>
-                        </li>
+    <nav class="navbar navbar-expand-lg navbar-dark">
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="napne.html">
-                                NAPNE
-                            </a>
-                        </li>
+        <div class="container">
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="projetos.html">
-                                Projetos
-                            </a>
-                        </li>
+            <!-- LOGO -->
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="acessibilidade.html">
-                                Acessibilidade
-                            </a>
-                        </li>
+            <a
+                class="navbar-brand"
+                href="index.html"
+            >
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="relatos.html">
-                                Relatos
-                            </a>
-                        </li>
+                <i class="bi bi-universal-access"></i>
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="login.html">
-                                Entrar
-                            </a>
-                        </li>
+                NAPNE IFRS
 
-                        <li class="nav-item ms-lg-2">
-                            <a
-                                class="btn-cadastro"
-                                href="cadastro.html">
-                                Cadastrar
-                            </a>
-                        </li>
+            </a>
 
-                    </ul>
 
-                </div>
+            <!-- BOTÃO MOBILE -->
 
-            </div>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
 
-        </nav>
+                <span class="navbar-toggler-icon"></span>
 
-    </header>
+            </button>
 
 
-    <!-- =====================================================
-         BANNER DO NAPNE
-    ====================================================== -->
+            <!-- MENU -->
 
-    <section class="pagina-banner">
+            <div
+                class="collapse navbar-collapse"
+                id="menu"
+            >
 
-        <div class="banner-conteudo">
+                <ul class="navbar-nav ms-auto">
 
-            
 
-            <h1>
-                Conheça o NAPNE
-            </h1>
+                    <!-- HOME -->
 
-            <p>
-                Conheça o núcleo, seus serviços e as ações
-                desenvolvidas para promover inclusão,
-                acessibilidade e permanência estudantil.
-            </p>
+                    <li class="nav-item">
 
-           
+                        <a
+                            class="nav-link"
+                            href="index.html"
+                        >
+                            Home
+                        </a>
 
-        </div>
+                    </li>
 
-    </section>
 
+                    <!-- NAPNE -->
 
+                    <li class="nav-item">
 
-        <!-- =================================================
-             SOBRE O NAPNE
-        ================================================== -->
+                        <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="napne.html"
+                        >
+                            NAPNE
+                        </a>
 
-        <section class="sobre-napne" id="sobre-napne">
-            <div class="container">
+                    </li>
 
-            
 
+                    <!-- PROJETOS -->
 
-                <h2>
-                    O que é o NAPNE?
-                </h2>
+                    <li class="nav-item">
 
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
 
-                <p>
-                    O Núcleo de Atendimento às Pessoas com Necessidades
-                    Educacionais Específicas (NAPNE) promove ações
-                    voltadas ao acesso, permanência, participação,
-                    aprendizagem significativa e êxito dos estudantes.
-                </p>
+                    </li>
 
 
-                <p>
-                    O trabalho do núcleo não se limita ao atendimento
-                    individual. O NAPNE busca construir uma cultura
-                    institucional mais inclusiva, criando estratégias
-                    de acessibilidade e apoiando toda a comunidade
-                    acadêmica.
-                </p>
+                    <!-- ACESSIBILIDADE -->
 
-            </div>
+                    <li class="nav-item">
 
-        </section>
+                        <a
+                            class="nav-link"
+                            href="acessibilidade.html"
+                        >
+                            Acessibilidade
+                        </a>
 
+                    </li>
 
 
-        <!-- =================================================
-             SERVIÇOS
-        ================================================== -->
+                    <!-- RELATOS -->
 
-        <section class="servicos-napne">
+                    <li class="nav-item">
 
-            <div class="container">
+                        <a
+                            class="nav-link"
+                            href="relatos.html"
+                        >
+                            Relatos
+                        </a>
 
-                <h2>
-                    Serviços oferecidos
-                </h2>
+                    </li>
 
 
-                <p class="text-center">
-                    Conheça algumas das ações realizadas pelo NAPNE
-                    para promover inclusão e acessibilidade.
-                </p>
+                    <!-- ENTRAR -->
 
+                    <li
+                        class="nav-item"
+                        id="areaEntrar"
+                    >
 
-                <div class="row g-4 mt-4">
+                        <a
+                            class="nav-link"
+                            href="login.html"
+                        >
+                            Entrar
+                        </a>
 
+                    </li>
 
-                    <div class="col-md-6 col-lg-4">
 
-                        <div class="card-servico">
+                    <!-- CADASTRAR -->
 
-                            <i class="bi bi-chat-heart"></i>
+                    <li
+                        class="nav-item ms-lg-2"
+                        id="areaCadastro"
+                    >
 
-                            <h3>
-                                Acolhimento e escuta
-                            </h3>
+                        <a
+                            class="btn-cadastro"
+                            href="cadastro.html"
+                        >
+                            Cadastrar
+                        </a>
 
-                            <p>
-                                Espaço de diálogo para compreender as
-                                necessidades dos estudantes e oferecer
-                                orientação.
-                            </p>
+                    </li>
 
-                        </div>
 
-                    </div>
+                    <!-- PERFIL -->
 
+                    <li
+                        class="nav-item"
+                        id="areaPerfil"
+                        style="display: none;"
+                    >
 
+                        <a
+                            class="nav-link"
+                            href="perfil.html"
+                        >
 
-                    <div class="col-md-6 col-lg-4">
+                            <i class="bi bi-person-circle"></i>
 
-                        <div class="card-servico">
+                            <span id="nomeUsuarioNavbar">
+                                Meu perfil
+                            </span>
 
-                            <i class="bi bi-book"></i>
+                        </a>
 
-                            <h3>
-                                Acompanhamento pedagógico
-                            </h3>
+                    </li>
 
-                            <p>
-                                Apoio durante a trajetória acadêmica
-                                e construção de estratégias de
-                                aprendizagem.
-                            </p>
 
-                        </div>
+                    <!-- SAIR -->
 
-                    </div>
+                    <li
+                        class="nav-item"
+                        id="areaSair"
+                        style="display: none;"
+                    >
 
+                        <a
+                            class="nav-link"
+                            href="#"
+                            id="btnSairNavbar"
+                        >
 
+                            <i class="bi bi-box-arrow-right"></i>
 
-                    <div class="col-md-6 col-lg-4">
+                            Sair
 
-                        <div class="card-servico">
+                        </a>
 
-                            <i class="bi bi-people"></i>
+                    </li>
 
-                            <h3>
-                                Orientação à comunidade
-                            </h3>
 
-                            <p>
-                                Orientações para estudantes, professores,
-                                famílias e setores da instituição.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-6 col-lg-4">
-
-                        <div class="card-servico">
-
-                            <i class="bi bi-universal-access"></i>
-
-                            <h3>
-                                Acessibilidade pedagógica
-                            </h3>
-
-                            <p>
-                                Desenvolvimento de estratégias que
-                                favorecem a participação e aprendizagem.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-6 col-lg-4">
-
-                        <div class="card-servico">
-
-                            <i class="bi bi-person-check"></i>
-
-                            <h3>
-                                Planos Educacionais Individualizados
-                            </h3>
-
-                            <p>
-                                Construção e acompanhamento de estratégias
-                                personalizadas quando necessário.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-6 col-lg-4">
-
-                        <div class="card-servico">
-
-                            <i class="bi bi-lightbulb"></i>
-
-                            <h3>
-                                Formações e ações inclusivas
-                            </h3>
-
-                            <p>
-                                Promoção de atividades formativas sobre
-                                inclusão para a comunidade acadêmica.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             COMO SOLICITAR ATENDIMENTO
-        ================================================== -->
-
-        <section class="atendimento-napne">
-
-            <div class="container">
-
-                <h2>
-                    Como solicitar atendimento?
-                </h2>
-
-
-                <p class="text-center">
-                    O atendimento do NAPNE pode ser solicitado de
-                    diferentes formas. Cada estudante possui
-                    necessidades diferentes e o acompanhamento é
-                    construído de forma individualizada.
-                </p>
-
-
-                <div class="row g-4 mt-4">
-
-
-                    <div class="col-md-4">
-
-                        <div class="passo-card">
-
-                            <div class="numero">
-                                1
-                            </div>
-
-
-                            <h3>
-                                Procure o NAPNE
-                            </h3>
-
-
-                            <p>
-                                O estudante pode procurar o núcleo
-                                espontaneamente ou ser encaminhado
-                                por professores, familiares, colegas
-                                ou outros setores da instituição.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-4">
-
-                        <div class="passo-card">
-
-                            <div class="numero">
-                                2
-                            </div>
-
-
-                            <h3>
-                                Converse com a equipe
-                            </h3>
-
-
-                            <p>
-                                É realizado um acolhimento para
-                                compreender as necessidades educacionais
-                                apresentadas pelo estudante.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-4">
-
-                        <div class="passo-card">
-
-                            <div class="numero">
-                                3
-                            </div>
-
-
-                            <h3>
-                                Construção de estratégias
-                            </h3>
-
-
-                            <p>
-                                Quando necessário, o NAPNE articula
-                                ações com outros profissionais para
-                                promover acessibilidade e participação.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="aviso-atendimento">
-
-                    <i class="bi bi-info-circle-fill"></i>
-
-                    <p>
-
-                        <strong>Importante:</strong>
-
-                        não é necessário possuir laudo médico para
-                        procurar o NAPNE. O acolhimento considera as
-                        necessidades educacionais do estudante.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-```html
-<!-- =================================================
-     EQUIPE
-================================================== -->
-
-<section class="equipe-napne">
-
-    <div class="container">
-
-        <h2>
-            Equipe do NAPNE
-        </h2>
-
-        <p class="text-center">
-            A equipe do NAPNE é formada por diferentes
-            profissionais e membros da comunidade acadêmica
-            que atuam na construção de uma educação mais
-            inclusiva.
-        </p>
-
-        <div class="row g-4 mt-4">
-
-            <!-- EQUIPE 1 -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card-equipe">
-
-                    <div class="foto-equipe">
-                        <img
-                            src="img/equipe1.jpg"
-                            alt="Melânia Cristina Biasus">
-                    </div>
-
-                    <h3>
-                        Melânia Cristina Biasus
-                    </h3>
-
-                    <p>
-                        Pedagoga / Coordenadora do NAPNE
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- EQUIPE 2 -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card-equipe">
-
-                    <div class="foto-equipe">
-                        <img
-                            src="img/equipe2.jpg"
-                            alt="Mônica Grazieli Marquet">
-                    </div>
-
-                    <h3>
-                        Mônica Grazieli Marquet
-                    </h3>
-
-                    <p>
-                        Educadora Especial
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- EQUIPE 3 -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card-equipe">
-
-                    <div class="foto-equipe">
-                        <img
-                            src="img/equipe3.jpg"
-                            alt="Roberta Di Giorgio Petry">
-                    </div>
-
-                    <h3>
-                        Roberta Di Giorgio Petry
-                    </h3>
-
-                    <p>
-                        Psicopedagoga
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- EQUIPE 4 -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card-equipe">
-
-                    <div class="foto-equipe">
-                        <img
-                            src="img/equipe4.jpg"
-                            alt="Isabel Cristina Ribeiro Ramos">
-                    </div>
-
-                    <h3>
-                        Isabel Cristina Ribeiro Ramos
-                    </h3>
-
-                    <p>
-                        Profissional de Apoio Escolar
-                    </p>
-
-                </div>
+                </ul>
 
             </div>
 
         </div>
 
+    </nav>
 
-        <p class="equipe-extra">
+</header>
 
-            Além da equipe principal, o NAPNE conta com a
-            participação de docentes, técnicas e técnicos
-            em educação, estudantes, comunidade externa,
-            bolsistas e voluntários em projetos institucionais.
 
+
+<!-- =====================================================
+     BANNER DO NAPNE
+====================================================== -->
+
+<section class="banner">
+
+    <div class="banner-conteudo">
+
+        <div class="banner-icone">
+
+            <i class="bi bi-universal-access"></i>
+
+        </div>
+
+        <h1>
+            Conheça o NAPNE
+        </h1>
+
+        <p>
+            Conheça o núcleo, seus serviços e as ações
+            desenvolvidas para promover inclusão,
+            acessibilidade e permanência estudantil.
         </p>
 
     </div>
@@ -614,201 +303,307 @@
 
 
 
+<!-- =========================================================
+     CONTEÚDO PRINCIPAL
+========================================================= -->
+
+<main>
 
 
-        <!-- =================================================
-             CONTATO
-        ================================================== -->
+    <!-- =====================================================
+         SOBRE O NAPNE
+    ====================================================== -->
 
-        <section class="contato-napne">
+    <section
+        class="sobre-napne"
+        id="sobre-napne"
+    >
 
-            <div class="container">
+        <div class="container">
 
-                <h2>
-                    Entre em contato
-                </h2>
+            <h2>
+                O que é o NAPNE?
+            </h2>
 
+            <p>
+                O Núcleo de Atendimento às Pessoas com Necessidades
+                Educacionais Específicas (NAPNE) promove ações
+                voltadas ao acesso, permanência, participação,
+                aprendizagem significativa e êxito dos estudantes.
+            </p>
 
-                <p class="text-center">
-                    Procure o NAPNE para tirar dúvidas, solicitar
-                    apoio ou conhecer melhor as ações do núcleo.
-                </p>
+            <p>
+                O trabalho do núcleo não se limita ao atendimento
+                individual. O NAPNE busca construir uma cultura
+                institucional mais inclusiva, criando estratégias
+                de acessibilidade e apoiando toda a comunidade
+                acadêmica.
+            </p>
 
+        </div>
 
-                <div class="row g-4 mt-4">
-
-
-                    <div class="col-md-4">
-
-                        <div class="card-contato">
-
-                            <i class="bi bi-envelope"></i>
-
-                            <h3>
-                                E-mail
-                            </h3>
-
-
-                            <p>
-
-                                <a href="mailto:napne@rolante.ifrs.edu.br">
-
-                                    napne@rolante.ifrs.edu.br
-
-                                </a>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-4">
-
-                        <div class="card-contato">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <h3>
-                                Localização
-                            </h3>
-
-
-                            <p>
-                                IFRS Campus Rolante
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-md-4">
-
-                        <div class="card-contato">
-
-                            <i class="bi bi-clock"></i>
-
-                            <h3>
-                                Atendimento
-                            </h3>
-
-
-                            <p>
-                                Procure o núcleo presencialmente
-                                ou pelos canais institucionais.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
+    </section>
 
 
 
     <!-- =====================================================
-         RODAPÉ
+         SERVIÇOS
     ====================================================== -->
 
-    <footer class="footer">
+    <section class="servicos-napne">
 
         <div class="container">
 
-            <div class="row">
+            <h2>
+                Serviços oferecidos
+            </h2>
+
+            <p class="text-center">
+                Conheça algumas das ações realizadas pelo NAPNE
+                para promover inclusão e acessibilidade.
+            </p>
 
 
-                <div class="col-md-4">
-
-                    <h4>
-                        NAPNE
-                    </h4>
+            <div class="row g-4 mt-4">
 
 
-                    <p>
-                        Núcleo de Atendimento às Pessoas com
-                        Necessidades Educacionais Específicas
-                        do IFRS Campus Rolante.
-                    </p>
+                <!-- SERVIÇO 1 -->
 
-                </div>
+                <div class="col-md-6 col-lg-4">
 
+                    <div class="card-servico">
 
+                        <i class="bi bi-chat-heart"></i>
 
-                <div class="col-md-4">
+                        <h3>
+                            Acolhimento e escuta
+                        </h3>
 
-                    <h4>
-                        Links
-                    </h4>
+                        <p>
+                            Espaço de diálogo para compreender as
+                            necessidades dos estudantes e oferecer
+                            orientação.
+                        </p>
 
-
-                    <ul class="list-unstyled">
-
-                        <li>
-                            <a href="index.html">
-                                Home
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="napne.html">
-                                NAPNE
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="acessibilidade.html">
-                                Acessibilidade
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="projetos.html">
-                                Projetos
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="relatos.html">
-                                Relatos
-                            </a>
-                        </li>
-
-                    </ul>
+                    </div>
 
                 </div>
 
 
+                <!-- SERVIÇO 2 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card-servico">
+
+                        <i class="bi bi-book"></i>
+
+                        <h3>
+                            Acompanhamento pedagógico
+                        </h3>
+
+                        <p>
+                            Apoio durante a trajetória acadêmica
+                            e construção de estratégias de
+                            aprendizagem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVIÇO 3 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card-servico">
+
+                        <i class="bi bi-people"></i>
+
+                        <h3>
+                            Orientação à comunidade
+                        </h3>
+
+                        <p>
+                            Orientações para estudantes, professores,
+                            famílias e setores da instituição.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVIÇO 4 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card-servico">
+
+                        <i class="bi bi-universal-access"></i>
+
+                        <h3>
+                            Acessibilidade pedagógica
+                        </h3>
+
+                        <p>
+                            Desenvolvimento de estratégias que
+                            favorecem a participação e aprendizagem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVIÇO 5 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card-servico">
+
+                        <i class="bi bi-person-check"></i>
+
+                        <h3>
+                            Planos Educacionais Individualizados
+                        </h3>
+
+                        <p>
+                            Construção e acompanhamento de estratégias
+                            personalizadas quando necessário.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVIÇO 6 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card-servico">
+
+                        <i class="bi bi-lightbulb"></i>
+
+                        <h3>
+                            Formações e ações inclusivas
+                        </h3>
+
+                        <p>
+                            Promoção de atividades formativas sobre
+                            inclusão para a comunidade acadêmica.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         COMO SOLICITAR ATENDIMENTO
+    ====================================================== -->
+
+    <section class="atendimento-napne">
+
+        <div class="container">
+
+            <h2>
+                Como solicitar atendimento?
+            </h2>
+
+            <p class="text-center">
+                O atendimento do NAPNE pode ser solicitado de
+                diferentes formas. Cada estudante possui
+                necessidades diferentes e o acompanhamento é
+                construído de forma individualizada.
+            </p>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <!-- PASSO 1 -->
 
                 <div class="col-md-4">
 
-                    <h4>
-                        Contato
-                    </h4>
+                    <div class="passo-card">
+
+                        <div class="numero">
+                            1
+                        </div>
+
+                        <h3>
+                            Procure o NAPNE
+                        </h3>
+
+                        <p>
+                            O estudante pode procurar o núcleo
+                            espontaneamente ou ser encaminhado
+                            por professores, familiares, colegas
+                            ou outros setores da instituição.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-                    <p>
-                        IFRS Campus Rolante
-                    </p>
+                <!-- PASSO 2 -->
+
+                <div class="col-md-4">
+
+                    <div class="passo-card">
+
+                        <div class="numero">
+                            2
+                        </div>
+
+                        <h3>
+                            Converse com a equipe
+                        </h3>
+
+                        <p>
+                            É realizado um acolhimento para
+                            compreender as necessidades educacionais
+                            apresentadas pelo estudante.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-                    <p>
-                        napne@rolante.ifrs.edu.br
-                    </p>
+                <!-- PASSO 3 -->
+
+                <div class="col-md-4">
+
+                    <div class="passo-card">
+
+                        <div class="numero">
+                            3
+                        </div>
+
+                        <h3>
+                            Construção de estratégias
+                        </h3>
+
+                        <p>
+                            Quando necessário, o NAPNE articula
+                            ações com outros profissionais para
+                            promover acessibilidade e participação.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -816,25 +611,407 @@
             </div>
 
 
-            <hr>
+            <!-- AVISO -->
+
+            <div class="aviso-atendimento">
+
+                <i class="bi bi-info-circle-fill"></i>
+
+                <p>
+
+                    <strong>Importante:</strong>
+
+                    não é necessário possuir laudo médico para
+                    procurar o NAPNE. O acolhimento considera as
+                    necessidades educacionais do estudante.
+
+                </p>
+
+            </div>
 
 
-            <p class="text-center mb-0">
+        </div>
 
-                © 2026 NAPNE - IFRS Campus Rolante
+    </section>
+
+
+
+    <!-- =====================================================
+         EQUIPE
+    ====================================================== -->
+
+    <section class="equipe-napne">
+
+        <div class="container">
+
+            <h2>
+                Equipe do NAPNE
+            </h2>
+
+            <p class="text-center">
+                A equipe do NAPNE é formada por diferentes
+                profissionais e membros da comunidade acadêmica
+                que atuam na construção de uma educação mais
+                inclusiva.
+            </p>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <!-- EQUIPE 1 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card-equipe">
+
+                        <div class="foto-equipe">
+
+                            <img
+                                src="img/equipe1.jpg"
+                                alt="Melânia Cristina Biasus"
+                            >
+
+                        </div>
+
+                        <h3>
+                            Melânia Cristina Biasus
+                        </h3>
+
+                        <p>
+                            Pedagoga / Coordenadora do NAPNE
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EQUIPE 2 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card-equipe">
+
+                        <div class="foto-equipe">
+
+                            <img
+                                src="img/equipe2.jpg"
+                                alt="Mônica Grazieli Marquet"
+                            >
+
+                        </div>
+
+                        <h3>
+                            Mônica Grazieli Marquet
+                        </h3>
+
+                        <p>
+                            Educadora Especial
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EQUIPE 3 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card-equipe">
+
+                        <div class="foto-equipe">
+
+                            <img
+                                src="img/equipe3.jpg"
+                                alt="Roberta Di Giorgio Petry"
+                            >
+
+                        </div>
+
+                        <h3>
+                            Roberta Di Giorgio Petry
+                        </h3>
+
+                        <p>
+                            Psicopedagoga
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EQUIPE 4 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card-equipe">
+
+                        <div class="foto-equipe">
+
+                            <img
+                                src="img/equipe4.jpg"
+                                alt="Isabel Cristina Ribeiro Ramos"
+                            >
+
+                        </div>
+
+                        <h3>
+                            Isabel Cristina Ribeiro Ramos
+                        </h3>
+
+                        <p>
+                            Profissional de Apoio Escolar
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <p class="equipe-extra">
+
+                Além da equipe principal, o NAPNE conta com a
+                participação de docentes, técnicas e técnicos
+                em educação, estudantes, comunidade externa,
+                bolsistas e voluntários em projetos institucionais.
 
             </p>
 
         </div>
 
-    </footer>
+    </section>
 
 
 
-    <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <!-- =====================================================
+         CONTATO
+    ====================================================== -->
+
+    <section class="contato-napne">
+
+        <div class="container">
+
+            <h2>
+                Entre em contato
+            </h2>
+
+            <p class="text-center">
+                Procure o NAPNE para tirar dúvidas, solicitar
+                apoio ou conhecer melhor as ações do núcleo.
+            </p>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <!-- E-MAIL -->
+
+                <div class="col-md-4">
+
+                    <div class="card-contato">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <h3>
+                            E-mail
+                        </h3>
+
+                        <p>
+
+                            <a
+                                href="mailto:napne@rolante.ifrs.edu.br"
+                            >
+                                napne@rolante.ifrs.edu.br
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCALIZAÇÃO -->
+
+                <div class="col-md-4">
+
+                    <div class="card-contato">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <h3>
+                            Localização
+                        </h3>
+
+                        <p>
+                            IFRS Campus Rolante
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATENDIMENTO -->
+
+                <div class="col-md-4">
+
+                    <div class="card-contato">
+
+                        <i class="bi bi-clock"></i>
+
+                        <h3>
+                            Atendimento
+                        </h3>
+
+                        <p>
+                            Procure o núcleo presencialmente
+                            ou pelos canais institucionais.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     RODAPÉ
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <!-- NAPNE -->
+
+            <div class="col-md-4">
+
+                <h4>
+                    NAPNE
+                </h4>
+
+                <p>
+                    Núcleo de Atendimento às Pessoas com
+                    Necessidades Educacionais Específicas
+                    do IFRS Campus Rolante.
+                </p>
+
+            </div>
+
+
+            <!-- LINKS -->
+
+            <div class="col-md-4">
+
+                <h4>
+                    Links
+                </h4>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="napne.html">
+                            NAPNE
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="acessibilidade.html">
+                            Acessibilidade
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="projetos.html">
+                            Projetos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="relatos.html">
+                            Relatos
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTATO -->
+
+            <div class="col-md-4">
+
+                <h4>
+                    Contato
+                </h4>
+
+                <p>
+                    IFRS Campus Rolante
+                </p>
+
+                <p>
+                    napne@rolante.ifrs.edu.br
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <p class="text-center mb-0">
+            © 2026 NAPNE - IFRS Campus Rolante
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     BOOTSTRAP JS
+========================================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+></script>
+
+
+<!-- =========================================================
+     NAVBAR DINÂMICA
+========================================================= -->
+
+<script src="js/navbar.js"></script>
 
 
 </body>

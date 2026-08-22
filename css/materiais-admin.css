@@ -1,0 +1,337 @@
+/* =========================================================
+   MATERIAIS - PAINEL ADMINISTRATIVO
+   NAPNE - IFRS Campus Rolante
+========================================================= */
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.admin-section {
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.admin-form-card {
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.06);
+
+    max-width: 900px;
+}
+
+
+/* Labels */
+
+.admin-form-card .form-label {
+
+    font-weight: 600;
+
+    color: #333333;
+
+    margin-bottom: 8px;
+}
+
+
+/* Inputs */
+
+.admin-form-card .form-control,
+.admin-form-card .form-select {
+
+    border: 1px solid #d9d9d9;
+
+    border-radius: 10px;
+
+    padding: 11px 14px;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+/* Foco */
+
+.admin-form-card .form-control:focus,
+.admin-form-card .form-select:focus {
+
+    border-color: #6c63a8;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(108, 99, 168, 0.12);
+}
+
+
+/* Textarea */
+
+.admin-form-card textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+/* Texto de ajuda */
+
+.admin-form-card .form-text {
+
+    color: #777777;
+
+    font-size: 13px;
+
+    margin-top: 6px;
+}
+
+
+/* Botão */
+
+.admin-form-card .btn-primary {
+
+    border-radius: 10px;
+
+    padding: 11px 22px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LISTA DE MATERIAIS
+========================================================= */
+
+.materiais-admin-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD DO MATERIAL
+========================================================= */
+
+.material-admin-card {
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.05);
+
+    transition: 0.2s;
+}
+
+
+.material-admin-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   CATEGORIA
+========================================================= */
+
+.material-admin-categoria {
+
+    display: inline-block;
+
+    background: #f0eef9;
+
+    color: #5d568f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.material-admin-card h3 {
+
+    margin: 0 0 10px;
+
+    font-size: 19px;
+
+    color: #333333;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.material-admin-card p {
+
+    color: #666666;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.material-admin-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.material-admin-acoes {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.material-admin-acoes .btn {
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+
+.admin-empty-state {
+
+    grid-column: 1 / -1;
+
+    background: #ffffff;
+
+    border: 1px dashed #d6d6d6;
+
+    border-radius: 16px;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    color: #777777;
+}
+
+
+.admin-empty-state i {
+
+    display: block;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+    color: #aaa;
+}
+
+
+.admin-empty-state h3 {
+
+    font-size: 19px;
+
+    color: #444444;
+
+    margin-bottom: 8px;
+}
+
+
+.admin-empty-state p {
+
+    margin: 0;
+
+    color: #777777;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .materiais-admin-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .admin-form-card {
+
+        padding: 20px;
+
+    }
+
+
+    .material-admin-acoes {
+
+        flex-direction: column;
+
+    }
+
+
+    .material-admin-acoes .btn {
+
+        width: 100%;
+
+    }
+
+}

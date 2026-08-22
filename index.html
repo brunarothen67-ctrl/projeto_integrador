@@ -1,117 +1,160 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NAPNE - IFRS Campus Rolante</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+<title>NAPNE - IFRS Campus Rolante</title>
 
-    <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
+<!-- Bootstrap -->
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
 
-    <!-- CSS geral -->
-    <link rel="stylesheet" href="css/style.css">
+<!-- Bootstrap Icons -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
 
-    <!-- CSS da Home -->
-    <link rel="stylesheet" href="css/home.css">
+<!-- CSS geral -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- CSS da Home -->
+<link rel="stylesheet" href="css/home.css">
 
 </head>
 
 <body>
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<header>
 
-<nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark">
 
-    <div class="container">
+        <div class="container">
 
-        <a class="navbar-brand" href="index.html">
-            <i class="bi bi-universal-access"></i>
-            NAPNE IFRS
-        </a>
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-universal-access"></i>
+                NAPNE IFRS
+            </a>
 
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Abrir menu">
+            <div
+                class="collapse navbar-collapse"
+                id="menu"
+            >
 
-            <span class="navbar-toggler-icon"></span>
+                <ul class="navbar-nav ms-auto">
 
-        </button>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="index.html"
+                        >
+                            Home
+                        </a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="napne.html"
+                        >
+                            NAPNE
+                        </a>
+                    </li>
 
-        <div class="collapse navbar-collapse" id="menu">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
+                    </li>
 
-            <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="acessibilidade.html"
+                        >
+                            Acessibilidade
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
-                        Home
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="relatos.html"
+                        >
+                            Relatos
+                        </a>
+                    </li>
+
+                  <li class="nav-item" id="areaEntrar">
+                     <a
+                        class="nav-link"
+                        href="login.html"
+                    >
+                            Entrar
+                      </a>
+                 </li>
+
+                <li class="nav-item ms-lg-2" id="areaCadastro">
+                    <a
+                        class="btn-cadastro"
+                        href="cadastro.html"
+                    >
+                            Cadastrar
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="napne.html">
-                        NAPNE
-                    </a>
+                <li class="nav-item" id="areaPerfil" style="display: none;">
+                    <a
+                            class="nav-link"
+                            href="perfil.html"
+                    >
+                        <i class="bi bi-person-circle"></i>
+                        <span id="nomeUsuarioNavbar">Meu perfil</span>
+                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="projetos.html">
-                        Projetos
-                    </a>
+                <li class="nav-item" id="areaSair" style="display: none;">
+                     <a
+                            class="nav-link"
+                            href="#"
+                            id="btnSairNavbar"
+    >
+                            <i class="bi bi-box-arrow-right"></i>
+                            Sair
+                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="acessibilidade.html">
-                        Acessibilidade
-                    </a>
-                </li>
+                </ul>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="relatos.html">
-                        Relatos
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">
-                        Entrar
-                    </a>
-                </li>
-
-                <li class="nav-item ms-lg-2">
-                    <a class="btn-cadastro" href="cadastro.html">
-                        Cadastrar
-                    </a>
-                </li>
-
-            </ul>
+            </div>
 
         </div>
 
-    </div>
+    </nav>
 
-</nav>
-
+</header>
 
 <!-- =====================================================
      BANNER
@@ -119,33 +162,40 @@
 
 <header class="banner">
 
-    <div class="banner-conteudo">
 
-        <div class="banner-icone">
-            <i class="bi bi-universal-access"></i>
-        </div>
+<div class="banner-conteudo">
 
-        <h1>
-            NAPNE - IFRS Campus Rolante
-        </h1>
+    <div class="banner-icone">
 
-        <p>
-            Promovendo inclusão, acessibilidade e permanência
-            estudantil para toda a comunidade acadêmica.
-        </p>
-
-        <a href="napne.html" class="botao-principal">
-            Conheça o NAPNE
-            <i class="bi bi-arrow-right"></i>
-        </a>
+        <i class="bi bi-universal-access"></i>
 
     </div>
 
+    <h1>
+        NAPNE - IFRS Campus Rolante
+    </h1>
+
+    <p>
+        Promovendo inclusão, acessibilidade e permanência
+        estudantil para toda a comunidade acadêmica.
+    </p>
+
+    <a
+        href="napne.html"
+        class="botao-principal">
+
+        Conheça o NAPNE
+
+        <i class="bi bi-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
 </header>
 
-
 <main>
-
 
 <!-- =====================================================
      COMO PODEMOS AJUDAR
@@ -153,128 +203,142 @@
 
 <section class="ajuda-section">
 
-    <div class="container">
 
-        <h2>
-            Como podemos ajudar?
-        </h2>
+<div class="container">
 
-        <p class="texto-secao">
-            O NAPNE está disponível para acolher estudantes,
-            orientar professores, apoiar famílias e promover
-            uma educação mais inclusiva.
-        </p>
+    <h2>
+        Como podemos ajudar?
+    </h2>
 
+    <p class="texto-secao">
 
-        <div class="row g-4 mt-2">
+        O NAPNE está disponível para acolher estudantes,
+        orientar professores, apoiar famílias e promover
+        uma educação mais inclusiva.
 
+    </p>
 
-            <!-- ESTUDANTE -->
+    <div class="row g-4 mt-2">
 
-            <div class="col-md-4">
+        <!-- ESTUDANTE -->
 
-                <a href="orientacoes.html" class="link-card">
+        <div class="col-md-4">
 
-                    <div class="card-ajuda estudante">
+            <a
+                href="orientacoes.html"
+                class="link-card">
 
-                        <div class="icone-card">
-                            <i class="bi bi-person"></i>
-                        </div>
+                <div class="card-ajuda estudante">
 
-                        <h3>
-                            Sou estudante
-                        </h3>
-
-                        <p>
-                            Encontre informações sobre atendimento,
-                            apoio pedagógico e acessibilidade.
-                        </p>
-
-                        <span class="saiba-mais">
-                            Saiba mais
-                            <i class="bi bi-arrow-right"></i>
-                        </span>
-
+                    <div class="icone-card">
+                        <i class="bi bi-person"></i>
                     </div>
 
-                </a>
+                    <h3>
+                        Sou estudante
+                    </h3>
 
-            </div>
+                    <p>
+                        Encontre informações sobre atendimento,
+                        apoio pedagógico e acessibilidade.
+                    </p>
+
+                    <span class="saiba-mais">
+
+                        Saiba mais
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
 
 
-            <!-- PROFESSOR -->
+        <!-- PROFESSOR -->
 
-            <div class="col-md-4">
+        <div class="col-md-4">
 
-                <a href="orientacoes.html" class="link-card">
+            <a
+                href="orientacoes.html"
+                class="link-card">
 
-                    <div class="card-ajuda professor">
+                <div class="card-ajuda professor">
 
-                        <div class="icone-card">
-                            <i class="bi bi-mortarboard"></i>
-                        </div>
-
-                        <h3>
-                            Sou professor
-                        </h3>
-
-                        <p>
-                            Orientações e estratégias para promover
-                            práticas inclusivas.
-                        </p>
-
-                        <span class="saiba-mais">
-                            Saiba mais
-                            <i class="bi bi-arrow-right"></i>
-                        </span>
-
+                    <div class="icone-card">
+                        <i class="bi bi-mortarboard"></i>
                     </div>
 
-                </a>
+                    <h3>
+                        Sou professor
+                    </h3>
 
-            </div>
+                    <p>
+                        Orientações e estratégias para promover
+                        práticas inclusivas.
+                    </p>
+
+                    <span class="saiba-mais">
+
+                        Saiba mais
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
 
 
-            <!-- FAMILIAR -->
+        <!-- FAMILIAR -->
 
-            <div class="col-md-4">
+        <div class="col-md-4">
 
-                <a href="orientacoes.html" class="link-card">
+            <a
+                href="orientacoes.html"
+                class="link-card">
 
-                    <div class="card-ajuda familiar">
+                <div class="card-ajuda familiar">
 
-                        <div class="icone-card">
-                            <i class="bi bi-people"></i>
-                        </div>
-
-                        <h3>
-                            Sou familiar
-                        </h3>
-
-                        <p>
-                            Conheça como o NAPNE pode auxiliar
-                            na trajetória acadêmica.
-                        </p>
-
-                        <span class="saiba-mais">
-                            Saiba mais
-                            <i class="bi bi-arrow-right"></i>
-                        </span>
-
+                    <div class="icone-card">
+                        <i class="bi bi-people"></i>
                     </div>
 
-                </a>
+                    <h3>
+                        Sou familiar
+                    </h3>
 
-            </div>
+                    <p>
+                        Conheça como o NAPNE pode auxiliar
+                        na trajetória acadêmica.
+                    </p>
 
+                    <span class="saiba-mais">
+
+                        Saiba mais
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
 
         </div>
 
     </div>
 
+</div>
+
+
 </section>
-
-
 <!-- =====================================================
      PRÓXIMOS EVENTOS
 ===================================================== -->
@@ -288,112 +352,35 @@
         </h2>
 
         <p class="texto-secao">
+
             Confira as próximas ações e atividades promovidas
             pelo NAPNE.
+
         </p>
 
 
-        <div class="row g-4 mt-2">
+        <!--
+            Os eventos publicados pelo administrador
+            serão carregados automaticamente aqui.
+        -->
 
-
-            <div class="col-md-4">
-
-                <div class="card-evento">
-
-                    <div class="evento-icone">
-                        <i class="bi bi-calendar-event"></i>
-                    </div>
-
-                    <h3>
-                        Nome do evento
-                    </h3>
-
-                    <p>
-                        <i class="bi bi-calendar3"></i>
-                        Data do evento
-                    </p>
-
-                    <p>
-                        <i class="bi bi-geo-alt"></i>
-                        Local do evento
-                    </p>
-
-                    <p>
-                        Descrição breve do evento.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="card-evento">
-
-                    <div class="evento-icone">
-                        <i class="bi bi-calendar-event"></i>
-                    </div>
-
-                    <h3>
-                        Nome do evento
-                    </h3>
-
-                    <p>
-                        <i class="bi bi-calendar3"></i>
-                        Data do evento
-                    </p>
-
-                    <p>
-                        <i class="bi bi-geo-alt"></i>
-                        Local do evento
-                    </p>
-
-                    <p>
-                        Descrição breve do evento.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="card-evento">
-
-                    <div class="evento-icone">
-                        <i class="bi bi-calendar-event"></i>
-                    </div>
-
-                    <h3>
-                        Nome do evento
-                    </h3>
-
-                    <p>
-                        <i class="bi bi-calendar3"></i>
-                        Data do evento
-                    </p>
-
-                    <p>
-                        <i class="bi bi-geo-alt"></i>
-                        Local do evento
-                    </p>
-
-                    <p>
-                        Descrição breve do evento.
-                    </p>
-
-                </div>
-
-            </div>
-
+        <div
+            class="row g-4 mt-2"
+            id="listaEventos"
+        >
 
         </div>
 
     </div>
 
 </section>
+
+<!-- =====================================================
+     MITOS E VERDADES
+===================================================== -->
+
+<section class="mitos-home">
+
 <div class="container">
 
     <h2>
@@ -401,7 +388,9 @@
     </h2>
 
     <p class="texto-secao">
+
         Teste seus conhecimentos sobre inclusão e acessibilidade.
+
     </p>
 
     <div class="card-interativo">
@@ -419,25 +408,34 @@
             ideias equivocadas sobre o NAPNE e a inclusão.
         </p>
 
-        <div id="opcoesMito" class="mt-4">
+        <div
+            id="opcoesMito"
+            class="mt-4">
 
             <button
                 type="button"
                 class="btn btn-primary me-2"
                 onclick="responderMito(true)">
+
                 Verdadeiro
+
             </button>
 
             <button
                 type="button"
                 class="btn btn-outline-primary"
                 onclick="responderMito(false)">
+
                 Falso
+
             </button>
 
         </div>
 
-        <div id="resultadoMito" class="mt-4"></div>
+        <div
+            id="resultadoMito"
+            class="mt-4">
+        </div>
 
         <button
             type="button"
@@ -447,6 +445,7 @@
             style="display: none;">
 
             Próxima
+
             <i class="bi bi-arrow-right"></i>
 
         </button>
@@ -455,8 +454,8 @@
 
 </div>
 
-       
 
+</section>
 
 <!-- =====================================================
      VOCÊ SABIA
@@ -464,88 +463,86 @@
 
 <section class="sabia-section">
 
-    <div class="container">
 
-        <h2>
-            Você Sabia?
-        </h2>
+<div class="container">
 
+    <h2>
+        Você Sabia?
+    </h2>
 
-        <div class="row g-4 mt-2">
+    <div class="row g-4 mt-2">
 
+        <div class="col-md-4">
 
-            <div class="col-md-4">
+            <div class="card-curiosidade">
 
-                <div class="card-curiosidade">
-
-                    <div class="curiosidade-icone">
-                        <i class="bi bi-file-earmark-check"></i>
-                    </div>
-
-                    <h3>
-                        Não é necessário ter laudo
-                    </h3>
-
-                    <p>
-                        O estudante pode procurar o NAPNE
-                        conforme suas necessidades educacionais.
-                    </p>
-
+                <div class="curiosidade-icone">
+                    <i class="bi bi-file-earmark-check"></i>
                 </div>
+
+                <h3>
+                    Não é necessário ter laudo
+                </h3>
+
+                <p>
+                    O estudante pode procurar o NAPNE
+                    conforme suas necessidades educacionais.
+                </p>
 
             </div>
 
+        </div>
 
-            <div class="col-md-4">
 
-                <div class="card-curiosidade">
+        <div class="col-md-4">
 
-                    <div class="curiosidade-icone">
-                        <i class="bi bi-people"></i>
-                    </div>
+            <div class="card-curiosidade">
 
-                    <h3>
-                        O NAPNE é para todos
-                    </h3>
-
-                    <p>
-                        O núcleo acompanha diferentes necessidades
-                        educacionais específicas.
-                    </p>
-
+                <div class="curiosidade-icone">
+                    <i class="bi bi-people"></i>
                 </div>
+
+                <h3>
+                    O NAPNE é para todos
+                </h3>
+
+                <p>
+                    O núcleo acompanha diferentes necessidades
+                    educacionais específicas.
+                </p>
 
             </div>
 
+        </div>
 
-            <div class="col-md-4">
 
-                <div class="card-curiosidade">
+        <div class="col-md-4">
 
-                    <div class="curiosidade-icone">
-                        <i class="bi bi-universal-access"></i>
-                    </div>
+            <div class="card-curiosidade">
 
-                    <h3>
-                        Inclusão é responsabilidade de todos
-                    </h3>
-
-                    <p>
-                        Toda a comunidade acadêmica participa
-                        da construção de um ambiente inclusivo.
-                    </p>
-
+                <div class="curiosidade-icone">
+                    <i class="bi bi-universal-access"></i>
                 </div>
 
-            </div>
+                <h3>
+                    Inclusão é responsabilidade de todos
+                </h3>
 
+                <p>
+                    Toda a comunidade acadêmica participa
+                    da construção de um ambiente inclusivo.
+                </p>
+
+            </div>
 
         </div>
 
     </div>
 
-</section>
+</div>
 
+
+</section>
 
 <!-- =====================================================
      PERGUNTAS FREQUENTES
@@ -553,272 +550,274 @@
 
 <section class="faq-section">
 
-    <div class="container">
 
-        <h2>
-            Perguntas Frequentes
-        </h2>
+<div class="container">
 
+    <h2>
+        Perguntas Frequentes
+    </h2>
 
-        <div class="accordion mt-4" id="faq">
+    <div
+        class="accordion mt-4"
+        id="faq">
 
+        <div class="accordion-item">
 
-            <div class="accordion-item">
+            <h3 class="accordion-header">
 
-                <h3 class="accordion-header">
+                <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pergunta1">
 
-                    <button
-                        class="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#pergunta1">
+                    É necessário ter laudo para ser atendido
+                    pelo NAPNE?
 
-                        É necessário ter laudo para ser atendido
-                        pelo NAPNE?
+                </button>
 
-                    </button>
+            </h3>
 
-                </h3>
+            <div
+                id="pergunta1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#faq">
 
+                <div class="accordion-body">
 
-                <div
-                    id="pergunta1"
-                    class="accordion-collapse collapse show"
-                    data-bs-parent="#faq">
-
-                    <div class="accordion-body">
-
-                        Não. O estudante pode procurar o NAPNE
-                        conforme suas necessidades educacionais.
-                        O laudo pode auxiliar em algumas situações,
-                        mas não é obrigatório para o acolhimento.
-
-                    </div>
+                    Não. O estudante pode procurar o NAPNE
+                    conforme suas necessidades educacionais.
+                    O laudo pode auxiliar em algumas situações,
+                    mas não é obrigatório para o acolhimento.
 
                 </div>
 
             </div>
 
-
-            <div class="accordion-item">
-
-                <h3 class="accordion-header">
-
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#pergunta2">
-
-                        Quem pode procurar o NAPNE?
-
-                    </button>
-
-                </h3>
+        </div>
 
 
-                <div
-                    id="pergunta2"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#faq">
+        <div class="accordion-item">
 
-                    <div class="accordion-body">
+            <h3 class="accordion-header">
 
-                        Estudantes, professores, familiares ou
-                        qualquer pessoa da comunidade acadêmica
-                        que necessite de orientação.
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pergunta2">
 
-                    </div>
+                    Quem pode procurar o NAPNE?
 
-                </div>
+                </button>
 
-            </div>
+            </h3>
 
+            <div
+                id="pergunta2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faq">
 
-            <div class="accordion-item">
+                <div class="accordion-body">
 
-                <h3 class="accordion-header">
-
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#pergunta3">
-
-                        O NAPNE atende somente pessoas com deficiência?
-
-                    </button>
-
-                </h3>
-
-
-                <div
-                    id="pergunta3"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#faq">
-
-                    <div class="accordion-body">
-
-                        Não. O NAPNE acompanha diferentes necessidades
-                        educacionais específicas e trabalha com
-                        estratégias de acessibilidade e inclusão.
-
-                    </div>
+                    Estudantes, professores, familiares ou
+                    qualquer pessoa da comunidade acadêmica
+                    que necessite de orientação.
 
                 </div>
 
             </div>
 
-
-            <div class="accordion-item">
-
-                <h3 class="accordion-header">
-
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#pergunta4">
-
-                        Como solicitar atendimento?
-
-                    </button>
-
-                </h3>
+        </div>
 
 
-                <div
-                    id="pergunta4"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#faq">
+        <div class="accordion-item">
 
-                    <div class="accordion-body">
+            <h3 class="accordion-header">
 
-                        O estudante pode procurar o NAPNE diretamente
-                        ou ser encaminhado por professores, familiares
-                        ou outros setores da instituição.
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pergunta3">
 
-                    </div>
+                    O NAPNE atende somente pessoas com deficiência?
+
+                </button>
+
+            </h3>
+
+            <div
+                id="pergunta3"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faq">
+
+                <div class="accordion-body">
+
+                    Não. O NAPNE acompanha diferentes necessidades
+                    educacionais específicas e trabalha com
+                    estratégias de acessibilidade e inclusão.
 
                 </div>
 
             </div>
 
+        </div>
+
+
+        <div class="accordion-item">
+
+            <h3 class="accordion-header">
+
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pergunta4">
+
+                    Como solicitar atendimento?
+
+                </button>
+
+            </h3>
+
+            <div
+                id="pergunta4"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faq">
+
+                <div class="accordion-body">
+
+                    O estudante pode procurar o NAPNE diretamente
+                    ou ser encaminhado por professores, familiares
+                    ou outros setores da instituição.
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
+</div>
+
+
 </section>
 
-
 </main>
-
 
 <!-- =====================================================
      RODAPÉ
 ===================================================== -->
 
-<footer>
+<footer class="footer">
 
-    <div class="container">
+<div class="container">
 
-        <div class="row g-4">
+    <div class="row g-4">
 
+        <div class="col-md-4">
 
-            <div class="col-md-4">
+            <h4>
+                NAPNE
+            </h4>
 
-                <h4>
-                    NAPNE
-                </h4>
-
-                <p>
-                    Núcleo de Atendimento às Pessoas com
-                    Necessidades Educacionais Específicas
-                    do IFRS Campus Rolante.
-                </p>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <h4>
-                    Links
-                </h4>
-
-                <ul class="list-unstyled">
-
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="napne.html">NAPNE</a>
-                    </li>
-
-                    <li>
-                        <a href="acessibilidade.html">
-                            Acessibilidade
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="projetos.html">
-                            Projetos
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="relatos.html">
-                            Relatos
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <h4>
-                    Contato
-                </h4>
-
-                <p>
-                    IFRS Campus Rolante
-                </p>
-
-                <p>
-                    napne@rolante.ifrs.edu.br
-                </p>
-
-            </div>
-
+            <p>
+                Núcleo de Atendimento às Pessoas com
+                Necessidades Educacionais Específicas
+                do IFRS Campus Rolante.
+            </p>
 
         </div>
 
 
-        <hr>
+        <div class="col-md-4">
+
+            <h4>
+                Links
+            </h4>
+
+            <ul class="list-unstyled">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="napne.html">
+                        NAPNE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="acessibilidade.html">
+                        Acessibilidade
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projetos.html">
+                        Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="relatos.html">
+                        Relatos
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
 
 
-        <p class="text-center mb-0">
-            © 2026 NAPNE - IFRS Campus Rolante
-        </p>
+        <div class="col-md-4">
+
+            <h4>
+                Contato
+            </h4>
+
+            <p>
+                IFRS Campus Rolante
+            </p>
+
+            <p>
+                napne@rolante.ifrs.edu.br
+            </p>
+
+        </div>
 
     </div>
 
+    <hr>
+
+    <p class="text-center mb-0">
+        © 2026 NAPNE - IFRS Campus Rolante
+    </p>
+
+</div>
+
+
 </footer>
 
-
-<!-- Bootstrap JS -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
 </script>
- 
+
 <script src="js/mitos-verdades.js"></script>
+<script src="js/eventos.js"></script>
+
+<script src="js/navbar.js"></script>
+
+
 </body>
 
 </html>

@@ -1,316 +1,461 @@
-/* ==========================
-   PAINEL ADMINISTRATIVO
-========================== */
+/* =========================================================
+PAINEL ADMINISTRATIVO
+NAPNE - IFRS CAMPUS ROLANTE
+========================================================= */
 
-
-/* ---------- ÁREA PRINCIPAL ---------- */
-
-.admin-area{
-
-    padding:80px 0;
-
-    background:var(--branco);
-
+body {
+background: #F6F9FC;
 }
 
+/* =========================================================
+SIDEBAR
+========================================================= */
 
-
-/* ---------- TOPO ---------- */
-
-.admin-topo{
-
-    text-align:center;
-
-    margin-bottom:60px;
-
+.admin-sidebar {
+position: fixed;
+left: 0;
+top: 0;
+width: 260px;
+height: 100vh;
+background: #0A376B;
+color: #FFFFFF;
+z-index: 2000;
+display: flex;
+flex-direction: column;
+box-shadow: 5px 0 25px rgba(0, 0, 0, .12);
 }
 
+/* =========================================================
+LOGO
+========================================================= */
 
-.admin-topo h2{
-
-    color:var(--azul-900);
-
-    font-size:2rem;
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
+.sidebar-logo {
+height: 80px;
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 0 25px;
+border-bottom: 1px solid rgba(255, 255, 255, .12);
+font-family: 'Poppins', sans-serif;
+font-size: 1.25rem;
+font-weight: 700;
 }
 
-
-.admin-topo p{
-
-    color:#555;
-
-    font-size:1rem;
-
+.sidebar-logo i {
+font-size: 1.8rem;
+color: #45B36B;
 }
 
+/* =========================================================
+ADMINISTRADOR
+========================================================= */
 
-
-/* ==========================
-   RESUMO DO SISTEMA
-========================== */
-
-
-.resumo-admin{
-
-    margin-bottom:80px;
-
+.sidebar-admin {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 25px 20px;
+border-bottom: 1px solid rgba(255, 255, 255, .12);
 }
 
-
-.resumo-admin h2,
-.admin-gerenciamento h2{
-
-    text-align:center;
-
-    color:var(--azul-900);
-
-    font-size:1.8rem;
-
-    margin-bottom:40px;
-
+.sidebar-avatar {
+width: 45px;
+height: 45px;
+border-radius: 50%;
+background: #FFFFFF;
+color: #0F4C97;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.3rem;
 }
 
-
-
-/* ---------- CARDS DE RESUMO ---------- */
-
-
-.resumo-card{
-
-    background:var(--branco);
-
-    border-radius:18px;
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    height:100%;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-    transition:.25s ease;
-
-    border-top:4px solid var(--dourado);
-
+.sidebar-admin strong {
+display: block;
+font-family: 'Poppins', sans-serif;
+font-size: .95rem;
 }
 
-
-
-.resumo-card:hover{
-
-    transform:translateY(-5px);
-
+.sidebar-admin small {
+display: block;
+color: #BBD1E6;
+font-size: .75rem;
+margin-top: 2px;
 }
 
+/* =========================================================
+MENU
+========================================================= */
 
-
-.resumo-card i{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:16px;
-
-    background:var(--azul-100);
-
-    color:var(--azul-700);
-
-    font-size:28px;
-
-    margin-bottom:15px;
-
+.sidebar-menu {
+display: flex;
+flex-direction: column;
+padding: 20px 14px;
+gap: 5px;
+overflow-y: auto;
 }
 
-
-
-.resumo-card h3{
-
-    color:var(--azul-900);
-
-    font-size:2rem;
-
-    margin-bottom:5px;
-
+.sidebar-link {
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 13px 15px;
+border-radius: 10px;
+color: #DDEAF5;
+text-decoration: none;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: .92rem;
+transition: .25s ease;
 }
 
-
-
-.resumo-card p{
-
-    color:#555;
-
-    margin:0;
-
-    font-size:1rem;
-
+.sidebar-link i {
+width: 22px;
+text-align: center;
+font-size: 1.1rem;
 }
 
-
-
-/* ==========================
-   GERENCIAMENTO
-========================== */
-
-
-.admin-gerenciamento{
-
-    margin-bottom:40px;
-
+.sidebar-link:hover {
+background: rgba(255, 255, 255, .10);
+color: #FFFFFF;
 }
 
-
-
-/* ---------- CARDS ADMIN ---------- */
-
-
-.admin-card{
-
-    background:var(--branco);
-
-    border-radius:20px;
-
-    padding:35px 25px;
-
-    height:100%;
-
-    text-align:center;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-    transition:.25s ease;
-
+.sidebar-link.active {
+background: #18A999;
+color: #FFFFFF;
+box-shadow: 0 5px 15px rgba(24, 169, 153, .25);
 }
 
+/* =========================================================
+DIVISOR
+========================================================= */
 
-
-.admin-card:hover{
-
-    transform:translateY(-7px);
-
+.sidebar-divisor {
+height: 1px;
+background: rgba(255, 255, 255, .12);
+margin: 12px 8px;
 }
 
+/* =========================================================
+BOTÃO SAIR
+========================================================= */
 
-
-.admin-card i{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:64px;
-
-    height:64px;
-
-    border-radius:16px;
-
-    background:var(--azul-100);
-
-    color:var(--azul-700);
-
-    font-size:30px;
-
-    margin-bottom:20px;
-
-    transition:.25s ease;
-
+.sidebar-sair {
+width: 100%;
+border: 0;
+background: transparent;
+color: #DDEAF5;
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 13px 15px;
+border-radius: 10px;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: .92rem;
+text-align: left;
+transition: .25s ease;
 }
 
-
-
-.admin-card:hover i{
-
-    background:var(--azul-700);
-
-    color:var(--branco);
-
+.sidebar-sair i {
+width: 22px;
+text-align: center;
 }
 
-
-
-.admin-card h3{
-
-    color:var(--azul-900);
-
-    font-size:1.2rem;
-
-    margin-bottom:15px;
-
+.sidebar-sair:hover {
+background: rgba(255, 255, 255, .10);
+color: #FFD54A;
 }
 
+/* =========================================================
+CONTEÚDO PRINCIPAL
+========================================================= */
 
-
-.admin-card p{
-
-    color:#555;
-
-    font-size:.95rem;
-
-    line-height:1.6;
-
-    margin-bottom:25px;
-
+.admin-main {
+margin-left: 260px;
+min-height: 100vh;
+padding: 0 40px;
 }
 
+/* =========================================================
+HEADER
+========================================================= */
 
-
-/* ---------- BOTÕES ---------- */
-
-
-.admin-card .btn{
-
-    border-radius:50px;
-
-    padding:10px 28px;
-
-    font-weight:600;
-
+.admin-header {
+min-height: 110px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid #D5E7F5;
 }
 
-
-
-/* ==========================
-   RESPONSIVIDADE
-========================== */
-
-
-@media(max-width:768px){
-
-
-    .admin-area{
-
-        padding:50px 0;
-
-    }
-
-
-    .admin-topo h2{
-
-        font-size:1.6rem;
-
-    }
-
-
-    .resumo-admin h2,
-    .admin-gerenciamento h2{
-
-        font-size:1.5rem;
-
-    }
-
-
-
+.admin-header h1 {
+margin: 0 0 5px;
+font-family: 'Poppins', sans-serif;
+color: #0A376B;
+font-size: 1.8rem;
+font-weight: 700;
 }
+
+.admin-header p {
+margin: 0;
+color: #5F6B7A;
+font-size: .92rem;
+}
+
+/* =========================================================
+BOTÃO MOBILE
+========================================================= */
+
+.sidebar-mobile-button {
+display: none;
+border: 0;
+background: #0F4C97;
+color: #FFFFFF;
+width: 45px;
+height: 45px;
+border-radius: 10px;
+font-size: 1.4rem;
+}
+
+/* =========================================================
+BOAS-VINDAS
+========================================================= */
+
+.admin-welcome {
+margin-top: 35px;
+padding: 35px;
+border-radius: 18px;
+background:
+linear-gradient(
+120deg,
+#0A376B,
+#0F4C97,
+#18A999
+);
+color: #FFFFFF;
+box-shadow: 0 10px 30px rgba(10, 55, 107, .15);
+}
+
+.admin-welcome-label {
+display: inline-block;
+font-size: .72rem;
+font-weight: 700;
+letter-spacing: 1px;
+color: #FFD54A;
+margin-bottom: 8px;
+}
+
+.admin-welcome h2 {
+color: #FFFFFF;
+font-size: 1.8rem;
+margin: 0 0 8px;
+padding: 0;
+text-align: left;
+}
+
+.admin-welcome h2::after {
+display: none;
+}
+
+.admin-welcome p {
+color: #EAF5FF;
+margin: 0;
+}
+
+/* =========================================================
+TÍTULOS DAS SEÇÕES
+========================================================= */
+
+.resumo-admin {
+margin-top: 45px;
+}
+
+.admin-gerenciamento {
+margin-top: 50px;
+margin-bottom: 40px;
+}
+
+.admin-section-title {
+margin-bottom: 25px;
+}
+
+.admin-section-title h2 {
+margin: 0 0 5px;
+padding: 0;
+text-align: left;
+color: #0A376B;
+font-size: 1.5rem;
+}
+
+.admin-section-title h2::after {
+display: none;
+}
+
+.admin-section-title p {
+margin: 0;
+color: #5F6B7A;
+font-size: .9rem;
+}
+
+/* =========================================================
+RESUMO DO SISTEMA
+========================================================= */
+
+.resumo-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+}
+
+.resumo-card {
+background: #FFFFFF;
+border: 1px solid #D5E7F5;
+border-radius: 16px;
+padding: 22px;
+display: flex;
+align-items: center;
+gap: 16px;
+box-shadow: 0 5px 20px rgba(10, 55, 107, .06);
+transition: .25s ease;
+}
+
+.resumo-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 10px 25px rgba(10, 55, 107, .12);
+}
+
+.resumo-icone {
+width: 55px;
+height: 55px;
+flex-shrink: 0;
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.4rem;
+}
+
+.resumo-icone.projeto {
+background: #EAF5FF;
+color: #0F4C97;
+}
+
+.resumo-icone.evento {
+background: #FFF9EA;
+color: #B07A00;
+}
+
+.resumo-icone.relato {
+background: #F4F0FF;
+color: #6E49C8;
+}
+
+.resumo-icone.material {
+background: #EEF9F2;
+color: #258A4A;
+}
+
+.resumo-card strong {
+display: block;
+color: #0A376B;
+font-family: 'Poppins', sans-serif;
+font-size: 1.6rem;
+line-height: 1;
+}
+
+.resumo-card span {
+display: block;
+margin-top: 5px;
+color: #5F6B7A;
+font-size: .85rem;
+}
+
+/* =========================================================
+CARDS DE GERENCIAMENTO
+========================================================= */
+
+.admin-menu-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.admin-menu-card {
+position: relative;
+display: flex;
+align-items: center;
+gap: 16px;
+min-height: 135px;
+padding: 25px;
+background: #FFFFFF;
+border: 1px solid #D5E7F5;
+border-radius: 16px;
+text-decoration: none;
+box-shadow: 0 5px 20px rgba(10, 55, 107, .06);
+transition: .25s ease;
+}
+
+.admin-menu-card:hover {
+transform: translateY(-5px);
+border-color: #18A999;
+box-shadow: 0 12px 30px rgba(10, 55, 107, .12);
+}
+
+.admin-menu-icone {
+width: 55px;
+height: 55px;
+flex-shrink: 0;
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #EAF5FF;
+color: #0F4C97;
+font-size: 1.4rem;
+}
+
+.admin-menu-card h3 {
+margin: 0 0 5px;
+color: #0A376B;
+font-family: 'Poppins', sans-serif;
+font-size: 1.05rem;
+}
+
+.admin-menu-card p {
+margin: 0;
+color: #5F6B7A;
+font-size: .82rem;
+line-height: 1.45;
+}
+
+.card-arrow {
+position: absolute;
+right: 18px;
+top: 50%;
+transform: translateY(-50%);
+color: #18A999;
+transition: .25s ease;
+}
+
+.admin-menu-card:hover .card-arrow {
+transform: translate(5px, -50%);
+}
+
+/* =========================================================
+RODAPÉ
+========================================================= */
+
+.admin-footer {
+margin-top: 60px;
+padding: 25px 0;
+border-top: 1px solid #D5E7F5;
+text-align: center;
+}
+
+.admin-footer p {
+margin: 0;
+color: #7A8795;
+font-size: .85rem;
+}
+

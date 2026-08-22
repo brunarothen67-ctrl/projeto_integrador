@@ -1,4 +1,10 @@
 /* =========================================================
+   NAPNE - IFRS CAMPUS ROLANTE
+   CSS GERAL
+========================================================= */
+
+
+/* =========================================================
    1. FONTES
 ========================================================= */
 
@@ -39,11 +45,8 @@
 
     --raio: 20px;
 
-    --sombra:
-        0 10px 30px rgba(10, 55, 107, .10);
-
-    --sombra-forte:
-        0 16px 40px rgba(10, 55, 107, .16);
+    --sombra: 0 10px 30px rgba(10, 55, 107, .10);
+    --sombra-forte: 0 16px 40px rgba(10, 55, 107, .16);
 }
 
 
@@ -62,29 +65,15 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 400;
+    line-height: 1.65;
     background: var(--fundo);
     color: var(--texto);
-    line-height: 1.65;
     overflow-x: hidden;
 }
-
-/* Textos gerais */
-
-p,
-span,
-li,
-label,
-input,
-textarea,
-select,
-button {
-    font-family: var(--fonte-texto);
-}
-
-/* Títulos */
 
 h1,
 h2,
@@ -112,20 +101,14 @@ h2 {
 
 h2::after {
     content: "";
-
     position: absolute;
-
     left: 50%;
     bottom: 0;
-
-    transform: translateX(-50%);
-
     width: 56px;
     height: 4px;
-
     border-radius: 4px;
-
     background: var(--turquesa);
+    transform: translateX(-50%);
 }
 
 p {
@@ -141,11 +124,6 @@ section {
     padding: 70px 20px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 
 /* =========================================================
    4. ACESSIBILIDADE
@@ -155,74 +133,56 @@ a:focus-visible,
 button:focus-visible,
 .nav-link:focus-visible,
 .form-control:focus-visible {
-
     outline: 3px solid var(--amarelo);
     outline-offset: 2px;
 }
 
 
+
 /* =========================================================
-   5. NAVBAR
+   NAVBAR PADRÃO
 ========================================================= */
 
 .navbar {
+    background: #FFFFFF;
 
-    background: #FFFFFF !important;
-
+    min-height: 80px;
     padding: 18px 0;
 
     box-shadow: 0 4px 18px rgba(0, 0, 0, .08);
 
     position: relative;
-
     z-index: 1000;
 }
-
-
-/* Nome NAPNE */
+.navbar > .container {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+}
 
 .navbar-brand {
-
-    color: var(--azul) !important;
-
-    font-family: var(--fonte-titulo) !important;
-
+    color: var(--azul);
+    font-family: var(--fonte-titulo);
     font-size: 2rem;
-
     font-weight: 700;
-
-    transition: .3s;
-
     text-decoration: none;
+    transition: .3s;
 }
 
 .navbar-brand:hover {
-
-    color: var(--azul-escuro) !important;
-
-    text-decoration: none;
+    color: var(--azul-escuro);
 }
 
-
-/* Bonequinho */
-
 .navbar-brand i {
-
     color: var(--verde);
-
     margin-right: 8px;
 }
 
-
-/* Botão mobile */
-
 .navbar-toggler {
-
     border: 2px solid var(--azul);
 }
 
 .navbar-toggler:focus {
-
     box-shadow: 0 0 0 3px rgba(24, 169, 153, .20);
 }
 
@@ -232,261 +192,297 @@ button:focus-visible,
 ========================================================= */
 
 .navbar .nav-link {
-
-    color: #163B73 !important;
-
-    font-family: var(--fonte-texto) !important;
-
+    color: #163B73;
+    font-family: var(--fonte-texto);
     font-weight: 600;
-
     font-size: .96rem;
-
     margin: 0 8px;
-
     position: relative;
-
     transition: .3s;
 }
 
 .navbar .nav-link:hover {
-
-    color: var(--turquesa) !important;
+    color: var(--turquesa);
 }
 
 .navbar .nav-link.active {
-
-    color: var(--azul) !important;
-
+    color: var(--azul);
     font-weight: 700;
 }
 
-
-/* Sublinhado */
-
 .navbar .nav-link::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
     right: 0;
-
     bottom: -5px;
-
     height: 3px;
-
     background: var(--turquesa);
-
     border-radius: 5px;
-
     transform: scaleX(0);
-
     transform-origin: center;
-
     transition: transform .25s ease;
 }
 
 .navbar .nav-link:hover::after,
 .navbar .nav-link.active::after {
-
     transform: scaleX(1);
 }
 
 
 /* =========================================================
-   7. BOTÕES DA NAVBAR
-========================================================= */
-
-.botoes-login {
-
-    display: flex;
-
-    gap: 10px;
-
-    margin-left: 20px;
-}
-
-.btn-login,
-.btn-cadastro {
-
-    text-decoration: none;
-
-    padding: 10px 22px;
-
-    border-radius: 50px;
-
-    font-family: var(--fonte-titulo) !important;
-
-    font-size: .85rem;
-
-    font-weight: 700;
-
-    transition: all .25s ease;
-
-    display: inline-block;
-}
-
-.btn-login {
-
-    color: var(--azul) !important;
-
-    border: 2px solid var(--azul);
-}
-
-.btn-login:hover {
-
-    background: var(--azul);
-
-    color: #fff !important;
-}
-
-.btn-cadastro {
-
-    background: var(--azul);
-
-    color: #fff !important;
-
-    border: 2px solid var(--amarelo);
-
-    border-radius: 30px;
-
-    padding: 10px 22px;
-}
-
-.btn-cadastro:hover {
-
-    background: var(--turquesa);
-
-    color: #fff !important;
-
-    border-color: var(--turquesa);
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   8. BOTÕES GERAIS
+   7. BOTÕES
 ========================================================= */
 
 .btn-primary {
-
-    background: var(--azul) !important;
-
-    border-color: var(--azul) !important;
-
-    color: #fff !important;
-
-    font-family: var(--fonte-titulo) !important;
-
+    background: var(--azul);
+    border-color: var(--azul);
+    color: #FFFFFF;
+    font-family: var(--fonte-titulo);
     font-weight: 600;
-
     border-radius: 50px;
-
     padding: 10px 26px;
-
     transition: all .25s ease;
 }
 
 .btn-primary:hover {
-
-    background: var(--turquesa) !important;
-
-    border-color: var(--turquesa) !important;
-
+    background: var(--turquesa);
+    border-color: var(--turquesa);
+    color: #FFFFFF;
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-
     border-radius: 50px;
-
     font-weight: 600;
 }
 
 .btn-outline-primary {
-
     border-radius: 50px;
-
     color: var(--azul);
-
     border-color: var(--azul);
-
     font-weight: 600;
-
     padding: 10px 25px;
 }
 
-.btn-outline-primary.active,
-.btn-outline-primary:hover {
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+    background: var(--azul);
+    border-color: var(--azul);
+    color: #FFFFFF;
+}
+
+/* =========================================================
+   8. BOTÃO CADASTRAR
+========================================================= */
+
+.btn-cadastro {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 44px;
+
+    padding: 0;
 
     background: var(--azul);
+    color: #FFFFFF;
 
-    border-color: var(--azul);
+    border: 2px solid var(--azul);
+    border-radius: 50px;
 
-    color: #fff;
+    font-family: var(--fonte-titulo);
+    font-size: .85rem;
+    font-weight: 700;
+    line-height: 1;
+
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.btn-cadastro:hover {
+    background: var(--turquesa);
+    color: #FFFFFF;
+    border-color: var(--turquesa);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(24, 169, 153, .20);
 }
 
 
-/* Botão principal */
+/* =========================================================
+   9. BOTÃO PRINCIPAL
+========================================================= */
 
 .botao-principal {
-
     display: inline-block;
-
     background: var(--amarelo);
-
     color: var(--azul-escuro);
-
     padding: 14px 34px;
-
     border-radius: 50px;
-
     text-decoration: none;
-
-    font-family: var(--fonte-titulo) !important;
-
+    font-family: var(--fonte-titulo);
     font-weight: 700;
-
     transition: all .25s ease;
-
     box-shadow: 0 10px 24px rgba(255, 213, 74, .35);
 }
 
 .botao-principal:hover {
-
     transform: translateY(-3px);
-
     background: #F4C936;
-
     color: var(--azul-escuro);
 }
 
 
 /* =========================================================
-   9. BANNER PADRÃO
-   MESMO TAMANHO EM TODAS AS PÁGINAS
+   10. BOTÕES DE LOGIN
 ========================================================= */
 
-.banner,
-.pagina-banner,
-.acessibilidade-banner,
-.projetos-banner,
-.orientacoes-banner {
+.botoes-login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
+.botoes-login .btn-login,
+.botoes-login .btn-cadastro {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50px;
+
+    font-family: var(--fonte-titulo);
+    font-size: .85rem;
+    font-weight: 700;
+    line-height: 1;
+
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+
+/* =========================================================
+   11. ÁREA DO USUÁRIO LOGADO
+========================================================= */
+
+.perfil-navbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    color: var(--azul);
+    background: var(--azul-claro);
+
+    border: 2px solid var(--azul-borda);
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-family: var(--fonte-texto);
+    font-size: .92rem;
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.perfil-navbar i {
+    font-size: 1.2rem;
+    color: var(--turquesa);
+}
+
+.perfil-navbar:hover {
+    background: var(--azul);
+    border-color: var(--azul);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(15, 76, 151, .18);
+}
+
+.perfil-navbar:hover i {
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   12. BOTÃO SAIR
+========================================================= */
+
+.btn-sair {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 9px 16px;
+
+    background: #FFFFFF;
+    color: var(--azul);
+
+    border: 2px solid var(--azul);
+    border-radius: 50px;
+
+    font-family: var(--fonte-texto);
+    font-size: .92rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.btn-sair i {
+    font-size: 1.1rem;
+}
+
+.btn-sair:hover {
+    background: var(--azul);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(15, 76, 151, .18);
+}
+
+#areaPerfil,
+#areaSair {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   13. BANNER
+========================================================= */
+
+.banner {
     position: relative;
 
     height: 370px;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
-
     color: #FFFFFF;
 
     overflow: hidden;
@@ -494,19 +490,16 @@ button:focus-visible,
     padding: 50px 20px 70px;
 
     background:
-
         radial-gradient(
             circle at 15% 20%,
             rgba(255, 213, 74, .16),
             transparent 35%
         ),
-
         radial-gradient(
             circle at 85% 75%,
             rgba(24, 169, 153, .25),
             transparent 40%
         ),
-
         linear-gradient(
             120deg,
             #0A376B 0%,
@@ -517,19 +510,13 @@ button:focus-visible,
 
 
 /* =========================================================
-   10. DECORAÇÃO DO BANNER
+   14. DECORAÇÃO DO BANNER
 ========================================================= */
 
-.banner::before,
-.pagina-banner::before,
-.acessibilidade-banner::before,
-.projetos-banner::before,
-.orientacoes-banner::before {
-
+.banner::before {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     opacity: .45;
@@ -538,165 +525,103 @@ button:focus-visible,
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.15' stroke-width='1.5'%3E%3Cline x1='30' y1='40' x2='120' y2='90'/%3E%3Cline x1='120' y1='90' x2='90' y2='190'/%3E%3Cline x1='120' y1='90' x2='230' y2='60'/%3E%3Cline x1='230' y1='60' x2='260' y2='170'/%3E%3Cline x1='90' y1='190' x2='200' y2='240'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.35'%3E%3Ccircle cx='30' cy='40' r='4'/%3E%3Ccircle cx='120' cy='90' r='5'/%3E%3Ccircle cx='90' cy='190' r='4'/%3E%3Ccircle cx='230' cy='60' r='4'/%3E%3Ccircle cx='260' cy='170' r='4'/%3E%3Ccircle cx='200' cy='240' r='4'/%3E%3C/g%3E%3C/svg%3E");
 
     background-repeat: repeat;
-
     background-size: 300px 300px;
 
     pointer-events: none;
-
     z-index: 1;
 }
 
 
 /* =========================================================
-   11. CONTEÚDO DO BANNER
+   15. CONTEÚDO DO BANNER
 ========================================================= */
 
 .banner-conteudo {
-
     position: relative;
-
     z-index: 3;
 
     width: 100%;
-
     max-width: 900px;
 
     margin: 0 auto;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 }
 
-
-/* =========================================================
-   12. ÍCONE DO BANNER
-========================================================= */
-
 .banner-icone {
-
     position: relative;
-
     z-index: 3;
-
     margin-bottom: 12px;
 }
 
 .banner-icone i {
-
     font-size: 2.5rem;
-
     color: #FFFFFF;
 }
 
 
 /* =========================================================
-   13. TÍTULOS DOS BANNERS
+   16. TÍTULO E TEXTO DO BANNER
 ========================================================= */
 
-.banner h1,
-.pagina-banner h1,
-.acessibilidade-banner h1,
-.projetos-banner h1,
-.orientacoes-banner h1 {
-
+.banner h1 {
     position: relative;
-
     z-index: 3;
 
     width: 100%;
-
     max-width: 900px;
 
     margin: 0 auto 18px;
 
-    font-family: var(--fonte-titulo) !important;
-
+    font-family: var(--fonte-titulo);
     font-size: 2.9rem;
-
     font-weight: 800;
-
     line-height: 1.2;
 
-    color: #FFFFFF !important;
-
+    color: #FFFFFF;
     text-align: center;
 }
 
-
-/* =========================================================
-   14. DESCRIÇÕES DOS BANNERS
-========================================================= */
-
-.banner p,
-.pagina-banner p,
-.acessibilidade-banner p,
-.projetos-banner p,
-.orientacoes-banner p {
-
+.banner p {
     position: relative;
-
     z-index: 3;
 
     width: 100%;
-
     max-width: 800px;
 
     margin: 0 auto 25px;
 
-    font-family: var(--fonte-texto) !important;
-
+    font-family: var(--fonte-texto);
     font-size: 1.15rem;
-
     font-weight: 400;
-
     line-height: 1.7;
 
-    color: #FFF4B8 !important;
-
+    color: #FFF4B8;
     text-align: center;
 }
 
-
-/* =========================================================
-   15. BOTÃO DO BANNER
-========================================================= */
-
-.banner .botao-principal,
-.pagina-banner .botao-principal,
-.acessibilidade-banner .botao-principal,
-.projetos-banner .botao-principal,
-.orientacoes-banner .botao-principal {
-
+.banner .botao-principal {
     position: relative;
-
     z-index: 4;
 }
 
 
 /* =========================================================
-   16. ONDA INFERIOR
+   17. ONDA DO BANNER
 ========================================================= */
 
-.banner::after,
-.pagina-banner::after,
-.acessibilidade-banner::after,
-.projetos-banner::after,
-.orientacoes-banner::after {
-
+.banner::after {
     content: "";
 
     position: absolute;
 
     left: 0;
     right: 0;
-
     bottom: -1px;
 
     height: 48px;
@@ -712,27 +637,21 @@ button:focus-visible,
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C200,70 400,0 600,24 C800,48 1000,10 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E");
 
     -webkit-mask-size: 100% 100%;
-
     mask-size: 100% 100%;
 }
 
 
 /* =========================================================
-   17. ESPAÇO ENTRE BANNER E CONTEÚDO
+   18. ESPAÇO DEPOIS DO BANNER
 ========================================================= */
 
-.banner + section,
-.pagina-banner + section,
-.acessibilidade-banner + section,
-.projetos-banner + section,
-.orientacoes-banner + section {
-
+.banner + section {
     padding-top: 80px;
 }
 
 
 /* =========================================================
-   18. CARDS
+   19. CARDS
 ========================================================= */
 
 .card-ajuda,
@@ -748,7 +667,6 @@ button:focus-visible,
 .direito-card,
 .material-acess-card,
 .passo-card {
-
     background: #FFFFFF;
 
     border-radius: var(--raio);
@@ -773,272 +691,297 @@ button:focus-visible,
 .direito-card:hover,
 .material-acess-card:hover,
 .passo-card:hover {
-
     transform: translateY(-8px);
-
     box-shadow: var(--sombra-forte);
 }
 
 
 /* =========================================================
-   19. LINKS DOS CARDS
+   20. LINKS DOS CARDS
 ========================================================= */
 
 .link-card {
-
     display: block;
-
     height: 100%;
 
     color: inherit;
-
     text-decoration: none;
 }
 
 .link-card:hover {
-
     color: inherit;
-
     text-decoration: none;
 }
 
 .saiba-mais {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
 
     margin-top: 15px;
 
     font-weight: 700;
-
     color: var(--azul);
 
     transition: .3s;
 }
 
 .saiba-mais i {
-
     transition: .3s;
 }
 
 .link-card:hover .saiba-mais {
-
     color: var(--turquesa);
 }
 
 .link-card:hover .saiba-mais i {
-
     transform: translateX(5px);
 }
-
-
 /* =========================================================
-   20. RODAPÉ
+   21. RODAPÉ - PADRÃO DO SITE
 ========================================================= */
 
-.footer,
-footer {
+footer,
+.footer {
+    width: 100%;
 
     background: var(--azul-escuro);
-
     color: #DDEAF5;
 
-    padding: 50px 20px 25px;
+    padding: 55px 20px 25px;
+
+    margin: 0;
 
     text-align: center;
 }
 
-footer h4 {
 
+/* =========================================================
+   CONTEÚDO DO RODAPÉ
+========================================================= */
+
+footer h4,
+.footer h4 {
     color: #FFFFFF;
 
-    font-family: var(--fonte-titulo) !important;
+    font-family: var(--fonte-titulo);
+    font-size: 1.05rem;
+    font-weight: 700;
 
-    font-size: 1rem;
-
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
-footer p {
 
+/* =========================================================
+   TEXTOS
+========================================================= */
+
+footer p,
+.footer p {
     color: #C5D9E9;
 
-    font-family: var(--fonte-texto) !important;
+    font-family: var(--fonte-texto);
+    font-size: .95rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
 }
 
-footer a {
 
+/* =========================================================
+   LISTA DE LINKS
+========================================================= */
+
+footer ul,
+.footer ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+footer a,
+.footer a {
     color: #DDEAF5;
+
+    font-family: var(--fonte-texto);
+    font-size: .95rem;
 
     text-decoration: none;
 
-    font-family: var(--fonte-texto) !important;
-
-    transition: color .2s ease;
+    transition:
+        color .2s ease,
+        transform .2s ease;
 }
 
-footer a:hover {
-
+footer a:hover,
+.footer a:hover {
     color: var(--amarelo);
 }
 
-footer hr {
-
-    border-color: rgba(255, 255, 255, .15);
-
-    margin: 24px 0 18px;
-}
-
 
 /* =========================================================
-   21. MAIN
+   ESPAÇAMENTO DOS LINKS
 ========================================================= */
 
-main {
-
-    margin: 0;
-
-    padding: 0;
-}
-
-main > section:first-child {
-
-    padding-top: 0;
+footer li,
+.footer li {
+    margin-bottom: 7px;
 }
 
 
 /* =========================================================
-   22. RESPONSIVIDADE — TABLET
+   LINHA
+========================================================= */
+
+footer hr,
+.footer hr {
+    width: 100%;
+
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+
+    margin: 28px 0 20px;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+footer .text-center,
+.footer .text-center {
+    color: #BFD3E4;
+
+    font-size: .9rem;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   RODAPÉ - RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    footer,
+    .footer {
+        padding: 45px 20px 22px;
+    }
+
+    footer .row > div,
+    .footer .row > div {
+        text-align: center;
+    }
+
+    footer h4,
+    .footer h4 {
+        margin-top: 10px;
+    }
+
+}
+/* =========================================================
+   22. TABLET
 ========================================================= */
 
 @media (max-width: 991px) {
 
     .navbar-nav {
-
         text-align: center;
-
         padding-top: 15px;
     }
 
     .navbar .nav-link {
-
         margin: 5px 0;
     }
 
     .navbar .nav-link::after {
-
         display: none;
     }
 
     .botoes-login {
-
         justify-content: center;
-
         margin: 15px 0 0;
     }
 
-    .banner,
-    .pagina-banner,
-    .acessibilidade-banner,
-    .projetos-banner,
-    .orientacoes-banner {
+    .perfil-navbar,
+    .btn-sair {
+        margin-top: 5px;
+    }
 
+    #areaPerfil,
+    #areaSair {
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .banner {
         height: 350px;
-
         padding: 50px 20px 65px;
     }
 
-    .banner h1,
-    .pagina-banner h1,
-    .acessibilidade-banner h1,
-    .projetos-banner h1,
-    .orientacoes-banner h1 {
-
+    .banner h1 {
         font-size: 2.8rem;
     }
 
-    .banner p,
-    .pagina-banner p,
-    .acessibilidade-banner p,
-    .projetos-banner p,
-    .orientacoes-banner p {
-
+    .banner p {
         font-size: 1.2rem;
     }
 }
 
 
 /* =========================================================
-   23. RESPONSIVIDADE — CELULAR
+   23. CELULAR
 ========================================================= */
 
 @media (max-width: 768px) {
 
     section {
-
         padding: 50px 15px;
     }
 
     h2 {
-
         font-size: 1.7rem;
     }
 
-    .banner,
-    .pagina-banner,
-    .acessibilidade-banner,
-    .projetos-banner,
-    .orientacoes-banner {
-
+    .banner {
         height: 300px;
-
         padding: 45px 20px 65px;
     }
 
-    .banner h1,
-    .pagina-banner h1,
-    .acessibilidade-banner h1,
-    .projetos-banner h1,
-    .orientacoes-banner h1 {
-
+    .banner h1 {
         font-size: 2.2rem;
     }
 
-    .banner p,
-    .pagina-banner p,
-    .acessibilidade-banner p,
-    .projetos-banner p,
-    .orientacoes-banner p {
-
+    .banner p {
         font-size: 1rem;
     }
 
     .botoes-login {
-
         flex-direction: column;
-
         align-items: center;
-
         gap: 8px;
     }
 
     .btn-login,
     .btn-cadastro {
-
         width: 180px;
-
-        text-align: center;
     }
 
-    .banner + section,
-    .pagina-banner + section,
-    .acessibilidade-banner + section,
-    .projetos-banner + section,
-    .orientacoes-banner + section {
+    .perfil-navbar,
+    .btn-sair {
+        min-width: 150px;
+        justify-content: center;
+    }
 
+    .banner + section {
         padding-top: 60px;
     }
 }
@@ -1051,59 +994,39 @@ main > section:first-child {
 @media (max-width: 576px) {
 
     .navbar-brand {
-
         font-size: 1.5rem;
     }
 
-    .banner,
-    .pagina-banner,
-    .acessibilidade-banner,
-    .projetos-banner,
-    .orientacoes-banner {
-
+    .banner {
         height: 280px;
-
         padding: 40px 15px 60px;
     }
 
-    .banner h1,
-    .pagina-banner h1,
-    .acessibilidade-banner h1,
-    .projetos-banner h1,
-    .orientacoes-banner h1 {
-
+    .banner h1 {
         font-size: 1.8rem;
-
         margin-bottom: 12px;
     }
 
-    .banner p,
-    .pagina-banner p,
-    .acessibilidade-banner p,
-    .projetos-banner p,
-    .orientacoes-banner p {
-
+    .banner p {
         font-size: .95rem;
-
         margin-bottom: 18px;
     }
 
     .banner-icone i {
-
         font-size: 2rem;
     }
 
     .btn-cadastro {
-
         padding: 9px 18px;
     }
 
-    .banner + section,
-    .pagina-banner + section,
-    .acessibilidade-banner + section,
-    .projetos-banner + section,
-    .orientacoes-banner + section {
+    .perfil-navbar,
+    .btn-sair {
+        padding: 8px 14px;
+        font-size: .9rem;
+    }
 
+    .banner + section {
         padding-top: 50px;
     }
 }
