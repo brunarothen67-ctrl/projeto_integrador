@@ -4,7 +4,7 @@ Oi, Fábioooooo!!!!!!!
 Espero que esteja bem <3
 Vou descrever algumas coisas, mas tudo é bem intuitivo. 
  
-Eu fiquei pensando que fazer esse trabalho seria tedioso e muito chato, então, pensei em fazer  sobre algo que me interessa para que eu conseguisse ter um pouquinho dealegria durante o processo. Em uma conversa com a Roberta, ela me deu a ideia de fazer para o NAPNE (odiei a ideia), mas não me deram muita escolha. Eu estava bem perdida sobre como fazer, então,se você comparar com a entrega das  telas, você vai ver que muitas coisas vão estar diferentes.
+Eu fiquei pensando que fazer esse trabalho seria tedioso e muito chato, então, pensei em fazer  sobre algo que me interessa para que eu conseguisse ter um pouquinho dealegria durante o processogit. Em uma conversa com a Roberta, ela me deu a ideia de fazer para o NAPNE (odiei a ideia), mas não me deram muita escolha. Eu estava bem perdida sobre como fazer, então,se você comparar com a entrega das  telas, você vai ver que muitas coisas vão estar diferentes.
 
 
 COMO ACESSSAR?

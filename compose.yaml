@@ -1,0 +1,47 @@
+ 
+services:
+  php:
+    build: .
+    container_name: napne_php
+    ports:
+      - "8082:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  mysql:
+    image: mysql:8.0
+    container_name: napne_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_napne_2026
+      MYSQL_DATABASE: napne
+      MYSQL_USER: napne_user
+      MYSQL_PASSWORD: napne_senha_2026
+    ports:
+      - "3308:3306"
+    volumes:
+      - napne_dados:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_napne_2026"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: napne_phpmyadmin
+    restart: always
+    ports:
+      - "8083:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  napne_dados:
