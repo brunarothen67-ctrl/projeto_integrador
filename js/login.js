@@ -1,4 +1,3 @@
-
 /* =========================================================
    LOGIN DE USUÁRIO
    NAPNE - IFRS Campus Rolante
@@ -8,129 +7,69 @@ const formulario = document.getElementById("formLogin");
 
 if (formulario) {
 
-    formulario.addEventListener("submit", function (event) {
+    console.log("LOGIN.JS ATUALIZADO E CARREGADO");
+
+    formulario.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
-        // ==========================
-        // PEGAR DADOS
-        // ==========================
+        console.log("FORMULÁRIO DE LOGIN ACIONADO");
 
-        const email = document
-            .getElementById("email")
-            .value
-            .trim()
-            .toLowerCase();
+        const email = document.getElementById("email").value.trim().toLowerCase();
+        const senha = document.getElementById("senha").value;
 
-        const senha = document
-            .getElementById("senha")
-            .value;
-
-
-        // ==========================
-        // LOGIN ADMINISTRADOR
-        // ==========================
-
-        if (
-            email === "admin@napne.com" &&
-            senha === "123456"
-        ) {
-
-            const administrador = {
-                nome: "Administrador",
-                email: email,
-                tipo: "admin"
-            };
-
-            localStorage.setItem(
-                "usuarioLogado",
-                JSON.stringify(administrador)
-            );
-
-            window.location.href = "./admin/painel-admin.html";
-
+        if (!email || !senha) {
+            alert("Preencha o e-mail e a senha.");
             return;
         }
 
+        try {
 
-        // ==========================
-        // BUSCAR USUÁRIOS
-        // ==========================
+            const resposta = await fetch("/api/login.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, senha })
+            });
 
-        const usuarios =
-            JSON.parse(
-                localStorage.getItem("usuarios")
-            ) || [];
+            const dados = await resposta.json();
 
+            console.log("STATUS:", resposta.status);
+            console.log("RESPOSTA:", dados);
 
-        // ==========================
-        // PROCURAR USUÁRIO
-        // ==========================
-
-        const usuario = usuarios.find(function (usuario) {
-
-            return (
-                usuario.email === email &&
-                usuario.senha === senha
-            );
-
-        });
-
-
-        // ==========================
-        // LOGIN VÁLIDO
-        // ==========================
-
-        if (usuario) {
-
-          const usuarioLogado = {
-             nome: usuario.nome,
-            email: usuario.email,
-            tipo: "usuario",
-            foto: usuario.foto || ""
-        };
-
-            localStorage.setItem(
-                "usuarioLogado",
-                JSON.stringify(usuarioLogado)
-            );
-
-
-            // ==========================
-            // VOLTAR PARA A PÁGINA ANTERIOR
-            // ==========================
-
-            const voltarDepoisLogin =
-                localStorage.getItem("voltarDepoisLogin");
-
-
-            if (voltarDepoisLogin) {
-
-                localStorage.removeItem(
-                    "voltarDepoisLogin"
-                );
-
-                window.location.href =
-                    voltarDepoisLogin;
-
-            } else {
-
-                window.location.href =
-                    "index.html";
-
+            if (!resposta.ok || !dados.sucesso) {
+                alert(dados.erro || "E-mail ou senha inválidos.");
+                return;
             }
 
-            return;
+            const usuario = dados.usuario;
+
+            localStorage.setItem(
+                "usuarioLogado",
+                JSON.stringify(usuario)
+            );
+
+            if (usuario.tipo === "admin") {
+                window.location.href = "/admin/painel-admin.html";
+                return;
+            }
+
+            const voltarDepoisLogin = localStorage.getItem("voltarDepoisLogin");
+
+            if (voltarDepoisLogin) {
+                localStorage.removeItem("voltarDepoisLogin");
+                window.location.href = voltarDepoisLogin;
+            } else {
+                window.location.href = "/index.html";
+            }
+
+        } catch (erro) {
+
+            console.error("Erro no login:", erro);
+            alert("Não foi possível conectar ao servidor. Tente novamente.");
+
         }
-
-
-        // ==========================
-        // LOGIN INVÁLIDO
-        // ==========================
-
-        alert(
-            "E-mail ou senha inválidos."
-        );
 
     });
 

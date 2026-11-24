@@ -1,117 +1,63 @@
-
 /* =========================================================
    CADASTRO DE USUÁRIO
    NAPNE - IFRS Campus Rolante
 ========================================================= */
 
-// Pega o formulário de cadastro
 const formulario = document.getElementById("formCadastro");
 
-
-// Verifica se o formulário existe na página
 if (formulario) {
 
-    formulario.addEventListener("submit", function (event) {
+    formulario.addEventListener("submit", async function (event) {
 
-        // Impede o formulário de recarregar a página
         event.preventDefault();
-
-
-        // ==========================
-        // PEGAR OS DADOS
-        // ==========================
 
         const nome = document.getElementById("nome").value.trim();
         const email = document.getElementById("email").value.trim().toLowerCase();
         const senha = document.getElementById("senha").value;
         const confirmarSenha = document.getElementById("confirmarSenha").value;
 
-
-        // ==========================
-        // VERIFICAR CAMPOS
-        // ==========================
-
         if (!nome || !email || !senha || !confirmarSenha) {
-
             alert("Preencha todos os campos.");
-
             return;
         }
-
-
-        // ==========================
-        // VERIFICAR SENHAS
-        // ==========================
 
         if (senha !== confirmarSenha) {
-
             alert("As senhas não coincidem.");
-
             return;
         }
 
+        try {
 
-        // ==========================
-        // BUSCAR USUÁRIOS SALVOS
-        // ==========================
+            const resposta = await fetch("api/cadastro.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome: nome,
+                    email: email,
+                    senha: senha
+                })
+            });
 
-        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            const dados = await resposta.json();
 
+            if (!resposta.ok) {
+                alert(dados.erro || "Não foi possível realizar o cadastro.");
+                return;
+            }
 
-        // ==========================
-        // VERIFICAR SE E-MAIL JÁ EXISTE
-        // ==========================
+            alert(dados.mensagem);
 
-        const usuarioExistente = usuarios.find(function (usuario) {
+            window.location.href = "login.html";
 
-            return usuario.email === email;
+        } catch (erro) {
 
-        });
+            console.error("Erro no cadastro:", erro);
+            alert("Não foi possível conectar ao servidor. Tente novamente.");
 
-
-        if (usuarioExistente) {
-
-            alert("Este e-mail já está cadastrado.");
-
-            return;
         }
-
-
-        // ==========================
-        // CRIAR NOVO USUÁRIO
-        // ==========================
-        const novoUsuario = {
-        nome: nome,
-        email: email,
-        senha: senha,
-        tipo: "usuario",
-        foto: ""
-        };
-
-
-        // ==========================
-        // SALVAR USUÁRIO
-        // ==========================
-
-        usuarios.push(novoUsuario);
-
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-
-        // ==========================
-        // MENSAGEM DE SUCESSO
-        // ==========================
-
-        alert("Cadastro realizado com sucesso!");
-
-
-        // ==========================
-        // IR PARA LOGIN
-        // ==========================
-
-        window.location.href = "login.html";
 
     });
 
 }
-
