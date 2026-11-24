@@ -3,125 +3,81 @@
    NAPNE - IFRS Campus Rolante
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const areaEntrar = document.getElementById("areaEntrar");
     const areaCadastro = document.getElementById("areaCadastro");
     const areaPerfil = document.getElementById("areaPerfil");
     const areaSair = document.getElementById("areaSair");
 
-    const nomeUsuarioNavbar =
-        document.getElementById("nomeUsuarioNavbar");
+    const nomeUsuarioNavbar = document.getElementById("nomeUsuarioNavbar");
+    const btnSairNavbar = document.getElementById("btnSairNavbar");
 
-    const btnSairNavbar =
-        document.getElementById("btnSairNavbar");
-
-
-    // =====================================================
-    // VERIFICAR SE OS ELEMENTOS EXISTEM
-    // =====================================================
-
-    if (
-        !areaEntrar ||
-        !areaCadastro ||
-        !areaPerfil ||
-        !areaSair
-    ) {
+    if (!areaEntrar || !areaCadastro || !areaPerfil || !areaSair) {
         return;
     }
 
-
-    // =====================================================
-    // PEGAR USUÁRIO LOGADO
-    // =====================================================
-
-    let usuarioLogado = null;
-
-    try {
-
-        usuarioLogado =
-            JSON.parse(
-                localStorage.getItem("usuarioLogado")
-            );
-
-    } catch (erro) {
-
-        usuarioLogado = null;
-
-    }
-
-
-    // =====================================================
-    // NINGUÉM ESTÁ LOGADO
-    // =====================================================
-
-    if (!usuarioLogado) {
-
+    function mostrarDeslogado() {
         areaEntrar.style.display = "";
         areaCadastro.style.display = "";
-
         areaPerfil.style.display = "none";
         areaSair.style.display = "none";
-
-        return;
     }
 
+    try {
+        const resposta = await fetch("/api/sessao.php", {
+            credentials: "same-origin"
+        });
 
-    // =====================================================
-    // USUÁRIO LOGADO
-    // =====================================================
+        if (!resposta.ok) {
+            mostrarDeslogado();
+            return;
+        }
 
-    areaEntrar.style.display = "none";
-    areaCadastro.style.display = "none";
+        const dados = await resposta.json();
 
-    areaPerfil.style.display = "flex";
-    areaSair.style.display = "flex";
+        if (!dados.autenticado || !dados.usuario) {
+            mostrarDeslogado();
+            return;
+        }
 
+        const usuario = dados.usuario;
 
-    // =====================================================
-    // MOSTRAR NOME
-    // =====================================================
+        areaEntrar.style.display = "none";
+        areaCadastro.style.display = "none";
+        areaPerfil.style.display = "flex";
+        areaSair.style.display = "flex";
 
-    if (nomeUsuarioNavbar) {
+        if (nomeUsuarioNavbar) {
+            nomeUsuarioNavbar.textContent = usuario.nome || "Meu perfil";
+        }
 
-        nomeUsuarioNavbar.textContent =
-            usuarioLogado.nome || "Meu perfil";
+        if (usuario.tipo === "admin") {
+            areaPerfil.style.display = "none";
+        }
 
+    } catch (erro) {
+        console.error("Erro ao verificar sessão:", erro);
+        mostrarDeslogado();
     }
-
-
-    // =====================================================
-    // ADMINISTRADOR
-    // =====================================================
-
-    if (usuarioLogado.tipo === "admin") {
-
-        areaPerfil.style.display = "none";
-
-    }
-
-
-    // =====================================================
-    // BOTÃO SAIR
-    // =====================================================
 
     if (btnSairNavbar) {
+        btnSairNavbar.addEventListener("click", async function (event) {
+            event.preventDefault();
 
-        btnSairNavbar.addEventListener(
-            "click",
-            function (event) {
+            try {
+                await fetch("/api/logout.php", {
+                    method: "POST",
+                    credentials: "same-origin"
+                });
 
-                event.preventDefault();
+                window.location.href = "/index.html";
 
-                localStorage.removeItem(
-                    "usuarioLogado"
-                );
-
-                window.location.href = "index.html";
-
+            } catch (erro) {
+                console.error("Erro ao sair:", erro);
+                alert("Não foi possível encerrar a sessão.");
             }
-        );
-
+        });
     }
 
 });

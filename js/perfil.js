@@ -1,31 +1,9 @@
-
 /* =========================================================
    PERFIL DO USUÁRIO
    NAPNE - IFRS Campus Rolante
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    // ==========================================
-    // VERIFICAR SE EXISTE USUÁRIO LOGADO
-    // ==========================================
-
-    const usuarioLogado =
-        JSON.parse(localStorage.getItem("usuarioLogado"));
-
-    if (!usuarioLogado) {
-
-        alert("Você precisa estar logado para acessar seu perfil.");
-
-        window.location.href = "login.html";
-
-        return;
-    }
-
-
-    // ==========================================
-    // PEGAR ELEMENTOS DA PÁGINA
-    // ==========================================
+document.addEventListener("DOMContentLoaded", async function () {
 
     const nomePerfil = document.getElementById("nomePerfil");
     const emailPerfil = document.getElementById("emailPerfil");
@@ -35,334 +13,168 @@ document.addEventListener("DOMContentLoaded", function () {
     const nomeNavbar = document.getElementById("nomeNavbar");
     const btnSair = document.getElementById("btnSair");
 
+    const novaSenha = document.getElementById("novaSenha");
+    const confirmarNovaSenha = document.getElementById("confirmarNovaSenha");
 
-    // ==========================================
-    // CARREGAR DADOS DO USUÁRIO
-    // ==========================================
+    // Verificar sessão e carregar dados
+    try {
 
-    nomePerfil.value = usuarioLogado.nome || "";
-    emailPerfil.value = usuarioLogado.email || "";
+        const resposta = await fetch("/api/perfil.php", {
+            credentials: "same-origin"
+        });
 
-    if (nomeNavbar) {
-        nomeNavbar.textContent = usuarioLogado.nome || "Meu perfil";
+        const dados = await resposta.json();
+
+        if (!resposta.ok || !dados.sucesso) {
+            alert("Você precisa estar logado para acessar seu perfil.");
+            window.location.href = "/login.html";
+            return;
+        }
+
+        nomePerfil.value = dados.usuario.nome || "";
+        emailPerfil.value = dados.usuario.email || "";
+
+        if (nomeNavbar) {
+            nomeNavbar.textContent = dados.usuario.nome || "Meu perfil";
+        }
+
+    } catch (erro) {
+
+        console.error("Erro ao carregar perfil:", erro);
+        alert("Não foi possível carregar seus dados.");
+        return;
     }
 
-
-    // ==========================================
-    // CARREGAR FOTO DE PERFIL
-    // ==========================================
-
-    if (usuarioLogado.foto) {
-
-        fotoPerfil.src = usuarioLogado.foto;
-
-    } else {
-
-        fotoPerfil.src = "imagens/avatar.png";
-    }
-
-
-    // ==========================================
-    // ALTERAR FOTO
-    // ==========================================
-
-    if (fotoInput) {
+    // Alterar foto: apenas pré-visualização temporária
+    if (fotoInput && fotoPerfil) {
 
         fotoInput.addEventListener("change", function () {
 
             const arquivo = fotoInput.files[0];
 
-            if (!arquivo) {
-                return;
-            }
+            if (!arquivo) return;
 
-
-            // Verifica se é imagem
             if (!arquivo.type.startsWith("image/")) {
-
                 alert("Escolha uma imagem válida.");
-
                 fotoInput.value = "";
-
                 return;
             }
 
-
-            // Limita o tamanho
             if (arquivo.size > 2 * 1024 * 1024) {
-
                 alert("A imagem deve ter no máximo 2 MB.");
-
                 fotoInput.value = "";
-
                 return;
             }
-
 
             const leitor = new FileReader();
 
-
             leitor.onload = function (event) {
-
-                const fotoBase64 = event.target.result;
-
-                // Mostra a foto imediatamente
-                fotoPerfil.src = fotoBase64;
-
-                // Guarda a foto no usuário logado
-                usuarioLogado.foto = fotoBase64;
-
-                salvarUsuario(usuarioLogado);
-
-                alert("Foto de perfil atualizada com sucesso!");
+                fotoPerfil.src = event.target.result;
+                alert("Pré-visualização da foto atualizada. A foto ainda não será salva permanentemente.");
             };
 
-
             leitor.readAsDataURL(arquivo);
-
         });
-
     }
 
-
-    // ==========================================
-    // SALVAR ALTERAÇÕES
-    // ==========================================
-
+    // Salvar alterações do perfil
     if (formPerfil) {
 
-        formPerfil.addEventListener("submit", function (event) {
+        formPerfil.addEventListener("submit", async function (event) {
 
             event.preventDefault();
 
+            const nome = nomePerfil.value.trim();
+            const email = emailPerfil.value.trim().toLowerCase();
+            const senha = novaSenha.value;
+            const confirmarSenha = confirmarNovaSenha.value;
 
-            const novoNome =
-                nomePerfil.value.trim();
-
-            const novoEmail =
-                emailPerfil.value.trim().toLowerCase();
-
-            const novaSenha =
-                document.getElementById("novaSenha").value;
-
-            const confirmarNovaSenha =
-                document.getElementById("confirmarNovaSenha").value;
-
-
-            // ==================================
-            // VALIDAR NOME E E-MAIL
-            // ==================================
-
-            if (!novoNome || !novoEmail) {
-
+            if (!nome || !email) {
                 alert("Preencha o nome e o e-mail.");
-
                 return;
             }
 
+            if (senha || confirmarSenha) {
 
-            // ==================================
-            // VERIFICAR NOVA SENHA
-            // ==================================
-
-            if (novaSenha || confirmarNovaSenha) {
-
-                if (novaSenha !== confirmarNovaSenha) {
-
+                if (senha !== confirmarSenha) {
                     alert("As novas senhas não coincidem.");
-
                     return;
                 }
 
-                if (novaSenha.length < 6) {
-
+                if (senha.length < 6) {
                     alert("A nova senha deve ter pelo menos 6 caracteres.");
-
                     return;
                 }
             }
 
+            try {
 
-            // ==================================
-            // BUSCAR USUÁRIOS
-            // ==================================
+                const resposta = await fetch("/api/perfil.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "same-origin",
+                    body: JSON.stringify({
+                        nome: nome,
+                        email: email,
+                        novaSenha: senha
+                    })
+                });
 
-            let usuarios =
-                JSON.parse(localStorage.getItem("usuarios")) || [];
+                const dados = await resposta.json();
 
+                if (!resposta.ok || !dados.sucesso) {
+                    alert(dados.erro || "Não foi possível atualizar o perfil.");
+                    return;
+                }
 
-            // ==================================
-            // VERIFICAR E-MAIL DUPLICADO
-            // ==================================
+                if (nomeNavbar) {
+                    nomeNavbar.textContent = nome;
+                }
 
-            const emailExistente = usuarios.find(function (usuario) {
+                novaSenha.value = "";
+                confirmarNovaSenha.value = "";
 
-                return (
-                    usuario.email === novoEmail &&
-                    usuario.email !== usuarioLogado.email
-                );
+                alert(dados.mensagem || "Perfil atualizado com sucesso!");
 
-            });
+            } catch (erro) {
 
-
-            if (emailExistente) {
-
-                alert("Este e-mail já está cadastrado.");
-
-                return;
+                console.error("Erro ao atualizar perfil:", erro);
+                alert("Não foi possível conectar ao servidor.");
             }
-
-
-            // ==================================
-            // LOCALIZAR USUÁRIO
-            // ==================================
-
-            const indiceUsuario = usuarios.findIndex(function (usuario) {
-
-                return usuario.email === usuarioLogado.email;
-
-            });
-
-
-            if (indiceUsuario === -1) {
-
-                alert("Usuário não encontrado.");
-
-                return;
-            }
-
-
-            // ==================================
-            // ATUALIZAR USUÁRIO
-            // ==================================
-
-            usuarios[indiceUsuario].nome = novoNome;
-            usuarios[indiceUsuario].email = novoEmail;
-
-
-            if (novaSenha) {
-
-                usuarios[indiceUsuario].senha = novaSenha;
-            }
-
-
-            // Mantém a foto
-            if (usuarioLogado.foto) {
-
-                usuarios[indiceUsuario].foto =
-                    usuarioLogado.foto;
-            }
-
-
-            // ==================================
-            // SALVAR USUÁRIOS
-            // ==================================
-
-            localStorage.setItem(
-                "usuarios",
-                JSON.stringify(usuarios)
-            );
-
-
-            // ==================================
-            // ATUALIZAR USUÁRIO LOGADO
-            // ==================================
-
-            usuarioLogado.nome = novoNome;
-            usuarioLogado.email = novoEmail;
-
-
-            localStorage.setItem(
-                "usuarioLogado",
-                JSON.stringify(usuarioLogado)
-            );
-
-
-            // ==================================
-            // ATUALIZAR NAVBAR
-            // ==================================
-
-            if (nomeNavbar) {
-
-                nomeNavbar.textContent = novoNome;
-            }
-
-
-            // ==================================
-            // LIMPAR SENHAS
-            // ==================================
-
-            document.getElementById("novaSenha").value = "";
-            document.getElementById("confirmarNovaSenha").value = "";
-
-
-            alert("Dados atualizados com sucesso!");
-
         });
-
     }
 
-
-    // ==========================================
-    // BOTÃO SAIR
-    // ==========================================
-
+    // Sair da conta
     if (btnSair) {
 
-        btnSair.addEventListener("click", function () {
+        btnSair.addEventListener("click", async function () {
 
-            const confirmar =
-                confirm("Deseja realmente sair da sua conta?");
+            const confirmar = confirm("Deseja realmente sair da sua conta?");
 
-            if (!confirmar) {
-                return;
+            if (!confirmar) return;
+
+            try {
+
+                const resposta = await fetch("/api/logout.php", {
+                    method: "POST",
+                    credentials: "same-origin"
+                });
+
+                if (!resposta.ok) {
+                    alert("Não foi possível encerrar a sessão.");
+                    return;
+                }
+
+                window.location.href = "/index.html";
+
+            } catch (erro) {
+
+                console.error("Erro ao sair:", erro);
+                alert("Não foi possível conectar ao servidor.");
             }
-
-
-            localStorage.removeItem("usuarioLogado");
-
-            window.location.href = "index.html";
-
         });
-
     }
 
 });
-
-
-// =================================================
-// FUNÇÃO PARA SALVAR USUÁRIO
-// =================================================
-
-function salvarUsuario(usuarioAtualizado) {
-
-    let usuarios =
-        JSON.parse(localStorage.getItem("usuarios")) || [];
-
-
-    const indice = usuarios.findIndex(function (usuario) {
-
-        return usuario.email === usuarioAtualizado.email;
-
-    });
-
-
-    if (indice !== -1) {
-
-        usuarios[indice] = usuarioAtualizado;
-
-    }
-
-
-    localStorage.setItem(
-        "usuarios",
-        JSON.stringify(usuarios)
-    );
-
-
-    localStorage.setItem(
-        "usuarioLogado",
-        JSON.stringify(usuarioAtualizado)
-    );
-}
-

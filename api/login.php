@@ -33,9 +33,7 @@ try {
     $usuario = $stmt->fetch();
 
 
-    error_log("Login recebido para: " . $email);
-    error_log("Usuário encontrado: " . ($usuario ? "SIM" : "NÃO"));
-    error_log("Hash válido: " . ($usuario && password_verify($senha, $usuario["senha"]) ? "SIM" : "NÃO"));
+    
 
     // Verificar usuário e senha
     if (!$usuario || !password_verify($senha, $usuario["senha"])) {

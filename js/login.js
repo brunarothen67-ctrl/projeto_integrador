@@ -7,13 +7,9 @@ const formulario = document.getElementById("formLogin");
 
 if (formulario) {
 
-    console.log("LOGIN.JS ATUALIZADO E CARREGADO");
-
     formulario.addEventListener("submit", async function (event) {
 
         event.preventDefault();
-
-        console.log("FORMULÁRIO DE LOGIN ACIONADO");
 
         const email = document.getElementById("email").value.trim().toLowerCase();
         const senha = document.getElementById("senha").value;
@@ -30,13 +26,11 @@ if (formulario) {
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "same-origin",
                 body: JSON.stringify({ email, senha })
             });
 
             const dados = await resposta.json();
-
-            console.log("STATUS:", resposta.status);
-            console.log("RESPOSTA:", dados);
 
             if (!resposta.ok || !dados.sucesso) {
                 alert(dados.erro || "E-mail ou senha inválidos.");
@@ -44,11 +38,6 @@ if (formulario) {
             }
 
             const usuario = dados.usuario;
-
-            localStorage.setItem(
-                "usuarioLogado",
-                JSON.stringify(usuario)
-            );
 
             if (usuario.tipo === "admin") {
                 window.location.href = "/admin/painel-admin.html";

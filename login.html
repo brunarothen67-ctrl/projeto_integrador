@@ -2,35 +2,26 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar | NAPNE IFRS</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
-
 </head>
 
 <body>
 
-   <header>
-
+<header>
     <nav class="navbar navbar-expand-lg navbar-dark">
-
         <div class="container">
 
-            <a
-                class="navbar-brand"
-                href="index.html"
-            >
+            <a class="navbar-brand" href="index.html">
                 <i class="bi bi-universal-access"></i>
                 NAPNE IFRS
             </a>
-
 
             <button
                 class="navbar-toggler"
@@ -39,326 +30,166 @@
                 data-bs-target="#menu"
                 aria-controls="menu"
                 aria-expanded="false"
-                aria-label="Abrir menu"
-            >
+                aria-label="Abrir menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-            <div
-                class="collapse navbar-collapse"
-                id="menu"
-            >
-
+            <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-
-                        <a
-                            class="nav-link"
-                            href="index.html"
-                        >
-                            Home
-                        </a>
-
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
-
 
                     <li class="nav-item">
-
-                        <a
-                            class="nav-link"
-                            href="napne.html"
-                        >
-                            NAPNE
-                        </a>
-
+                        <a class="nav-link" href="napne.html">NAPNE</a>
                     </li>
-
 
                     <li class="nav-item">
-
-                        <a
-                            class="nav-link"
-                            href="projetos.html"
-                        >
-                            Projetos
-                        </a>
-
+                        <a class="nav-link" href="projetos.html">Projetos</a>
                     </li>
-
 
                     <li class="nav-item">
-
-                        <a
-                            class="nav-link"
-                            href="acessibilidade.html"
-                        >
-                            Acessibilidade
-                        </a>
-
+                        <a class="nav-link" href="acessibilidade.html">Acessibilidade</a>
                     </li>
-
 
                     <li class="nav-item">
-
-                        <a
-                            class="nav-link"
-                            href="relatos.html"
-                        >
-                            Relatos
-                        </a>
-
+                        <a class="nav-link" href="relatos.html">Relatos</a>
                     </li>
-
 
                     <li class="nav-item" id="areaEntrar">
-
-                        <a
-                            class="nav-link active"
-                            href="login.html"
-                            aria-current="page"
-                        >
+                        <a class="nav-link active" href="login.html" aria-current="page">
                             Entrar
                         </a>
-
                     </li>
-
-
-                    <li class="nav-item ms-lg-2">
-
-                        <a
-                            class="btn-cadastro"
-                            href="cadastro.html"
-                        >
+                    <li class="nav-item ms-lg-2" id="areaCadastro">
+                        <a class="btn-cadastro" href="cadastro.html">
                             Cadastrar
                         </a>
-
                     </li>
 
-
-                    <li
-                        class="nav-item"
-                        id="areaPerfil"
-                        style="display: none;"
-                    >
-
-                        <a
-                            class="nav-link"
-                            href="perfil.html"
-                        >
+                    <li class="nav-item" id="areaPerfil" style="display: none;">
+                        <a class="nav-link" href="perfil.html">
                             <i class="bi bi-person-circle"></i>
-
-                            <span id="nomeUsuarioNavbar">
-                                Meu perfil
-                            </span>
-
+                            <span id="nomeUsuarioNavbar">Meu perfil</span>
                         </a>
-
                     </li>
 
-
-                    <li
-                        class="nav-item"
-                        id="areaSair"
-                        style="display: none;"
-                    >
-
-                        <a
-                            class="nav-link"
-                            href="#"
-                            id="btnSairNavbar"
-                        >
+                    <li class="nav-item" id="areaSair" style="display: none;">
+                        <a class="nav-link" href="#" id="btnSairNavbar">
                             <i class="bi bi-box-arrow-right"></i>
                             Sair
                         </a>
-
                     </li>
 
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
-
 </header>
 
-    <section class="banner pagina-banner">
-        <div class="banner-conteudo">
-            <h1>Entrar</h1>
-            <p>Acesse sua conta para participar da comunidade NAPNE.</p>
+<section class="banner pagina-banner">
+    <div class="banner-conteudo">
+        <h1>Entrar</h1>
+        <p>Acesse sua conta para participar da comunidade NAPNE.</p>
+    </div>
+</section>
+
+<section class="login-area">
+    <div class="container">
+        <div class="login-card">
+
+            <h2>Login</h2>
+
+            <form id="formLogin">
+
+                <div class="mb-3">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="username"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="senha">Senha</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required>
+                </div>
+
+                <div class="text-end mb-3">
+                    <a href="recuperar-senha.html" class="link-recuperar">
+                        Esqueceu sua senha?
+                    </a>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p class="text-center mt-4">
+                Ainda não possui uma conta?
+                <a href="cadastro.html">Cadastrar</a>
+            </p>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="login-area">
-        <div class="container">
-            <div class="login-card">
-                <h2>Login</h2>
+<footer class="footer">
+    <div class="container">
 
-                <form id="formLogin">
+        <div class="row">
 
-                    <div class="mb-3">
-                        <label class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
-                    </div>
-
-                    <div class="text-end mb-3">
-                        <a href="recuperar-senha.html" class="link-recuperar">Esqueceu sua senha?</a>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
-
-                </form>
-
-                <p class="text-center mt-4">
-                    Ainda não possui uma conta?
-                    <a href="cadastro.html">Cadastrar</a>
+            <div class="col-md-4">
+                <h4>NAPNE</h4>
+                <p>
+                    Núcleo de Atendimento às Pessoas com Necessidades
+                    Educacionais Específicas do IFRS Campus Rolante.
                 </p>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4">
-                    <h4>NAPNE</h4>
-                    <p>Núcleo de Atendimento às Pessoas com Necessidades Educacionais Específicas do IFRS Campus Rolante.</p>
-                </div>
-
-                <div class="col-md-4">
-                    <h4>Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="napne.html">NAPNE</a></li>
-                        <li><a href="acessibilidade.html">Acessibilidade</a></li>
-                        <li><a href="projetos.html">Projetos</a></li>
-                        <li><a href="relatos.html">Relatos</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4">
-                    <h4>Contato</h4>
-                    <p>IFRS Campus Rolante</p>
-                    <p>napne@rolante.ifrs.edu.br</p>
-                </div>
-
             </div>
 
-            <hr>
+            <div class="col-md-4">
+                <h4>Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="napne.html">NAPNE</a></li>
+                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                </ul>
+            </div>
 
-            <p class="text-center mb-0">© 2026 NAPNE - IFRS Campus Rolante</p>
+            <div class="col-md-4">
+                <h4>Contato</h4>
+                <p>IFRS Campus Rolante</p>
+                <p>napne@rolante.ifrs.edu.br</p>
+            </div>
 
         </div>
-    </footer>
+
+        <hr>
+
+        <p class="text-center mb-0">
+            © 2026 NAPNE - IFRS Campus Rolante
+        </p>
+
+    </div>
+</footer>
 
 <script src="js/login.js"></script>
-
+<script src="js/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const areaEntrar = document.getElementById("areaEntrar");
-
-    const areaCadastro =
-        document.querySelector(".btn-cadastro").closest(".nav-item");
-
-    const areaPerfil =
-        document.getElementById("areaPerfil");
-
-    const areaSair =
-        document.getElementById("areaSair");
-
-    const nomeUsuarioNavbar =
-        document.getElementById("nomeUsuarioNavbar");
-
-    const btnSairNavbar =
-        document.getElementById("btnSairNavbar");
-
-
-    const usuarioLogado =
-        JSON.parse(localStorage.getItem("usuarioLogado"));
-
-
-    // =================================================
-    // NINGUÉM ESTÁ LOGADO
-    // =================================================
-
-    if (!usuarioLogado) {
-
-        areaEntrar.style.display = "block";
-        areaCadastro.style.display = "block";
-
-        areaPerfil.style.display = "none";
-        areaSair.style.display = "none";
-
-        return;
-    }
-
-
-    // =================================================
-    // USUÁRIO COMUM
-    // =================================================
-
-    if (usuarioLogado.tipo === "usuario") {
-
-        areaEntrar.style.display = "none";
-        areaCadastro.style.display = "none";
-
-        areaPerfil.style.display = "block";
-        areaSair.style.display = "block";
-
-        nomeUsuarioNavbar.textContent =
-            usuarioLogado.nome || "Meu perfil";
-
-    }
-
-
-    // =================================================
-    // ADMINISTRADOR
-    // =================================================
-
-    if (usuarioLogado.tipo === "admin") {
-
-        areaEntrar.style.display = "none";
-        areaCadastro.style.display = "none";
-
-        areaPerfil.style.display = "none";
-        areaSair.style.display = "block";
-
-    }
-
-
-    // =================================================
-    // SAIR
-    // =================================================
-
-    btnSairNavbar.addEventListener("click", function (event) {
-
-        event.preventDefault();
-
-        localStorage.removeItem("usuarioLogado");
-
-        window.location.href = "index.html";
-
-    });
-
-});
-
-</script>
-
 </body>
-
 </html>
