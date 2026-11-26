@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             nomeNavbar.textContent = dados.usuario.nome || "Meu perfil";
         }
 
+        // Carregar foto salva no servidor
+        if (fotoPerfil && dados.usuario.foto_perfil) {
+            fotoPerfil.src = "/" + dados.usuario.foto_perfil + "?t=" + Date.now();
+        }
+
     } catch (erro) {
 
         console.error("Erro ao carregar perfil:", erro);
@@ -45,17 +50,23 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
 
-    // Alterar foto: apenas pré-visualização temporária
+    // Alterar e salvar foto permanentemente
     if (fotoInput && fotoPerfil) {
 
-        fotoInput.addEventListener("change", function () {
+        fotoInput.addEventListener("change", async function () {
 
             const arquivo = fotoInput.files[0];
 
             if (!arquivo) return;
 
-            if (!arquivo.type.startsWith("image/")) {
-                alert("Escolha uma imagem válida.");
+            const tiposPermitidos = [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+            ];
+
+            if (!tiposPermitidos.includes(arquivo.type)) {
+                alert("Escolha uma imagem JPG, PNG ou WebP.");
                 fotoInput.value = "";
                 return;
             }
@@ -66,14 +77,51 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
+            const fotoAnterior = fotoPerfil.src;
+
+            // Pré-visualização da imagem
             const leitor = new FileReader();
 
             leitor.onload = function (event) {
                 fotoPerfil.src = event.target.result;
-                alert("Pré-visualização da foto atualizada. A foto ainda não será salva permanentemente.");
             };
 
             leitor.readAsDataURL(arquivo);
+
+            // Preparar envio ao servidor
+            const formulario = new FormData();
+            formulario.append("foto", arquivo);
+
+            try {
+
+                const resposta = await fetch("/api/perfil.php", {
+                    method: "POST",
+                    credentials: "same-origin",
+                    body: formulario
+                });
+
+                const dados = await resposta.json();
+
+                if (!resposta.ok || !dados.sucesso) {
+                    fotoPerfil.src = fotoAnterior;
+                    alert(dados.erro || "Não foi possível salvar a foto.");
+                    return;
+                }
+
+                // Mostrar imagem salva no servidor
+                fotoPerfil.src = "/" + dados.foto_perfil + "?t=" + Date.now();
+
+                alert(dados.mensagem || "Foto atualizada com sucesso!");
+
+            } catch (erro) {
+
+                console.error("Erro ao enviar foto:", erro);
+                fotoPerfil.src = fotoAnterior;
+                alert("Não foi possível conectar ao servidor.");
+
+            } finally {
+                fotoInput.value = "";
+            }
         });
     }
 
@@ -152,6 +200,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         btnSair.addEventListener("click", async function () {
 
             const confirmar = confirm("Deseja realmente sair da sua conta?");
+            try { localStorage.removeItem("napne_nav"); } catch (e) { /* ignora */ }
 
             if (!confirmar) return;
 

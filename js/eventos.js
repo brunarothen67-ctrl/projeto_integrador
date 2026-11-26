@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const lista =
         document.getElementById("listaEventos");
@@ -9,13 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =====================================================
-    // BUSCAR EVENTOS DO LOCALSTORAGE
+    // BUSCAR EVENTOS (BANCO DE DADOS)
     // =====================================================
 
-    const eventos =
-        JSON.parse(
-            localStorage.getItem("eventosNAPNE")
-        ) || [];
+    const eventos = await NapneConteudos.carregar("eventos");
 
 
     // =====================================================

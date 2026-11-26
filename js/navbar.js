@@ -17,7 +17,27 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
 
+    // Nome do último acesso já na primeira pintura (evita o menu "mudar de largura")
+    try {
+        const guardado = JSON.parse(localStorage.getItem("napne_nav") || "null");
+
+        if (guardado && guardado.nome && nomeUsuarioNavbar) {
+            nomeUsuarioNavbar.textContent = guardado.nome;
+        }
+    } catch (e) { /* ignora */ }
+
+    // Guarda o estado confirmado pelo servidor para a próxima página já abrir certa
+    function registrarEstado(estado, nome) {
+        document.documentElement.classList.remove("nav-deslogado", "nav-usuario", "nav-admin");
+        document.documentElement.classList.add("nav-" + estado);
+
+        try {
+            localStorage.setItem("napne_nav", JSON.stringify({ estado: estado, nome: nome || "" }));
+        } catch (e) { /* ignora */ }
+    }
+
     function mostrarDeslogado() {
+        registrarEstado("deslogado");
         areaEntrar.style.display = "";
         areaCadastro.style.display = "";
         areaPerfil.style.display = "none";
@@ -56,6 +76,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             areaPerfil.style.display = "none";
         }
 
+        registrarEstado(usuario.tipo === "admin" ? "admin" : "usuario", usuario.nome);
+
     } catch (erro) {
         console.error("Erro ao verificar sessão:", erro);
         mostrarDeslogado();
@@ -64,6 +86,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (btnSairNavbar) {
         btnSairNavbar.addEventListener("click", async function (event) {
             event.preventDefault();
+            registrarEstado("deslogado");
 
             try {
                 await fetch("/api/logout.php", {

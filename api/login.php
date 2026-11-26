@@ -1,68 +1,56 @@
 <?php
 
-session_start();
+require_once __DIR__ . "/_comum.php";
 
-header("Content-Type: application/json; charset=UTF-8");
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    erro("Método não permitido.", 405);
+}
 
-require_once __DIR__ . "/../conexao.php";
+$dados = lerJson();
 
-// Receber os dados enviados pelo JavaScript
-$dados = json_decode(file_get_contents("php://input"), true);
+$email = is_string($dados["email"] ?? null) ? strtolower(trim($dados["email"])) : "";
+$senha = is_string($dados["senha"] ?? null) ? $dados["senha"] : "";
 
-$email = strtolower(trim($dados["email"] ?? ""));
-$senha = $dados["senha"] ?? "";
+if ($email === "" || $senha === "") {
+    erro("Preencha o e-mail e a senha.");
+}
 
-// Validar campos
-if (empty($email) || empty($senha)) {
-    http_response_code(400);
-    echo json_encode(["erro" => "Preencha o e-mail e a senha."]);
-    exit;
+// Limite simples de tentativas erradas em sequência na mesma sessão
+$tentativas = $_SESSION["tentativas_login"] ?? ["qtd" => 0, "desde" => time()];
+
+if (time() - $tentativas["desde"] > 300) {
+    $tentativas = ["qtd" => 0, "desde" => time()];
+}
+
+if ($tentativas["qtd"] >= 10) {
+    $_SESSION["tentativas_login"] = $tentativas;
+    erro("Muitas tentativas. Aguarde alguns minutos e tente novamente.", 429);
 }
 
 try {
 
-    // Buscar usuário no banco
-    $sql = "SELECT id, nome, email, senha, tipo
-            FROM usuarios
-            WHERE email = :email
-            LIMIT 1";
-
-    $stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare(
+        "SELECT id, nome, email, senha, tipo FROM usuarios WHERE email = :email LIMIT 1"
+    );
     $stmt->execute([":email" => $email]);
-
     $usuario = $stmt->fetch();
 
-
-    
-
-    // Verificar usuário e senha
     if (!$usuario || !password_verify($senha, $usuario["senha"])) {
-        http_response_code(401);
-        echo json_encode([
-            "erro" => "E-mail ou senha inválidos."
-        ]);
-        exit;
+        $tentativas["qtd"]++;
+        $_SESSION["tentativas_login"] = $tentativas;
+        erro("E-mail ou senha inválidos.", 401);
     }
 
-    // Verificar tipo de conta
-    if (!in_array($usuario["tipo"], ["admin", "usuario"], true)) {
-        http_response_code(403);
-        echo json_encode(["erro" => "Tipo de conta inválido."]);
-        exit;
+    if (password_needs_rehash($usuario["senha"], PASSWORD_DEFAULT)) {
+        $pdo->prepare("UPDATE usuarios SET senha = :s WHERE id = :id")
+            ->execute([":s" => password_hash($senha, PASSWORD_DEFAULT), ":id" => $usuario["id"]]);
     }
 
-    // Criar sessão
     session_regenerate_id(true);
 
-    $_SESSION["usuario"] = [
-        "id" => $usuario["id"],
-        "nome" => $usuario["nome"],
-        "email" => $usuario["email"],
-        "tipo" => $usuario["tipo"]
-    ];
+    $_SESSION = ["usuario_id" => (int)$usuario["id"]];
 
-    // Retornar dados para o JavaScript
-    echo json_encode([
+    responder([
         "sucesso" => true,
         "usuario" => [
             "nome" => $usuario["nome"],
@@ -74,9 +62,5 @@ try {
 } catch (PDOException $e) {
 
     error_log($e->getMessage());
-
-    http_response_code(500);
-    echo json_encode([
-        "erro" => "Não foi possível realizar o login."
-    ]);
+    erro("Não foi possível realizar o login.", 500);
 }

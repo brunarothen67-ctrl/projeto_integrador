@@ -1,0 +1,13 @@
+# Arquivos internos que não devem ser baixados pelo navegador
+<FilesMatch "^(conexao\.php|compose\.yaml|Dockerfile|README\.md|\.env.*|.*\.sql|.*\.log)$">
+    Require all denied
+</FilesMatch>
+
+RedirectMatch 404 ^/(\.git|config|storage|banco)(/|$)
+
+# Uploads grandes (imagens de relatos e perfil)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 6M
+    php_value post_max_size 32M
+    php_value max_file_uploads 10
+</IfModule>

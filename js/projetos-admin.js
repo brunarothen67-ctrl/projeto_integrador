@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const form = document.getElementById("formProjeto");
     const lista = document.getElementById("listaProjetos");
@@ -8,16 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // Os projetos ficam no banco de dados (API), não no localStorage
+    await NapneConteudos.carregar("projetos");
+
 
     // =====================================================
-    // PEGAR PROJETOS DO LOCALSTORAGE
+    // PEGAR PROJETOS (BANCO DE DADOS)
     // =====================================================
 
     function obterProjetos() {
 
-        return JSON.parse(
-            localStorage.getItem("projetosNAPNE")
-        ) || [];
+        return NapneConteudos.obter("projetos");
 
     }
 
@@ -28,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function salvarProjetos(projetos) {
 
-        localStorage.setItem(
-            "projetosNAPNE",
-            JSON.stringify(projetos)
-        );
+        return NapneConteudos.salvar("projetos", projetos);
 
     }
 
@@ -752,13 +750,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                localStorage.removeItem(
-                    "usuarioLogado"
-                );
-
-
-                window.location.href =
-                    "../index.html";
+                window.sairDoSistema("../index.html");
 
             }
         );

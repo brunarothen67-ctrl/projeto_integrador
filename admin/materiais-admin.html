@@ -27,6 +27,8 @@
     <!-- CSS específico dos materiais -->
     <link rel="stylesheet" href="../css/materiais-admin.css">
 
+<script src="../js/conteudos-api.js"></script>
+<script src="../js/notificacoes.js?v=1"></script>
 </head>
 
 <body>
@@ -464,9 +466,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         btnSair.addEventListener("click", function () {
 
-            localStorage.removeItem("usuarioLogado");
-
-            window.location.href = "../index.html";
+            window.sairDoSistema("../index.html");
 
         });
 

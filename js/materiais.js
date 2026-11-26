@@ -3,7 +3,7 @@
    NAPNE - IFRS Campus Rolante
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const lista = document.getElementById("listaMateriais");
 
@@ -14,11 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Categoria definida pela página
     const categoria = lista.dataset.categoria;
 
-    // Buscar materiais publicados pelo administrador
-    const materiais =
-        JSON.parse(
-            localStorage.getItem("materiaisNAPNE")
-        ) || [];
+    // Buscar materiais publicados pelo administrador (banco de dados)
+    const materiais = await NapneConteudos.carregar("materiais");
 
     // Filtrar somente os materiais da categoria atual
     const materiaisCategoria =

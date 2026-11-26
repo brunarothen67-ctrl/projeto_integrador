@@ -1,0 +1,7 @@
+# Páginas do painel só são entregues a administradores logados (api/admin-pagina.php)
+RewriteEngine On
+RewriteRule ^([a-z0-9-]+\.html)$ /api/admin-pagina.php?p=$1 [L,QSA]
+
+<FilesMatch "\.code-workspace$">
+    Require all denied
+</FilesMatch>

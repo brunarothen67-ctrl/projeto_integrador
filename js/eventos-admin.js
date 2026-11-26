@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const form = document.getElementById("formEvento");
     const lista = document.getElementById("listaEventos");
@@ -7,16 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // Os eventos ficam no banco de dados (API), não no localStorage
+    await NapneConteudos.carregar("eventos");
+
 
     // =====================================================
-    // PEGAR EVENTOS DO LOCALSTORAGE
+    // PEGAR EVENTOS (BANCO DE DADOS)
     // =====================================================
 
     function obterEventos() {
 
-        return JSON.parse(
-            localStorage.getItem("eventosNAPNE")
-        ) || [];
+        return NapneConteudos.obter("eventos");
 
     }
 
@@ -27,10 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function salvarEventos(eventos) {
 
-        localStorage.setItem(
-            "eventosNAPNE",
-            JSON.stringify(eventos)
-        );
+        return NapneConteudos.salvar("eventos", eventos);
 
     }
 
@@ -844,13 +842,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                localStorage.removeItem(
-                    "usuarioLogado"
-                );
-
-
-                window.location.href =
-                    "../index.html";
+                window.sairDoSistema("../index.html");
 
             }
         );

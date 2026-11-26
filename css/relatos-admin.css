@@ -316,3 +316,111 @@
     }
 
 }
+
+/* =========================================================
+   VISUAL DOS CARDS (revisão)
+========================================================= */
+
+.relato-card {
+    min-height: 0;
+    padding: 24px 24px 20px;
+    border: 1px solid #e3eaf2;
+    border-top: 5px solid #f0ad4e;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(10, 55, 107, .08);
+}
+
+.relato-card[data-status="publicado"] { border-top-color: #2F9E6A; }
+.relato-card[data-status="reprovado"] { border-top-color: #dc3545; }
+
+.relato-card:hover {
+    box-shadow: 0 14px 32px rgba(10, 55, 107, .15);
+}
+
+.relato-status {
+    margin-bottom: 12px;
+}
+
+.relato-status.reprovado {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.relato-icone {
+    display: none;
+}
+
+.relato-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #0A376B;
+    overflow-wrap: anywhere;
+}
+
+.tipo-relato {
+    background: #EAF5FF;
+    color: #0F4C97;
+    border: 1px solid #D5E7F5;
+}
+
+.texto-relato {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.relato-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 8px;
+    margin: 4px 0 16px;
+}
+
+.relato-galeria a {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.relato-galeria img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacoes-relato p {
+    overflow-wrap: anywhere;
+}
+
+.acoes-relato {
+    flex-wrap: wrap;
+}
+
+.acoes-relato button {
+    flex: 1 1 auto;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* Grade que se adapta à largura disponível */
+.relatos-admin-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.acoes-relato button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.acoes-relato button i {
+    display: inline;
+    margin: 0;
+}

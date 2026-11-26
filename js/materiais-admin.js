@@ -4,7 +4,7 @@
 ========================================================= */
 
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
 
     // =====================================================
@@ -30,10 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // BUSCAR MATERIAIS SALVOS
     // =====================================================
 
-    let materiais =
-        JSON.parse(
-            localStorage.getItem("materiaisNAPNE")
-        ) || [];
+    // Os materiais ficam no banco de dados (API), não no localStorage
+    let materiais = await NapneConteudos.carregar("materiais");
 
 
     // =====================================================
@@ -209,10 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     materiais.splice(index, 1);
 
 
-                    localStorage.setItem(
-                        "materiaisNAPNE",
-                        JSON.stringify(materiais)
-                    );
+                    NapneConteudos.salvar("materiais", materiais);
 
 
                     mostrarMateriais();
@@ -322,10 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
             materiais.push(novoMaterial);
 
 
-            localStorage.setItem(
-                "materiaisNAPNE",
-                JSON.stringify(materiais)
-            );
+            NapneConteudos.salvar("materiais", materiais);
 
 
             // =================================================

@@ -1,134 +1,140 @@
 <?php
 
-session_start();
+/*
+ * API do perfil do usuário logado (cada pessoa só enxerga e altera o próprio perfil).
+ *
+ *  GET                  -> dados do perfil
+ *  POST (multipart)     -> campo "foto": troca a foto de perfil
+ *  POST (JSON)          -> {nome, email, novaSenha?}: atualiza os dados
+ */
 
-header("Content-Type: application/json; charset=UTF-8");
+require_once __DIR__ . "/_comum.php";
 
-require_once __DIR__ . "/../conexao.php";
+const PASTA_PERFIS = "uploads/perfis/";
 
-if (!isset($_SESSION["usuario"])) {
-    http_response_code(401);
-    echo json_encode(["erro" => "Você precisa estar logado."]);
-    exit;
-}
-
-$id = $_SESSION["usuario"]["id"];
+$usuarioLogado = exigirLogin();
+$id = $usuarioLogado["id"];
 
 try {
 
     if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
-        $stmt = $pdo->prepare(
-            "SELECT nome, email FROM usuarios WHERE id = :id"
-        );
-
-        $stmt->execute([":id" => $id]);
-        $usuario = $stmt->fetch();
-
-        if (!$usuario) {
-            http_response_code(404);
-            echo json_encode(["erro" => "Usuário não encontrado."]);
-            exit;
-        }
-
-        echo json_encode([
+        responder([
             "sucesso" => true,
-            "usuario" => $usuario
+            "usuario" => [
+                "nome" => $usuarioLogado["nome"],
+                "email" => $usuarioLogado["email"],
+                "foto_perfil" => $usuarioLogado["foto_perfil"]
+            ]
         ]);
-        exit;
     }
 
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        http_response_code(405);
-        echo json_encode(["erro" => "Método não permitido."]);
-        exit;
+        erro("Método não permitido.", 405);
     }
 
-    $dados = json_decode(file_get_contents("php://input"), true);
-
-    if (!is_array($dados)) {
-        http_response_code(400);
-        echo json_encode(["erro" => "Dados inválidos."]);
-        exit;
+    // Arquivo maior que post_max_size: o PHP descarta $_POST e $_FILES
+    if (empty($_POST) && empty($_FILES) && stripos($_SERVER["CONTENT_TYPE"] ?? "", "multipart/") === 0) {
+        erro("A imagem é grande demais. Use uma imagem de até 2 MB.", 413);
     }
 
-    $nome = trim($dados["nome"] ?? "");
-    $email = strtolower(trim($dados["email"] ?? ""));
+    // =====================================================
+    // FOTO DE PERFIL
+    // =====================================================
+
+    if (isset($_FILES["foto"])) {
+
+        $imagem = validarImagem($_FILES["foto"], 2 * 1024 * 1024);
+
+        $pasta = __DIR__ . "/../" . PASTA_PERFIS;
+
+        if (!is_dir($pasta) && !mkdir($pasta, 0755, true)) {
+            throw new RuntimeException("Não foi possível criar a pasta de imagens.");
+        }
+
+        $nomeArquivo = "perfil_" . $id . "_" . bin2hex(random_bytes(8)) . "." . $imagem["extensao"];
+
+        if (!move_uploaded_file($imagem["tmp_name"], $pasta . $nomeArquivo)) {
+            throw new RuntimeException("Não foi possível salvar a imagem no servidor.");
+        }
+
+        $caminhoBanco = PASTA_PERFIS . $nomeArquivo;
+
+        try {
+
+            $pdo->prepare("UPDATE usuarios SET foto_perfil = :foto WHERE id = :id")
+                ->execute([":foto" => $caminhoBanco, ":id" => $id]);
+
+        } catch (Throwable $e) {
+
+            @unlink($pasta . $nomeArquivo);
+            throw $e;
+        }
+
+        // Remove a foto anterior
+        apagarUpload($usuarioLogado["foto_perfil"], PASTA_PERFIS);
+
+        responder([
+            "sucesso" => true,
+            "foto_perfil" => $caminhoBanco,
+            "mensagem" => "Foto de perfil atualizada com sucesso!"
+        ]);
+    }
+
+    // =====================================================
+    // NOME, E-MAIL E SENHA
+    // =====================================================
+
+    $dados = lerJson();
+
+    $nome = is_string($dados["nome"] ?? null) ? trim($dados["nome"]) : "";
+    $email = is_string($dados["email"] ?? null) ? strtolower(trim($dados["email"])) : "";
     $novaSenha = $dados["novaSenha"] ?? "";
 
     if ($nome === "" || $email === "") {
-        http_response_code(400);
-        echo json_encode(["erro" => "Preencha nome e e-mail."]);
-        exit;
+        erro("Preencha nome e e-mail.");
     }
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        http_response_code(400);
-        echo json_encode(["erro" => "E-mail inválido."]);
-        exit;
+    if (mb_strlen($nome) < 2 || mb_strlen($nome) > 150) {
+        erro("O nome deve ter entre 2 e 150 caracteres.");
     }
 
-    if (!is_string($novaSenha) || ($novaSenha !== "" && strlen($novaSenha) < 6)) {
-        http_response_code(400);
-        echo json_encode(["erro" => "A senha deve ter pelo menos 6 caracteres."]);
-        exit;
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 150) {
+        erro("E-mail inválido.");
     }
 
-    $stmt = $pdo->prepare(
-        "SELECT id FROM usuarios
-         WHERE email = :email AND id != :id
-         LIMIT 1"
-    );
+    if (!is_string($novaSenha) || ($novaSenha !== "" && (strlen($novaSenha) < 6 || strlen($novaSenha) > 72))) {
+        erro("A senha deve ter entre 6 e 72 caracteres.");
+    }
 
-    $stmt->execute([
-        ":email" => $email,
-        ":id" => $id
-    ]);
+    $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = :email AND id != :id LIMIT 1");
+    $stmt->execute([":email" => $email, ":id" => $id]);
 
     if ($stmt->fetch()) {
-        http_response_code(409);
-        echo json_encode(["erro" => "Este e-mail já está cadastrado."]);
-        exit;
+        erro("Este e-mail já está cadastrado.", 409);
     }
 
     if ($novaSenha !== "") {
 
-        $senhaHash = password_hash($novaSenha, PASSWORD_DEFAULT);
-
-        $stmt = $pdo->prepare(
-            "UPDATE usuarios
-             SET nome = :nome, email = :email, senha = :senha
-             WHERE id = :id"
-        );
-
-        $stmt->execute([
+        $pdo->prepare(
+            "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha WHERE id = :id"
+        )->execute([
             ":nome" => $nome,
             ":email" => $email,
-            ":senha" => $senhaHash,
+            ":senha" => password_hash($novaSenha, PASSWORD_DEFAULT),
             ":id" => $id
         ]);
 
     } else {
 
-        $stmt = $pdo->prepare(
-            "UPDATE usuarios
-             SET nome = :nome, email = :email
-             WHERE id = :id"
-        );
-
-        $stmt->execute([
-            ":nome" => $nome,
-            ":email" => $email,
-            ":id" => $id
-        ]);
+        $pdo->prepare(
+            "UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id"
+        )->execute([":nome" => $nome, ":email" => $email, ":id" => $id]);
     }
 
-    $_SESSION["usuario"]["nome"] = $nome;
-    $_SESSION["usuario"]["email"] = $email;
-
-    echo json_encode([
+    responder([
         "sucesso" => true,
-        "usuario" => $_SESSION["usuario"],
+        "usuario" => ["nome" => $nome, "email" => $email, "tipo" => $usuarioLogado["tipo"]],
         "mensagem" => "Perfil atualizado com sucesso!"
     ]);
 
@@ -136,6 +142,14 @@ try {
 
     error_log($e->getMessage());
 
-    http_response_code(500);
-    echo json_encode(["erro" => "Não foi possível processar o perfil."]);
+    if ($e->getCode() === "23000") {
+        erro("Este e-mail já está cadastrado.", 409);
+    }
+
+    erro("Não foi possível processar a solicitação.", 500);
+
+} catch (Throwable $e) {
+
+    error_log($e->getMessage());
+    erro("Não foi possível processar a solicitação.", 500);
 }

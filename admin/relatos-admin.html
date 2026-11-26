@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,13 +26,12 @@
     <link rel="stylesheet" href="../css/painel-admin.css">
 
     <!-- CSS dos relatos -->
-    <link rel="stylesheet" href="../css/relatos-admin.css">
+    <link rel="stylesheet" href="../css/relatos-admin.css?v=3">
 
+<script src="../js/notificacoes.js?v=1"></script>
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      SIDEBAR
@@ -47,141 +47,77 @@
 
     </div>
 
-
     <div class="sidebar-admin">
 
         <div class="sidebar-avatar">
-
             <i class="bi bi-person-fill"></i>
-
         </div>
 
         <div>
-
             <strong>Administrador</strong>
-
             <small>Painel administrativo</small>
-
         </div>
 
     </div>
 
-
     <nav class="sidebar-menu">
 
-
-        <a
-            href="painel-admin.html"
-            class="sidebar-link"
-        >
-
+        <a href="painel-admin.html" class="sidebar-link">
             <i class="bi bi-grid-1x2-fill"></i>
-
             <span>Dashboard</span>
-
         </a>
 
-
-        <a
-            href="projetos-admin.html"
-            class="sidebar-link"
-        >
-
+        <a href="projetos-admin.html" class="sidebar-link">
             <i class="bi bi-folder2-open"></i>
-
             <span>Projetos</span>
-
         </a>
 
-
-        <a
-            href="eventos-admin.html"
-            class="sidebar-link"
-        >
-
+        <a href="eventos-admin.html" class="sidebar-link">
             <i class="bi bi-calendar-event"></i>
-
             <span>Eventos</span>
-
         </a>
 
-
-        <a
-            href="relatos-admin.html"
-            class="sidebar-link active"
-        >
-
+        <a href="relatos-admin.html" class="sidebar-link active">
             <i class="bi bi-chat-left-text"></i>
-
             <span>Relatos</span>
-
         </a>
 
-
-        <a
-            href="materiais-admin.html"
-            class="sidebar-link"
-        >
-
+        <a href="materiais-admin.html" class="sidebar-link">
             <i class="bi bi-file-earmark-text"></i>
-
             <span>Materiais</span>
-
         </a>
 
-
-        <a
-            href="usuarios-admin.html"
-            class="sidebar-link"
-        >
-
+        <a href="usuarios-admin.html" class="sidebar-link">
             <i class="bi bi-people"></i>
-
             <span>Usuários</span>
-
         </a>
-
 
         <div class="sidebar-divisor"></div>
 
-
-        <a
-            href="../index.html"
-            class="sidebar-link"
-        >
-
+        <a href="../index.html" class="sidebar-link">
             <i class="bi bi-house"></i>
-
             <span>Voltar ao site</span>
-
         </a>
-
 
         <button
             type="button"
             class="sidebar-sair"
-            id="btnSairAdmin"
-        >
+            id="btnSairAdmin">
 
             <i class="bi bi-box-arrow-right"></i>
-
             <span>Sair</span>
 
         </button>
 
-
     </nav>
 
 </aside>
-
-
 
 <!-- =====================================================
      CONTEÚDO PRINCIPAL
 ====================================================== -->
 
 <main class="admin-main">
-
 
     <!-- CABEÇALHO -->
 
@@ -198,20 +134,16 @@
 
         </div>
 
-
         <button
             type="button"
             class="sidebar-mobile-button"
-            id="btnMenuAdmin"
-        >
+            id="btnMenuAdmin">
 
             <i class="bi bi-list"></i>
 
         </button>
 
     </header>
-
-
 
     <!-- FILTRO -->
 
@@ -232,33 +164,21 @@
 
         </div>
 
-
         <div class="admin-form-card">
 
-            <label
-                for="filtroRelatos"
-                class="form-label"
-            >
+            <label for="filtroRelatos" class="form-label">
                 Filtrar relatos
             </label>
 
+            <select id="filtroRelatos" class="form-select">
 
-            <select
-                id="filtroRelatos"
-                class="form-select"
-            >
+                <option value="todos">Todos os relatos</option>
 
-                <option value="todos">
-                    Todos os relatos
-                </option>
+                <option value="pendente">Aguardando aprovação</option>
 
-                <option value="pendente">
-                    Aguardando aprovação
-                </option>
+                <option value="publicado">Publicados</option>
 
-                <option value="publicado">
-                    Publicados
-                </option>
+                <option value="reprovado">Reprovados</option>
 
             </select>
 
@@ -266,27 +186,19 @@
 
     </section>
 
-
-
     <!-- LISTA DINÂMICA -->
 
     <section class="admin-section">
 
         <div
             id="listaRelatos"
-            class="relatos-admin-list"
-        >
+            class="relatos-admin-list">
 
-            <!--
-                OS RELATOS SERÃO INSERIDOS
-                AUTOMATICAMENTE PELO JAVASCRIPT
-            -->
+            <!-- Relatos carregados pelo JavaScript -->
 
         </div>
 
     </section>
-
-
 
     <!-- RODAPÉ -->
 
@@ -298,114 +210,180 @@
 
     </footer>
 
-
 </main>
-
-
 
 <!-- Bootstrap -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-</script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- JAVASCRIPT -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
+    const lista = document.getElementById("listaRelatos");
+    const filtro = document.getElementById("filtroRelatos");
+    const btnSair = document.getElementById("btnSairAdmin");
+    const btnMenu = document.getElementById("btnMenuAdmin");
+    const sidebar = document.getElementById("adminSidebar");
 
-    // =====================================================
-    // SAIR
-    // =====================================================
-
-    const btnSair =
-        document.getElementById("btnSairAdmin");
-
-
-    if (btnSair) {
-
-        btnSair.addEventListener(
-            "click",
-            function () {
-
-                localStorage.removeItem(
-                    "usuarioLogado"
-                );
-
-                window.location.href =
-                    "../index.html";
-
-            }
-        );
-
-    }
-
+    let relatos = [];
 
     // =====================================================
-    // MENU MOBILE
+    // VERIFICAR ADMINISTRADOR
     // =====================================================
 
-    const btnMenu =
-        document.getElementById("btnMenuAdmin");
-
-    const sidebar =
-        document.getElementById("adminSidebar");
-
-
-    if (btnMenu && sidebar) {
-
-        btnMenu.addEventListener(
-            "click",
-            function () {
-
-                sidebar.classList.toggle(
-                    "aberta"
-                );
-
-            }
-        );
-
-    }
-
-
-    // =====================================================
-    // OBTER RELATOS
-    // =====================================================
-
-    function obterRelatos() {
+    async function verificarAdmin() {
 
         try {
 
-            return JSON.parse(
-                localStorage.getItem("relatos")
-            ) || [];
+            const resposta = await fetch("../api/sessao.php", {
+                credentials: "same-origin"
+            });
+
+            if (!resposta.ok) {
+                window.location.href = "../login.html";
+                return false;
+            }
+
+            const dados = await resposta.json();
+
+            if (
+                !dados.autenticado ||
+                !dados.usuario ||
+                dados.usuario.tipo !== "admin"
+            ) {
+
+                alert("Acesso permitido somente ao administrador.");
+                window.location.href = "../index.html";
+
+                return false;
+            }
+
+            return true;
 
         } catch (erro) {
 
-            return [];
+            console.error("Erro ao verificar sessão:", erro);
+
+            window.location.href = "../login.html";
+
+            return false;
 
         }
 
     }
 
-
     // =====================================================
-    // SALVAR RELATOS
+    // SAIR
     // =====================================================
 
-    function salvarRelatos(relatos) {
+    if (btnSair) {
 
-        localStorage.setItem(
-            "relatos",
-            JSON.stringify(relatos)
-        );
+        btnSair.addEventListener("click", async function () {
+
+            try {
+
+                const resposta = await fetch("../api/logout.php", {
+                    method: "POST",
+                    credentials: "same-origin"
+                });
+
+                if (!resposta.ok) {
+                    alert("Não foi possível encerrar a sessão.");
+                    return;
+                }
+
+                window.location.href = "../index.html";
+
+            } catch (erro) {
+
+                console.error("Erro ao sair:", erro);
+                alert("Não foi possível conectar ao servidor.");
+
+            }
+
+        });
 
     }
 
+    // =====================================================
+    // MENU MOBILE
+    // =====================================================
+
+    if (btnMenu && sidebar) {
+
+        btnMenu.addEventListener("click", function () {
+            sidebar.classList.toggle("aberta");
+        });
+
+    }
+
+    // =====================================================
+    // CARREGAR RELATOS DO BANCO
+    // =====================================================
+
+    async function carregarRelatos() {
+
+        lista.innerHTML = `
+            <p class="text-muted">Carregando relatos...</p>
+        `;
+
+        try {
+
+            const resposta = await fetch("../api/relatos.php?admin=1", {
+                credentials: "same-origin"
+            });
+
+            if (!resposta.ok) {
+                throw new Error("Não foi possível carregar os relatos.");
+            }
+
+            relatos = await resposta.json();
+
+            if (!Array.isArray(relatos)) {
+                relatos = [];
+            }
+
+            mostrarRelatos();
+
+        } catch (erro) {
+
+            console.error("Erro ao carregar relatos:", erro);
+
+            lista.innerHTML = `
+                <div class="nenhum-relato">
+                    <h3>Não foi possível carregar os relatos.</h3>
+                    <p>Tente novamente mais tarde.</p>
+                </div>
+            `;
+
+        }
+
+    }
+
+    // =====================================================
+    // FORMATAR DATA
+    // =====================================================
+
+    function formatarData(data) {
+
+        if (!data) {
+            return "Data não informada";
+        }
+
+        const dataFormatada = new Date(
+            String(data).replace(" ", "T")
+        );
+
+        if (isNaN(dataFormatada.getTime())) {
+            return String(data);
+        }
+
+        return dataFormatada.toLocaleDateString("pt-BR");
+
+    }
 
     // =====================================================
     // MOSTRAR RELATOS
@@ -413,39 +391,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function mostrarRelatos() {
 
-        const lista =
-            document.getElementById(
-                "listaRelatos"
+        const valorFiltro = filtro.value;
+
+        const filtrados = relatos.filter(function (relato) {
+
+            return (
+                valorFiltro === "todos" ||
+                relato.status === valorFiltro
             );
 
-
-        if (!lista) {
-            return;
-        }
-
-
-        const relatos =
-            obterRelatos();
-
+        });
 
         lista.innerHTML = "";
 
-
-        // -----------------------------------------------
-        // NENHUM RELATO
-        // -----------------------------------------------
-
-        if (relatos.length === 0) {
+        if (filtrados.length === 0) {
 
             lista.innerHTML = `
-
                 <div class="nenhum-relato">
 
                     <i class="bi bi-chat-left-text"></i>
 
-                    <h3>
-                        Nenhum relato recebido
-                    </h3>
+                    <h3>Nenhum relato recebido</h3>
 
                     <p>
                         Quando um usuário enviar um relato,
@@ -453,389 +419,235 @@ document.addEventListener("DOMContentLoaded", function () {
                     </p>
 
                 </div>
-
             `;
 
             return;
 
         }
 
+        filtrados.forEach(function (relato) {
 
-        // -----------------------------------------------
-        // CRIAR CARDS
-        // -----------------------------------------------
+            const card = document.createElement("div");
+            card.className = "relato-card";
+            card.dataset.status = relato.status || "pendente";
 
-        relatos.forEach(function (relato) {
+            const status = relato.status || "pendente";
 
-            const card =
-                document.createElement("div");
+            const statusElemento = document.createElement("div");
 
+            if (status === "publicado") {
 
-            card.className =
-                "relato-card";
+                statusElemento.className = "relato-status publicado";
+                statusElemento.textContent = "✓ Publicado";
 
+            } else if (status === "reprovado") {
 
-            card.dataset.status =
-                relato.status || "pendente";
+                statusElemento.className = "relato-status reprovado";
+                statusElemento.textContent = "✕ Reprovado";
 
+            } else {
 
-            const status =
-                relato.status || "pendente";
+                statusElemento.className = "relato-status pendente";
+                statusElemento.textContent = "◷ Aguardando aprovação";
 
+            }
 
-            const statusHTML =
-                status === "publicado"
+            const icone = document.createElement("i");
+            icone.className = "bi bi-chat-heart relato-icone";
 
-                ?
+            const titulo = document.createElement("h3");
+            titulo.textContent = relato.titulo || "";
 
-                `
-                <div class="relato-status publicado">
+            const tipo = document.createElement("span");
+            tipo.className = "tipo-relato";
+            tipo.textContent = relato.tipo || "";
 
-                    <i class="bi bi-check-circle"></i>
+            const texto = document.createElement("p");
+            texto.className = "texto-relato";
+            texto.textContent = relato.texto || "";
 
-                    Publicado
+            const informacoes = document.createElement("div");
+            informacoes.className = "informacoes-relato";
 
-                </div>
-                `
+            const autor = document.createElement("p");
+            autor.textContent =
+                "Autor: " +
+                (Number(relato.anonimo) === 1
+                    ? "Usuário anônimo (" + (relato.nome || "?") + " - " + (relato.autor_email || "") + ")"
+                    : (relato.nome || "Não informado") + (relato.autor_email ? " - " + relato.autor_email : ""));
 
-                :
+            const data = document.createElement("p");
+            data.textContent = "Data: " + formatarData(relato.criado_em);
 
-                `
-                <div class="relato-status pendente">
+            informacoes.appendChild(autor);
+            informacoes.appendChild(data);
 
-                    <i class="bi bi-clock"></i>
+            const acoes = document.createElement("div");
+            acoes.className = "acoes-relato";
 
-                    Aguardando aprovação
+            if (status !== "reprovado") {
 
-                </div>
-                `;
+                const btnReprovar = document.createElement("button");
 
+                btnReprovar.type = "button";
+                btnReprovar.className = "btn btn-outline-secondary";
+                btnReprovar.innerHTML = '<i class="bi bi-x-circle"></i> Reprovar';
 
-            card.innerHTML = `
+                btnReprovar.addEventListener("click", function () {
 
-                ${statusHTML}
-
-
-                <i class="bi bi-chat-heart relato-icone"></i>
-
-
-                <h3>
-                    ${relato.titulo}
-                </h3>
-
-
-                <span class="tipo-relato">
-
-                    ${relato.tipo}
-
-                </span>
-
-
-                <p class="texto-relato">
-
-                    ${relato.texto}
-
-                </p>
-
-
-                <div class="informacoes-relato">
-
-                    <p>
-
-                        <i class="bi bi-person"></i>
-
-                        ${
-                            relato.anonimo
-                            ? "Usuário anônimo"
-                            : relato.nome
-                        }
-
-                    </p>
-
-
-                    <p>
-
-                        <i class="bi bi-calendar"></i>
-
-                        ${relato.data}
-
-                    </p>
-
-                </div>
-
-
-                <div class="acoes-relato">
-
-
-                    ${
-                        status === "pendente"
-
-                        ?
-
-                        `
-                        <button
-                            type="button"
-                            class="btn btn-success btn-publicar"
-                            data-id="${relato.id}"
-                        >
-
-                            <i class="bi bi-check-circle"></i>
-
-                            Publicar
-
-                        </button>
-                        `
-
-                        :
-
-                        ""
+                    if (confirm("Deseja reprovar este relato? Ele deixará de aparecer no site.")) {
+                        alterarRelato("PATCH", relato.id, "reprovado");
                     }
 
+                });
 
-                    <button
-                        type="button"
-                        class="btn btn-outline-danger btn-excluir"
-                        data-id="${relato.id}"
-                    >
+                acoes.appendChild(btnReprovar);
 
-                        <i class="bi bi-trash"></i>
+            }
 
-                        Excluir
+            if (status !== "publicado") {
 
-                    </button>
+                const btnPublicar = document.createElement("button");
 
+                btnPublicar.type = "button";
+                btnPublicar.className = "btn btn-success btn-publicar";
+                btnPublicar.innerHTML = '<i class="bi bi-check-circle"></i> Publicar';
 
-                </div>
+                btnPublicar.addEventListener("click", function () {
 
-            `;
+                    if (confirm("Deseja realmente publicar este relato?")) {
+                        alterarRelato("PATCH", relato.id, "publicado");
+                    }
 
+                });
+
+                acoes.appendChild(btnPublicar);
+
+            }
+
+            const btnExcluir = document.createElement("button");
+
+            btnExcluir.type = "button";
+            btnExcluir.className = "btn btn-outline-danger btn-excluir";
+            btnExcluir.innerHTML = '<i class="bi bi-trash"></i> Excluir';
+
+            btnExcluir.addEventListener("click", function () {
+
+                if (confirm("Deseja realmente excluir este relato?")) {
+                    alterarRelato("DELETE", relato.id);
+                }
+
+            });
+
+            acoes.appendChild(btnExcluir);
+
+            card.appendChild(statusElemento);
+            card.appendChild(icone);
+            card.appendChild(titulo);
+            card.appendChild(tipo);
+            card.appendChild(texto);
+
+            if (Array.isArray(relato.imagens) && relato.imagens.length > 0) {
+
+                const imagens = document.createElement("div");
+                imagens.className = "relato-galeria";
+
+                relato.imagens.forEach(function (caminho) {
+
+                    const img = document.createElement("img");
+                    img.src = "../" + caminho;
+                    img.alt = "Imagem do relato";
+
+                    const link = document.createElement("a");
+                    link.href = "../" + caminho;
+                    link.target = "_blank";
+                    link.rel = "noopener";
+
+                    link.appendChild(img);
+                    imagens.appendChild(link);
+
+                });
+
+                card.appendChild(imagens);
+
+            }
+
+            card.appendChild(informacoes);
+            card.appendChild(acoes);
 
             lista.appendChild(card);
 
         });
 
-
-        configurarBotoes();
-
     }
 
-
     // =====================================================
-    // BOTÕES PUBLICAR / EXCLUIR
+    // PUBLICAR OU EXCLUIR
     // =====================================================
 
-    function configurarBotoes() {
+    async function alterarRelato(metodo, id, novoStatus) {
 
+        try {
 
-        // -------------------------------------------------
-        // PUBLICAR
-        // -------------------------------------------------
+            const resposta = await fetch("../api/relatos.php", {
 
-        const botoesPublicar =
-            document.querySelectorAll(
-                ".btn-publicar"
-            );
+                method: metodo,
 
+                credentials: "same-origin",
 
-        botoesPublicar.forEach(function (botao) {
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            botao.addEventListener(
-                "click",
-                function () {
+                body: JSON.stringify({
+                    id: id,
+                    status: novoStatus
+                })
 
-                    const id =
-                        Number(
-                            this.dataset.id
-                        );
+            });
 
+            const dados = await resposta.json();
 
-                    const confirmar =
-                        confirm(
-                            "Deseja realmente publicar este relato?"
-                        );
+            if (!resposta.ok) {
 
+                alert(dados.erro || "Não foi possível realizar a operação.");
+                return;
 
-                    if (!confirmar) {
-                        return;
-                    }
+            }
 
+            await carregarRelatos();
 
-                    let relatos =
-                        obterRelatos();
+        } catch (erro) {
 
+            console.error("Erro ao alterar relato:", erro);
 
-                    relatos =
-                        relatos.map(
-                            function (relato) {
+            alert("Não foi possível conectar ao servidor.");
 
-                                if (
-                                    relato.id === id
-                                ) {
-
-                                    relato.status =
-                                        "publicado";
-
-                                }
-
-                                return relato;
-
-                            }
-                        );
-
-
-                    salvarRelatos(
-                        relatos
-                    );
-
-
-                    alert(
-                        "Relato publicado com sucesso!"
-                    );
-
-
-                    mostrarRelatos();
-
-                }
-            );
-
-        });
-
-
-        // -------------------------------------------------
-        // EXCLUIR
-        // -------------------------------------------------
-
-        const botoesExcluir =
-            document.querySelectorAll(
-                ".btn-excluir"
-            );
-
-
-        botoesExcluir.forEach(function (botao) {
-
-            botao.addEventListener(
-                "click",
-                function () {
-
-                    const id =
-                        Number(
-                            this.dataset.id
-                        );
-
-
-                    const confirmar =
-                        confirm(
-                            "Deseja realmente excluir este relato?"
-                        );
-
-
-                    if (!confirmar) {
-                        return;
-                    }
-
-
-                    let relatos =
-                        obterRelatos();
-
-
-                    relatos =
-                        relatos.filter(
-                            function (relato) {
-
-                                return relato.id !== id;
-
-                            }
-                        );
-
-
-                    salvarRelatos(
-                        relatos
-                    );
-
-
-                    alert(
-                        "Relato excluído."
-                    );
-
-
-                    mostrarRelatos();
-
-                }
-            );
-
-        });
+        }
 
     }
-
 
     // =====================================================
     // FILTRO
     // =====================================================
 
-    const filtro =
-        document.getElementById(
-            "filtroRelatos"
-        );
-
-
     if (filtro) {
-
-        filtro.addEventListener(
-            "change",
-            function () {
-
-                const valor =
-                    this.value;
-
-
-                const cards =
-                    document.querySelectorAll(
-                        ".relato-card"
-                    );
-
-
-                cards.forEach(
-                    function (card) {
-
-                        const status =
-                            card.dataset.status;
-
-
-                        if (
-                            valor === "todos" ||
-                            valor === status
-                        ) {
-
-                            card.style.display =
-                                "flex";
-
-                        } else {
-
-                            card.style.display =
-                                "none";
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
+        filtro.addEventListener("change", mostrarRelatos);
     }
 
-
     // =====================================================
-    // CARREGAR
+    // INICIAR
     // =====================================================
 
-    mostrarRelatos();
+    const autorizado = await verificarAdmin();
+
+    if (autorizado) {
+        await carregarRelatos();
+    }
 
 });
 
 </script>
 
-
 </body>
-
 </html>

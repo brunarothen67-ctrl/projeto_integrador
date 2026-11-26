@@ -1,440 +1,336 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Painel Administrativo | NAPNE IFRS</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Painel Administrativo | NAPNE IFRS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- Bootstrap -->
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
-<!-- Bootstrap Icons -->
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-<!-- CSS geral -->
-<link rel="stylesheet" href="../css/style.css">
-
-<!-- CSS do painel -->
-<link rel="stylesheet" href="../css/painel-admin.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/painel-admin.css">
+<script src="../js/notificacoes.js?v=1"></script>
 </head>
 
 <body>
 
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
 
-<!-- =====================================================
-     SIDEBAR
-====================================================== -->
-
-<aside class="admin-sidebar" id="adminSidebar">
-
-    <div class="sidebar-logo">
-
-        <i class="bi bi-universal-access"></i>
-
-        <span>NAPNE IFRS</span>
-
-    </div>
-
-
-    <div class="sidebar-admin">
-
-        <div class="sidebar-avatar">
-
-            <i class="bi bi-person-fill"></i>
-
+        <div class="sidebar-logo">
+            <i class="bi bi-universal-access"></i>
+            <span>NAPNE IFRS</span>
         </div>
 
-        <div>
-
-            <strong>Administrador</strong>
-
-            <small>Painel administrativo</small>
-
-        </div>
-
-    </div>
-
-
-    <nav class="sidebar-menu">
-
-        <a href="painel-admin.html" class="sidebar-link active">
-
-            <i class="bi bi-grid-1x2-fill"></i>
-
-            <span>Dashboard</span>
-
-        </a>
-
-
-        <a href="projetos-admin.html" class="sidebar-link">
-
-            <i class="bi bi-folder2-open"></i>
-
-            <span>Projetos</span>
-
-        </a>
-
-
-        <a href="eventos-admin.html" class="sidebar-link">
-
-            <i class="bi bi-calendar-event"></i>
-
-            <span>Eventos</span>
-
-        </a>
-
-
-        <a href="relatos-admin.html" class="sidebar-link">
-
-            <i class="bi bi-chat-left-text"></i>
-
-            <span>Relatos</span>
-
-        </a>
-
-
-        <a href="materiais-admin.html" class="sidebar-link">
-
-            <i class="bi bi-file-earmark-text"></i>
-
-            <span>Materiais</span>
-
-        </a>
-
-
-        <a href="usuarios-admin.html" class="sidebar-link">
-
-            <i class="bi bi-people"></i>
-
-            <span>Usuários</span>
-
-        </a>
-
-
-        <div class="sidebar-divisor"></div>
-
-
-        <a href="../index.html" class="sidebar-link">
-
-            <i class="bi bi-house"></i>
-
-            <span>Voltar ao site</span>
-
-        </a>
-
-
-        <button
-            type="button"
-            class="sidebar-sair"
-            id="btnSairAdmin">
-
-            <i class="bi bi-box-arrow-right"></i>
-
-            <span>Sair</span>
-
-        </button>
-
-    </nav>
-
-</aside>
-
-
-<!-- =====================================================
-     CONTEÚDO PRINCIPAL
-====================================================== -->
-
-<main class="admin-main">
-
-
-    <!-- TOPO -->
-
-    <header class="admin-header">
-
-        <div>
-
-            <h1>Painel Administrativo</h1>
-
-            <p>
-                Gerencie os conteúdos do NAPNE de forma simples e organizada.
-            </p>
-
-        </div>
-
-
-        <button
-            type="button"
-            class="sidebar-mobile-button"
-            id="btnMenuAdmin">
-
-            <i class="bi bi-list"></i>
-
-        </button>
-
-    </header>
-
-
-    <!-- =================================================
-         BOAS-VINDAS
-    ================================================== -->
-
-    <section class="admin-welcome">
-
-        <div>
-
-            <span class="admin-welcome-label">
-                PAINEL ADMINISTRATIVO
-            </span>
-
-            <h2>
-                Bem-vindo, Administrador!
-            </h2>
-
-            <p>
-                Aqui você pode acompanhar e gerenciar
-                os conteúdos do site NAPNE.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-
-    <!-- =================================================
-         GERENCIAMENTO
-    ================================================== -->
-
-    <section class="admin-gerenciamento">
-
-        <div class="admin-section-title">
+        <div class="sidebar-admin">
+
+            <div class="sidebar-avatar">
+                <i class="bi bi-person-fill"></i>
+            </div>
 
             <div>
-
-                <h2>Gerenciamento</h2>
-
-                <p>
-                    Acesse rapidamente cada área administrativa.
-                </p>
-
+                <strong>Administrador</strong>
+                <small>Painel administrativo</small>
             </div>
 
         </div>
 
+        <nav class="sidebar-menu">
 
-        <div class="admin-menu-grid">
-
-
-            <a href="projetos-admin.html" class="admin-menu-card">
-
-                <div class="admin-menu-icone">
-
-                    <i class="bi bi-folder2-open"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>Projetos</h3>
-
-                    <p>
-                        Cadastrar, editar e organizar projetos.
-                    </p>
-
-                </div>
-
-                <i class="bi bi-arrow-right card-arrow"></i>
-
+            <a href="painel-admin.html" class="sidebar-link active">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
             </a>
 
-
-            <a href="eventos-admin.html" class="admin-menu-card">
-
-                <div class="admin-menu-icone">
-
-                    <i class="bi bi-calendar-event"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>Eventos</h3>
-
-                    <p>
-                        Publicar e atualizar eventos do NAPNE.
-                    </p>
-
-                </div>
-
-                <i class="bi bi-arrow-right card-arrow"></i>
-
+            <a href="projetos-admin.html" class="sidebar-link">
+                <i class="bi bi-folder2-open"></i>
+                <span>Projetos</span>
             </a>
 
-
-            <a href="relatos-admin.html" class="admin-menu-card">
-
-                <div class="admin-menu-icone">
-
-                    <i class="bi bi-chat-left-text"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>Relatos</h3>
-
-                    <p>
-                        Analisar e gerenciar relatos enviados.
-                    </p>
-
-                </div>
-
-                <i class="bi bi-arrow-right card-arrow"></i>
-
+            <a href="eventos-admin.html" class="sidebar-link">
+                <i class="bi bi-calendar-event"></i>
+                <span>Eventos</span>
             </a>
 
-
-            <a href="materiais-admin.html" class="admin-menu-card">
-
-                <div class="admin-menu-icone">
-
-                    <i class="bi bi-file-earmark-text"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>Materiais</h3>
-
-                    <p>
-                        Adicionar documentos e conteúdos.
-                    </p>
-
-                </div>
-
-                <i class="bi bi-arrow-right card-arrow"></i>
-
+            <a href="relatos-admin.html" class="sidebar-link">
+                <i class="bi bi-chat-left-text"></i>
+                <span>Relatos</span>
             </a>
 
-
-            <a href="usuarios-admin.html" class="admin-menu-card">
-
-                <div class="admin-menu-icone">
-
-                    <i class="bi bi-people"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>Usuários</h3>
-
-                    <p>
-                        Gerenciar usuários cadastrados.
-                    </p>
-
-                </div>
-
-                <i class="bi bi-arrow-right card-arrow"></i>
-
+            <a href="materiais-admin.html" class="sidebar-link">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Materiais</span>
             </a>
 
-
-            <a href="#" class="admin-menu-card">
-
-                <div class="admin-menu-icone">
-
-                    <i class="bi bi-gear"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>Configurações</h3>
-
-                    <p>
-                        Ajustar configurações do sistema.
-                    </p>
-
-                </div>
-
-                <i class="bi bi-arrow-right card-arrow"></i>
-
+            <a href="usuarios-admin.html" class="sidebar-link">
+                <i class="bi bi-people"></i>
+                <span>Usuários</span>
             </a>
 
+            <div class="sidebar-divisor"></div>
 
-        </div>
+            <a href="../index.html" class="sidebar-link">
+                <i class="bi bi-house"></i>
+                <span>Voltar ao site</span>
+            </a>
 
-    </section>
+            <button type="button" class="sidebar-sair" id="btnSairAdmin">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sair</span>
+            </button>
 
+        </nav>
 
-    <!-- =================================================
-         RODAPÉ
-    ================================================== -->
+    </aside>
 
-    <footer class="admin-footer">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="admin-main">
 
-        <p>
-            © 2026 NAPNE - IFRS Campus Rolante
-        </p>
+        <header class="admin-header">
 
-    </footer>
+            <div>
+                <h1>Painel Administrativo</h1>
 
-</main>
+                <p>
+                    Gerencie os conteúdos do NAPNE de forma simples e organizada.
+                </p>
+            </div>
 
+            <button type="button" class="sidebar-mobile-button" id="btnMenuAdmin">
+                <i class="bi bi-list"></i>
+            </button>
 
-<!-- Bootstrap JS -->
+        </header>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-</script>
+        <!-- BOAS-VINDAS -->
+        <section class="admin-welcome">
 
-<script src="../js/projetos-admin.js"></script>
-<!-- JS do painel -->
+            <div>
 
-<script>
+                <span class="admin-welcome-label">
+                    PAINEL ADMINISTRATIVO
+                </span>
 
-    const btnSair = document.getElementById("btnSairAdmin");
+                <h2>Bem-vindo, Administrador!</h2>
 
-    if (btnSair) {
+                <p>
+                    Aqui você pode acompanhar e gerenciar
+                    os conteúdos do site NAPNE.
+                </p>
 
-        btnSair.addEventListener("click", function () {
+            </div>
 
-            localStorage.removeItem("usuarioLogado");
+        </section>
 
-            window.location.href = "../index.html";
+        <!-- GERENCIAMENTO -->
+        <section class="admin-gerenciamento">
+
+            <div class="admin-section-title">
+
+                <div>
+                    <h2>Gerenciamento</h2>
+
+                    <p>
+                        Acesse rapidamente cada área administrativa.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="admin-menu-grid">
+
+                <a href="projetos-admin.html" class="admin-menu-card">
+
+                    <div class="admin-menu-icone">
+                        <i class="bi bi-folder2-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>Projetos</h3>
+                        <p>Cadastrar, editar e organizar projetos.</p>
+                    </div>
+
+                    <i class="bi bi-arrow-right card-arrow"></i>
+
+                </a>
+
+                <a href="eventos-admin.html" class="admin-menu-card">
+
+                    <div class="admin-menu-icone">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+
+                    <div>
+                        <h3>Eventos</h3>
+                        <p>Publicar e atualizar eventos do NAPNE.</p>
+                    </div>
+
+                    <i class="bi bi-arrow-right card-arrow"></i>
+
+                </a>
+
+                <a href="relatos-admin.html" class="admin-menu-card">
+
+                    <div class="admin-menu-icone">
+                        <i class="bi bi-chat-left-text"></i>
+                    </div>
+
+                    <div>
+                        <h3>Relatos</h3>
+                        <p>Analisar e gerenciar relatos enviados.</p>
+                    </div>
+
+                    <i class="bi bi-arrow-right card-arrow"></i>
+
+                </a>
+
+                <a href="materiais-admin.html" class="admin-menu-card">
+
+                    <div class="admin-menu-icone">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <div>
+                        <h3>Materiais</h3>
+                        <p>Adicionar documentos e conteúdos.</p>
+                    </div>
+
+                    <i class="bi bi-arrow-right card-arrow"></i>
+
+                </a>
+
+                <a href="usuarios-admin.html" class="admin-menu-card">
+
+                    <div class="admin-menu-icone">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <div>
+                        <h3>Usuários</h3>
+                        <p>Gerenciar usuários cadastrados.</p>
+                    </div>
+
+                    <i class="bi bi-arrow-right card-arrow"></i>
+
+                </a>
+
+                <a href="#" class="admin-menu-card">
+
+                    <div class="admin-menu-icone">
+                        <i class="bi bi-gear"></i>
+                    </div>
+
+                    <div>
+                        <h3>Configurações</h3>
+                        <p>Ajustar configurações do sistema.</p>
+                    </div>
+
+                    <i class="bi bi-arrow-right card-arrow"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="admin-footer">
+            <p>© 2026 NAPNE - IFRS Campus Rolante</p>
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/projetos-admin.js"></script>
+
+    <!-- Verificação de acesso, logout e menu -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+
+            // Verifica se o usuário está autenticado como administrador
+            try {
+
+                const resposta = await fetch("../api/sessao.php", {
+                    credentials: "same-origin"
+                });
+
+                if (!resposta.ok) {
+                    window.location.href = "../login.html";
+                    return;
+                }
+
+                const dados = await resposta.json();
+
+                if (
+                    !dados.autenticado ||
+                    !dados.usuario ||
+                    dados.usuario.tipo !== "admin"
+                ) {
+                    window.location.href = "../login.html";
+                    return;
+                }
+
+            } catch (erro) {
+
+                console.error("Erro ao verificar sessão:", erro);
+                window.location.href = "../login.html";
+                return;
+
+            }
+
+            // Logout
+            const btnSair = document.getElementById("btnSairAdmin");
+
+            if (btnSair) {
+
+                btnSair.addEventListener("click", async function () {
+
+                    btnSair.disabled = true;
+
+                    try {
+
+                        const resposta = await fetch("../api/logout.php", {
+                            method: "POST",
+                            credentials: "same-origin"
+                        });
+
+                        if (!resposta.ok) {
+                            throw new Error("Falha ao encerrar sessão.");
+                        }
+
+                        window.location.href = "../index.html";
+
+                    } catch (erro) {
+
+                        console.error("Erro ao sair:", erro);
+                        alert("Não foi possível encerrar a sessão.");
+                        btnSair.disabled = false;
+
+                    }
+
+                });
+
+            }
+
+            // Menu mobile
+            const btnMenu = document.getElementById("btnMenuAdmin");
+            const sidebar = document.getElementById("adminSidebar");
+
+            if (btnMenu && sidebar) {
+
+                btnMenu.addEventListener("click", function () {
+                    sidebar.classList.toggle("aberta");
+                });
+
+            }
 
         });
-
-    }
-
-
-    const btnMenu = document.getElementById("btnMenuAdmin");
-
-    const sidebar = document.getElementById("adminSidebar");
-
-    if (btnMenu && sidebar) {
-
-        btnMenu.addEventListener("click", function () {
-
-            sidebar.classList.toggle("aberta");
-
-        });
-
-    }
-
-</script>
-
+    </script>
 
 </body>
-
 </html>

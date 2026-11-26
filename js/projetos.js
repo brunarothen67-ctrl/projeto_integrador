@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
     const lista =
         document.getElementById("listaProjetos");
@@ -9,13 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =====================================================
-    // BUSCAR PROJETOS
+    // BUSCAR PROJETOS (BANCO DE DADOS)
     // =====================================================
 
-    const projetos =
-        JSON.parse(
-            localStorage.getItem("projetosNAPNE")
-        ) || [];
+    const projetos = await NapneConteudos.carregar("projetos");
 
 
     // =====================================================

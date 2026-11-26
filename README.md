@@ -54,3 +54,11 @@ O projeto utiliza `localStorage` (dona AI me apresentou )para armazenar os dados
 Por isso, os dados ficam salvos apenas no navegador utilizado. Se o armazenamento do navegador for apagado, os dados cadastrados também poderão ser perdidos.
 
 Era isso. Abraços, Fábio!!!!
+
+
+## Atualização: back-end com banco de dados
+
+- Cadastro, login, sessões, perfil, relatos, usuários, projetos, eventos e materiais agora usam PHP + MySQL (o `localStorage` não guarda mais dados permanentes).
+- Páginas `/admin` só abrem para administradores logados; as APIs em `/api` também validam o acesso.
+- Alterações de estrutura do banco: `banco/migracao-01.sql` (já aplicada no banco atual).
+- Recuperação de senha: copie `config/email.exemplo.php` para `config/email.php` e preencha o SMTP (instruções no arquivo). Sem isso, o e-mail é gravado em `storage/emails.log`.

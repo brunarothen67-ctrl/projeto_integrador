@@ -38,6 +38,9 @@
 
     <link rel="stylesheet" href="css/projetos.css">
 
+<script src="js/conteudos-api.js"></script>
+<script src="js/notificacoes.js?v=1"></script>
+<script src="js/navbar-pre.js?v=1"></script>
 </head>
 
 
@@ -95,7 +98,7 @@
                                 class="nav-link"
                                 href="index.html"
                             >
-                                Home
+                                Início
                             </a>
 
                         </li>
@@ -328,7 +331,7 @@
 
                         <li>
                             <a href="index.html">
-                                Home
+                                Início
                             </a>
                         </li>
 
@@ -409,95 +412,9 @@
          CONTROLE DA NAVBAR
     ================================================== -->
 
-    <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const areaEntrar = document.getElementById("areaEntrar");
-        const areaCadastro = document.querySelector(".btn-cadastro").closest(".nav-item");
-        const areaPerfil = document.getElementById("areaPerfil");
-        const areaSair = document.getElementById("areaSair");
-
-        const nomeUsuarioNavbar =
-            document.getElementById("nomeUsuarioNavbar");
-
-        const btnSairNavbar =
-            document.getElementById("btnSairNavbar");
-
-
-        const usuarioLogado =
-            JSON.parse(localStorage.getItem("usuarioLogado"));
-
-
-        // =================================================
-        // NINGUÉM ESTÁ LOGADO
-        // =================================================
-
-        if (!usuarioLogado) {
-
-            areaEntrar.style.display = "block";
-            areaCadastro.style.display = "block";
-
-            areaPerfil.style.display = "none";
-            areaSair.style.display = "none";
-
-            return;
-        }
-
-
-        // =================================================
-        // USUÁRIO COMUM LOGADO
-        // =================================================
-
-        if (usuarioLogado.tipo === "usuario") {
-
-            areaEntrar.style.display = "none";
-            areaCadastro.style.display = "none";
-
-            areaPerfil.style.display = "block";
-            areaSair.style.display = "block";
-
-            nomeUsuarioNavbar.textContent =
-                usuarioLogado.nome || "Meu perfil";
-
-        }
-
-
-        // =================================================
-        // ADMINISTRADOR
-        // =================================================
-
-        if (usuarioLogado.tipo === "admin") {
-
-            areaEntrar.style.display = "none";
-            areaCadastro.style.display = "none";
-
-            areaPerfil.style.display = "none";
-            areaSair.style.display = "block";
-
-        }
-
-
-        // =================================================
-        // BOTÃO SAIR
-        // =================================================
-
-        btnSairNavbar.addEventListener("click", function (event) {
-
-            event.preventDefault();
-
-            localStorage.removeItem("usuarioLogado");
-
-            window.location.href = "index.html";
-
-        });
-
-    });
-
-    </script>
 
 <script src="js/projetos.js"></script>
-<script src="js/navbar.js"></script>
+<script src="js/navbar.js?v=2"></script>
 
 
 </body>

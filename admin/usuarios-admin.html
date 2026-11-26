@@ -27,6 +27,7 @@
     <!-- CSS dos usuários -->
     <link rel="stylesheet" href="../css/usuarios-admin.css">
 
+<script src="../js/notificacoes.js?v=1"></script>
 </head>
 
 
@@ -263,7 +264,7 @@
                     </strong>
 
                     <span>
-                        Usuários ativos
+                        Administradores
                     </span>
 
                 </div>
@@ -436,442 +437,329 @@
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const listaUsuarios = document.getElementById("listaUsuarios");
+    const usuariosVazio = document.getElementById("usuariosVazio");
+    const totalUsuarios = document.getElementById("totalUsuarios");
+    const totalAdmins = document.getElementById("totalUsuariosAtivos");
+    const pesquisa = document.getElementById("pesquisaUsuario");
+    const btnSair = document.getElementById("btnSairAdmin");
+    const btnMenu = document.getElementById("btnMenuAdmin");
+    const sidebar = document.getElementById("adminSidebar");
+
+    let usuarios = [];
+    let meuId = null;
 
 
     /* =================================================
-       SAIR
+       SAIR E MENU MOBILE
     ================================================= */
-
-    const btnSair =
-        document.getElementById("btnSairAdmin");
-
 
     if (btnSair) {
 
-        btnSair.addEventListener(
-            "click",
-            function () {
+        btnSair.addEventListener("click", async function () {
 
-                localStorage.removeItem(
-                    "usuarioLogado"
-                );
+            try {
 
-                window.location.href =
-                    "../index.html";
+                await fetch("../api/logout.php", {
+                    method: "POST",
+                    credentials: "same-origin"
+                });
+
+            } catch (erro) {
+
+                console.error("Erro ao sair:", erro);
 
             }
-        );
+
+            window.location.href = "../index.html";
+
+        });
 
     }
-
-
-
-    /* =================================================
-       MENU MOBILE
-    ================================================= */
-
-    const btnMenu =
-        document.getElementById("btnMenuAdmin");
-
-    const sidebar =
-        document.getElementById("adminSidebar");
-
 
     if (btnMenu && sidebar) {
 
-        btnMenu.addEventListener(
-            "click",
-            function () {
-
-                sidebar.classList.toggle(
-                    "aberta"
-                );
-
-            }
-        );
+        btnMenu.addEventListener("click", function () {
+            sidebar.classList.toggle("aberta");
+        });
 
     }
 
 
-
     /* =================================================
-       BUSCAR USUÁRIOS
+       VERIFICAR ADMINISTRADOR
     ================================================= */
 
-    let usuarios =
-        JSON.parse(
-            localStorage.getItem("usuarios")
-        ) || [];
+    async function verificarAdmin() {
 
+        try {
 
-    const listaUsuarios =
-        document.getElementById("listaUsuarios");
+            const resposta = await fetch("../api/sessao.php", {
+                credentials: "same-origin"
+            });
 
-    const usuariosVazio =
-        document.getElementById("usuariosVazio");
+            if (!resposta.ok) {
+                window.location.href = "../login.html";
+                return false;
+            }
 
-    const totalUsuarios =
-        document.getElementById("totalUsuarios");
+            const dados = await resposta.json();
 
-    const totalUsuariosAtivos =
-        document.getElementById(
-            "totalUsuariosAtivos"
-        );
+            if (!dados.autenticado || dados.usuario.tipo !== "admin") {
+                window.location.href = "../index.html";
+                return false;
+            }
 
+            meuId = dados.usuario.id;
+            return true;
 
-    /* =================================================
-       MOSTRAR QUANTIDADE
-    ================================================= */
+        } catch (erro) {
 
-    totalUsuarios.textContent =
-        usuarios.length;
-
-    totalUsuariosAtivos.textContent =
-        usuarios.length;
-
-
-
-    /* =================================================
-       MOSTRAR USUÁRIOS
-    ================================================= */
-
-    function mostrarUsuarios(lista) {
-
-
-        listaUsuarios.innerHTML = "";
-
-
-        if (lista.length === 0) {
-
-            usuariosVazio.style.display =
-                "block";
-
-            return;
+            console.error("Erro ao verificar sessão:", erro);
+            window.location.href = "../login.html";
+            return false;
 
         }
 
-
-        usuariosVazio.style.display =
-            "none";
+    }
 
 
-        lista.forEach(function (
-            usuario,
-            indice
-        ) {
+    /* =================================================
+       CHAMADA À API
+    ================================================= */
+
+    async function chamarApi(metodo, corpo) {
+
+        try {
+
+            const resposta = await fetch("../api/usuarios.php", {
+                method: metodo,
+                credentials: "same-origin",
+                headers: { "Content-Type": "application/json" },
+                body: corpo ? JSON.stringify(corpo) : undefined
+            });
+
+            const dados = await resposta.json();
+
+            if (!resposta.ok) {
+                alert(dados.erro || "Não foi possível concluir a operação.");
+                return null;
+            }
+
+            return dados;
+
+        } catch (erro) {
+
+            console.error("Erro na API de usuários:", erro);
+            alert("Não foi possível conectar ao servidor.");
+            return null;
+
+        }
+
+    }
+
+    async function carregarUsuarios() {
+
+        const dados = await chamarApi("GET");
+
+        usuarios = Array.isArray(dados) ? dados : [];
+
+        aplicarPesquisa();
+
+    }
 
 
-            const linha =
-                document.createElement("tr");
+    /* =================================================
+       MOSTRAR USUÁRIOS (texto sempre via textContent)
+    ================================================= */
 
+    function criarBotao(classe, icone, titulo, aoClicar) {
 
-            linha.innerHTML = `
+        const botao = document.createElement("button");
 
-                <td>
+        botao.type = "button";
+        botao.className = "btn btn-sm " + classe;
+        botao.title = titulo;
+        botao.innerHTML = '<i class="bi ' + icone + '"></i>';
+        botao.addEventListener("click", aoClicar);
 
-                    <div class="usuario-info">
+        return botao;
 
-                        <div class="usuario-avatar">
+    }
 
-                            <i class="bi bi-person-fill"></i>
+    function mostrarUsuarios(lista) {
 
-                        </div>
+        listaUsuarios.innerHTML = "";
 
-                        <div>
+        totalUsuarios.textContent = usuarios.length;
+        totalAdmins.textContent = usuarios.filter(function (u) {
+            return u.tipo === "admin";
+        }).length;
 
-                            <strong>
-                                ${usuario.nome}
-                            </strong>
+        usuariosVazio.style.display = lista.length === 0 ? "block" : "none";
 
-                        </div>
+        lista.forEach(function (usuario) {
 
-                    </div>
+            const ehEuMesmo = Number(usuario.id) === Number(meuId);
+            const linha = document.createElement("tr");
 
-                </td>
+            // Usuário (foto + nome)
+            const celulaNome = document.createElement("td");
+            const info = document.createElement("div");
+            info.className = "usuario-info";
 
+            const avatar = document.createElement("div");
+            avatar.className = "usuario-avatar";
 
-                <td>
+            if (usuario.foto_perfil) {
 
-                    ${usuario.email}
+                const foto = document.createElement("img");
+                foto.src = "../" + usuario.foto_perfil;
+                foto.alt = "";
+                foto.style.cssText = "width:100%;height:100%;object-fit:cover;border-radius:50%";
+                foto.onerror = function () {
+                    avatar.innerHTML = '<i class="bi bi-person-fill"></i>';
+                };
+                avatar.appendChild(foto);
 
-                </td>
+            } else {
 
+                avatar.innerHTML = '<i class="bi bi-person-fill"></i>';
 
-                <td>
+            }
 
-                    <span class="usuario-tipo">
+            const nome = document.createElement("strong");
+            nome.textContent = usuario.nome + (ehEuMesmo ? " (você)" : "");
 
-                        Usuário
+            const bloco = document.createElement("div");
+            bloco.appendChild(nome);
 
-                    </span>
+            info.appendChild(avatar);
+            info.appendChild(bloco);
+            celulaNome.appendChild(info);
 
-                </td>
+            // E-mail
+            const celulaEmail = document.createElement("td");
+            celulaEmail.textContent = usuario.email;
 
+            // Tipo
+            const celulaTipo = document.createElement("td");
+            const tipo = document.createElement("span");
+            tipo.className = "usuario-tipo";
+            tipo.textContent = usuario.tipo === "admin" ? "Administrador" : "Usuário";
+            celulaTipo.appendChild(tipo);
 
-                <td>
+            // Status (relatos enviados)
+            const celulaStatus = document.createElement("td");
+            const status = document.createElement("span");
+            status.className = "usuario-status";
+            status.textContent = usuario.total_relatos + (Number(usuario.total_relatos) === 1 ? " relato" : " relatos");
+            celulaStatus.appendChild(status);
 
-                    <span class="usuario-status">
+            // Ações
+            const celulaAcoes = document.createElement("td");
+            const acoes = document.createElement("div");
+            acoes.className = "usuario-acoes";
 
-                        Ativo
+            acoes.appendChild(criarBotao("btn-outline-primary", "bi-pencil", "Editar nome", async function () {
 
-                    </span>
+                const novoNome = prompt("Editar nome do usuário:", usuario.nome);
 
-                </td>
+                if (novoNome === null || novoNome.trim() === "") {
+                    return;
+                }
 
+                if (await chamarApi("PATCH", { id: usuario.id, nome: novoNome.trim() })) {
+                    await carregarUsuarios();
+                }
 
-                <td>
+            }));
 
-                    <div class="usuario-acoes">
+            if (!ehEuMesmo) {
 
-                        <button
-                            type="button"
-                            class="btn btn-sm btn-outline-primary btn-editar-usuario"
-                            data-indice="${indice}"
-                        >
+                const virarAdmin = usuario.tipo !== "admin";
 
-                            <i class="bi bi-pencil"></i>
+                acoes.appendChild(criarBotao(
+                    "btn-outline-secondary",
+                    virarAdmin ? "bi-shield-plus" : "bi-shield-minus",
+                    virarAdmin ? "Tornar administrador" : "Remover acesso de administrador",
+                    async function () {
 
-                        </button>
+                        const pergunta = virarAdmin
+                            ? "Dar acesso de administrador a " + usuario.nome + "?"
+                            : "Remover o acesso de administrador de " + usuario.nome + "?";
 
+                        if (!confirm(pergunta)) {
+                            return;
+                        }
 
-                        <button
-                            type="button"
-                            class="btn btn-sm btn-outline-danger btn-excluir-usuario"
-                            data-indice="${indice}"
-                        >
+                        if (await chamarApi("PATCH", { id: usuario.id, tipo: virarAdmin ? "admin" : "usuario" })) {
+                            await carregarUsuarios();
+                        }
 
-                            <i class="bi bi-trash"></i>
+                    }
+                ));
 
-                        </button>
+                acoes.appendChild(criarBotao("btn-outline-danger", "bi-trash", "Excluir usuário", async function () {
 
-                    </div>
+                    if (!confirm("Deseja realmente excluir " + usuario.nome + "? Os relatos dessa pessoa também serão excluídos.")) {
+                        return;
+                    }
 
-                </td>
+                    if (await chamarApi("DELETE", { id: usuario.id })) {
+                        await carregarUsuarios();
+                    }
 
-            `;
+                }));
 
+            }
+
+            celulaAcoes.appendChild(acoes);
+
+            linha.appendChild(celulaNome);
+            linha.appendChild(celulaEmail);
+            linha.appendChild(celulaTipo);
+            linha.appendChild(celulaStatus);
+            linha.appendChild(celulaAcoes);
 
             listaUsuarios.appendChild(linha);
 
         });
 
-
-        adicionarEventos();
-
     }
-
-
-
-    /* =================================================
-       EDITAR / EXCLUIR
-    ================================================= */
-
-    function adicionarEventos() {
-
-
-        const botoesEditar =
-            document.querySelectorAll(
-                ".btn-editar-usuario"
-            );
-
-
-        botoesEditar.forEach(
-            function (botao) {
-
-                botao.addEventListener(
-                    "click",
-                    function () {
-
-                        const indice =
-                            Number(
-                                botao.dataset.indice
-                            );
-
-
-                        const usuario =
-                            usuarios[indice];
-
-
-                        const novoNome =
-                            prompt(
-                                "Editar nome do usuário:",
-                                usuario.nome
-                            );
-
-
-                        if (
-                            novoNome === null ||
-                            novoNome.trim() === ""
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        usuario.nome =
-                            novoNome.trim();
-
-
-                        usuarios[indice] =
-                            usuario;
-
-
-                        localStorage.setItem(
-                            "usuarios",
-                            JSON.stringify(usuarios)
-                        );
-
-
-                        mostrarUsuarios(
-                            usuarios
-                        );
-
-
-                        alert(
-                            "Usuário atualizado com sucesso!"
-                        );
-
-                    }
-                );
-
-            }
-        );
-
-
-
-        const botoesExcluir =
-            document.querySelectorAll(
-                ".btn-excluir-usuario"
-            );
-
-
-        botoesExcluir.forEach(
-            function (botao) {
-
-                botao.addEventListener(
-                    "click",
-                    function () {
-
-                        const indice =
-                            Number(
-                                botao.dataset.indice
-                            );
-
-
-                        const confirmacao =
-                            confirm(
-                                "Deseja realmente excluir este usuário?"
-                            );
-
-
-                        if (!confirmacao) {
-
-                            return;
-
-                        }
-
-
-                        usuarios.splice(
-                            indice,
-                            1
-                        );
-
-
-                        localStorage.setItem(
-                            "usuarios",
-                            JSON.stringify(usuarios)
-                        );
-
-
-                        totalUsuarios.textContent =
-                            usuarios.length;
-
-
-                        totalUsuariosAtivos.textContent =
-                            usuarios.length;
-
-
-                        mostrarUsuarios(
-                            usuarios
-                        );
-
-
-                        alert(
-                            "Usuário excluído com sucesso."
-                        );
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
 
 
     /* =================================================
        PESQUISA
     ================================================= */
 
-    const pesquisa =
-        document.getElementById(
-            "pesquisaUsuario"
-        );
+    function aplicarPesquisa() {
 
+        const termo = pesquisa.value.toLowerCase().trim();
 
-    pesquisa.addEventListener(
-        "input",
-        function () {
+        mostrarUsuarios(usuarios.filter(function (usuario) {
 
-
-            const termo =
-                pesquisa.value
-                .toLowerCase()
-                .trim();
-
-
-            const usuariosFiltrados =
-                usuarios.filter(
-                    function (usuario) {
-
-                        return (
-
-                            usuario.nome
-                                .toLowerCase()
-                                .includes(termo)
-
-                            ||
-
-                            usuario.email
-                                .toLowerCase()
-                                .includes(termo)
-
-                        );
-
-                    }
-                );
-
-
-            mostrarUsuarios(
-                usuariosFiltrados
+            return (
+                usuario.nome.toLowerCase().includes(termo) ||
+                usuario.email.toLowerCase().includes(termo)
             );
 
-        }
-    );
+        }));
 
+    }
+
+    pesquisa.addEventListener("input", aplicarPesquisa);
 
 
     /* =================================================
        INICIAR
     ================================================= */
 
-    mostrarUsuarios(
-        usuarios
-    );
-
+    if (await verificarAdmin()) {
+        await carregarUsuarios();
+    }
 
 });
 
